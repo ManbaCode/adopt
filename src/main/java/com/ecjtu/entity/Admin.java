@@ -20,6 +20,7 @@ public class Admin {
     private Date birthday;
     private String sex;
     private String remark;
+
     List<Comment> commentList;
 
     public Admin() {
@@ -106,7 +107,7 @@ public class Admin {
     }
 
     public void setEmail(String Email) {
-        Email = Email;
+        this.Email = Email;
     }
 
     public Date getBirthday() {

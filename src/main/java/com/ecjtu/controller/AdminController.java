@@ -8,6 +8,7 @@ import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.ResponseBody;
+import org.springframework.web.servlet.ModelAndView;
 
 import java.util.List;
 
@@ -16,7 +17,7 @@ import java.util.List;
  * @create: 2019-08-22 10:22
  */
 @Controller
-@RequestMapping("admin")
+@RequestMapping("/admin")
 public class AdminController {
 
     @Autowired
@@ -25,6 +26,7 @@ public class AdminController {
     @RequestMapping("/admins.action")
     public String getAdmins(Model model){
         List<Admin> admins = adminService.getAdmins();
+        System.out.println(admins+"admins");
         model.addAttribute("admins",admins);
         return "admin/admin";
     }
@@ -65,20 +67,21 @@ public class AdminController {
 
     @RequestMapping("/findById.action")
     @ResponseBody
-    public Admin findById(Integer id){
+    public Message findById(Integer id){
         Admin admin = adminService.findById(id);
+        System.out.println((admin!=null)+"11111111111111111");
         if(admin!=null){
-            return admin;
+            return Message.success().add("admin",admin);
         }else{
-            return null;
+            return Message.fail();
         }
     }
     @RequestMapping("/findByName.action")
     @ResponseBody
-    public Admin findByIName(String adminName){
+    public String findByName(String adminName, ModelAndView modelAndView){
         Admin admin = adminService.findByName(adminName);
         if(admin!=null){
-            return admin;
+            return "admin/admin";
         }else{
             return null;
         }

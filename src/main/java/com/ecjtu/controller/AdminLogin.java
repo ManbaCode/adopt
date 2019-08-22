@@ -20,8 +20,9 @@ public class AdminLogin {
     @RequestMapping("login.action")
     public String login(Admin admin, Model model){
         Admin admin1 = adminService.loginAdmin(admin);
+        System.out.println(admin1);
         if(admin1!=null){
-            return "admin/admins.action";
+            return "forward:admin/admins.action";
         }else {
             model.addAttribute("msg","账号或者密码有错，请重新输入！");
             return "admin/login";

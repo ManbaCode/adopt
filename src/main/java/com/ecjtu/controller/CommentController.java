@@ -17,20 +17,21 @@ import java.util.List;
  * @create: 2019-08-22 10:23
  */
 @Controller
+@RequestMapping("comment")
 public class CommentController {
 
     @Autowired
     private CommentService commentService;
 
 
-    @RequestMapping("getComments")
+    @RequestMapping("/getComments.action")
     public String getComments(ModelAndView modelAndView){
         List<Comment> comments = commentService.getComments();
         modelAndView.addObject("comments",comments);
         return "admin/comment";
     }
 
-    @RequestMapping("create.action")
+    @RequestMapping("/create.action")
     @ResponseBody
     public Message createComment(Comment comment){
         if(commentService.addComment(comment)>0){
@@ -40,7 +41,7 @@ public class CommentController {
         }
     }
 
-    @RequestMapping("delete.action")
+    @RequestMapping("/delete.action")
     @ResponseBody
     public Message deleteComment(Integer id){
         if(commentService.deleteComment(id)>0){
@@ -50,7 +51,7 @@ public class CommentController {
         }
     }
 
-    @RequestMapping("update.action")
+    @RequestMapping("/update.action")
     @ResponseBody
     public Message updateComment(Comment comment){
         if(commentService.updateComment(comment)>0){
@@ -60,7 +61,7 @@ public class CommentController {
         }
     }
 
-    @RequestMapping("findById")
+    @RequestMapping("/findById.action")
     @ResponseBody
     public Comment findById(Comment comment){
         Comment byId = commentService.findById(comment);

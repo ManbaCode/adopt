@@ -70,27 +70,27 @@
                 <div id="collapseListGroup3" class="panel-collapse collapse in" role="tabpanel" aria-labelledby="collapseListGroupHeading3">
                     <ul class="list-group">
                         <li class="list-group-item my_font">
-                            <a href="user.html">
+                            <a href="../../html/admin/user.html">
                                 <i class="fa fa-flash fa-fw"></i> 用户信息
                             </a>
                         </li>
                         <li class="list-group-item my_font">
-                            <a href="admin.html">
+                            <a href="../../html/admin/admin.html">
                                 <i class="fa fa-flash fa-fw"></i> 管理员信息
                             </a>
                         </li>
                         <li class="list-group-item my_font">
-                            <a href="pet.html">
+                            <a href="../../html/admin/pet.html">
                                 <i class="fa fa-sitemap fa-fw"></i> 宠物管理
                             </a>
                         </li>
                         <li class="list-group-item my_font">
-                            <a href="t_adopt.html">
+                            <a href="../../html/admin/t_adopt.html">
                                 <i class="fa fa-sitemap fa-fw"></i> 领养管理
                             </a>
                         </li>
                         <li class="list-group-item my_font">
-                            <a href="comment.html">
+                            <a href="../../html/admin/comment.html">
                                 <i class="fa fa-sitemap fa-fw"></i> 评论管理
                             </a>
                         </li>
@@ -120,11 +120,11 @@
                 </form>
             </div>
         </div>
-        <a href="crmclass/list.action#" class="btn btn-primary" data-toggle="modal" data-target="#newAdmin" onclick="clearadmin()">新建</a>
+        <a href="#" class="btn btn-primary" data-toggle="modal" data-target="#newAdmin" onclick="clearadmin()">新建</a>
         <div class="row">
             <div class="col-lg-12">
                 <div class="panel panel-default">
-                    <div class="panel-heading">班级信息列表</div>
+                    <div class="panel-heading">管理员信息列表</div>
                     <!-- /.panel-heading -->
                     <table class="table table-bordered table-striped">
                         <thead>
@@ -150,7 +150,7 @@
                                 <td>${admin.birthday}</td>
                                 <td>${admin.sex}</td>
                                 <td>
-                                    <a href="#" class="btn btn-primary btn-xs" data-toggle="modal" data-target="#editAdmin" onclick="editAdmin(${admin.id})">修改</a>
+                                    <a href="#" class="btn btn-primary btn-xs" data-toggle="modal" data-target="#editAdmin" onclick="editAdmins(${admin.id})">修改</a>
                                     <a href="#" class="btn btn-danger btn-xs" onclick="deleteAdmin(${admin.id})">删除</a>
                                 </td>
                             </tr>
@@ -254,7 +254,7 @@
             </div>
             <div class="modal-footer">
                 <button type="button" class="btn btn-default" data-dismiss="modal">关闭</button>
-                <button type="button" class="btn btn-primary" onclick="createcrmclass()">创建用户</button>
+                <button type="button" class="btn btn-primary" onclick="createAdmin()">创建用户</button>
             </div>
         </div>
     </div>
@@ -314,7 +314,7 @@
                             Email
                         </label>
                         <div class="col-sm-4">
-                            <input type="text" class="form-control" id="edit_Email" placeholder="Email"  name="Email">
+                            <input type="text" class="form-control" id="edit_Email" placeholder="邮件"  name="Email">
                         </div>
                     </div>
                     <div class="form-group">
@@ -337,7 +337,7 @@
             </div>
             <div class="modal-footer">
                 <button type="button" class="btn btn-default" data-dismiss="modal">关闭</button>
-                <button type="button" class="btn btn-primary" onclick="updatecrmclass()">保存修改</button>
+                <button type="button" class="btn btn-primary" onclick="updateAdmin()">保存修改</button>
             </div>
         </div>
     </div>
@@ -365,8 +365,9 @@
     });
     //清空新建班级窗口中的数据
     function clearAdmin() {
-        $("#new_userName").val("");
+        $("#new_adminName").val("");
         $("#new_password").val("");
+        $("#new_Name").val("");
         $("#new_sex").val("");
         $("#new_telephone").val("");
         $("#new_Email").val("");
@@ -375,45 +376,51 @@
     }
     // 创建用户
     function createAdmin() {
-        $.Post("admin/create.action",
-            $("#new_admin_form").serialize(),function(data){
-                if(data =="OK"){
-                    alert("班级创建成功！");
-                    window.location.reload();
-                }else{
-                    alert("班级创建失败！");
-                    window.location.reload();
-                }
-            });
+        $.ajax({
+            url:"${pageContext.request.contextPath}/admin/create.action",
+            type:"POST",
+            date:$("#new_admin_form").serialize(),
+            success:function (result) {
+                alter("管理员创建成功");
+                window.location.reload();
+            },
+            error:function (result) {
+                alert("管理员创建失败");
+                window.location.reload();
+            }
+        });
     }
     // 通过id获取修改的管理员信息
-    function editAdmin(id) {
+    function editAdmins(id) {
         $.ajax({
-            type:"get",
-            url:"${pageContext.request.contextPath}/admin/findById.action",
-            data:{"id":id},
-            success:function(data) {
-                $("#edit_id").val(data.id);
-                $("#edit_userName").val(data.userName);
-                $("#edit_password").val(data.password);
-                $("#edit_sex").val(data.sex);
-                $("#edit_telephone").val(data.telephone);
-                $("#edit_Email").val(data.Email);
-                $("#edit_address").val(data.address);
-                $("#edit_state").val(data.state);
+            type:"GET",
+            url:"${pageContext.request.contextPath}/admin/findById.action?id="+id,
+            success:function(result) {
+                $("#edit_id").val(result.extend.admin.id);
+                $("#edit_adminName").val(result.extend.admin.adminName);
+                $("#edit_password").val(result.extend.admin.adminPwd);
+                $("#edit_Name").val(result.extend.admin.realName)
+                $("#edit_sex").val(result.extend.admin.sex);
+                $("#edit_telephone").val(result.extend.admin.telephone);
+                $("#edit_Email").val(result.extend.admin.Email);
+                $("#edit_birthday").val(result.extend.admin.birthday);
+                $("#edit_remark").val(result.extend.admin.remark);
+            },
+            error:function (result) {
+                alert(id);
             }
         });
     }
     // 执行修改用户
     function updateAdmin() {
-        $.Post("${pageContext.request.contextPath}admin/update.action",
+        $.Post("${pageContext.request.contextPath}/admin/update.action",
             $("#edit_admin_form").serialize(),
-            function(data){
-                if(data =="OK"){
-                    alert("班级信息更新成功！");
+            function(result){
+                if(result.code==100){
+                    alert("管理员信息更新成功！");
                     window.location.reload();
                 }else{
-                    alert("班级信息更新失败！");
+                    alert("管理员信息更新失败！");
                     window.location.reload();
                 }
             });
@@ -421,16 +428,19 @@
     // 删除用户
     function deleteAdmin(id) {
         if(confirm('确实要删除该管理员吗?')) {
-            $.Post("${pageContext.request.contextPath}/admin/delete.action",{"id":id},
-                function(data){
-                    if(data =="OK"){
-                        alert("用户删除成功！");
+            $.ajax({
+                url:"${pageContext.request.contextPath}/admin/delete.action?id="+id,
+                type:"GET",
+                success:function (result) {
+                    if(result.code==100){
+                        alert("管理员删除成功！");
                         window.location.reload();
                     }else{
-                        alert("用户班级失败！");
+                        alert("管理员删除失败！");
                         window.location.reload();
                     }
-                });
+                }
+            });
         }
     }
 </script>

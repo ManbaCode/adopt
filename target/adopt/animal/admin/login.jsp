@@ -33,13 +33,13 @@
                     <div class="panel-body"style="padding:30px; padding-bottom:10px; padding-top:10px;">
                         <div class="form-group">
                             <div class="field field-icon-right">
-                                <input type="text" class="input input-big" name="name" id="adminName" placeholder="账号" />
+                                <input type="text" class="input input-big" name="adminName" id="name" placeholder="账号" />
                                 <span class="icon icon-user margin-small"></span>
                             </div>
                         </div>
                         <div class="form-group">
                             <div class="field field-icon-right">
-                                <input type="password" class="input input-big" name="password" id="adminPwd"  placeholder="密码" />
+                                <input type="password" class="input input-big" name="adminPwd" id="password"  placeholder="密码" />
                                 <span class="icon icon-key margin-small"></span>
                             </div>
                         </div>
@@ -51,7 +51,7 @@
                         </div>
                     </div>
                     <div style="padding:30px;">
-                        <input type="button" id="button" class="button button-block bg-main text-big input-big" value="登录">
+                        <input type="submit" id="button" class="button button-block bg-main text-big input-big" value="登录">
                     </div>
                 </div>
             </form>

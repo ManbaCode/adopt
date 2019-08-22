@@ -14,22 +14,22 @@
         <context:include-filter type="annotation" expression="org.springframework.stereotype.Controller"/>
     </context:component-scan>
 
-    <!--配置拦截器-->
-    <mvc:interceptors>
-        <mvc:interceptor>
-            <mvc:mapping path="/**"/>
-            <bean class="com.ecjtu.util.MyInterceptor"></bean>
-        </mvc:interceptor>
-    </mvc:interceptors>
+<!--    &lt;!&ndash;配置拦截器&ndash;&gt;-->
+<!--    <mvc:interceptors>-->
+<!--        <mvc:interceptor>-->
+<!--            <mvc:mapping path="/**"/>-->
+<!--            <bean class="com.ecjtu.util.MyInterceptor"></bean>-->
+<!--        </mvc:interceptor>-->
+<!--    </mvc:interceptors>-->
+
     <!--配置注解驱动-->
     <mvc:annotation-driven></mvc:annotation-driven>
 
     <!--配置SpringMVC无法使用静态文件的问题-->
     <mvc:default-servlet-handler/>
-
     <!--配置视图解析器-->
     <bean class="org.springframework.web.servlet.view.InternalResourceViewResolver">
-        <property name="prefix" value="/html/"></property>
+        <property name="prefix" value="/animal/"></property>
         <property name="suffix" value=".jsp"></property>
     </bean>
 </beans>

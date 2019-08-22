@@ -41,7 +41,7 @@ public class UsersController {
 
     @RequestMapping("delete.action")
     @ResponseBody
-    public Message deletUsers(Integer id){
+    public Message deleteUsers(Integer id){
         if(usersService.deleteUser(id)>0){
             return Message.fail();
         }else{

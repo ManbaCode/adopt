@@ -16,19 +16,20 @@ import java.util.List;
  * @create: 2019-08-22 10:21
  */
 @Controller
+@RequestMapping("pet")
 public class PetController {
 
     @Autowired
     private PetService petService;
 
-    @RequestMapping("getPets")
+    @RequestMapping("/getPets.action")
     public String getPets(ModelAndView modelAndView){
         List<Pet> pets = petService.getPets();
         modelAndView.addObject("pets",pets);
         return "admin/pet";
     }
 
-    @RequestMapping("create.action")
+    @RequestMapping("/create.action")
     @ResponseBody
     public Message createPet(Pet pet){
         if(petService.addPet(pet)>0){
@@ -38,7 +39,7 @@ public class PetController {
         }
     }
 
-    @RequestMapping("delete.action")
+    @RequestMapping("/delete.action")
     @ResponseBody
     public Message deletePet(Integer id){
         if(petService.deletePet(id)>0){
@@ -48,7 +49,7 @@ public class PetController {
         }
     }
 
-    @RequestMapping("update.action")
+    @RequestMapping("/update.action")
     @ResponseBody
     public Message updatePet(Pet pet){
         if(petService.updatePet(pet)>0){
@@ -58,7 +59,7 @@ public class PetController {
         }
     }
 
-    @RequestMapping("findById")
+    @RequestMapping("/findById.action")
     @ResponseBody
     public Pet findById(Integer id){
         Pet pet = petService.findById(id);
@@ -69,7 +70,7 @@ public class PetController {
         }
     }
 
-    @RequestMapping("findByName")
+    @RequestMapping("/findByName.action")
     @ResponseBody
     public Pet findByName(String petName){
         Pet byName = petService.findByName(petName);

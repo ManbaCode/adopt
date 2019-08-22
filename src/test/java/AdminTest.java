@@ -41,4 +41,10 @@ public class AdminTest {
         int i = adminMapper.deleteAdmin(10);
         System.out.println(i);
     }
+
+    @Test
+    public void select1(){
+        Admin byId = adminMapper.findById(1);
+        System.out.println(byId);
+    }
 }

@@ -23,7 +23,7 @@ public class AdoptAnimalController {
     private AdoptAnimalService animalService;
 
 
-    @RequestMapping("getAdopts")
+    @RequestMapping("getAdopts.action")
     public String getAdoptAnimals(ModelAndView modelAndView){
         List<com.ecjtu.entity.AdoptAnimal> adoptAnimals = animalService.getAdoptAnimals();
         modelAndView.addObject("adoptAnimals",adoptAnimals);
@@ -60,7 +60,7 @@ public class AdoptAnimalController {
         }
     }
 
-    @RequestMapping("findById")
+    @RequestMapping("findById.action")
     @ResponseBody
     public AdoptAnimal findById(Integer id){
         AdoptAnimal byId = animalService.findById(id);

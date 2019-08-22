@@ -46,20 +46,20 @@
         </collection>
     </resultMap>
 
-    <select id="loginAdmin" parameterType="Admin">
+    <select id="loginAdmin" parameterType="Admin" resultMap="BaseAdminMap">
         SELECT * FROM admin WHERE adminName=#{adminName} AND adminPwd=#{adminPwd}
     </select>
 
     <select id="getAdmins" resultMap="BaseAdminMap">
-        SELECT * FROM admin AS a,comment AS  c ,pet as p WHERE a.id=c.admin_id AND c.pet_id=p.id
+        SELECT * FROM (admin  LEFT JOIN comment ON admin.id=comment.admin_id) LEFT JOIN pet ON comment.pet_id=pet.id
     </select>
 
-    <select id="findById" resultMap="BaseAdminMap">
-        SELECT * FROM admin AS a,comment AS  c ,pet as p WHERE a.id=c.admin_id AND c.pet_id=p.id AND a.id=#{id}
+    <select id="findById" resultMap="BaseAdminMap" parameterType="int">
+        SELECT * FROM (admin  LEFT JOIN comment ON admin.id=comment.admin_id) LEFT JOIN pet ON comment.pet_id=pet.id WHERE admin.id=#{id}
     </select>
 
-    <select id="findByName" resultMap="BaseAdminMap">
-        SELECT * FROM admin AS a,comment AS  c ,pet as p WHERE a.id=c.admin_id AND c.pet_id=p.id AND a.adminName=#{adminName}
+    <select id="findByName" resultMap="BaseAdminMap" parameterType="string">
+        SELECT * FROM (admin  LEFT JOIN comment ON admin.id=comment.admin_id) LEFT JOIN pet ON comment.pet_id=pet.id WHERE a.id=#{id} WHERE a.adminName=#{adminName}
     </select>
 
     <delete id="deleteBatch" parameterType="int">

@@ -1,0 +1,96 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.ecjtu.mapper.PetMapper">
+
+    <insert id="addPet" parameterType="Pet">
+        INSERT INTO pet (id,petName,petType,sex,birthday,pic,state,remark)values(#{id},#{petName},#{petType},#{sex},#{birthday},#{pic},#{remark})
+    </insert>
+
+    <delete id="deletePet" parameterType="int">
+        DELETE FROM pet WHERE id=#{id}
+    </delete>
+
+    <update id="updatePet" parameterType="Pet">
+        UPDATE SET petName=#{petName},petType=#{petType},sex=#{sex},birthday=#{birthday},pic=#{pic},state=#{state},remark=#{remark}
+    </update>
+
+
+
+    <resultMap id="BasePetMap" type="Pet">
+        <id column="id" property="id"></id>
+        <result column="petName" property="petName"></result>
+        <result column="petType" property="petType"></result>
+        <result column="sex" property="sex"></result>
+        <result column="birthday" property="birthday"></result>
+        <result column="pic" property="pic"></result>
+        <result column="state" property="state"></result>
+        <result column="remark" property="remark"></result>
+        <association property="adoptAnimal" javaType="adoptAnimal">
+            <id column="id" property="id"></id>
+            <result column="adoptTime" property="adoptTime"></result>
+            <result column="state" property="state"></result>
+            <association property="user" javaType="users">
+                <id property="id" column="id"></id>
+                <result column="userName" property="userName"></result>
+                <result column="password" property="password"></result>
+                <result column="sex" property="sex"></result>
+                <result column="age" property="age"></result>
+                <result column="telephone" property="telephone"></result>
+                <result column="Email" property="Email"></result>
+                <result column="address" property="address"></result>
+                <result column="pic" property="pic"></result>
+                <result column="state" property="state"></result>
+            </association>
+        </association>
+        <collection property="commentList" ofType="comment" javaType="list">
+            <id column="id" property="id"></id>
+            <result column="commentTime" property="commentTime"></result>
+            <result column="content" property="content"></result>
+            <association property="admin" javaType="admin">
+                <id column="id" property="id"></id>
+                <result column="adminName"  property="adminName"></result>
+                <result column="adminPwd"  property="adminPwd"></result>
+                <result column="realName"  property="realName"></result>
+                <result column="telephone" property="telephone"></result>
+                <result column="Email" property="Email"></result>
+                <result column="birthday" property="birthday"></result>
+                <result column="sex" property="sex"></result>
+                <result column="remark" property="remark"></result>
+            </association>
+            <association property="user" javaType="users">
+                <id property="id" column="id"></id>
+                <result column="userName" property="userName"></result>
+                <result column="password" property="password"></result>
+                <result column="sex" property="sex"></result>
+                <result column="age" property="age"></result>
+                <result column="telephone" property="telephone"></result>
+                <result column="Email" property="Email"></result>
+                <result column="address" property="address"></result>
+                <result column="pic" property="pic"></result>
+                <result column="state" property="state"></result>
+            </association>
+        </collection>
+    </resultMap>
+
+    <select id="getPets" resultMap="BasePetMap">
+        SELECT * FROM pet as p,t_adopt as t,users as u,comment as c,admin as a WHERE p.id=t.pet_id AND u.id=t.user_id AND p.id=c.pet_id AND u.id=c.user_id OR  c.admin_id=a.id
+    </select>
+
+
+    <select id="findById" resultMap="BasePetMap">
+        SELECT * FROM pet as p,t_adopt as t,users as u,comment as c,admin as a WHERE p.id=t.pet_id AND u.id=t.user_id AND p.id=c.pet_id AND u.id=c.user_id OR  c.admin_id=a.id AND  p.id=#{id}
+    </select>
+
+    <select id="findByName" resultMap="BasePetMap">
+        SELECT * FROM pet as p,t_adopt as t,users as u,comment as c,admin as a WHERE p.id=t.pet_id AND u.id=t.user_id AND p.id=c.pet_id AND u.id=c.user_id OR  c.admin_id=a.id AND  p.petName=#{petName}
+    </select>
+
+    <delete id="deleteBatch" parameterType="int">
+        DELETE FROM pet
+        <foreach collection="ids" item="id" separator="," open="where id in (" close=")">
+            #{id}
+        </foreach>
+    </delete>
+</mapper>

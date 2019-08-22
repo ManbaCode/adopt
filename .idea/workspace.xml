@@ -1,0 +1,1758 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ArtifactsWorkspaceSettings">
+    <artifacts-to-build>
+      <artifact name="adopt:war exploded" />
+    </artifacts-to-build>
+  </component>
+  <component name="ChangeListManager">
+    <list default="true" id="f591194b-05f8-45ac-87db-2b419717f508" name="Default Changelist" comment="基于SSM的流浪猫狗领养网站的设计与实现的第一次提交">
+      <change afterPath="$PROJECT_DIR$/.idea/compiler.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/encodings.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/inspectionProfiles/Project_Default.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/uiDesigner.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/adopt.iml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/ecjtu/controller/AdminController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/ecjtu/controller/AdminLogin.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/ecjtu/controller/AdoptAnimalController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/ecjtu/controller/BlogController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/ecjtu/controller/CommentController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/ecjtu/controller/PetController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/ecjtu/controller/UsersController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/ecjtu/entity/Admin.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/ecjtu/entity/AdoptAnimal.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/ecjtu/entity/Blog.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/ecjtu/entity/Comment.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/ecjtu/entity/Pet.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/ecjtu/entity/Users.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/ecjtu/mapper/AdminMapper.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/ecjtu/mapper/AdoptAnimalMapper.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/ecjtu/mapper/BlogMapper.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/ecjtu/mapper/CommentMapper.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/ecjtu/mapper/PetMapper.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/ecjtu/mapper/UsersMapper.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/ecjtu/service/AdminService.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/ecjtu/service/AdoptAnimalService.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/ecjtu/service/BlogService.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/ecjtu/service/CommentService.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/ecjtu/service/PetService.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/ecjtu/service/UsersService.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/ecjtu/service/impl/AdminServiceImpl.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/ecjtu/service/impl/AdoptAnimalServiceImpl.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/ecjtu/service/impl/BlogServiceImpl.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/ecjtu/service/impl/CommentServiceImpl.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/ecjtu/service/impl/PetServiceImpl.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/ecjtu/service/impl/UserServiceImpl.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/ecjtu/util/Message.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/ecjtu/util/MyInterceptor.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resource/MyBatis.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resource/Spring-dao.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resource/Spring-service.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resource/SpringMVC.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resource/Sprng-tx.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resource/db.properties" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resource/log4j.properties" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resource/mapper/AdminMapper.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resource/mapper/AdoptAnimalMapper.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resource/mapper/BlogMapper.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resource/mapper/CommentMapper.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resource/mapper/PetMapper.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resource/mapper/UserMapper.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/webapp/JQuery/jquery-3.4.1.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/webapp/JQuery/jquery-3.4.1.min.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/web.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/webapp/bootstrap/css/bootstrap-theme.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/webapp/bootstrap/css/bootstrap-theme.css.map" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/webapp/bootstrap/css/bootstrap-theme.min.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/webapp/bootstrap/css/bootstrap-theme.min.css.map" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/webapp/bootstrap/css/bootstrap.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/webapp/bootstrap/css/bootstrap.css.map" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/webapp/bootstrap/css/bootstrap.min.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/webapp/bootstrap/css/bootstrap.min.css.map" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/webapp/bootstrap/fonts/glyphicons-halflings-regular.eot" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/webapp/bootstrap/fonts/glyphicons-halflings-regular.svg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/webapp/bootstrap/fonts/glyphicons-halflings-regular.ttf" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/webapp/bootstrap/fonts/glyphicons-halflings-regular.woff" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/webapp/bootstrap/fonts/glyphicons-halflings-regular.woff2" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/webapp/bootstrap/js/bootstrap.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/webapp/bootstrap/js/bootstrap.min.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/webapp/bootstrap/js/npm.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/webapp/css/base.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/webapp/css/error.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/webapp/css/font-awesome.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/webapp/css/jquery.slideBox.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/webapp/css/login.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/webapp/css/owl.carousel.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/webapp/css/show.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/webapp/css/simplelightbox.min.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/webapp/css/style.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/webapp/fonts/FontAwesome.otf" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/webapp/fonts/fontawesome-webfont.eot" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/webapp/fonts/fontawesome-webfont.svg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/webapp/fonts/fontawesome-webfont.ttf" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/webapp/fonts/fontawesome-webfont.woff" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/webapp/fonts/fontawesome-webfont.woff2" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/webapp/fonts/glyphicons-halflings-regular.eot" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/webapp/fonts/glyphicons-halflings-regular.ttf" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/webapp/fonts/glyphicons-halflings-regular.woff" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/webapp/fonts/glyphicons-halflings-regular.woff2" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/webapp/html/about.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/webapp/html/admin/admin.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/webapp/html/admin/admin.jsp" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/webapp/html/admin/blog.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/webapp/html/admin/comment.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/webapp/html/admin/login.jsp" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/webapp/html/admin/pet.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/webapp/html/admin/test.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/webapp/html/admin/user.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/webapp/html/blog.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/webapp/html/error.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/webapp/html/index.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/webapp/html/services.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/webapp/html/show.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/webapp/html/team.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/webapp/images/1.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/webapp/images/2.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/webapp/images/3.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/webapp/images/4.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/webapp/images/P3.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/webapp/images/P7.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/webapp/images/Thumbs.db" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/webapp/images/ab.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/webapp/images/arrows.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/webapp/images/bg.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/webapp/images/bg3.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/webapp/images/btn.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/webapp/images/cat1.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/webapp/images/cat1.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/webapp/images/cat10.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/webapp/images/cat11.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/webapp/images/cat11.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/webapp/images/cat2.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/webapp/images/cat2.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/webapp/images/cat3.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/webapp/images/cat4.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/webapp/images/cat5.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/webapp/images/cat6.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/webapp/images/cat7.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/webapp/images/cat8.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/webapp/images/cat9.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/webapp/images/catsm1.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/webapp/images/dog1.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/webapp/images/dog10.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/webapp/images/dog11.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/webapp/images/dog12.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/webapp/images/dog13.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/webapp/images/dog14.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/webapp/images/dog15.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/webapp/images/dog16.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/webapp/images/dog17.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/webapp/images/dog18.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/webapp/images/dog19.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/webapp/images/dog2.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/webapp/images/dog20.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/webapp/images/dog3.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/webapp/images/dog4.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/webapp/images/dog5.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/webapp/images/dog6.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/webapp/images/dog7.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/webapp/images/dog8.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/webapp/images/dog9.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/webapp/images/dogsm1.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/webapp/images/error/banner.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/webapp/images/error/cut.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/webapp/images/f1.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/webapp/images/f2.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/webapp/images/f3.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/webapp/images/f4.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/webapp/images/f5.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/webapp/images/f6.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/webapp/images/float-bg.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/webapp/images/g2.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/webapp/images/g3.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/webapp/images/loading.gif" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/webapp/images/login.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/webapp/images/login/bg.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/webapp/images/login/passcode.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/webapp/images/login/tmbg-white.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/webapp/images/logo.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/webapp/images/m1.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/webapp/images/m2.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/webapp/images/m3.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/webapp/images/m4.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/webapp/images/m5.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/webapp/images/m6.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/webapp/images/move-up.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/webapp/images/p1 .jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/webapp/images/p10.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/webapp/images/p11.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/webapp/images/p2.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/webapp/images/p4.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/webapp/images/p5.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/webapp/images/p6.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/webapp/images/p8.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/webapp/images/p9.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/webapp/images/passcode.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/webapp/images/share-btn.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/webapp/images/t1.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/webapp/images/t2.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/webapp/images/t3.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/webapp/images/t4.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/webapp/images/tmbg-white.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/webapp/index.jsp" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/webapp/js/SmoothScroll.min.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/webapp/js/demo.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/webapp/js/easing.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/webapp/js/houtai/css/boot-crm.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/webapp/js/houtai/css/bootstrap.min.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/webapp/js/houtai/css/dataTables.bootstrap.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/webapp/js/houtai/css/font-awesome.min.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/webapp/js/houtai/css/metisMenu.min.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/webapp/js/houtai/css/rightbg.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/webapp/js/houtai/css/sb-admin-2.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/webapp/js/houtai/css/style.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/webapp/js/houtai/fonts/FontAwesome.otf" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/webapp/js/houtai/fonts/fontawesome-webfont.eot" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/webapp/js/houtai/fonts/fontawesome-webfont.svg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/webapp/js/houtai/fonts/fontawesome-webfont.ttf" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/webapp/js/houtai/fonts/fontawesome-webfont.woff" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/webapp/js/houtai/js/bootstrap.min.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/webapp/js/houtai/js/dataTables.bootstrap.min.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/webapp/js/houtai/js/jquery-1.11.3.min.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/webapp/js/houtai/js/jquery.dataTables.min.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/webapp/js/houtai/js/metisMenu.min.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/webapp/js/houtai/js/sb-admin-2.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/webapp/js/jquery-2.2.3.min.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/webapp/js/jquery.comment.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/webapp/js/jquery.min.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/webapp/js/jquery.slideBox.min.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/webapp/js/move-top.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/webapp/js/owl.carousel.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/webapp/js/responsiveslides.min.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/webapp/js/simple-lightbox.min.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/test/java/AdminTest.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/test/java/AdoptAnimalTest.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/test/java/BlogTest.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/test/java/CommentTest.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/test/java/UserTest.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/test/java/petTest.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/adopt/JQuery/jquery-3.4.1.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/adopt/JQuery/jquery-3.4.1.min.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/adopt/META-INF/MANIFEST.MF" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/adopt/WEB-INF/classes/MyBatis.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/adopt/WEB-INF/classes/Spring-dao.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/adopt/WEB-INF/classes/Spring-service.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/adopt/WEB-INF/classes/SpringMVC.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/adopt/WEB-INF/classes/Sprng-tx.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/adopt/WEB-INF/classes/com/ecjtu/controller/AdminController.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/adopt/WEB-INF/classes/com/ecjtu/controller/AdminLogin.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/adopt/WEB-INF/classes/com/ecjtu/controller/AdoptAnimal.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/adopt/WEB-INF/classes/com/ecjtu/controller/BlogController.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/adopt/WEB-INF/classes/com/ecjtu/controller/CommentController.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/adopt/WEB-INF/classes/com/ecjtu/controller/PetController.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/adopt/WEB-INF/classes/com/ecjtu/controller/UsersController.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/adopt/WEB-INF/classes/com/ecjtu/entity/Admin.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/adopt/WEB-INF/classes/com/ecjtu/entity/AdoptAnimal.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/adopt/WEB-INF/classes/com/ecjtu/entity/Blog.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/adopt/WEB-INF/classes/com/ecjtu/entity/Comment.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/adopt/WEB-INF/classes/com/ecjtu/entity/Pet.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/adopt/WEB-INF/classes/com/ecjtu/entity/Users.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/adopt/WEB-INF/classes/com/ecjtu/mapper/AdminMapper.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/adopt/WEB-INF/classes/com/ecjtu/mapper/AdoptAnimalMapper.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/adopt/WEB-INF/classes/com/ecjtu/mapper/BlogMapper.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/adopt/WEB-INF/classes/com/ecjtu/mapper/CommentMapper.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/adopt/WEB-INF/classes/com/ecjtu/mapper/PetMapper.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/adopt/WEB-INF/classes/com/ecjtu/mapper/UsersMapper.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/adopt/WEB-INF/classes/com/ecjtu/service/AdminService.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/adopt/WEB-INF/classes/com/ecjtu/service/AdoptAnimalService.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/adopt/WEB-INF/classes/com/ecjtu/service/BlogService.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/adopt/WEB-INF/classes/com/ecjtu/service/CommentService.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/adopt/WEB-INF/classes/com/ecjtu/service/PetService.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/adopt/WEB-INF/classes/com/ecjtu/service/UsersService.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/adopt/WEB-INF/classes/com/ecjtu/service/impl/AdminServiceImpl.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/adopt/WEB-INF/classes/com/ecjtu/service/impl/AdoptAnimalServiceImpl.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/adopt/WEB-INF/classes/com/ecjtu/service/impl/BlogServiceImpl.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/adopt/WEB-INF/classes/com/ecjtu/service/impl/CommentServiceImpl.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/adopt/WEB-INF/classes/com/ecjtu/service/impl/PetServiceImpl.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/adopt/WEB-INF/classes/com/ecjtu/service/impl/UserServiceImpl.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/adopt/WEB-INF/classes/com/ecjtu/util/Message.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/adopt/WEB-INF/classes/com/ecjtu/util/MyInterceptor.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/adopt/WEB-INF/classes/db.properties" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/adopt/WEB-INF/classes/log4j.properties" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/adopt/WEB-INF/classes/mapper/AdminMapper.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/adopt/WEB-INF/classes/mapper/AdoptAnimalMapper.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/adopt/WEB-INF/classes/mapper/BlogMapper.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/adopt/WEB-INF/classes/mapper/CommentMapper.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/adopt/WEB-INF/classes/mapper/PetMapper.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/adopt/WEB-INF/classes/mapper/UserMapper.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/adopt/WEB-INF/lib/druid-1.1.19.jar" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/adopt/WEB-INF/lib/jackson-annotations-2.9.9.jar" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/adopt/WEB-INF/lib/jackson-core-2.9.9.jar" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/adopt/WEB-INF/lib/jackson-databind-2.9.9.jar" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/adopt/WEB-INF/lib/jsqlparser-2.0.jar" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/adopt/WEB-INF/lib/jstl-1.2.jar" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/adopt/WEB-INF/lib/mybatis-3.5.2.jar" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/adopt/WEB-INF/lib/mybatis-spring-2.0.2.jar" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/adopt/WEB-INF/lib/mysql-connector-java-8.0.12.jar" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/adopt/WEB-INF/lib/pagehelper-5.1.9.jar" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/adopt/WEB-INF/lib/protobuf-java-2.6.0.jar" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/adopt/WEB-INF/lib/spring-aop-5.1.8.RELEASE.jar" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/adopt/WEB-INF/lib/spring-beans-5.1.8.RELEASE.jar" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/adopt/WEB-INF/lib/spring-context-5.1.8.RELEASE.jar" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/adopt/WEB-INF/lib/spring-core-5.1.8.RELEASE.jar" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/adopt/WEB-INF/lib/spring-expression-5.1.8.RELEASE.jar" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/adopt/WEB-INF/lib/spring-jcl-5.1.8.RELEASE.jar" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/adopt/WEB-INF/lib/spring-jdbc-5.1.8.RELEASE.jar" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/adopt/WEB-INF/lib/spring-tx-5.1.8.RELEASE.jar" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/adopt/WEB-INF/lib/spring-web-5.1.8.RELEASE.jar" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/adopt/WEB-INF/lib/spring-webmvc-5.1.8.RELEASE.jar" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/adopt/WEB-INF/web.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/adopt/bootstrap/css/bootstrap-theme.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/adopt/bootstrap/css/bootstrap-theme.css.map" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/adopt/bootstrap/css/bootstrap-theme.min.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/adopt/bootstrap/css/bootstrap-theme.min.css.map" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/adopt/bootstrap/css/bootstrap.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/adopt/bootstrap/css/bootstrap.css.map" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/adopt/bootstrap/css/bootstrap.min.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/adopt/bootstrap/css/bootstrap.min.css.map" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/adopt/bootstrap/fonts/glyphicons-halflings-regular.eot" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/adopt/bootstrap/fonts/glyphicons-halflings-regular.svg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/adopt/bootstrap/fonts/glyphicons-halflings-regular.ttf" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/adopt/bootstrap/fonts/glyphicons-halflings-regular.woff" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/adopt/bootstrap/fonts/glyphicons-halflings-regular.woff2" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/adopt/bootstrap/js/bootstrap.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/adopt/bootstrap/js/bootstrap.min.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/adopt/bootstrap/js/npm.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/adopt/css/base.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/adopt/css/error.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/adopt/css/font-awesome.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/adopt/css/jquery.slideBox.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/adopt/css/login.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/adopt/css/owl.carousel.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/adopt/css/show.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/adopt/css/simplelightbox.min.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/adopt/css/style.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/adopt/fonts/FontAwesome.otf" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/adopt/fonts/fontawesome-webfont.eot" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/adopt/fonts/fontawesome-webfont.svg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/adopt/fonts/fontawesome-webfont.ttf" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/adopt/fonts/fontawesome-webfont.woff" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/adopt/fonts/fontawesome-webfont.woff2" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/adopt/fonts/glyphicons-halflings-regular.eot" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/adopt/fonts/glyphicons-halflings-regular.ttf" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/adopt/fonts/glyphicons-halflings-regular.woff" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/adopt/fonts/glyphicons-halflings-regular.woff2" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/adopt/html/about.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/adopt/html/admin/admin.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/adopt/html/admin/admin.jsp" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/adopt/html/admin/blog.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/adopt/html/admin/comment.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/adopt/html/admin/login.jsp" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/adopt/html/admin/pet.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/adopt/html/admin/t_adopt.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/adopt/html/admin/test.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/adopt/html/admin/user.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/adopt/html/blog.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/adopt/html/error.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/adopt/html/index.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/adopt/html/services.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/adopt/html/show.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/adopt/html/team.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/adopt/images/1.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/adopt/images/2.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/adopt/images/3.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/adopt/images/4.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/adopt/images/P3.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/adopt/images/P7.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/adopt/images/Thumbs.db" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/adopt/images/ab.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/adopt/images/arrows.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/adopt/images/bg.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/adopt/images/bg3.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/adopt/images/btn.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/adopt/images/cat1.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/adopt/images/cat1.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/adopt/images/cat10.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/adopt/images/cat11.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/adopt/images/cat11.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/adopt/images/cat2.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/adopt/images/cat2.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/adopt/images/cat3.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/adopt/images/cat4.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/adopt/images/cat5.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/adopt/images/cat6.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/adopt/images/cat7.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/adopt/images/cat8.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/adopt/images/cat9.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/adopt/images/catsm1.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/adopt/images/dog1.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/adopt/images/dog10.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/adopt/images/dog11.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/adopt/images/dog12.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/adopt/images/dog13.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/adopt/images/dog14.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/adopt/images/dog15.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/adopt/images/dog16.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/adopt/images/dog17.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/adopt/images/dog18.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/adopt/images/dog19.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/adopt/images/dog2.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/adopt/images/dog20.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/adopt/images/dog3.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/adopt/images/dog4.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/adopt/images/dog5.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/adopt/images/dog6.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/adopt/images/dog7.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/adopt/images/dog8.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/adopt/images/dog9.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/adopt/images/dogsm1.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/adopt/images/error/banner.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/adopt/images/error/cut.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/adopt/images/f1.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/adopt/images/f2.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/adopt/images/f3.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/adopt/images/f4.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/adopt/images/f5.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/adopt/images/f6.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/adopt/images/float-bg.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/adopt/images/g2.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/adopt/images/g3.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/adopt/images/loading.gif" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/adopt/images/login.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/adopt/images/login/bg.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/adopt/images/login/passcode.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/adopt/images/login/tmbg-white.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/adopt/images/logo.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/adopt/images/m1.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/adopt/images/m2.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/adopt/images/m3.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/adopt/images/m4.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/adopt/images/m5.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/adopt/images/m6.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/adopt/images/move-up.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/adopt/images/p1 .jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/adopt/images/p10.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/adopt/images/p11.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/adopt/images/p2.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/adopt/images/p4.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/adopt/images/p5.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/adopt/images/p6.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/adopt/images/p8.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/adopt/images/p9.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/adopt/images/passcode.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/adopt/images/share-btn.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/adopt/images/t1.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/adopt/images/t2.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/adopt/images/t3.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/adopt/images/t4.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/adopt/images/tmbg-white.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/adopt/index.jsp" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/adopt/js/SmoothScroll.min.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/adopt/js/demo.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/adopt/js/easing.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/adopt/js/houtai/css/boot-crm.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/adopt/js/houtai/css/bootstrap.min.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/adopt/js/houtai/css/dataTables.bootstrap.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/adopt/js/houtai/css/font-awesome.min.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/adopt/js/houtai/css/metisMenu.min.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/adopt/js/houtai/css/rightbg.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/adopt/js/houtai/css/sb-admin-2.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/adopt/js/houtai/css/style.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/adopt/js/houtai/fonts/FontAwesome.otf" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/adopt/js/houtai/fonts/fontawesome-webfont.eot" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/adopt/js/houtai/fonts/fontawesome-webfont.svg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/adopt/js/houtai/fonts/fontawesome-webfont.ttf" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/adopt/js/houtai/fonts/fontawesome-webfont.woff" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/adopt/js/houtai/js/bootstrap.min.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/adopt/js/houtai/js/dataTables.bootstrap.min.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/adopt/js/houtai/js/jquery-1.11.3.min.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/adopt/js/houtai/js/jquery.dataTables.min.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/adopt/js/houtai/js/metisMenu.min.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/adopt/js/houtai/js/sb-admin-2.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/adopt/js/jquery-2.2.3.min.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/adopt/js/jquery.comment.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/adopt/js/jquery.min.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/adopt/js/jquery.slideBox.min.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/adopt/js/move-top.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/adopt/js/owl.carousel.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/adopt/js/responsiveslides.min.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/adopt/js/simple-lightbox.min.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/MyBatis.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/Spring-dao.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/Spring-service.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/SpringMVC.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/Sprng-tx.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/com/ecjtu/controller/AdminController.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/com/ecjtu/controller/AdminLogin.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/com/ecjtu/controller/AdoptAnimal.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/com/ecjtu/controller/BlogController.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/com/ecjtu/controller/CommentController.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/com/ecjtu/controller/PetController.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/com/ecjtu/controller/UsersController.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/com/ecjtu/entity/Admin.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/com/ecjtu/entity/AdoptAnimal.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/com/ecjtu/entity/Blog.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/com/ecjtu/entity/Comment.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/com/ecjtu/entity/Pet.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/com/ecjtu/entity/Users.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/com/ecjtu/mapper/AdminMapper.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/com/ecjtu/mapper/AdoptAnimalMapper.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/com/ecjtu/mapper/BlogMapper.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/com/ecjtu/mapper/CommentMapper.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/com/ecjtu/mapper/PetMapper.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/com/ecjtu/mapper/UsersMapper.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/com/ecjtu/service/AdminService.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/com/ecjtu/service/AdoptAnimalService.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/com/ecjtu/service/BlogService.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/com/ecjtu/service/CommentService.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/com/ecjtu/service/PetService.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/com/ecjtu/service/UsersService.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/com/ecjtu/service/impl/AdminServiceImpl.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/com/ecjtu/service/impl/AdoptAnimalServiceImpl.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/com/ecjtu/service/impl/BlogServiceImpl.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/com/ecjtu/service/impl/CommentServiceImpl.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/com/ecjtu/service/impl/PetServiceImpl.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/com/ecjtu/service/impl/UserServiceImpl.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/com/ecjtu/util/Message.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/com/ecjtu/util/MyInterceptor.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/db.properties" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/log4j.properties" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/mapper/AdminMapper.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/mapper/AdoptAnimalMapper.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/mapper/BlogMapper.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/mapper/CommentMapper.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/mapper/PetMapper.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/mapper/UserMapper.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/test-classes/AdminTest.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/test-classes/AdoptAnimalTest.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/test-classes/BlogTest.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/test-classes/CommentTest.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/test-classes/UserTest.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/test-classes/petTest.class" afterDir="false" />
+    </list>
+    <ignored path="$PROJECT_DIR$/out/" />
+    <ignored path="$PROJECT_DIR$/target/" />
+    <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="DatabaseView">
+    <option name="SHOW_INTERMEDIATE" value="true" />
+    <option name="GROUP_DATA_SOURCES" value="true" />
+    <option name="GROUP_SCHEMA" value="true" />
+    <option name="GROUP_CONTENTS" value="false" />
+    <option name="SORT_POSITIONED" value="false" />
+    <option name="SHOW_EMPTY_GROUPS" value="false" />
+    <option name="AUTO_SCROLL_FROM_SOURCE" value="false" />
+    <option name="HIDDEN_KINDS">
+      <set />
+    </option>
+    <expand />
+    <select />
+  </component>
+  <component name="DefaultGradleProjectSettings">
+    <option name="isMigrated" value="true" />
+  </component>
+  <component name="FileEditorManager">
+    <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/com/ecjtu/controller/AdminController.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="-1785">
+              <caret line="19" column="13" selection-start-line="19" selection-start-column="13" selection-end-line="19" selection-end-column="13" />
+              <folding>
+                <element signature="imports" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/com/ecjtu/controller/PetController.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="45">
+              <caret line="74" column="52" selection-start-line="74" selection-start-column="52" selection-end-line="74" selection-end-column="52" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/com/ecjtu/service/PetService.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="225">
+              <caret line="57" selection-start-line="57" selection-end-line="57" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/com/ecjtu/controller/CommentController.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state>
+              <caret column="29" lean-forward="true" selection-start-column="29" selection-end-column="29" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/webapp/html/admin/admin.html">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="300">
+              <caret line="165" column="22" lean-forward="true" selection-start-line="165" selection-start-column="22" selection-end-line="165" selection-end-column="22" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/webapp/html/admin/blog.html">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="108">
+              <caret line="328" column="19" selection-start-line="328" selection-start-column="19" selection-end-line="328" selection-end-column="19" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/src/main/webapp/html/admin/t_adopt.html">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="48">
+              <caret line="134" column="45" lean-forward="true" selection-start-line="134" selection-start-column="45" selection-end-line="134" selection-end-column="45" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/com/ecjtu/controller/BlogController.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="153">
+              <caret line="20" column="13" selection-start-line="20" selection-start-column="13" selection-end-line="20" selection-end-column="13" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/com/ecjtu/controller/AdminLogin.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="181">
+              <caret line="19" column="20" selection-start-line="19" selection-start-column="20" selection-end-line="19" selection-end-column="20" />
+              <folding>
+                <element signature="imports" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/com/ecjtu/controller/AdoptAnimalController.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="585">
+              <caret line="69" column="24" selection-start-line="69" selection-start-column="24" selection-end-line="69" selection-end-column="24" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+    </leaf>
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="mybatis-config.xml" />
+        <option value="Interface" />
+        <option value="Class" />
+        <option value="Jsp File" />
+      </list>
+    </option>
+  </component>
+  <component name="FindInProjectRecents">
+    <findStrings>
+      <find>int</find>
+      <find>AllComment</find>
+      <find>AllPet</find>
+      <find>AdoptAnimalTest</find>
+      <find>c.user_id</find>
+      <find>user_id</find>
+      <find>1234455</find>
+      <find>userName</find>
+      <find>reamrk</find>
+      <find>users</find>
+      <find>adopt_time</find>
+      <find>BaseCommentMap</find>
+      <find>clearCrmclass</find>
+      <find>../..</find>
+      <find>new_crmclass_form</find>
+      <find>form</find>
+    </findStrings>
+    <replaceStrings>
+      <replace>Integer</replace>
+      <replace>allComment</replace>
+      <replace>allPet</replace>
+      <replace>${pageContext.request.contextPath}</replace>
+    </replaceStrings>
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="IdeDocumentHistory">
+    <option name="CHANGED_PATHS">
+      <list>
+        <option value="$PROJECT_DIR$/src/main/java/com/ecjtu/service/impl/PetService.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/ecjtu/mapper/UsersMapper.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/ecjtu/mapper/AdminMapper.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/ecjtu/service/impl/AdminServiceimpl.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/ecjtu/service/UsersService.java" />
+        <option value="$PROJECT_DIR$/src/test/java/PetTest.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/ecjtu/entity/Blog.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/ecjtu/entity/Pet.java" />
+        <option value="$PROJECT_DIR$/src/main/resource/mapper/BlogMapper.xml" />
+        <option value="$PROJECT_DIR$/src/main/java/com/ecjtu/service/impl/AdminServiceImpl.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/ecjtu/service/impl/PetServiceImpl.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/ecjtu/service/impl/UserServiceImpl.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/ecjtu/entity/Users.java" />
+        <option value="$PROJECT_DIR$/src/main/resource/mapper/PetMapper.xml" />
+        <option value="$PROJECT_DIR$/src/test/java/petTest.java" />
+        <option value="$PROJECT_DIR$/src/main/resource/mapper/AdminMapper.xml" />
+        <option value="$PROJECT_DIR$/src/test/java/AdminTest.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/ecjtu/entity/Comment.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/ecjtu/mapper/AdoptAnimalMapper.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/ecjtu/service/AdoptAnimalService.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/ecjtu/service/impl/AdoptAnimalServiceImpl.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/ecjtu/entity/AdoptAnimal.java" />
+        <option value="$PROJECT_DIR$/src/main/resource/mapper/AdoptAnimalMapper.xml" />
+        <option value="$PROJECT_DIR$/src/test/java/AdoptAnimalTest.java" />
+        <option value="$PROJECT_DIR$/src/main/resource/mapper/UserMapper.xml" />
+        <option value="$PROJECT_DIR$/src/main/java/com/ecjtu/service/BlogService.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/ecjtu/controller/BlogController.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/ecjtu/service/CommentService.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/ecjtu/mapper/CommentMapper.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/ecjtu/service/impl/CommentServiceImpl.java" />
+        <option value="$PROJECT_DIR$/src/test/java/CommentTest.java" />
+        <option value="$PROJECT_DIR$/src/test/java/UserTest.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/ecjtu/service/AdminService.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/ecjtu/controller/AdminLogin.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/ecjtu/entity/Admin.java" />
+        <option value="$PROJECT_DIR$/src/main/resource/mapper/CommentMapper.xml" />
+        <option value="$PROJECT_DIR$/src/main/webapp/html/admin/admin.jsp" />
+        <option value="$PROJECT_DIR$/src/main/webapp/css/login.css" />
+        <option value="$PROJECT_DIR$/src/main/java/com/ecjtu/controller/AdminController.java" />
+        <option value="$PROJECT_DIR$/src/main/resource/Sprng-tx.xml" />
+        <option value="$PROJECT_DIR$/src/main/java/com/ecjtu/util/MyInterceptor.java" />
+        <option value="$PROJECT_DIR$/src/main/webapp/html/admin/login.jsp" />
+        <option value="$PROJECT_DIR$/src/main/resource/SpringMVC.xml" />
+        <option value="$PROJECT_DIR$/src/main/java/com/ecjtu/controller/UsersController.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/ecjtu/service/PetService.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/ecjtu/controller/PetController.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/ecjtu/controller/AdoptAnimal.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/ecjtu/controller/AdoptAnimalController.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/ecjtu/controller/CommentController.java" />
+        <option value="$PROJECT_DIR$/src/main/webapp/html/admin/admin.html" />
+        <option value="$PROJECT_DIR$/src/main/webapp/html/admin/t_adopt.html" />
+      </list>
+    </option>
+  </component>
+  <component name="LogFilters">
+    <option name="FILTER_ERRORS" value="false" />
+    <option name="FILTER_WARNINGS" value="false" />
+    <option name="FILTER_INFO" value="true" />
+    <option name="FILTER_DEBUG" value="true" />
+    <option name="CUSTOM_FILTER" />
+  </component>
+  <component name="MavenImportPreferences">
+    <option name="generalSettings">
+      <MavenGeneralSettings>
+        <option name="mavenHome" value="$PROJECT_DIR$/../../apache-maven-3.6.0" />
+        <option name="userSettingsFile" value="D:\software\maven\apache-maven-3.6.0\conf\settings.xml" />
+      </MavenGeneralSettings>
+    </option>
+  </component>
+  <component name="ProjectConfigurationFiles">
+    <option name="files">
+      <list>
+        <option value="$PROJECT_DIR$/.idea/vcs.xml" />
+      </list>
+    </option>
+  </component>
+  <component name="ProjectFrameBounds" extendedState="6">
+    <option name="x" value="676" />
+    <option name="width" value="697" />
+    <option name="height" value="735" />
+  </component>
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
+  <component name="ProjectView">
+    <navigator proportions="" version="1">
+      <foldersAlwaysOnTop value="true" />
+    </navigator>
+    <panes>
+      <pane id="Scope" />
+      <pane id="PackagesPane" />
+      <pane id="ProjectPane">
+        <subPane>
+          <expand>
+            <path>
+              <item name="adopt" type="b2602c69:ProjectViewProjectNode" />
+              <item name="adopt" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="adopt" type="b2602c69:ProjectViewProjectNode" />
+              <item name="adopt" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="adopt" type="b2602c69:ProjectViewProjectNode" />
+              <item name="adopt" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="adopt" type="b2602c69:ProjectViewProjectNode" />
+              <item name="adopt" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+              <item name="java" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="adopt" type="b2602c69:ProjectViewProjectNode" />
+              <item name="adopt" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+              <item name="java" type="462c0819:PsiDirectoryNode" />
+              <item name="ecjtu" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="adopt" type="b2602c69:ProjectViewProjectNode" />
+              <item name="adopt" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+              <item name="java" type="462c0819:PsiDirectoryNode" />
+              <item name="ecjtu" type="462c0819:PsiDirectoryNode" />
+              <item name="controller" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="adopt" type="b2602c69:ProjectViewProjectNode" />
+              <item name="adopt" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+              <item name="java" type="462c0819:PsiDirectoryNode" />
+              <item name="ecjtu" type="462c0819:PsiDirectoryNode" />
+              <item name="entity" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="adopt" type="b2602c69:ProjectViewProjectNode" />
+              <item name="adopt" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+              <item name="java" type="462c0819:PsiDirectoryNode" />
+              <item name="ecjtu" type="462c0819:PsiDirectoryNode" />
+              <item name="mapper" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="adopt" type="b2602c69:ProjectViewProjectNode" />
+              <item name="adopt" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+              <item name="java" type="462c0819:PsiDirectoryNode" />
+              <item name="ecjtu" type="462c0819:PsiDirectoryNode" />
+              <item name="service" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="adopt" type="b2602c69:ProjectViewProjectNode" />
+              <item name="adopt" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+              <item name="java" type="462c0819:PsiDirectoryNode" />
+              <item name="ecjtu" type="462c0819:PsiDirectoryNode" />
+              <item name="service" type="462c0819:PsiDirectoryNode" />
+              <item name="impl" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="adopt" type="b2602c69:ProjectViewProjectNode" />
+              <item name="adopt" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+              <item name="java" type="462c0819:PsiDirectoryNode" />
+              <item name="ecjtu" type="462c0819:PsiDirectoryNode" />
+              <item name="util" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="adopt" type="b2602c69:ProjectViewProjectNode" />
+              <item name="adopt" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+              <item name="resource" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="adopt" type="b2602c69:ProjectViewProjectNode" />
+              <item name="adopt" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+              <item name="resource" type="462c0819:PsiDirectoryNode" />
+              <item name="mapper" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="adopt" type="b2602c69:ProjectViewProjectNode" />
+              <item name="adopt" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+              <item name="webapp" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="adopt" type="b2602c69:ProjectViewProjectNode" />
+              <item name="adopt" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+              <item name="webapp" type="462c0819:PsiDirectoryNode" />
+              <item name="css" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="adopt" type="b2602c69:ProjectViewProjectNode" />
+              <item name="adopt" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+              <item name="webapp" type="462c0819:PsiDirectoryNode" />
+              <item name="html" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="adopt" type="b2602c69:ProjectViewProjectNode" />
+              <item name="adopt" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+              <item name="webapp" type="462c0819:PsiDirectoryNode" />
+              <item name="html" type="462c0819:PsiDirectoryNode" />
+              <item name="admin" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="adopt" type="b2602c69:ProjectViewProjectNode" />
+              <item name="adopt" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+              <item name="webapp" type="462c0819:PsiDirectoryNode" />
+              <item name="WEB-INF" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="adopt" type="b2602c69:ProjectViewProjectNode" />
+              <item name="adopt" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="test" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="adopt" type="b2602c69:ProjectViewProjectNode" />
+              <item name="adopt" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="test" type="462c0819:PsiDirectoryNode" />
+              <item name="java" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="adopt" type="b2602c69:ProjectViewProjectNode" />
+              <item name="External Libraries" type="cb654da1:ExternalLibrariesNode" />
+            </path>
+            <path>
+              <item name="adopt" type="b2602c69:ProjectViewProjectNode" />
+              <item name="External Libraries" type="cb654da1:ExternalLibrariesNode" />
+              <item name="Maven: org.mybatis:mybatis:3.5.2" type="70bed36:NamedLibraryElementNode" />
+            </path>
+            <path>
+              <item name="adopt" type="b2602c69:ProjectViewProjectNode" />
+              <item name="External Libraries" type="cb654da1:ExternalLibrariesNode" />
+              <item name="Maven: org.mybatis:mybatis:3.5.2" type="70bed36:NamedLibraryElementNode" />
+              <item name="mybatis-3.5.2.jar" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="adopt" type="b2602c69:ProjectViewProjectNode" />
+              <item name="External Libraries" type="cb654da1:ExternalLibrariesNode" />
+              <item name="Maven: org.mybatis:mybatis:3.5.2" type="70bed36:NamedLibraryElementNode" />
+              <item name="mybatis-3.5.2.jar" type="462c0819:PsiDirectoryNode" />
+              <item name="ibatis" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="adopt" type="b2602c69:ProjectViewProjectNode" />
+              <item name="External Libraries" type="cb654da1:ExternalLibrariesNode" />
+              <item name="Maven: org.mybatis:mybatis:3.5.2" type="70bed36:NamedLibraryElementNode" />
+              <item name="mybatis-3.5.2.jar" type="462c0819:PsiDirectoryNode" />
+              <item name="ibatis" type="462c0819:PsiDirectoryNode" />
+              <item name="session" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="adopt" type="b2602c69:ProjectViewProjectNode" />
+              <item name="External Libraries" type="cb654da1:ExternalLibrariesNode" />
+              <item name="Maven: org.mybatis:mybatis:3.5.2" type="70bed36:NamedLibraryElementNode" />
+              <item name="mybatis-3.5.2.jar" type="462c0819:PsiDirectoryNode" />
+              <item name="ibatis" type="462c0819:PsiDirectoryNode" />
+              <item name="session" type="462c0819:PsiDirectoryNode" />
+              <item name="SqlSession" type="1a9f42e2:ClassTreeNode" />
+            </path>
+          </expand>
+          <select />
+        </subPane>
+      </pane>
+    </panes>
+  </component>
+  <component name="PropertiesComponent">
+    <property name="ChangesTree.GroupingKeys" value="module" />
+    <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
+    <property name="WebServerToolWindowFactoryState" value="false" />
+    <property name="aspect.path.notification.shown" value="true" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
+    <property name="nodejs_npm_path_reset_for_default_project" value="true" />
+    <property name="nodejs_package_manager_path" value="npm" />
+    <property name="project.structure.last.edited" value="Modules" />
+    <property name="project.structure.proportion" value="0.0" />
+    <property name="project.structure.side.proportion" value="0.0" />
+    <property name="settings.editor.selected.configurable" value="http.proxy" />
+  </component>
+  <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="D:\software\maven\workspace\adopt\src\main\webapp" />
+      <recent name="D:\software\maven\workspace\adopt\src\main\resource" />
+    </key>
+  </component>
+  <component name="RunDashboard">
+    <option name="ruleStates">
+      <list>
+        <RuleState>
+          <option name="name" value="ConfigurationTypeDashboardGroupingRule" />
+        </RuleState>
+        <RuleState>
+          <option name="name" value="StatusDashboardGroupingRule" />
+        </RuleState>
+      </list>
+    </option>
+  </component>
+  <component name="RunManager" selected="Tomcat Server.Tomcat 9.0.4">
+    <configuration name="AdoptAnimalTest.delet" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="adopt" />
+      <option name="PACKAGE_NAME" value="" />
+      <option name="MAIN_CLASS_NAME" value="AdoptAnimalTest" />
+      <option name="METHOD_NAME" value="delet" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="AdoptAnimalTest.insert" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="adopt" />
+      <option name="PACKAGE_NAME" value="" />
+      <option name="MAIN_CLASS_NAME" value="AdoptAnimalTest" />
+      <option name="METHOD_NAME" value="insert" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="AdoptAnimalTest.update" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="adopt" />
+      <option name="PACKAGE_NAME" value="" />
+      <option name="MAIN_CLASS_NAME" value="AdoptAnimalTest" />
+      <option name="METHOD_NAME" value="update" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="CommentTest.select1" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="adopt" />
+      <option name="PACKAGE_NAME" value="" />
+      <option name="MAIN_CLASS_NAME" value="CommentTest" />
+      <option name="METHOD_NAME" value="select1" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="UserTest.select1" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="adopt" />
+      <option name="PACKAGE_NAME" value="" />
+      <option name="MAIN_CLASS_NAME" value="UserTest" />
+      <option name="METHOD_NAME" value="select1" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="Tomcat 9.0.4" type="#com.intellij.j2ee.web.tomcat.TomcatRunConfigurationFactory" factoryName="Local" APPLICATION_SERVER_NAME="Tomcat 9.0.4" ALTERNATIVE_JRE_ENABLED="false" nameIsGenerated="true">
+      <option name="OPEN_IN_BROWSER_URL" value="http://localhost:8080/web/" />
+      <option name="UPDATING_POLICY" value="restart-server" />
+      <deployment>
+        <artifact name="adopt:war exploded">
+          <settings>
+            <option name="CONTEXT_PATH" value="/web" />
+          </settings>
+        </artifact>
+      </deployment>
+      <server-settings>
+        <option name="BASE_DIRECTORY_NAME" value="Unnamed_adopt" />
+      </server-settings>
+      <predefined_log_file enabled="true" id="Tomcat" />
+      <predefined_log_file enabled="true" id="Tomcat Catalina" />
+      <predefined_log_file id="Tomcat Manager" />
+      <predefined_log_file id="Tomcat Host Manager" />
+      <predefined_log_file id="Tomcat Localhost Access" />
+      <RunnerSettings RunnerId="Debug">
+        <option name="DEBUG_PORT" value="62606" />
+      </RunnerSettings>
+      <ConfigurationWrapper VM_VAR="JAVA_OPTS" RunnerId="Cover">
+        <option name="USE_ENV_VARIABLES" value="true" />
+        <STARTUP>
+          <option name="USE_DEFAULT" value="true" />
+          <option name="SCRIPT" value="" />
+          <option name="VM_PARAMETERS" value="" />
+          <option name="PROGRAM_PARAMETERS" value="" />
+        </STARTUP>
+        <SHUTDOWN>
+          <option name="USE_DEFAULT" value="true" />
+          <option name="SCRIPT" value="" />
+          <option name="VM_PARAMETERS" value="" />
+          <option name="PROGRAM_PARAMETERS" value="" />
+        </SHUTDOWN>
+      </ConfigurationWrapper>
+      <ConfigurationWrapper VM_VAR="JAVA_OPTS" RunnerId="Debug">
+        <option name="USE_ENV_VARIABLES" value="true" />
+        <STARTUP>
+          <option name="USE_DEFAULT" value="true" />
+          <option name="SCRIPT" value="" />
+          <option name="VM_PARAMETERS" value="" />
+          <option name="PROGRAM_PARAMETERS" value="" />
+        </STARTUP>
+        <SHUTDOWN>
+          <option name="USE_DEFAULT" value="true" />
+          <option name="SCRIPT" value="" />
+          <option name="VM_PARAMETERS" value="" />
+          <option name="PROGRAM_PARAMETERS" value="" />
+        </SHUTDOWN>
+      </ConfigurationWrapper>
+      <ConfigurationWrapper VM_VAR="JAVA_OPTS" RunnerId="Run">
+        <option name="USE_ENV_VARIABLES" value="true" />
+        <STARTUP>
+          <option name="USE_DEFAULT" value="true" />
+          <option name="SCRIPT" value="" />
+          <option name="VM_PARAMETERS" value="" />
+          <option name="PROGRAM_PARAMETERS" value="" />
+        </STARTUP>
+        <SHUTDOWN>
+          <option name="USE_DEFAULT" value="true" />
+          <option name="SCRIPT" value="" />
+          <option name="VM_PARAMETERS" value="" />
+          <option name="PROGRAM_PARAMETERS" value="" />
+        </SHUTDOWN>
+      </ConfigurationWrapper>
+      <method v="2">
+        <option name="Make" enabled="true" />
+        <option name="BuildArtifacts" enabled="true">
+          <artifact name="adopt:war exploded" />
+        </option>
+      </method>
+    </configuration>
+    <list>
+      <item itemvalue="JUnit.AdoptAnimalTest.delet" />
+      <item itemvalue="JUnit.AdoptAnimalTest.insert" />
+      <item itemvalue="JUnit.AdoptAnimalTest.update" />
+      <item itemvalue="JUnit.CommentTest.select1" />
+      <item itemvalue="JUnit.UserTest.select1" />
+      <item itemvalue="Tomcat Server.Tomcat 9.0.4" />
+    </list>
+    <recent_temporary>
+      <list>
+        <item itemvalue="JUnit.CommentTest.select1" />
+        <item itemvalue="JUnit.UserTest.select1" />
+        <item itemvalue="JUnit.AdoptAnimalTest.delet" />
+        <item itemvalue="JUnit.AdoptAnimalTest.update" />
+        <item itemvalue="JUnit.AdoptAnimalTest.insert" />
+      </list>
+    </recent_temporary>
+  </component>
+  <component name="SvnConfiguration">
+    <configuration />
+  </component>
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="f591194b-05f8-45ac-87db-2b419717f508" name="Default Changelist" comment="" />
+      <created>1566220109131</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1566220109131</updated>
+      <workItem from="1566220117427" duration="871000" />
+      <workItem from="1566281858921" duration="10614000" />
+      <workItem from="1566347110924" duration="20577000" />
+      <workItem from="1566392691771" duration="9739000" />
+      <workItem from="1566433835544" duration="16091000" />
+      <workItem from="1566457628663" duration="5514000" />
+    </task>
+    <task id="LOCAL-00001" summary="基于SSM的流浪猫狗领养网站的设计与实现的第一次提交">
+      <created>1566461234342</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1566461234343</updated>
+    </task>
+    <option name="localTasksCounter" value="2" />
+    <servers />
+  </component>
+  <component name="TestHistory">
+    <history-entry file="CommentTest_select1 - 2019.08.22 at 11h 28m 27s.xml">
+      <configuration name="CommentTest.select1" configurationId="JUnit" />
+    </history-entry>
+    <history-entry file="CommentTest_select1 - 2019.08.22 at 11h 29m 47s.xml">
+      <configuration name="CommentTest.select1" configurationId="JUnit" />
+    </history-entry>
+    <history-entry file="CommentTest_select1 - 2019.08.22 at 11h 30m 30s.xml">
+      <configuration name="CommentTest.select1" configurationId="JUnit" />
+    </history-entry>
+    <history-entry file="CommentTest_select1 - 2019.08.22 at 11h 36m 31s.xml">
+      <configuration name="CommentTest.select1" configurationId="JUnit" />
+    </history-entry>
+    <history-entry file="CommentTest_select1 - 2019.08.22 at 11h 36m 41s.xml">
+      <configuration name="CommentTest.select1" configurationId="JUnit" />
+    </history-entry>
+    <history-entry file="CommentTest_select1 - 2019.08.22 at 11h 37m 22s.xml">
+      <configuration name="CommentTest.select1" configurationId="JUnit" />
+    </history-entry>
+    <history-entry file="UserTest_select1 - 2019.08.22 at 13h 55m 33s.xml">
+      <configuration name="UserTest.select1" configurationId="JUnit" />
+    </history-entry>
+    <history-entry file="CommentTest_select1 - 2019.08.22 at 13h 57m 36s.xml">
+      <configuration name="CommentTest.select1" configurationId="JUnit" />
+    </history-entry>
+    <history-entry file="CommentTest_select1 - 2019.08.22 at 13h 58m 21s.xml">
+      <configuration name="CommentTest.select1" configurationId="JUnit" />
+    </history-entry>
+    <history-entry file="CommentTest_select1 - 2019.08.22 at 14h 00m 09s.xml">
+      <configuration name="CommentTest.select1" configurationId="JUnit" />
+    </history-entry>
+  </component>
+  <component name="TimeTrackingManager">
+    <option name="totallyTimeSpent" value="63406000" />
+  </component>
+  <component name="ToolWindowManager">
+    <frame x="-8" y="-8" width="1382" height="744" extended-state="6" />
+    <layout>
+      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.27609682" />
+      <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
+      <window_info id="Web" order="2" side_tool="true" />
+      <window_info id="Designer" order="3" />
+      <window_info id="UI Designer" order="4" />
+      <window_info id="Favorites" order="5" side_tool="true" />
+      <window_info anchor="bottom" id="Message" order="0" />
+      <window_info anchor="bottom" id="Find" order="1" weight="0.37315875" />
+      <window_info anchor="bottom" id="Run" order="2" weight="0.6622951" />
+      <window_info anchor="bottom" id="Debug" order="3" weight="0.3633388" />
+      <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
+      <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
+      <window_info anchor="bottom" id="TODO" order="6" weight="0.3295082" />
+      <window_info anchor="bottom" id="Docker" order="7" show_stripe_button="false" />
+      <window_info active="true" anchor="bottom" id="Version Control" order="8" visible="true" weight="0.4180328" />
+      <window_info anchor="bottom" id="Database Changes" order="9" />
+      <window_info anchor="bottom" id="Spring" order="10" />
+      <window_info anchor="bottom" id="Terminal" order="11" weight="0.3295082" />
+      <window_info anchor="bottom" id="Event Log" order="12" side_tool="true" />
+      <window_info anchor="bottom" id="Java Enterprise" order="13" weight="0.3295082" />
+      <window_info anchor="bottom" id="Messages" order="14" weight="0.42131147" />
+      <window_info anchor="bottom" id="Application Servers" order="15" weight="0.32786885" />
+      <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
+      <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
+      <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
+      <window_info anchor="right" id="Palette" order="3" />
+      <window_info anchor="right" id="Database" order="4" weight="0.32967034" />
+      <window_info anchor="right" id="Maven" order="5" />
+      <window_info anchor="right" id="Palette&#9;" order="6" />
+    </layout>
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="1" />
+  </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="基于SSM的流浪猫狗领养网站的设计与实现的第一次提交" />
+    <option name="LAST_COMMIT_MESSAGE" value="基于SSM的流浪猫狗领养网站的设计与实现的第一次提交" />
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>jar://$PROJECT_DIR$/../../apache-maven-3.6.0/repository/org/mybatis/mybatis-spring/2.0.2/mybatis-spring-2.0.2-sources.jar!/org/mybatis/spring/SqlSessionTemplate.java</url>
+          <line>422</line>
+          <properties />
+          <option name="timeStamp" value="3" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>jar://$PROJECT_DIR$/../../apache-maven-3.6.0/repository/org/mybatis/mybatis/3.5.2/mybatis-3.5.2-sources.jar!/org/apache/ibatis/session/defaults/DefaultSqlSession.java</url>
+          <line>146</line>
+          <properties />
+          <option name="timeStamp" value="5" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>jar://$PROJECT_DIR$/../../apache-maven-3.6.0/repository/org/mybatis/mybatis/3.5.2/mybatis-3.5.2-sources.jar!/org/apache/ibatis/executor/BaseExecutor.java</url>
+          <line>133</line>
+          <properties />
+          <option name="timeStamp" value="6" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>jar://$PROJECT_DIR$/../../apache-maven-3.6.0/repository/org/mybatis/mybatis/3.5.2/mybatis-3.5.2-sources.jar!/org/apache/ibatis/executor/CachingExecutor.java</url>
+          <line>80</line>
+          <properties />
+          <option name="timeStamp" value="7" />
+        </line-breakpoint>
+      </breakpoints>
+    </breakpoint-manager>
+  </component>
+  <component name="editorHistoryManager">
+    <entry file="jar://$PROJECT_DIR$/../../apache-maven-3.6.0/repository/org/mybatis/mybatis/3.5.2/mybatis-3.5.2-sources.jar!/org/apache/ibatis/executor/Executor.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="112">
+          <caret line="40" column="14" selection-start-line="40" selection-start-column="14" selection-end-line="40" selection-end-column="14" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://$PROJECT_DIR$/../../apache-maven-3.6.0/repository/org/mybatis/mybatis/3.5.2/mybatis-3.5.2-sources.jar!/org/apache/ibatis/session/defaults/DefaultSqlSession.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="112">
+          <caret line="146" selection-start-line="146" selection-end-line="146" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://$PROJECT_DIR$/../../apache-maven-3.6.0/repository/org/mybatis/mybatis/3.5.2/mybatis-3.5.2-sources.jar!/org/apache/ibatis/plugin/Plugin.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="180">
+          <caret line="60" selection-start-line="60" selection-end-line="60" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://$PROJECT_DIR$/../../apache-maven-3.6.0/repository/org/mybatis/mybatis/3.5.2/mybatis-3.5.2-sources.jar!/org/apache/ibatis/plugin/Invocation.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="112">
+          <caret line="36" selection-start-line="36" selection-end-line="36" />
+          <folding>
+            <element signature="e#1122#1123#0" expanded="true" />
+            <element signature="e#1207#1208#0" expanded="true" />
+            <element signature="e#1228#1229#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://$PROJECT_DIR$/../../apache-maven-3.6.0/repository/com/github/pagehelper/pagehelper/5.1.9/pagehelper-5.1.9.jar!/com/github/pagehelper/PageInterceptor.class">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="222">
+          <caret line="58" selection-start-line="58" selection-end-line="58" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://$PROJECT_DIR$/../../apache-maven-3.6.0/repository/org/mybatis/mybatis/3.5.2/mybatis-3.5.2-sources.jar!/org/apache/ibatis/reflection/wrapper/DefaultObjectWrapperFactory.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="120">
+          <caret line="27" selection-start-line="27" selection-end-line="27" />
+          <folding>
+            <element signature="e#992#993#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://$PROJECT_DIR$/../../apache-maven-3.6.0/repository/org/mybatis/mybatis/3.5.2/mybatis-3.5.2-sources.jar!/org/apache/ibatis/reflection/wrapper/BaseWrapper.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="180">
+          <caret line="34" selection-start-line="34" selection-end-line="34" />
+          <folding>
+            <element signature="e#1161#1162#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://$PROJECT_DIR$/../../apache-maven-3.6.0/repository/org/mybatis/mybatis/3.5.2/mybatis-3.5.2-sources.jar!/org/apache/ibatis/reflection/DefaultReflectorFactory.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="180">
+          <caret line="41" selection-start-line="41" selection-end-line="41" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://$PROJECT_DIR$/../../apache-maven-3.6.0/repository/org/mybatis/mybatis/3.5.2/mybatis-3.5.2-sources.jar!/org/apache/ibatis/reflection/MetaClass.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="112">
+          <caret line="42" selection-start-line="42" selection-end-line="42" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://$PROJECT_DIR$/../../apache-maven-3.6.0/repository/org/mybatis/mybatis/3.5.2/mybatis-3.5.2-sources.jar!/org/apache/ibatis/reflection/wrapper/BeanWrapper.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="210">
+          <caret line="40" selection-start-line="40" selection-end-line="40" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://$PROJECT_DIR$/../../apache-maven-3.6.0/repository/org/mybatis/mybatis/3.5.2/mybatis-3.5.2-sources.jar!/org/apache/ibatis/reflection/MetaObject.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="112">
+          <caret line="63" selection-start-line="63" selection-end-line="63" />
+          <folding>
+            <element signature="e#2920#2921#0" expanded="true" />
+            <element signature="e#2953#2954#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://$PROJECT_DIR$/../../apache-maven-3.6.0/repository/org/mybatis/mybatis/3.5.2/mybatis-3.5.2-sources.jar!/org/apache/ibatis/session/Configuration.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="112">
+          <caret line="482" selection-start-line="482" selection-end-line="482" />
+          <folding>
+            <element signature="e#17087#17088#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/ecjtu/entity/Users.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="104">
+          <caret line="8" column="13" selection-start-line="8" selection-start-column="13" selection-end-line="8" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://$PROJECT_DIR$/../../apache-maven-3.6.0/repository/org/mybatis/mybatis/3.5.2/mybatis-3.5.2-sources.jar!/org/apache/ibatis/scripting/xmltags/DynamicSqlSource.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="120">
+          <caret line="37" selection-start-line="37" selection-end-line="37" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://$PROJECT_DIR$/../../apache-maven-3.6.0/repository/org/mybatis/mybatis/3.5.2/mybatis-3.5.2-sources.jar!/org/apache/ibatis/scripting/xmltags/DynamicContext.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="120">
+          <caret line="47" selection-start-line="47" selection-end-line="47" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://$PROJECT_DIR$/../../apache-maven-3.6.0/repository/org/mybatis/mybatis/3.5.2/mybatis-3.5.2-sources.jar!/org/apache/ibatis/type/TypeHandlerRegistry.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="112">
+          <caret line="217" selection-start-line="217" selection-end-line="217" />
+          <folding>
+            <element signature="e#7522#7523#0" expanded="true" />
+            <element signature="e#7569#7570#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/ecjtu/entity/Comment.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="150">
+          <caret line="15" column="27" lean-forward="true" selection-start-line="15" selection-start-column="27" selection-end-line="15" selection-end-column="27" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/test/java/petTest.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="184">
+          <caret line="16" column="13" selection-start-line="16" selection-start-column="13" selection-end-line="16" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/test/java/UserTest.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="244">
+          <caret line="34" column="31" selection-start-line="34" selection-start-column="31" selection-end-line="34" selection-end-column="31" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/test/java/CommentTest.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="108">
+          <caret line="33" column="20" lean-forward="true" selection-start-line="33" selection-start-column="16" selection-end-line="33" selection-end-column="23" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://$PROJECT_DIR$/../../apache-maven-3.6.0/repository/org/mybatis/mybatis/3.5.2/mybatis-3.5.2-sources.jar!/org/apache/ibatis/mapping/MappedStatement.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="330">
+          <caret line="309" column="9" lean-forward="true" selection-start-line="309" selection-start-column="9" selection-end-line="309" selection-end-column="9" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/ecjtu/service/AdminService.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="293">
+          <caret line="64" selection-start-line="64" selection-end-line="64" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/ecjtu/entity/Admin.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="2190">
+          <caret line="112" column="24" lean-forward="true" selection-start-line="112" selection-start-column="24" selection-end-line="112" selection-end-column="24" />
+          <folding>
+            <element signature="e#2848#2849#0" expanded="true" />
+            <element signature="e#2879#2880#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/ecjtu/util/Message.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-455">
+          <caret line="9" column="13" selection-start-line="9" selection-start-column="13" selection-end-line="9" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/webapp/html/admin/admin.jsp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="510">
+          <caret line="148" column="49" selection-start-line="148" selection-start-column="49" selection-end-line="148" selection-end-column="49" />
+          <folding>
+            <element signature="n#style#0;n#nav#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/webapp/html/admin/login.html" />
+    <entry file="file://$PROJECT_DIR$/src/main/resource/mapper/CommentMapper.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="334">
+          <caret line="93" column="13" lean-forward="true" selection-start-line="93" selection-start-column="13" selection-end-line="93" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/webapp/html/index.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="5063">
+          <caret line="203" column="28" selection-start-line="203" selection-start-column="28" selection-end-line="203" selection-end-column="28" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/webapp/css/base.css">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/web.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-269">
+          <caret line="24" lean-forward="true" selection-start-line="24" selection-end-line="24" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/resource/db.properties">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/resource/MyBatis.xml">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/resource/Spring-dao.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-810" />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/resource/Spring-service.xml">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/resource/Sprng-tx.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="270">
+          <caret line="9" column="7" selection-start-line="9" selection-start-column="7" selection-end-line="9" selection-end-column="7" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/resource/log4j.properties">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/ecjtu/util/MyInterceptor.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="333">
+          <caret line="24" column="33" selection-start-line="24" selection-start-column="33" selection-end-line="24" selection-end-column="33" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/webapp/html/admin/login.jsp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="55">
+          <caret line="15" column="82" selection-start-line="15" selection-start-column="82" selection-end-line="15" selection-end-column="82" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/webapp/css/login.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="60">
+          <caret line="2" column="89" selection-start-line="2" selection-start-column="89" selection-end-line="2" selection-end-column="89" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/resource/SpringMVC.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="61">
+          <caret line="27" column="32" selection-start-line="27" selection-start-column="9" selection-end-line="27" selection-end-column="32" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/ecjtu/controller/UsersController.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="60">
+          <caret line="92" column="59" selection-start-line="92" selection-start-column="59" selection-end-line="92" selection-end-column="59" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/ecjtu/service/PetService.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="225">
+          <caret line="57" selection-start-line="57" selection-end-line="57" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/ecjtu/controller/PetController.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="45">
+          <caret line="74" column="52" selection-start-line="74" selection-start-column="52" selection-end-line="74" selection-end-column="52" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/ecjtu/controller/BlogController.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="153">
+          <caret line="20" column="13" selection-start-line="20" selection-start-column="13" selection-end-line="20" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/ecjtu/controller/AdminLogin.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="181">
+          <caret line="19" column="20" selection-start-line="19" selection-start-column="20" selection-end-line="19" selection-end-column="20" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/ecjtu/controller/AdminController.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-1785">
+          <caret line="19" column="13" selection-start-line="19" selection-start-column="13" selection-end-line="19" selection-end-column="13" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/ecjtu/controller/AdoptAnimalController.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="585">
+          <caret line="69" column="24" selection-start-line="69" selection-start-column="24" selection-end-line="69" selection-end-column="24" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/ecjtu/controller/CommentController.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state>
+          <caret column="29" lean-forward="true" selection-start-column="29" selection-end-column="29" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/webapp/html/admin/admin.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="300">
+          <caret line="165" column="22" lean-forward="true" selection-start-line="165" selection-start-column="22" selection-end-line="165" selection-end-column="22" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/webapp/html/admin/blog.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="108">
+          <caret line="328" column="19" selection-start-line="328" selection-start-column="19" selection-end-line="328" selection-end-column="19" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/webapp/html/admin/t_adopt.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="48">
+          <caret line="134" column="45" lean-forward="true" selection-start-line="134" selection-start-column="45" selection-end-line="134" selection-end-column="45" />
+        </state>
+      </provider>
+    </entry>
+  </component>
+  <component name="masterDetails">
+    <states>
+      <state key="ArtifactsStructureConfigurable.UI">
+        <settings>
+          <artifact-editor />
+          <splitter-proportions>
+            <option name="proportions">
+              <list>
+                <option value="0.2" />
+              </list>
+            </option>
+          </splitter-proportions>
+        </settings>
+      </state>
+      <state key="FacetStructureConfigurable.UI">
+        <settings>
+          <splitter-proportions>
+            <option name="proportions">
+              <list>
+                <option value="0.2" />
+              </list>
+            </option>
+          </splitter-proportions>
+        </settings>
+      </state>
+      <state key="GlobalLibrariesConfigurable.UI">
+        <settings>
+          <splitter-proportions>
+            <option name="proportions">
+              <list>
+                <option value="0.2" />
+              </list>
+            </option>
+          </splitter-proportions>
+        </settings>
+      </state>
+      <state key="JdkListConfigurable.UI">
+        <settings>
+          <splitter-proportions>
+            <option name="proportions">
+              <list>
+                <option value="0.2" />
+              </list>
+            </option>
+          </splitter-proportions>
+        </settings>
+      </state>
+      <state key="ModuleStructureConfigurable.UI">
+        <settings>
+          <last-edited>adopt</last-edited>
+          <splitter-proportions>
+            <option name="proportions">
+              <list>
+                <option value="0.15735294" />
+                <option value="0.6" />
+              </list>
+            </option>
+          </splitter-proportions>
+        </settings>
+      </state>
+      <state key="ProjectJDKs.UI">
+        <settings>
+          <last-edited>1.8</last-edited>
+          <splitter-proportions>
+            <option name="proportions">
+              <list>
+                <option value="0.2" />
+              </list>
+            </option>
+          </splitter-proportions>
+        </settings>
+      </state>
+      <state key="ProjectLibrariesConfigurable.UI">
+        <settings>
+          <splitter-proportions>
+            <option name="proportions">
+              <list>
+                <option value="0.2" />
+              </list>
+            </option>
+          </splitter-proportions>
+        </settings>
+      </state>
+    </states>
+  </component>
+</project>

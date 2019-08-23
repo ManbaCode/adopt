@@ -12,7 +12,6 @@ import java.util.List;
 public class AdoptAnimal {
 
     private Integer id;
-    @DateTimeFormat(pattern = "yyyy-MM-dd")
     private Date adoptTime;
     private Integer state;
     private Pet pet;

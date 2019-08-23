@@ -75,16 +75,16 @@
     </resultMap>
 
     <select id="getPets" resultMap="BasePetMap">
-        SELECT * FROM pet as p,t_adopt as t,users as u,comment as c,admin as a WHERE p.id=t.pet_id AND u.id=t.user_id AND p.id=c.pet_id AND u.id=c.user_id OR  c.admin_id=a.id
+        select * from (pet  left join t_adopt on pet.id=t_adopt.pet_id) left join users on t_adopt.user_id=users.id
     </select>
 
 
     <select id="findById" resultMap="BasePetMap">
-        SELECT * FROM pet as p,t_adopt as t,users as u,comment as c,admin as a WHERE p.id=t.pet_id AND u.id=t.user_id AND p.id=c.pet_id AND u.id=c.user_id OR  c.admin_id=a.id AND  p.id=#{id}
+       select * from (pet  left join t_adopt on pet.id=t_adopt.pet_id) left join users on t_adopt.user_id=users.id where pet.id=#{id}
     </select>
 
     <select id="findByName" resultMap="BasePetMap">
-        SELECT * FROM pet as p,t_adopt as t,users as u,comment as c,admin as a WHERE p.id=t.pet_id AND u.id=t.user_id AND p.id=c.pet_id AND u.id=c.user_id OR  c.admin_id=a.id AND  p.petName=#{petName}
+        select * from (pet  left join t_adopt on pet.id=t_adopt.pet_id) left join users on t_adopt.user_id=users.id where pet.petName=#{petName}
     </select>
 
     <delete id="deleteBatch" parameterType="int">

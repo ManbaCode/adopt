@@ -31,9 +31,9 @@ public class AdminTest {
 
     @Test
     public void add(){
-        int i = adminMapper.addAdmin(new Admin("熊四", "121", "111", "19802841023", "234552091@qq.com", new Date(), "男", "1111"));
-        String ste=i>0?"插入成功":"插入失败";
-        System.out.println(ste);
+//        int i = adminMapper.addAdmin(new Admin("熊四", "121", "111", "19802841023", "234552091@qq.com", new Date(), "男", "1111"));
+//        String ste=i>0?"插入成功":"插入失败";
+//        System.out.println(ste);
     }
 
     @Test

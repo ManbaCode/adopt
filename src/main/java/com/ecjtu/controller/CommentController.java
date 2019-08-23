@@ -3,10 +3,13 @@ package com.ecjtu.controller;
 import com.ecjtu.entity.Comment;
 import com.ecjtu.service.CommentService;
 import com.ecjtu.util.Message;
+import com.github.pagehelper.PageHelper;
+import com.github.pagehelper.PageInfo;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.servlet.ModelAndView;
 
@@ -23,12 +26,14 @@ public class CommentController {
     @Autowired
     private CommentService commentService;
 
-
-    @RequestMapping("/getComments.action")
-    public String getComments(ModelAndView modelAndView){
+    @RequestMapping("comments.action")
+    @ResponseBody
+    public Message getComments(@RequestParam(value = "pn",defaultValue = "1") Integer pn){
+        PageHelper.startPage(pn,4);
         List<Comment> comments = commentService.getComments();
-        modelAndView.addObject("comments",comments);
-        return "admin/comment";
+        System.out.println(comments);
+        PageInfo page=new PageInfo(comments,2);
+        return Message.success().add("pageInfo",page);
     }
 
     @RequestMapping("/create.action")

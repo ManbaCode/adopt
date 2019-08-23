@@ -64,7 +64,7 @@
         </association>
     </resultMap>
 
-   <!-- <select id="getComments" resultMap="BaseCommentMap">
+   <select id="getComments" resultMap="BaseCommentMap">
         SELECT * FROM comment As c,pet As p
         <if test=" comment != null and comment.user_id != null">
             ,users as u
@@ -82,10 +82,9 @@
             </if>
         </where>
     </select>
--->
+
     <select id="findById" parameterType="comment" resultMap="BaseCommentMap" >
         SELECT *  FROM comment as c ,pet as p
-
         <if test="user != null ">
             ,users as u
         </if>

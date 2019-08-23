@@ -3,9 +3,12 @@ package com.ecjtu.controller;
 import com.ecjtu.entity.AdoptAnimal;
 import com.ecjtu.service.AdoptAnimalService;
 import com.ecjtu.util.Message;
+import com.github.pagehelper.PageHelper;
+import com.github.pagehelper.PageInfo;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.servlet.ModelAndView;
 
@@ -23,11 +26,13 @@ public class AdoptAnimalController {
     private AdoptAnimalService animalService;
 
 
-    @RequestMapping("getAdopts.action")
-    public String getAdoptAnimals(ModelAndView modelAndView){
-        List<com.ecjtu.entity.AdoptAnimal> adoptAnimals = animalService.getAdoptAnimals();
-        modelAndView.addObject("adoptAnimals",adoptAnimals);
-        return "admin/adopt";
+    @RequestMapping("adopts.action")
+    @ResponseBody
+    public Message getAdoptAnimals(@RequestParam(value = "pn",defaultValue = "1") Integer pn){
+        PageHelper.startPage(pn,4);
+        List<AdoptAnimal> adoptAnimals = animalService.getAdoptAnimals();
+        PageInfo page=new PageInfo(adoptAnimals,2);
+        return Message.success().add("pageInfo",page);
     }
 
     @RequestMapping("create.action")

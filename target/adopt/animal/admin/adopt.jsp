@@ -2,15 +2,13 @@
   Created by IntelliJ IDEA.
   User: 24255
   Date: 2019/8/22
-  Time: 23:50
+  Time: 23:49
   To change this template use File | Settings | File Templates.
 --%>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <!DOCTYPE html>
-<html>
-<head>
-    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-    <title>学员关系管理系统CRM</title>
+<html><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <title>宠物领养管理后台</title>
     <!-- 引入css样式文件 -->
     <!-- Bootstrap Core CSS -->
     <link href="${pageContext.request.contextPath}/bootstrap/css/bootstrap.min.css" rel="stylesheet">
@@ -24,25 +22,8 @@
     <link href="${pageContext.request.contextPath}/js/houtai/css/font-awesome.min.css" rel="stylesheet" type="text/css">
     <link href="${pageContext.request.contextPath}/js/houtai/css/boot-crm.css" rel="stylesheet" type="text/css">
     <style>
-        .panel-heading {
-            background-color: #337ab7;
-            border-color: #2e6da4;
-            font-size: 14px;
-            padding-left: 20px;
-            height: 36px;
-            line-height: 36px;
-            color: white;
-            position: relative;
-            cursor: pointer;
-        }
-
-        /*转成手形图标*/
-        .panel-heading span {
-            position: absolute;
-            right: 10px;
-            top: 12px;
-        }
-
+        .panel-heading{background-color: #337ab7;border-color: #2e6da4;font-size:14px;padding-left:20px;height:36px;line-height:36px;color:white;position:relative;cursor:pointer;}/*转成手形图标*/
+        .panel-heading span{position:absolute;right:10px;top:12px;}
     </style>
 </head>
 <body>
@@ -121,12 +102,13 @@
                 </div>
             </div>
         </div><!-- 左侧显示列表部分 end-->
+
     </nav>
-    <!-- 用户信息查询部分  start-->
+    <!-- 领养表列表查询部分  start-->
     <div id="page-wrapper">
         <div class="row">
             <div class="col-lg-12">
-                <h1 class="page-header">用户评论管理</h1>
+                <h1 class="page-header">用户管理</h1>
             </div>
             <!-- /.col-lg-12 -->
         </div>
@@ -134,10 +116,10 @@
         <div class="panel panel-default">
             <!-- 搜索部分 -->
             <div class="panel-body">
-                <form class="form-inline" method="get" action="#">
+                <form class="form-inline" method="get" action="">
                     <div class="form-group">
-                        <label for="findByName">用户名</label>
-                        <input type="text" class="form-control" id="findByName" value="" name="userName">
+                        <label for="fingByName">用户名称</label>
+                        <input type="text" class="form-control" id="fingByName" value="" name="userName">
                     </div>
                     <button type="submit" class="btn btn-primary">查询</button>
                 </form>
@@ -146,20 +128,21 @@
         <div class="row">
             <div class="col-lg-12">
                 <div class="panel panel-default">
-                    <div class="panel-heading">用户评论列表</div>
+                    <div class="panel-heading">领养信息列表</div>
                     <!-- /.panel-heading -->
-                    <table class="table table-bordered table-striped" id="comment_table">
+                    <table class="table table-bordered table-striped" id="adopt_table">
                         <thead>
                         <tr>
-                            <th>评论编号</th>
-                            <th>评论人</th>
-                            <th>评论动物</th>
-                            <th>评论内容</th>
-                            <th>评论时间</th>
+                            <th>编号</th>
+                            <th>用户名称</th>
+                            <th>宠物名字</th>
+                            <th>领养时间</th>
+                            <th>状态</th>
                             <th>操作</th>
                         </tr>
                         </thead>
                         <tbody>
+
 
                         </tbody>
                     </table>
@@ -178,70 +161,20 @@
             <!-- /.col-lg-12 -->
         </div>
     </div>
-    <!-- 班级列表查询部分  end-->
+    <!-- 用户查询  end-->
 </div>
 
-<!-- 修改评论模态框 -->
-<div class="modal fade" id="editComment" tabindex="-1" role="dialog" aria-labelledby="myModalLabe">
-    <div class="modal-dialog" role="document">
-        <div class="modal-content">
-            <div class="modal-header">
-                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                    <span aria-hidden="true">×</span>
-                </button>
-                <h4 class="modal-title" id="myModalLabe">修改用户评论记录</h4>
-            </div>
-            <div class="modal-body">
-                <form class="form-horizontal" id="edit_pinglun_form">
-                    <input type="hidden" id="edit_pinglunId" name="pinglunId">
-                    <div class="form-group">
-                        <label for="edit_crmUserName" class="col-sm-2 control-label">
-                            用户名
-                        </label>
-                        <div class="col-sm-4">
-                            <input type="text" class="form-control" id="edit_crmUserName" value="${comment.user.userName}" placeholder="用户名"
-                                   name="name">
-                        </div>
-                        <label for="edit_commmentTime" class="col-sm-2 control-label">
-                            评论时间
-                        </label>
-                        <div class="col-sm-4">
-                            <input type="datetime-local" class="form-control" id="edit_commmentTime" placeholder="评论时间" value="${comment.commentTime}"
-                                   name="commentTime">
-                        </div>
-                    </div>
-                    <div class="form-group">
-                        <label for="edit_content" class="col-sm-2 control-label">
-                            内容
-                        </label>
-                        <div class="col-sm-10">
-                            <textarea class="form-control" id="edit_content" placeholder="内容" value= "${comment.content}" name="content" ></textarea>
-                        </div>
-                    </div>
-
-                </form>
-            </div>
-            <div class="modal-footer">
-                <button type="button" class="btn btn-default" data-dismiss="modal">关闭</button>
-                <button type="button" class="btn btn-primary" onclick="comment_update_btn">保存修改</button>
-            </div>
-        </div>
-    </div>
-</div>
 <!-- 引入js文件 -->
+<!-- jQuery -->
 <!-- jQuery -->
 <script src="${pageContext.request.contextPath}/JQuery/jquery-3.4.1.min.js"></script>
 <!-- Bootstrap Core JavaScript -->
 <script src="${pageContext.request.contextPath}/bootstrap/js/bootstrap.min.js"></script>
-<!-- Metis Menu Plugin JavaScript -->
-<script src="${pageContext.request.contextPath}/js/houtai/js/metisMenu.min.js"></script>
-<!-- DataTables JavaScript -->
-<script src="${pageContext.request.contextPath}/js/houtai/js/jquery.dataTables.min.js"></script>
-<script src="${pageContext.request.contextPath}/js/houtai/js/dataTables.bootstrap.min.js"></script>
-<!-- Custom Theme JavaScript -->
-<script src="${pageContext.request.contextPath}/js/houtai/js/sb-admin-2.js"></script>
+
 <!-- 编写js代码 -->
 <script type="text/javascript">
+
+    //总的数据 当前的页面
 
     var totalRecord,currentPage;
 
@@ -250,12 +183,12 @@
     });
     function to_page(pn){
         $.ajax({
-            url:"${pageContext.request.contextPath}/comment/comments.action",
+            url:"${pageContext.request.contextPath}/adopt/adopts.action",
             data:"pn="+pn,
             type:"GET",
             success:function(result){
                 //1、解析并显示员工数据
-                build_comments_table(result);
+                build_adopts_table(result);
                 //2、解析并显示分页信息
                 build_page_info(result);
                 //3、解析显示分页条数据
@@ -264,39 +197,39 @@
         });
     }
 
-    function build_comments_table(result){
+    function build_adopts_table(result){
         //清空table表格
-        $("#comment_table tbody").empty();
+        $("#adopt_table tbody").empty();
         //index：下标 user：单个对象
-        var comments=result.extend.pageInfo.list;
-        $.each(comments,function(index,comment){
-            var checkBoxTd = $("<td><input type='checkbox' class='check_item'/></td>");
-            var commentIdTd = $("<td></td>").append(comment.id);
-            var userNameTd=$("<td></td>").append(comment.user.userName);
-            var petNameTd = $("<td></td>").append(comment.pet.petName);
-            var contentTd=$("<td></td>").append(comment.content);
-            var commentTimeTd = $("<td></td>").append(comment.commentTime);
+        var adopts=result.extend.pageInfo.list;
+        $.each(adopts,function(index,adopt){
 
+            var checkBoxTd = $("<td><input type='checkbox' class='check_item'/></td>");
+            var adoptIdTd = $("<td></td>").append(adopt.id);
+            var userNameTd = $("<td></td>").append(adopt.user.userName);
+            var petNameTd = $("<td></td>").append(adopt.pet.petName);
+            var adoptTimeTd=$("<td></td>").append(adopt.adoptTime);
+            var stateTd=$("<td></td>").append(adopt.state);
 
             var editBtn = $("<button></button>").addClass("btn btn-primary btn-sm edit_btn")
                 .append($("<span></span>").addClass("glyphicon glyphicon-pencil")).append("修改");
             //为编辑按钮添加一个自定义的属性，来表示当前员工id
-            editBtn.attr("edit-id",comment.id);
+            editBtn.attr("edit-id",adopt.id);
             var delBtn =  $("<button></button>").addClass("btn btn-danger btn-sm delete_btn")
                 .append($("<span></span>").addClass("glyphicon glyphicon-trash")).append("删除");
             //为删除按钮添加一个自定义的属性来表示当前删除的员工id
-            delBtn.attr("del-id",comment.id);
+            delBtn.attr("del-id",adopt.id);
             var btnTd = $("<td></td>").append(editBtn).append(" ").append(delBtn);
             //var delBtn =
             //append方法执行完成以后还是返回原来的元素
             $("<tr></tr>").append(checkBoxTd)
-                .append(commentIdTd)
+                .append(adoptIdTd)
                 .append(userNameTd)
                 .append(petNameTd)
-                .append(contentTd)
-                .append(commentTimeTd)
+                .append(adoptTimeTd)
+                .append(stateTd)
                 .append(btnTd)
-                .appendTo("#comment_table tbody");
+                .appendTo("#adopt_table tbody");
         });
     }
 
@@ -367,16 +300,17 @@
         navEle.appendTo("#page_nav_area");
     }
 
-
-    //清空表单样式及内容
-    function reset_form(ele){
-        $(ele)[0].reset();
-        //清空表单样式
-        $(ele).find("*").removeClass("has-error has-success");
-        $(ele).find(".help-block").text("");
+    function jsonDateFormat(jsonDate) {
+        try {
+            var date = new Date(parseInt(jsonDate.replace("/Date(", "").replace(")/", ""), 10));
+            var month = date.getMonth() + 1 < 10 ? "0" + (date.getMonth() + 1) : date.getMonth() + 1;
+            var day = date.getDate() < 10 ? "0" + date.getDate() : date.getDate();
+            return date.getFullYear() + "-" + month + "-" + day;
+        } catch (ex) {
+            return "";
+        }
     }
 
 </script>
 
-</body>
-</html>
+</body></html>

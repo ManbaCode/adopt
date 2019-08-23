@@ -1,11 +1,15 @@
 package com.ecjtu.controller;
 
+import com.ecjtu.entity.Admin;
 import com.ecjtu.entity.Users;
 import com.ecjtu.service.UsersService;
 import com.ecjtu.util.Message;
+import com.github.pagehelper.PageHelper;
+import com.github.pagehelper.PageInfo;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.servlet.ModelAndView;
 
@@ -16,17 +20,21 @@ import java.util.List;
  * @create: 2019-08-22 10:21
  */
 @Controller
-@RequestMapping("users")
+@RequestMapping("user")
 public class UsersController {
 
     @Autowired
     private UsersService usersService;
 
+
     @RequestMapping("users.action")
-    public String getUsers(ModelAndView modelAndView){
+    @ResponseBody
+    public Message getUsers(@RequestParam(value = "pn",defaultValue = "1") Integer pn){
+        PageHelper.startPage(pn,4);
         List<Users> users = usersService.getUsers();
-        modelAndView.addObject("users",users);
-        return "admin/admin";
+        System.out.println(users);
+        PageInfo page=new PageInfo(users,2);
+        return Message.success().add("pageInfo",page);
     }
 
     @RequestMapping("create.action")

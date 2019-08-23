@@ -1,5 +1,6 @@
 package com.ecjtu.entity;
 
+import com.fasterxml.jackson.annotation.JsonFormat;
 import org.springframework.format.annotation.DateTimeFormat;
 
 import java.util.Date;
@@ -16,7 +17,7 @@ public class Admin {
     private String realName;
     private String telephone;
     private String Email;
-    @DateTimeFormat(pattern = "yyyy-MM-dd")
+
     private Date birthday;
     private String sex;
     private String remark;
@@ -26,36 +27,14 @@ public class Admin {
     public Admin() {
     }
 
-    public Admin( String adminName, String adminPwd, String realName, String telephone, String Email, Date birthday, String sex, String remark) {
-        this.adminName = adminName;
-        this.adminPwd = adminPwd;
-        this.realName = realName;
-        this.telephone = telephone;
-        this.Email = Email;
-        this.birthday = birthday;
-        this.sex = sex;
-        this.remark = remark;
-    }
 
-    public Admin(String adminName, String adminPwd, String realName, String telephone, String Email, Date birthday, String sex, String remark, List<Comment> commentList) {
-        this.adminName = adminName;
-        this.adminPwd = adminPwd;
-        this.realName = realName;
-        this.telephone = telephone;
-        Email = this.Email;
-        this.birthday = birthday;
-        this.sex = sex;
-        this.remark = remark;
-        this.commentList = commentList;
-    }
-
-    public Admin(Integer id, String adminName, String adminPwd, String realName, String telephone, String Email, Date birthday, String sex, String remark, List<Comment> commentList) {
+        public Admin(Integer id, String adminName, String adminPwd, String realName, String telephone, String email, Date birthday, String sex, String remark, List<Comment> commentList) {
         this.id = id;
         this.adminName = adminName;
         this.adminPwd = adminPwd;
         this.realName = realName;
         this.telephone = telephone;
-        this.Email = Email;
+        Email = email;
         this.birthday = birthday;
         this.sex = sex;
         this.remark = remark;
@@ -106,8 +85,8 @@ public class Admin {
         return Email;
     }
 
-    public void setEmail(String Email) {
-        this.Email = Email;
+    public void setEmail(String email) {
+        Email = email;
     }
 
     public Date getBirthday() {
@@ -143,7 +122,7 @@ public class Admin {
     }
 
     @Override
-    public String toString() {
+    public String  toString() {
         return "Admin{" +
                 "id=" + id +
                 ", adminName='" + adminName + '\'' +

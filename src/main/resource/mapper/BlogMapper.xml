@@ -26,11 +26,7 @@
     </update>
 
     <select id="getBlogs" resultType="Blog">
-        SELECT id,actionTime
-        <if test="address !=null ">
-            ,address
-        </if>
-        ,peoples,event,title FROM blog;
+        SELECT id,actionTime,address,peoples,event,title FROM blog
     </select>
 
     <select id="findByid" parameterType="int" resultType="Blog">

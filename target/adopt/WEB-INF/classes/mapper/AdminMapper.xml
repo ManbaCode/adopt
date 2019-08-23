@@ -6,7 +6,7 @@
 
 
     <insert id="addAdmin" parameterType="admin">
-       INSERT INTO admin (adminName,adminPwd,realName,telephone,Email,birthday,sex,remark)VALUES
+       INSERT INTO admin (adminName,adminPwd,realName,telephone,Email,birthday,sex,remark) VALUES
        (#{adminName},#{adminPwd},#{realName},#{telephone},#{Email},#{birthday},#{sex},#{remark})
     </insert>
 
@@ -16,7 +16,7 @@
     </delete>
 
     <update id="updateAdmin" parameterType="Admin">
-        UPDATE SET adminName=#{adminName},adminPwd=#{adminPwd},realName=#{realName},telephone=#{telephone},Email=#{Email},birthday=#{birthday},sex=#{sex},remark=#{remark} WHERE id=#{id}
+        UPDATE admin SET adminName=#{adminName},adminPwd=#{adminPwd},realName=#{realName},telephone=#{telephone},Email=#{Email},birthday=#{birthday},sex=#{sex},remark=#{remark} WHERE id=#{id}
     </update>
 
     <resultMap id="BaseAdminMap" type="Admin">

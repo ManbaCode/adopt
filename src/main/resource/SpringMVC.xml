@@ -14,6 +14,14 @@
         <context:include-filter type="annotation" expression="org.springframework.stereotype.Controller"/>
     </context:component-scan>
 
+    <mvc:annotation-driven conversion-service="conversionService"/>
+    <bean id="conversionService" class="org.springframework.context.support.ConversionServiceFactoryBean">
+        <property name="converters">
+            <set>
+                <bean class="com.ecjtu.util.DataConvert"></bean>
+            </set>
+        </property>
+    </bean>
 <!--    &lt;!&ndash;配置拦截器&ndash;&gt;-->
 <!--    <mvc:interceptors>-->
 <!--        <mvc:interceptor>-->

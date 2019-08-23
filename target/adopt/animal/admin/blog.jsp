@@ -11,7 +11,7 @@
     <title>宠物领养管理后台</title>
     <!-- 引入css样式文件 -->
     <!-- Bootstrap Core CSS -->
-    <link href="${pageContext.request.contextPath}/js/houtai/css/bootstrap.min.css" rel="stylesheet">
+    <link href="${pageContext.request.contextPath}/bootstrap/css/bootstrap.min.css" rel="stylesheet">
     <!-- MetisMenu CSS -->
     <link href="${pageContext.request.contextPath}/js/houtai/css/metisMenu.min.css" rel="stylesheet">
     <!-- DataTables CSS -->
@@ -69,28 +69,33 @@
                 <div id="collapseListGroup3" class="panel-collapse collapse in" role="tabpanel" aria-labelledby="collapseListGroupHeading3">
                     <ul class="list-group">
                         <li class="list-group-item my_font">
-                            <a href="user.html">
+                            <a href="${pageContext.request.contextPath}/animal/admin/user.jsp">
                                 <i class="fa fa-flash fa-fw"></i> 用户信息
                             </a>
                         </li>
                         <li class="list-group-item my_font">
-                            <a href="admin.html">
+                            <a href="${pageContext.request.contextPath}/animal/admin/admin.jsp">
                                 <i class="fa fa-flash fa-fw"></i> 管理员信息
                             </a>
                         </li>
                         <li class="list-group-item my_font">
-                            <a href="pet.html">
+                            <a href="${pageContext.request.contextPath}/animal/admin/pet.jsp">
                                 <i class="fa fa-sitemap fa-fw"></i> 宠物管理
                             </a>
                         </li>
                         <li class="list-group-item my_font">
-                            <a href="t_adopt.html">
+                            <a href="${pageContext.request.contextPath}/animal/admin/adopt.jsp">
                                 <i class="fa fa-sitemap fa-fw"></i> 领养管理
                             </a>
                         </li>
                         <li class="list-group-item my_font">
-                            <a href="comment.html">
+                            <a href="${pageContext.request.contextPath}/animal/admin/comment.jsp">
                                 <i class="fa fa-sitemap fa-fw"></i> 评论管理
+                            </a>
+                        </li>
+                        <li class="list-group-item my_font">
+                            <a href="${pageContext.request.contextPath}/animal/admin/blog.jsp">
+                                <i class="fa fa-sitemap fa-fw"></i> 团队活动管理
                             </a>
                         </li>
                     </ul>
@@ -112,20 +117,20 @@
             <div class="panel-body">
                 <form class="form-inline" method="get" action="">
                     <div class="form-group">
-                        <label for="fingBytime">活动事件</label>
-                        <input type="datetime-local" class="form-control" id="fingBytime" value="" name="actionTime">
+                        <label for="fingByTime">活动事件</label>
+                        <input type="date" class="form-control" id="fingByTime" value="" name="actionTime">
                     </div>
                     <button type="submit" class="btn btn-primary">查询</button>
                 </form>
             </div>
         </div>
-        <a href="crmclass/list.action#" class="btn btn-primary" data-toggle="modal" data-target="#newBlog" onclick="clearCrmclass()">新建</a>
+        <button class="btn btn-primary" id="blog_add_modal_btn">新增</button>
         <div class="row">
             <div class="col-lg-12">
                 <div class="panel panel-default">
                     <div class="panel-heading">活动列表</div>
                     <!-- /.panel-heading -->
-                    <table class="table table-bordered table-striped">
+                    <table class="table table-bordered table-striped" id="blog_table">
                         <thead>
                         <tr>
                             <th>编号</th>
@@ -134,36 +139,21 @@
                             <th>活动人物</th>
                             <th>活动描述</th>
                             <th>标题</th>
-
                             <th>操作</th>
                         </tr>
                         </thead>
                         <tbody>
-                        <tr>
-                            <td>2</td>
-                            <td>2期JavaEE</td>
-                            <td>Java基础</td>
-                            <td>2015-04-28 00:00:00.0</td>
-                            <td>2016-01-01 15:02:02.0</td>
-                            <td>已开课</td>
-                            <td>
-                                <a href="crmclass/list.action#" class="btn btn-primary btn-xs" data-toggle="modal" data-target="#editBlog" onclick="editcrmclass(2)">修改</a>
-                                <a href="crmclass/list.action#" class="btn btn-danger btn-xs" onclick="deletecrmclass(2)">删除</a>
-                            </td>
-                        </tr>
-
 
                         </tbody>
                     </table>
-                    <div class="col-md-12 text-right">
-                        <nav><ul class="pagination">
-                            <li class="disabled"><a href="crmclass/list.action#">首页 </a></li>
-                            <li class="disabled"><a href="crmclass/list.action#">上一页 </a></li>
-                            <li class="active"><a href="crmclass/list.action#">1<spanclass="sr-only"></spanclass="sr-only"></a></li>
-                            <li class="disabled"><a href="crmclass/list.action#">下一页</a></li>
-                            <li class="disabled"><a href="crmclass/list.action#">尾页</a></li>
-                        </ul></nav>
-                    </div>
+                        <div class="row">
+                            <!--分页文字信息  -->
+                            <div class="col-md-4" id="page_info_area"></div>
+                            <!-- 分页条信息 -->
+                            <div class="col-md-4" id="page_nav_area">
+
+                            </div>
+                        </div>
                     <!-- /.panel-body -->
                 </div>
                 <!-- /.panel -->
@@ -190,7 +180,7 @@
                             活动标题
                         </label>
                         <div class="col-sm-10">
-                            <input type="datetime-local" class="form-control" id="new_title" placeholder="标题" name="title">
+                            <input type="date" class="form-control" id="new_title" placeholder="标题" name="title">
                         </div>
                     </div>
 
@@ -230,7 +220,7 @@
             </div>
             <div class="modal-footer">
                 <button type="button" class="btn btn-default" data-dismiss="modal">关闭</button>
-                <button type="button" class="btn btn-primary" onclick="createcrmclass()">创建用户</button>
+                <button type="button" class="btn btn-primary" id="blog_save_btn">提交</button>
             </div>
         </div>
     </div>
@@ -253,7 +243,7 @@
                             活动标题
                         </label>
                         <div class="col-sm-10">
-                            <input type="datetime-local" class="form-control" id="edit_title" placeholder="标题" name="title">
+                            <input type="datetime-local" class="form-control" id="edit_title" placeholder="标题" value="${blog.title}" name="title">
                         </div>
                     </div>
 
@@ -262,7 +252,7 @@
                             活动时间
                         </label>
                         <div class="col-sm-10">
-                            <input type="datetime-local" class="form-control" id="edit_actionTime" placeholder="用户名称" name="actionTime">
+                            <input type="date" class="form-control" id="edit_actionTime" placeholder="用户名称" value="${blog.actionTime}" name="actionTime">
                         </div>
                     </div>
                     <div class="form-group">
@@ -270,7 +260,7 @@
                             活动地点
                         </label>
                         <div class="col-sm-10">
-                            <input type="text" class="form-control" id="edit_address" placeholder="活动地点" name="address">
+                            <input type="text" class="form-control" id="edit_address" placeholder="活动地点" value="${blog.address}" name="address">
                         </div>
                     </div>
                     <div class="form-group">
@@ -278,7 +268,7 @@
                             活动人物
                         </label>
                         <div class="col-sm-10">
-                            <input type="text" class="form-control" id="edit_peoples" placeholder="活动人物" name="peoples">
+                            <input type="text" class="form-control" id="edit_peoples" placeholder="活动人物" value="${blog.peoples}" name="peoples">
                         </div>
                     </div>
                     <div class="form-group">
@@ -286,7 +276,7 @@
                             活动介绍
                         </label>
                         <div class="col-sm-10">
-                            <textarea class="form-control" id="edit_event" placeholder="活动介绍"  name="event"></textarea>
+                            <textarea class="form-control" id="edit_event" placeholder="活动介绍" value="${blog.event}"  name="event"></textarea>
                         </div>
                     </div>
 
@@ -294,16 +284,16 @@
             </div>
             <div class="modal-footer">
                 <button type="button" class="btn btn-default" data-dismiss="modal">关闭</button>
-                <button type="button" class="btn btn-primary" onclick="updatecrmclass()">保存修改</button>
+                <button type="button" class="btn btn-primary" id="blo">保存修改</button>
             </div>
         </div>
     </div>
 </div>
 <!-- 引入js文件 -->
 <!-- jQuery -->
-<script src="${pageContext.request.contextPath}/js/houtai/js/jquery-1.11.3.min.js"></script>
+<script src="${pageContext.request.contextPath}/JQuery/jquery-3.4.1.min.js"></script>
 <!-- Bootstrap Core JavaScript -->
-<script src="${pageContext.request.contextPath}/js/houtai/js/bootstrap.min.js"></script>
+<script src="${pageContext.request.contextPath}/bootstrap/js/bootstrap.min.js"></script>
 <!-- Metis Menu Plugin JavaScript -->
 <script src="${pageContext.request.contextPath}/js/houtai/js/metisMenu.min.js"></script>
 <!-- DataTables JavaScript -->
@@ -312,69 +302,242 @@
 <!-- Custom Theme JavaScript -->
 <script src="${pageContext.request.contextPath}/js/houtai/js/sb-admin-2.js"></script>
 <!-- 编写js代码 -->
+
 <script type="text/javascript">
+    //总的数据 当前的页面
+
+    var totalRecord,currentPage;
+
     $(function(){
-        $(".panel-heading").click(function(e){
-            /*切换折叠指示图标*/
-            $(this).find("span").toggleClass("fa-chevron-down");
-            $(this).find("span").toggleClass("fa-chevron-up");
-        });
+        to_page(1);
     });
-    //清空新建班级窗口中的数据
-    function clearCrmclass() {
-        $("#new_actionName").val("");
-        $("#new_address").val("");
-        $("#new_peoples").val("");
-        $("#new_event").val("");
-        $("#new_title").val("");
-
-
-    }
-    // 创建用户
-    function createcrmclass() {
-        $.Post("crmclass/create.action",
-            $("#new_blog_form").serialize(),function(data){
-                if(data =="OK"){
-                    alert("班级创建成功！");
-                    window.location.reload();
-                }else{
-                    alert("班级创建失败！");
-                    window.location.reload();
-                }
-            });
-    }
-    // 通过id获取修改的用户信息
-    function editcrmclass(id) {
+    function to_page(pn){
         $.ajax({
-            type:"get",
-            url:"crmclass/getcrmclassById.action",
-            data:{"id":id},
-            success:function(data) {
-                $("#edit_id").val(data.id);
-                $("#edit_actionTime").val(data.actionName);
-                $("#edit_address").val(data.address);
-                $("#edit_peoples").val(data.peoples);
-                $("#edit_event").val(data.event);
-                $("#edit_title").val(data.title);
-
-
+            url:"${pageContext.request.contextPath}/blog/blogs.action",
+            data:"pn="+pn,
+            type:"GET",
+            success:function(result){
+                //1、解析并显示员工数据
+                build_blogs_table(result);
+                //2、解析并显示分页信息
+                build_page_info(result);
+                //3、解析显示分页条数据
+                build_page_nav(result);
             }
         });
     }
-    // 执行修改用户
-    function updateUsers() {
-        $.Post("crmclass/update.action",
-            $("#edit_blog_form").serialize(),
-            function(data){
-                if(data =="OK"){
-                    alert("班级信息更新成功！");
-                    window.location.reload();
-                }else{
-                    alert("班级信息更新失败！");
-                    window.location.reload();
+
+    function build_blogs_table(result){
+        //清空table表格
+        $("#blog_table tbody").empty();
+        //index：下标 user：单个对象
+        var blogs=result.extend.pageInfo.list;
+        $.each(blogs,function(index,blog){
+            var checkBoxTd = $("<td><input type='checkbox' class='check_item'/></td>");
+
+            var blogIdTd = $("<td></td>").append(blog.id);
+            var titleTd=$("<td></td>").append(blog.title);
+            var actionTimed = $("<td></td>").append(blog.actionTime);
+            var addressTd = $("<td></td>").append(blog.address);
+            var peoplesTd=$("<td></td>").append(blog.peoples);
+            var eventTd=$("<td></td>").append(blog.event);
+
+            var editBtn = $("<button></button>").addClass("btn btn-primary btn-sm edit_btn")
+                .append($("<span></span>").addClass("glyphicon glyphicon-pencil")).append("修改");
+            //为编辑按钮添加一个自定义的属性，来表示当前员工id
+            editBtn.attr("edit-id",blog.id);
+            var delBtn =  $("<button></button>").addClass("btn btn-danger btn-sm delete_btn")
+                .append($("<span></span>").addClass("glyphicon glyphicon-trash")).append("删除");
+            //为删除按钮添加一个自定义的属性来表示当前删除的员工id
+            delBtn.attr("del-id",blog.id);
+            var btnTd = $("<td></td>").append(editBtn).append(" ").append(delBtn);
+            //var delBtn =
+            //append方法执行完成以后还是返回原来的元素
+            $("<tr></tr>").append(checkBoxTd)
+                .append(blogIdTd)
+                .append(titleTd)
+                .append(actionTimed)
+                .append(addressTd)
+                .append(peoplesTd)
+                .append(eventTd)
+
+                .append(btnTd)
+                .appendTo("#blog_table tbody");
+        });
+    }
+
+    //解析显示分页信息
+    function build_page_info(result){
+        $("#page_info_area").empty();
+        $("#page_info_area").append("当前"+result.extend.pageInfo.pageNum+"页,总"+
+            result.extend.pageInfo.pages+"页,总"+
+            result.extend.pageInfo.total+"条记录");
+        totalRecord = result.extend.pageInfo.total;//最后的数据
+        currentPage = result.extend.pageInfo.pageNum;//当前页
+    }
+    //解析显示分页条，点击分页要能去下一页....
+    function build_page_nav(result){
+        //page_nav_area
+        $("#page_nav_area").empty();
+        var ul = $("<ul></ul>").addClass("pagination");
+
+        //构建元素
+        var firstPageLi = $("<li></li>").append($("<a></a>").append("首页").attr("href","#"));
+        var prePageLi = $("<li></li>").append($("<a></a>").append("&laquo;"));
+        if(result.extend.pageInfo.hasPreviousPage == false){
+            firstPageLi.addClass("disabled");
+            prePageLi.addClass("disabled");
+        }else{
+            //为元素添加点击翻页的事件
+            firstPageLi.click(function(){
+                to_page(1);
+            });
+            prePageLi.click(function(){
+                to_page(result.extend.pageInfo.pageNum -1);
+            });
+        }
+
+        var nextPageLi = $("<li></li>").append($("<a></a>").append("&raquo;"));
+        var lastPageLi = $("<li></li>").append($("<a></a>").append("末页").attr("href","#"));
+        if(result.extend.pageInfo.hasNextPage == false){
+            nextPageLi.addClass("disabled");
+            lastPageLi.addClass("disabled");
+        }else{
+            nextPageLi.click(function(){
+                to_page(result.extend.pageInfo.pageNum +1);
+            });
+            lastPageLi.click(function(){
+                to_page(result.extend.pageInfo.pages);
+            });
+        }
+
+        //添加首页和前一页 的提示
+        ul.append(firstPageLi).append(prePageLi);
+        //1,2，3遍历给ul中添加页码提示
+        $.each(result.extend.pageInfo.navigatepageNums,function(index,item){
+
+            var numLi = $("<li></li>").append($("<a></a>").append(item));
+            if(result.extend.pageInfo.pageNum == item){
+                numLi.addClass("active");
+            }
+            numLi.click(function(){
+                to_page(item);
+            });
+            ul.append(numLi);
+        });
+        //添加下一页和末页 的提示
+        ul.append(nextPageLi).append(lastPageLi);
+
+        //把ul加入到nav
+        var navEle = $("<nav></nav>").append(ul);
+        navEle.appendTo("#page_nav_area");
+    }
+
+
+    //清空表单样式及内容
+    function reset_form(ele){
+        $(ele)[0].reset();
+        //清空表单样式
+        $(ele).find("*").removeClass("has-error has-success");
+        $(ele).find(".help-block").text("");
+    }
+
+    //点击新增按钮弹出模态框。
+    $("#blog_add_modal_btn").click(function(){
+        //清除表单数据（表单完整重置（表单的数据，表单的样式））
+        reset_form("#newBlog form");
+        //弹出模态框
+        $("#newBlog").modal({
+            backdrop:"static"
+        });
+    });
+    //点击保存，保存员工。
+    $("#blog_save_btn").click(function(){
+        //2、发送ajax请求保存员工
+        $.ajax({
+            url:"${pageContext.request.contextPath}/blog/create.action",
+            type:"POST",
+            data:$("#newBlog form").serialize(),
+            success:function (result) {
+                alert("活动添加成功");
+                to_page(1);
+            },
+            error:function (result) {
+                console.log(result);
+                alert("活动添加失败");
+
+            }
+        });
+    });
+
+
+    //点击编辑按钮弹出模态框。
+    $(document).on("click",".edit_btn",function(){
+        //1、发送ajax,根据id获取用户信息
+        //清除表单数据（表单完整重置（表单的数据，表单的样式））
+        reset_form("#editBlog form");
+        var id = $(this).attr("edit-id");
+        $.ajax({
+            url:"${pageContext.request.contextPath}/blog/findById.action?id="+id,
+            type:"GET",
+            success:function(result){
+                //填充用户信息
+                console.log(result);
+
+                $("#edit_id").val(result.extend.blog.id);
+                $("#edit_actionTime").val(result.extend.blog.actionTime);
+                $("#edit_address").val(result.extend.blog.address);
+                $("#edit_peoples").val(result.extend.blog.peoples)
+                $("#edit_event").val(result.extend.blog.event);
+                $("#edit_title").val(result.extend.blog.title);
+
+            }});
+        //2、弹出模态框
+        $("#editBlog").modal({
+            backdrop:"static"
+        });
+
+    });
+
+    //点击更新按钮弹出模态框。
+    $("#blog_update_btn").click(function(){
+        $.ajax({
+            url:"${pageContext.request.contextPath}/blog/update.action",
+            type:"POST",
+            data:$("#edit_blog_form").serialize(),
+            success:function (result) {
+                alert("活动信息更新成功！");
+                to_page(1);
+            },
+            error:function(result){
+                alert("活动信息更新失败！");
+            }
+        });
+
+    });
+
+    //单个删除
+    $(document).on("click",".delete_btn",function(){
+        //1、弹出是否确认删除对话框
+        var  title= $(this).parents("tr").find("td:eq(1)").text();
+        var id = $(this).attr("del-id");
+
+        if(confirm("确认删除【"+title+"】吗？")){
+            //确认，发送ajax请求删除即可
+            $.ajax({
+                url:"${pageContext.request.contextPath}/blog/delete.action?id="+id,
+                type:"GET",
+                success:function (result) {
+                    if(result.code==100){
+                        alert("活动删除成功！");
+                        to_page(1);
+                    }else{
+                        alert("活动删除失败！");
+                    }
                 }
             });
-    }
+        }
+    });
     // 删除用户
     function deleteUsers(id) {
         if(confirm('确实要删除该用户吗?')) {

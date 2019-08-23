@@ -22,7 +22,7 @@ public class AdminLogin {
         Admin admin1 = adminService.loginAdmin(admin);
         System.out.println(admin1);
         if(admin1!=null){
-            return "forward:admin/admins.action";
+            return "redirect:/animal/admin/admin.jsp";
         }else {
             model.addAttribute("msg","账号或者密码有错，请重新输入！");
             return "admin/login";

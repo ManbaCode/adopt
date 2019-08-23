@@ -13,7 +13,7 @@
     <title>学员关系管理系统CRM</title>
     <!-- 引入css样式文件 -->
     <!-- Bootstrap Core CSS -->
-    <link href="${pageContext.request.contextPath}/js/houtai/css/bootstrap.min.css" rel="stylesheet">
+    <link href="${pageContext.request.contextPath}/bootstrap/css/bootstrap.min.css" rel="stylesheet">
     <!-- MetisMenu CSS -->
     <link href="${pageContext.request.contextPath}/js/houtai/css/metisMenu.min.css" rel="stylesheet">
     <!-- DataTables CSS -->
@@ -88,32 +88,32 @@
                 <div id="collapseListGroup3" class="panel-collapse collapse in" role="tabpanel" aria-labelledby="collapseListGroupHeading3">
                     <ul class="list-group">
                         <li class="list-group-item my_font">
-                            <a href="${pageContext.request.contextPath}/users/users.action">
+                            <a href="${pageContext.request.contextPath}/animal/admin/user.jsp">
                                 <i class="fa fa-flash fa-fw"></i> 用户信息
                             </a>
                         </li>
                         <li class="list-group-item my_font">
-                            <a href="${pageContext.request.contextPath}/admin/admins.action">
+                            <a href="${pageContext.request.contextPath}/animal/admin/admin.jsp">
                                 <i class="fa fa-flash fa-fw"></i> 管理员信息
                             </a>
                         </li>
                         <li class="list-group-item my_font">
-                            <a href="${pageContext.request.contextPath}/pet/getPets.action">
+                            <a href="${pageContext.request.contextPath}/animal/admin/pet.jsp">
                                 <i class="fa fa-sitemap fa-fw"></i> 宠物管理
                             </a>
                         </li>
                         <li class="list-group-item my_font">
-                            <a href="${pageContext.request.contextPath}/adopt/getAdopts.action">
+                            <a href="${pageContext.request.contextPath}/animal/admin/adopt.jsp">
                                 <i class="fa fa-sitemap fa-fw"></i> 领养管理
                             </a>
                         </li>
                         <li class="list-group-item my_font">
-                            <a href="${pageContext.request.contextPath}/comment/getComments.action">
+                            <a href="${pageContext.request.contextPath}/animal/admin/comment.jsp">
                                 <i class="fa fa-sitemap fa-fw"></i> 评论管理
                             </a>
                         </li>
                         <li class="list-group-item my_font">
-                            <a href="${pageContext.request.contextPath}/blog/blogs.action">
+                            <a href="${pageContext.request.contextPath}/animal/admin/blog.jsp">
                                 <i class="fa fa-sitemap fa-fw"></i> 团队活动管理
                             </a>
                         </li>
@@ -148,45 +148,28 @@
                 <div class="panel panel-default">
                     <div class="panel-heading">用户评论列表</div>
                     <!-- /.panel-heading -->
-                    <table class="table table-bordered table-striped">
+                    <table class="table table-bordered table-striped" id="comment_table">
                         <thead>
                         <tr>
                             <th>评论编号</th>
-                            <th>评论用户名</th>
+                            <th>评论人</th>
+                            <th>评论动物</th>
                             <th>评论内容</th>
                             <th>评论时间</th>
-                            <th>被评论人</th>
                             <th>操作</th>
                         </tr>
                         </thead>
                         <tbody>
-                        <tr>
-                            <td>1</td>
-                            <td>李白</td>
-                            <td>我爱这只猫</td>
-                            <td>2019年8月22日</td>
-                            <td>pet2</td>
-                            <td>
-                                <a href="" class="btn btn-primary btn-xs" data-toggle="modal"
-                                   data-target="#editComment" onclick="editpinglun(1)">修改</a>
-                                <a href="" class="btn btn-danger btn-xs" onclick="deletepinglun(1)">删除</a>
-                            </td>
-                        </tr>
-
 
                         </tbody>
                     </table>
-                    <div class="col-md-12 text-right">
-                        <nav>
-                            <ul class="pagination">
-                                <li class="disabled"><a href="#">首页 </a></li>
-                                <li class="disabled"><a href="crmclass/list.action#">上一页 </a></li>
-                                <li class="active"><a href="crmclass/list.action#">1</spanclass="sr-only"></spanclass
-                                    ="sr-only"></a></li>
-                                <li class="disabled"><a href="crmclass/list.action#">下一页</a></li>
-                                <li class="disabled"><a href="crmclass/list.action#">尾页</a></li>
-                            </ul>
-                        </nav>
+                    <div class="row">
+                        <!--分页文字信息  -->
+                        <div class="col-md-12" id="page_info_area"></div>
+                        <!-- 分页条信息 -->
+                        <div class="col-md-12" id="page_nav_area">
+
+                        </div>
                     </div>
                     <!-- /.panel-body -->
                 </div>
@@ -216,23 +199,15 @@
                             用户名
                         </label>
                         <div class="col-sm-4">
-                            <input type="text" class="form-control" id="edit_crmUserName" placeholder="用户名"
+                            <input type="text" class="form-control" id="edit_crmUserName" value="${comment.user.userName}" placeholder="用户名"
                                    name="name">
                         </div>
                         <label for="edit_commmentTime" class="col-sm-2 control-label">
                             评论时间
                         </label>
                         <div class="col-sm-4">
-                            <input type="datetime-local" class="form-control" id="edit_commmentTime" placeholder="评论时间"
+                            <input type="datetime-local" class="form-control" id="edit_commmentTime" placeholder="评论时间" value="${comment.commentTime}"
                                    name="commentTime">
-                        </div>
-                    </div>
-                    <div class="form-group">
-                        <label for="edit_userNameed" class="col-sm-2 control-label">
-                            被评论人
-                        </label>
-                        <div class="col-sm-4">
-                            <input type="text" class="form-control" id="edit_userNameed" placeholder="评论位置" name="userNameed">
                         </div>
                     </div>
                     <div class="form-group">
@@ -240,8 +215,7 @@
                             内容
                         </label>
                         <div class="col-sm-10">
-                            <textarea class="form-control" id="edit_content" placeholder="内容" name="conntent" ></textarea>
-
+                            <textarea class="form-control" id="edit_content" placeholder="内容" value= "${comment.content}" name="content" ></textarea>
                         </div>
                     </div>
 
@@ -249,16 +223,16 @@
             </div>
             <div class="modal-footer">
                 <button type="button" class="btn btn-default" data-dismiss="modal">关闭</button>
-                <button type="button" class="btn btn-primary" onclick="updatePinglun()">保存修改</button>
+                <button type="button" class="btn btn-primary" onclick="comment_update_btn">保存修改</button>
             </div>
         </div>
     </div>
 </div>
 <!-- 引入js文件 -->
 <!-- jQuery -->
-<script src="${pageContext.request.contextPath}/js/houtai/js/jquery-1.11.3.min.js"></script>
+<script src="${pageContext.request.contextPath}/JQuery/jquery-3.4.1.min.js"></script>
 <!-- Bootstrap Core JavaScript -->
-<script src="${pageContext.request.contextPath}/js/houtai/js/bootstrap.min.js"></script>
+<script src="${pageContext.request.contextPath}/bootstrap/js/bootstrap.min.js"></script>
 <!-- Metis Menu Plugin JavaScript -->
 <script src="${pageContext.request.contextPath}/js/houtai/js/metisMenu.min.js"></script>
 <!-- DataTables JavaScript -->
@@ -269,52 +243,139 @@
 <!-- 编写js代码 -->
 <script type="text/javascript">
 
-    // 通过id获取修改的班级信息
-    function editComment(id) {
+    var totalRecord,currentPage;
+
+    $(function(){
+        to_page(1);
+    });
+    function to_page(pn){
         $.ajax({
-            type: "get",
-            url: "crmclass/getcrmclassById.action",
-            data: {"id": id},
-            success: function (data) {
-                $("#edit_id").val(data.id);
-                $("#edit_userName").val(data.userName);
-                $("#edit_commmentTime").val(data.commentTime);
-                $("#edit_userNameed").val(data.userNameed);
-                $("#edit_content").val(data.content);
+            url:"${pageContext.request.contextPath}/comment/comments.action",
+            data:"pn="+pn,
+            type:"GET",
+            success:function(result){
+                //1、解析并显示员工数据
+                build_comments_table(result);
+                //2、解析并显示分页信息
+                build_page_info(result);
+                //3、解析显示分页条数据
+                build_page_nav(result);
             }
         });
     }
 
-    // 执行修改评论操作
-    function updateComment() {
-        $.Post("crmclass/update.action",
-            $("#edit_pinglun_form").serialize(),
-            function (data) {
-                if (data == "OK") {
-                    alert("评论记录更新成功！");
-                    window.location.reload();
-                } else {
-                    alert("评论记录更新失败！");
-                    window.location.reload();
-                }
-            });
+    function build_comments_table(result){
+        //清空table表格
+        $("#comment_table tbody").empty();
+        //index：下标 user：单个对象
+        var comments=result.extend.pageInfo.list;
+        $.each(comments,function(index,comment){
+            var checkBoxTd = $("<td><input type='checkbox' class='check_item'/></td>");
+            var commentIdTd = $("<td></td>").append(comment.id);
+            var userNameTd=$("<td></td>").append(comment.user.userName);
+            var petNameTd = $("<td></td>").append(comment.pet.petName);
+            var contentTd=$("<td></td>").append(comment.content);
+            var commentTimeTd = $("<td></td>").append(comment.commentTime);
+
+
+            var editBtn = $("<button></button>").addClass("btn btn-primary btn-sm edit_btn")
+                .append($("<span></span>").addClass("glyphicon glyphicon-pencil")).append("修改");
+            //为编辑按钮添加一个自定义的属性，来表示当前员工id
+            editBtn.attr("edit-id",comment.id);
+            var delBtn =  $("<button></button>").addClass("btn btn-danger btn-sm delete_btn")
+                .append($("<span></span>").addClass("glyphicon glyphicon-trash")).append("删除");
+            //为删除按钮添加一个自定义的属性来表示当前删除的员工id
+            delBtn.attr("del-id",comment.id);
+            var btnTd = $("<td></td>").append(editBtn).append(" ").append(delBtn);
+            //var delBtn =
+            //append方法执行完成以后还是返回原来的元素
+            $("<tr></tr>").append(checkBoxTd)
+                .append(commentIdTd)
+                .append(userNameTd)
+                .append(petNameTd)
+                .append(contentTd)
+                .append(commentTimeTd)
+                .append(btnTd)
+                .appendTo("#comment_table tbody");
+        });
     }
 
-    // 删除班级
-    function deleteComment(id) {
-        if (confirm('确实要删除该评论记录吗?')) {
-            $.Post("crmclass/delete.action", {"id": id},
-                function (data) {
-                    if (data == "OK") {
-                        alert("记录删除成功！");
-                        window.location.reload();
-                    } else {
-                        alert("删除记录失败！");
-                        window.location.reload();
-                    }
-                });
-        }
+    //解析显示分页信息
+    function build_page_info(result){
+        $("#page_info_area").empty();
+        $("#page_info_area").append("当前"+result.extend.pageInfo.pageNum+"页,总"+
+            result.extend.pageInfo.pages+"页,总"+
+            result.extend.pageInfo.total+"条记录");
+        totalRecord = result.extend.pageInfo.total;//最后的数据
+        currentPage = result.extend.pageInfo.pageNum;//当前页
     }
+    //解析显示分页条，点击分页要能去下一页....
+    function build_page_nav(result){
+        //page_nav_area
+        $("#page_nav_area").empty();
+        var ul = $("<ul></ul>").addClass("pagination");
+
+        //构建元素
+        var firstPageLi = $("<li></li>").append($("<a></a>").append("首页").attr("href","#"));
+        var prePageLi = $("<li></li>").append($("<a></a>").append("&laquo;"));
+        if(result.extend.pageInfo.hasPreviousPage == false){
+            firstPageLi.addClass("disabled");
+            prePageLi.addClass("disabled");
+        }else{
+            //为元素添加点击翻页的事件
+            firstPageLi.click(function(){
+                to_page(1);
+            });
+            prePageLi.click(function(){
+                to_page(result.extend.pageInfo.pageNum -1);
+            });
+        }
+
+        var nextPageLi = $("<li></li>").append($("<a></a>").append("&raquo;"));
+        var lastPageLi = $("<li></li>").append($("<a></a>").append("末页").attr("href","#"));
+        if(result.extend.pageInfo.hasNextPage == false){
+            nextPageLi.addClass("disabled");
+            lastPageLi.addClass("disabled");
+        }else{
+            nextPageLi.click(function(){
+                to_page(result.extend.pageInfo.pageNum +1);
+            });
+            lastPageLi.click(function(){
+                to_page(result.extend.pageInfo.pages);
+            });
+        }
+
+        //添加首页和前一页 的提示
+        ul.append(firstPageLi).append(prePageLi);
+        //1,2，3遍历给ul中添加页码提示
+        $.each(result.extend.pageInfo.navigatepageNums,function(index,item){
+
+            var numLi = $("<li></li>").append($("<a></a>").append(item));
+            if(result.extend.pageInfo.pageNum == item){
+                numLi.addClass("active");
+            }
+            numLi.click(function(){
+                to_page(item);
+            });
+            ul.append(numLi);
+        });
+        //添加下一页和末页 的提示
+        ul.append(nextPageLi).append(lastPageLi);
+
+        //把ul加入到nav
+        var navEle = $("<nav></nav>").append(ul);
+        navEle.appendTo("#page_nav_area");
+    }
+
+
+    //清空表单样式及内容
+    function reset_form(ele){
+        $(ele)[0].reset();
+        //清空表单样式
+        $(ele).find("*").removeClass("has-error has-success");
+        $(ele).find(".help-block").text("");
+    }
+
 </script>
 
 </body>

@@ -18,9 +18,9 @@
     <meta name="keywords" content=""/>
     <!--// Meta tag Keywords -->
     <!-- css files -->
-    <link rel="stylesheet" href="${pageContext.request.contextPath}bootstrap/css/bootstrap.css" type="text/css" media="all">
+    <link rel="stylesheet" href="${pageContext.request.contextPath}/bootstrap/css/bootstrap.css" type="text/css" media="all">
     <!-- Owl-Carousel-CSS -->
-    <link rel="stylesheet" href="${pageContext.request.contextPath}css/style.css" type="text/css" media="all" />
+    <link rel="stylesheet" href="${pageContext.request.contextPath}/css/style.css" type="text/css" media="all" />
 
 
 </head>
@@ -160,7 +160,7 @@
         <div class="clearfix"> </div>
     </div>
     <div class="blog-grids mid-blog-agile">
-        <img src="${pageContext.request.contextPath}images/cat2.png" class="img-responsive" alt="">
+        <img src="${pageContext.request.contextPath}/images/cat2.png" class="img-responsive" alt="">
     </div>
 </div>
 <!-- Modal5 -->
@@ -172,7 +172,7 @@
                 <button type="button" class="close" data-dismiss="modal">&times;</button>
                 <div class="modal-info">
                     <h4>Cat Life</h4>
-                    <img src="${pageContext.request.contextPath}images/g2.jpg" alt=" " class="img-responsive" />
+                    <img src="${pageContext.request.contextPath}/images/g2.jpg" alt=" " class="img-responsive" />
                     <h5>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</h5>
                     <p class="para-agileits-w3layouts">Duis sit amet nisi quis leo fermentum vestibulum vitae eget augue. Nulla quam nunc, vulputate id urna at, tempor tincidunt
                         metus. Sed feugiat quam nec mauris mattis malesuada.</p>
@@ -184,8 +184,8 @@
 <!-- //Modal5 -->
 <!-- //blog -->
 <!-- js -->
-<script src="${pageContext.request.contextPath}JQuery/jquery-3.4.1.min.js"></script>
-<script src="${pageContext.request.contextPath}bootstrap/js/bootstrap.min.js"></script>
+<script src="${pageContext.request.contextPath}/JQuery/jquery-3.4.1.min.js"></script>
+<script src="${pageContext.request.contextPath}/bootstrap/js/bootstrap.min.js"></script>
 <!-- Necessary-JavaScript-File-For-Bootstrap -->
 <!-- //js -->
 </body>

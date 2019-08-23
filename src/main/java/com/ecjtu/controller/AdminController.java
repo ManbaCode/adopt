@@ -3,13 +3,19 @@ package com.ecjtu.controller;
 import com.ecjtu.entity.Admin;
 import com.ecjtu.service.AdminService;
 import com.ecjtu.util.Message;
+import com.github.pagehelper.PageHelper;
+import com.github.pagehelper.PageInfo;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.servlet.ModelAndView;
 
+import java.text.ParseException;
+import java.text.SimpleDateFormat;
+import java.util.Date;
 import java.util.List;
 
 /**
@@ -23,18 +29,28 @@ public class AdminController {
     @Autowired
     private AdminService adminService;
 
+
+
     @RequestMapping("/admins.action")
-    public String getAdmins(Model model){
+    @ResponseBody
+    public Message getAdmins(@RequestParam(value = "pn",defaultValue = "1") Integer pn){
+        // 引入PageHelper分页插件
+        // 在查询之前只需要调用，传入页码，以及每页的大小
+        PageHelper.startPage(pn,4);
         List<Admin> admins = adminService.getAdmins();
+        // startPage后面紧跟的这个查询就是一个分页查询
         System.out.println(admins+"admins");
-        model.addAttribute("admins",admins);
-        return "admin/admin";
+        // 使用pageInfo包装查询后的结果，只需要将pageInfo交给页面就行了。
+        // 封装了详细的分页信息,包括有我们查询出来的数据，传入连续显示的页数
+        PageInfo page=new PageInfo(admins,2);
+        return Message.success().add("pageInfo",page);
     }
 
     @RequestMapping("/create.action")
     @ResponseBody
     public Message addAdmin(Admin admin){
         int i = adminService.addAdmin(admin);
+        System.out.println(i);
         if(i>0){
             return Message.success();
         }else{
@@ -58,6 +74,7 @@ public class AdminController {
     @ResponseBody
     public Message updateAdmin(Admin admin){
         int i = adminService.updateAdmin(admin);
+        System.out.println(i);
         if(i>0){
             return Message.success();
         }else{
@@ -67,9 +84,13 @@ public class AdminController {
 
     @RequestMapping("/findById.action")
     @ResponseBody
-    public Message findById(Integer id){
+    public Message findById(Integer id) throws ParseException {
         Admin admin = adminService.findById(id);
-        System.out.println((admin!=null)+"11111111111111111");
+        SimpleDateFormat simpleDateFormat = new SimpleDateFormat("yyyy-MM-dd");
+        String dt= simpleDateFormat.format(admin.getBirthday());
+        Date parse = simpleDateFormat.parse(dt);
+        System.out.println(parse);
+        admin.setBirthday(parse);
         if(admin!=null){
             return Message.success().add("admin",admin);
         }else{
@@ -77,10 +98,10 @@ public class AdminController {
         }
     }
     @RequestMapping("/findByName.action")
-    @ResponseBody
     public String findByName(String adminName, ModelAndView modelAndView){
         Admin admin = adminService.findByName(adminName);
         if(admin!=null){
+            modelAndView.addObject("admins",admin);
             return "admin/admin";
         }else{
             return null;

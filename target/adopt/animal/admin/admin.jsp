@@ -12,7 +12,7 @@
     <title>宠物领养管理后台</title>
     <!-- 引入css样式文件 -->
     <!-- Bootstrap Core CSS -->
-    <link href="${pageContext.request.contextPath}/js/houtai/css/bootstrap.min.css" rel="stylesheet">
+    <link href="${pageContext.request.contextPath}/bootstrap/css/bootstrap.min.css" rel="stylesheet">
     <!-- MetisMenu CSS -->
     <link href="${pageContext.request.contextPath}/js/houtai/css/metisMenu.min.css" rel="stylesheet">
     <!-- DataTables CSS -->
@@ -70,28 +70,33 @@
                 <div id="collapseListGroup3" class="panel-collapse collapse in" role="tabpanel" aria-labelledby="collapseListGroupHeading3">
                     <ul class="list-group">
                         <li class="list-group-item my_font">
-                            <a href="../../html/admin/user.html">
+                            <a href="${pageContext.request.contextPath}/animal/admin/user.jsp">
                                 <i class="fa fa-flash fa-fw"></i> 用户信息
                             </a>
                         </li>
                         <li class="list-group-item my_font">
-                            <a href="../../html/admin/admin.html">
+                            <a href="${pageContext.request.contextPath}/animal/admin/admin.jsp">
                                 <i class="fa fa-flash fa-fw"></i> 管理员信息
                             </a>
                         </li>
                         <li class="list-group-item my_font">
-                            <a href="../../html/admin/pet.html">
+                            <a href="${pageContext.request.contextPath}/animal/admin/pet.jsp">
                                 <i class="fa fa-sitemap fa-fw"></i> 宠物管理
                             </a>
                         </li>
                         <li class="list-group-item my_font">
-                            <a href="../../html/admin/t_adopt.html">
+                            <a href="${pageContext.request.contextPath}/animal/admin/adopt.jsp">
                                 <i class="fa fa-sitemap fa-fw"></i> 领养管理
                             </a>
                         </li>
                         <li class="list-group-item my_font">
-                            <a href="../../html/admin/comment.html">
+                            <a href="${pageContext.request.contextPath}/animal/admin/comment.jsp">
                                 <i class="fa fa-sitemap fa-fw"></i> 评论管理
+                            </a>
+                        </li>
+                        <li class="list-group-item my_font">
+                            <a href="${pageContext.request.contextPath}/animal/admin/blog.jsp">
+                                <i class="fa fa-sitemap fa-fw"></i> 团队活动管理
                             </a>
                         </li>
                     </ul>
@@ -111,7 +116,7 @@
         <div class="panel panel-default">
             <!-- 搜索部分 -->
             <div class="panel-body">
-                <form class="form-inline" method="get" action="">
+                <form class="form-inline" method="get" >
                     <div class="form-group">
                         <label for="fingByName">管理员名称</label>
                         <input type="text" class="form-control" id="fingByName" value="" name="adminName">
@@ -120,15 +125,18 @@
                 </form>
             </div>
         </div>
-        <a href="#" class="btn btn-primary" data-toggle="modal" data-target="#newAdmin" onclick="clearadmin()">新建</a>
+        <button class="btn btn-primary" id="admin_add_modal_btn">新增</button>
         <div class="row">
             <div class="col-lg-12">
                 <div class="panel panel-default">
                     <div class="panel-heading">管理员信息列表</div>
                     <!-- /.panel-heading -->
-                    <table class="table table-bordered table-striped">
+                    <table class="table table-bordered table-striped" id="admin_table">
                         <thead>
                         <tr>
+                            <th>
+                                <input type="checkbox" id="check_all"/>
+                            </th>
                             <th>编号</th>
                             <th>管理员账号</th>
                             <th>真实姓名</th>
@@ -140,39 +148,25 @@
                         </tr>
                         </thead>
                         <tbody>
-                        <c:forEach items="${admins}" var="admin">
-                            <tr>
-                                <td>${admin.id}</td>
-                                <td>${admin.adminName}</td>
-                                <td>${admin.realName}</td>
-                                <td>${admin.telephone}</td>
-                                <td>${admin.email}</td>
-                                <td>${admin.birthday}</td>
-                                <td>${admin.sex}</td>
-                                <td>
-                                    <a href="#" class="btn btn-primary btn-xs" data-toggle="modal" data-target="#editAdmin" onclick="editAdmins(${admin.id})">修改</a>
-                                    <a href="#" class="btn btn-danger btn-xs" onclick="deleteAdmin(${admin.id})">删除</a>
-                                </td>
-                            </tr>
-
-                        </c:forEach>
                         </tbody>
                     </table>
                     <div class="col-md-12 text-right">
-                        <nav><ul class="pagination">
-                            <li class="disabled"><a href="crmclass/list.action#">首页 </a></li>
-                            <li class="disabled"><a href="crmclass/list.action#">上一页 </a></li>
-                            <li class="active"><a href="crmclass/list.action#">1
-                                <spanclass="sr-only"></spanclass="sr-only"></a></li>
-                            <li class="disabled"><a href="crmclass/list.action#">下一页</a></li>
-                            <li class="disabled"><a href="crmclass/list.action#">尾页</a></li>
-                        </ul></nav>
+
                     </div>
                     <!-- /.panel-body -->
                 </div>
                 <!-- /.panel -->
             </div>
             <!-- /.col-lg-12 -->
+            <!-- 显示分页信息 -->
+            <div class="row">
+                <!--分页文字信息  -->
+                <div class="col-md-6" id="page_info_area"></div>
+                <!-- 分页条信息 -->
+                <div class="col-md-6" id="page_nav_area">
+
+                </div>
+            </div>
         </div>
     </div>
     <!-- 用户查询  end-->
@@ -239,7 +233,7 @@
                             生日
                         </label>
                         <div class="col-sm-4">
-                            <input type="datetime-local" class="form-control" id="new_birthday" placeholder="生日" name="birthday">
+                            <input type="date" class="form-control" id="new_birthday" placeholder="生日" name="birthday">
                         </div>
                     </div>
                     <div class="form-group">
@@ -254,7 +248,7 @@
             </div>
             <div class="modal-footer">
                 <button type="button" class="btn btn-default" data-dismiss="modal">关闭</button>
-                <button type="button" class="btn btn-primary" onclick="createAdmin()">创建用户</button>
+                <button type="button" class="btn btn-primary" id="admin_save_btn">创建用户</button>
             </div>
         </div>
     </div>
@@ -277,13 +271,13 @@
                             管理员名字
                         </label>
                         <div class="col-sm-4">
-                            <input type="text" class="form-control" id="edit_adminName" placeholder="管理员账号" name="adminName">
+                            <input type="text" class="form-control" id="edit_adminName" placeholder="管理员账号" value="${admin.adminName}" name="adminName">
                         </div>
                         <label for="edit_password" class="col-sm-2 control-label">
                             管理员密码
                         </label>
                         <div class="col-sm-4">
-                            <input type="text" class="form-control" id="edit_password" placeholder="用户密码" name="adminPwd">
+                            <input type="text" class="form-control" id="edit_password" placeholder="用户密码" value="${admin.adminPwd}" name="adminPwd">
                         </div>
                     </div>
                     <div class="form-group">
@@ -291,13 +285,13 @@
                             管理员名字
                         </label>
                         <div class="col-sm-4">
-                            <input type="text" class="form-control" id="edit_Name" placeholder="真实名字" name="realName">
+                            <input type="text" class="form-control" id="edit_Name" placeholder="真实名字" value="${admin.realName}" name="realName">
                         </div>
                         <label for="edit_sex" class="col-sm-2 control-label">
                             性别
                         </label>
                         <div class="col-sm-4">
-                            <select class="form-control" id="edit_sex" name="sex">
+                            <select class="form-control" id="edit_sex" value="${admin.sex}" name="sex">
                                 <option value="男">男</option>
                                 <option value="女">女</option>
                             </select>
@@ -308,13 +302,13 @@
                             电话号码
                         </label>
                         <div class="col-sm-4">
-                            <input type="text" class="form-control" id="edit_telephone" placeholder="电话" name="telephone">
+                            <input type="text" class="form-control" id="edit_telephone" placeholder="电话" value="${admin.telephone}" name="telephone">
                         </div>
                         <label for="edit_Email" class="col-sm-2 control-label">
                             Email
                         </label>
                         <div class="col-sm-4">
-                            <input type="text" class="form-control" id="edit_Email" placeholder="邮件"  name="Email">
+                            <input type="text" class="form-control" id="edit_Email" placeholder="邮件" value="${admin.email}"  name="Email">
                         </div>
                     </div>
                     <div class="form-group">
@@ -322,7 +316,7 @@
                             生日
                         </label>
                         <div class="col-sm-4">
-                            <input type="datetime-local" class="form-control" id="edit_birthday" placeholder="生日" name="birthday">
+                            <input type="date" class="form-control" id="edit_birthday" placeholder="生日" value="${admin.birthday}" name="birthday">
                         </div>
                     </div>
                     <div class="form-group">
@@ -330,23 +324,23 @@
                             个人介绍
                         </label>
                         <div class="col-sm-10">
-                            <textarea class="form-control" id="edit_remark" placeholder="个人介绍" name="remark"></textarea>
+                            <textarea class="form-control" id="edit_remark" placeholder="个人介绍" value="${admin.remark}" name="remark"></textarea>
                         </div>
                     </div>
                 </form>
             </div>
             <div class="modal-footer">
                 <button type="button" class="btn btn-default" data-dismiss="modal">关闭</button>
-                <button type="button" class="btn btn-primary" onclick="updateAdmin()">保存修改</button>
+                <button type="button" class="btn btn-primary" id="admin_update_btn">保存修改</button>
             </div>
         </div>
     </div>
 </div>
 <!-- 引入js文件 -->
 <!-- jQuery -->
-<script src="${pageContext.request.contextPath}/js/houtai/js/jquery-1.11.3.min.js"></script>
+<script src="${pageContext.request.contextPath}/JQuery/jquery-3.4.1.min.js"></script>
 <!-- Bootstrap Core JavaScript -->
-<script src="${pageContext.request.contextPath}/js/houtai/js/bootstrap.min.js"></script>
+<script src="${pageContext.request.contextPath}/bootstrap/js/bootstrap.min.js"></script>
 <!-- Metis Menu Plugin JavaScript -->
 <script src="${pageContext.request.contextPath}/js/houtai/js/metisMenu.min.js"></script>
 <!-- DataTables JavaScript -->
@@ -356,93 +350,241 @@
 <script src="${pageContext.request.contextPath}/js/houtai/js/sb-admin-2.js"></script>
 <!-- 编写js代码 -->
 <script type="text/javascript">
+
+    //总的数据 当前的页面
+
+    var totalRecord,currentPage;
+
     $(function(){
-        $(".panel-heading").click(function(e){
-            /*切换折叠指示图标*/
-            $(this).find("span").toggleClass("fa-chevron-down");
-            $(this).find("span").toggleClass("fa-chevron-up");
-        });
+        to_page(1);
     });
-    //清空新建班级窗口中的数据
-    function clearAdmin() {
-        $("#new_adminName").val("");
-        $("#new_password").val("");
-        $("#new_Name").val("");
-        $("#new_sex").val("");
-        $("#new_telephone").val("");
-        $("#new_Email").val("");
-        $("#new_address").val("");
-        $("#new_state").val("");
-    }
-    // 创建用户
-    function createAdmin() {
+    function to_page(pn){
         $.ajax({
-            url:"${pageContext.request.contextPath}/admin/create.action",
-            type:"POST",
-            date:$("#new_admin_form").serialize(),
-            success:function (result) {
-                alter("管理员创建成功");
-                window.location.reload();
-            },
-            error:function (result) {
-                alert("管理员创建失败");
-                window.location.reload();
+            url:"${pageContext.request.contextPath}/admin/admins.action",
+            data:"pn="+pn,
+            type:"GET",
+            success:function(result){
+                //1、解析并显示员工数据
+                build_admins_table(result);
+                //2、解析并显示分页信息
+                build_page_info(result);
+                //3、解析显示分页条数据
+                build_page_nav(result);
             }
         });
     }
-    // 通过id获取修改的管理员信息
-    function editAdmins(id) {
+
+    function build_admins_table(result){
+        //清空table表格
+        $("#admin_table tbody").empty();
+        //index：下标 user：单个对象
+        var admins=result.extend.pageInfo.list;
+        $.each(admins,function(index,admin){
+            var checkBoxTd = $("<td><input type='checkbox' class='check_item'/></td>");
+            var adminIdTd = $("<td></td>").append(admin.id);
+            var adminNameTd = $("<td></td>").append(admin.adminName);
+            var realNameTd = $("<td></td>").append(admin.realName);
+            var telephoneTd=$("<td></td>").append(admin.telephone);
+            var emailTd=$("<td></td>").append(admin.email);
+            var birthdayTd=$("<td></td>").append(admin.birthday);
+            var sexTd=$("<td></td>").append(admin.sex);
+
+            var editBtn = $("<button></button>").addClass("btn btn-primary btn-sm edit_btn")
+                .append($("<span></span>").addClass("glyphicon glyphicon-pencil")).append("修改");
+            //为编辑按钮添加一个自定义的属性，来表示当前员工id
+            editBtn.attr("edit-id",admin.id);
+            var delBtn =  $("<button></button>").addClass("btn btn-danger btn-sm delete_btn")
+                .append($("<span></span>").addClass("glyphicon glyphicon-trash")).append("删除");
+            //为删除按钮添加一个自定义的属性来表示当前删除的员工id
+            delBtn.attr("del-id",admin.id);
+            var btnTd = $("<td></td>").append(editBtn).append(" ").append(delBtn);
+            //var delBtn =
+            //append方法执行完成以后还是返回原来的元素
+            $("<tr></tr>").append(checkBoxTd)
+                .append(adminIdTd)
+                .append(adminNameTd)
+                .append(realNameTd)
+                .append(telephoneTd)
+                .append(emailTd)
+                .append(birthdayTd)
+                .append(sexTd)
+                .append(btnTd)
+                .appendTo("#admin_table tbody");
+        });
+    }
+
+    //解析显示分页信息
+    function build_page_info(result){
+        $("#page_info_area").empty();
+        $("#page_info_area").append("当前"+result.extend.pageInfo.pageNum+"页,总"+
+            result.extend.pageInfo.pages+"页,总"+
+            result.extend.pageInfo.total+"条记录");
+        totalRecord = result.extend.pageInfo.total;//最后的数据
+        currentPage = result.extend.pageInfo.pageNum;//当前页
+    }
+    //解析显示分页条，点击分页要能去下一页....
+    function build_page_nav(result){
+        //page_nav_area
+        $("#page_nav_area").empty();
+        var ul = $("<ul></ul>").addClass("pagination");
+
+        //构建元素
+        var firstPageLi = $("<li></li>").append($("<a></a>").append("首页").attr("href","#"));
+        var prePageLi = $("<li></li>").append($("<a></a>").append("&laquo;"));
+        if(result.extend.pageInfo.hasPreviousPage == false){
+            firstPageLi.addClass("disabled");
+            prePageLi.addClass("disabled");
+        }else{
+            //为元素添加点击翻页的事件
+            firstPageLi.click(function(){
+                to_page(1);
+            });
+            prePageLi.click(function(){
+                to_page(result.extend.pageInfo.pageNum -1);
+            });
+        }
+
+        var nextPageLi = $("<li></li>").append($("<a></a>").append("&raquo;"));
+        var lastPageLi = $("<li></li>").append($("<a></a>").append("末页").attr("href","#"));
+        if(result.extend.pageInfo.hasNextPage == false){
+            nextPageLi.addClass("disabled");
+            lastPageLi.addClass("disabled");
+        }else{
+            nextPageLi.click(function(){
+                to_page(result.extend.pageInfo.pageNum +1);
+            });
+            lastPageLi.click(function(){
+                to_page(result.extend.pageInfo.pages);
+            });
+        }
+
+        //添加首页和前一页 的提示
+        ul.append(firstPageLi).append(prePageLi);
+        //1,2，3遍历给ul中添加页码提示
+        $.each(result.extend.pageInfo.navigatepageNums,function(index,item){
+
+            var numLi = $("<li></li>").append($("<a></a>").append(item));
+            if(result.extend.pageInfo.pageNum == item){
+                numLi.addClass("active");
+            }
+            numLi.click(function(){
+                to_page(item);
+            });
+            ul.append(numLi);
+        });
+        //添加下一页和末页 的提示
+        ul.append(nextPageLi).append(lastPageLi);
+
+        //把ul加入到nav
+        var navEle = $("<nav></nav>").append(ul);
+        navEle.appendTo("#page_nav_area");
+    }
+
+
+    //清空表单样式及内容
+    function reset_form(ele){
+        $(ele)[0].reset();
+        //清空表单样式
+        $(ele).find("*").removeClass("has-error has-success");
+        $(ele).find(".help-block").text("");
+    }
+    //点击新增按钮弹出模态框。
+    $("#admin_add_modal_btn").click(function(){
+        //清除表单数据（表单完整重置（表单的数据，表单的样式））
+        reset_form("#newAdmin form");
+        //弹出模态框
+        $("#newAdmin").modal({
+            backdrop:"static"
+        });
+    });
+    //点击保存，保存员工。
+    $("#admin_save_btn").click(function(){
+        //2、发送ajax请求保存员工
         $.ajax({
-            type:"GET",
+            url:"${pageContext.request.contextPath}/admin/create.action",
+            type:"POST",
+            data:$("#newAdmin form").serialize(),
+            success:function (result) {
+                alert("管理员创建成功");
+                to_page(1);
+            },
+            error:function (result) {
+                console.log(result);
+                alert("管理员创建失败");
+
+            }
+        });
+    });
+
+    //点击编辑按钮弹出模态框。
+    $(document).on("click",".edit_btn",function(){
+        //1、发送ajax,根据id获取用户信息
+        //清除表单数据（表单完整重置（表单的数据，表单的样式））
+        reset_form("#editAdmin form");
+        var id = $(this).attr("edit-id");
+        $.ajax({
             url:"${pageContext.request.contextPath}/admin/findById.action?id="+id,
-            success:function(result) {
+            type:"GET",
+            success:function(result){
+                //填充用户信息
+                console.log(result);
                 $("#edit_id").val(result.extend.admin.id);
                 $("#edit_adminName").val(result.extend.admin.adminName);
                 $("#edit_password").val(result.extend.admin.adminPwd);
                 $("#edit_Name").val(result.extend.admin.realName)
                 $("#edit_sex").val(result.extend.admin.sex);
                 $("#edit_telephone").val(result.extend.admin.telephone);
-                $("#edit_Email").val(result.extend.admin.Email);
+                $("#edit_Email").val(result.extend.admin.email);
                 $("#edit_birthday").val(result.extend.admin.birthday);
                 $("#edit_remark").val(result.extend.admin.remark);
+            }});
+        //2、弹出模态框
+        $("#editAdmin").modal({
+            backdrop:"static"
+        });
+
+    });
+
+    //点击更新按钮弹出模态框。
+    $("#admin_update_btn").click(function(){
+        $.ajax({
+            url:"${pageContext.request.contextPath}/admin/update.action",
+            type:"POST",
+            data:$("#edit_admin_form").serialize(),
+            success:function (result) {
+                alert("管理员信息更新成功！");
+                to_page(1);
             },
-            error:function (result) {
-                alert(id);
+            error:function(result){
+                alert("管理员信息更新失败！");
             }
         });
-    }
-    // 执行修改用户
-    function updateAdmin() {
-        $.Post("${pageContext.request.contextPath}/admin/update.action",
-            $("#edit_admin_form").serialize(),
-            function(result){
-                if(result.code==100){
-                    alert("管理员信息更新成功！");
-                    window.location.reload();
-                }else{
-                    alert("管理员信息更新失败！");
-                    window.location.reload();
-                }
-            });
-    }
-    // 删除用户
-    function deleteAdmin(id) {
-        if(confirm('确实要删除该管理员吗?')) {
+
+    });
+
+    //单个删除
+    $(document).on("click",".delete_btn",function(){
+        //1、弹出是否确认删除对话框
+        var adminName = $(this).parents("tr").find("td:eq(2)").text();
+        var adminId = $(this).attr("del-id");
+
+        if(confirm("确认删除【"+adminName+"】吗？")){
+            //确认，发送ajax请求删除即可
             $.ajax({
-                url:"${pageContext.request.contextPath}/admin/delete.action?id="+id,
+                url:"${pageContext.request.contextPath}/admin/delete.action?id="+adminId,
                 type:"GET",
                 success:function (result) {
                     if(result.code==100){
                         alert("管理员删除成功！");
-                        window.location.reload();
+                        to_page(1);
                     }else{
                         alert("管理员删除失败！");
-                        window.location.reload();
                     }
                 }
             });
         }
-    }
+    });
+
 </script>
 
 </body></html>

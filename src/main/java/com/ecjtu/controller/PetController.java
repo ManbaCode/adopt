@@ -3,9 +3,12 @@ package com.ecjtu.controller;
 import com.ecjtu.entity.Pet;
 import com.ecjtu.service.PetService;
 import com.ecjtu.util.Message;
+import com.github.pagehelper.PageHelper;
+import com.github.pagehelper.PageInfo;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.servlet.ModelAndView;
 
@@ -22,11 +25,13 @@ public class PetController {
     @Autowired
     private PetService petService;
 
-    @RequestMapping("/getPets.action")
-    public String getPets(ModelAndView modelAndView){
+    @RequestMapping("/pets.action")
+    @ResponseBody
+    public Message getPets(@RequestParam(value = "pn",defaultValue = "1")Integer pn){
+        PageHelper.startPage(pn,4);
         List<Pet> pets = petService.getPets();
-        modelAndView.addObject("pets",pets);
-        return "admin/pet";
+        PageInfo page=new PageInfo(pets,2);
+        return Message.success().add("pageInfo",page);
     }
 
     @RequestMapping("/create.action")

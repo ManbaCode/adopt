@@ -33,6 +33,12 @@ public interface AdoptAnimalMapper {
     int updateAdoptAnimal(AdoptAnimal animal);
 
     /**
+     * 更新领养表中动物的状态
+     * @param animal 要领养宠物的id
+     * @return int
+     * */
+    int updateAdoptState(AdoptAnimal animal);
+    /**
      * 破除用户表外键关系
      * @param user_id 领养表的外键
      * */

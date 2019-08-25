@@ -26,4 +26,11 @@ public class BlogTest {
             System.out.println(b);
         }
     }
+
+    @Test
+    public void delete(){
+        int i = blogService.deleteBlog(12);
+        System.out.println(i);
+
+    }
 }

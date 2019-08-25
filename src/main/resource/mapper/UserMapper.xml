@@ -51,20 +51,20 @@
         </collection>
     </resultMap>
 
-    <select id="loginUser" parameterType="users">
+    <select id="loginUser" parameterType="users" resultType="users">
         SELECT * FROM users WHERE userName=#{userName} AND password=#{password}
     </select>
 
-    <select id="getUsers" resultMap="BaseUserMap">
-        SELECT * FROM users AS u,comment As c,t_adopt As t,pet As p WHERE u.id=c.user_id AND u.id=t.user_id AND t.pet_id = u.id AND t.pet_id = p.id
+    <select id="getUsers" resultType="users">
+        select * from users
     </select>
 
     <select id="findByName" resultMap="BaseUserMap">
-        SELECT * FROM users AS u,comment As c,t_adopt As t,pet As p WHERE u.id=c.user_id AND u.id=t.user_id AND t.pet_id = p.id AND u.userName=#{userName}
+        SELECT * FROM users WHERE userName=#{userName}
     </select>
 
     <select id="findById" resultMap="BaseUserMap">
-        SELECT * FROM users AS u,comment As c,t_adopt As t,pet As p WHERE u.id=c.user_id AND u.id=t.user_id AND t.pet_id = p.id AND u.id=#{id}
+        SELECT * FROM users WHERE id=#{id}
     </select>
 
     <delete id="deleteBatch" parameterType="int">

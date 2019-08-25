@@ -7,7 +7,6 @@
 --%>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
-<!DOCTYPE html>
 <html lang="en">
 <head>
     <title>Home</title>
@@ -33,7 +32,7 @@
     <link href="http://fonts.googleapis.com/css?family=Raleway:100,100i,200,200i,300,300i,400,400i,500,500i,600,600i,700,700i,800,800i,900,900i&amp;subset=latin-ext" rel="stylesheet">
 </head>
 <body>
-
+<jsp:include page="navigation.jsp"></jsp:include>
 <!-- //sticky navigation 首页轮播图 -->
 <div class="w3l-main" id="home1">
     <div class="container">

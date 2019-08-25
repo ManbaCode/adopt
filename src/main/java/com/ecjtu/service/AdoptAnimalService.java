@@ -3,6 +3,7 @@ package com.ecjtu.service;
 import com.ecjtu.entity.AdoptAnimal;
 import org.apache.ibatis.annotations.Param;
 
+import javax.mail.MessagingException;
 import java.util.List;
 
 /**
@@ -32,7 +33,12 @@ public interface AdoptAnimalService {
      * */
     int updateAdoptAnimal(AdoptAnimal animal);
 
-
+    /**
+     * 更新领养表的信息
+     * @param animal 宠物id
+     * @return int
+     * */
+    int updateAdoptState(AdoptAnimal animal) throws MessagingException;
     /**
      * 破除用户表外键关系
      * @param user_id 领养表的外键

@@ -2,10 +2,13 @@ package com.ecjtu.service.impl;
 
 import com.ecjtu.entity.AdoptAnimal;
 import com.ecjtu.mapper.AdoptAnimalMapper;
+import com.ecjtu.mapper.UsersMapper;
 import com.ecjtu.service.AdoptAnimalService;
+import com.ecjtu.util.MailUtil;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import javax.mail.MessagingException;
 import java.util.List;
 
 /**
@@ -17,6 +20,9 @@ public class AdoptAnimalServiceImpl implements AdoptAnimalService {
 
     @Autowired
     private AdoptAnimalMapper adoptAnimalMapper;
+
+    @Autowired
+    private UsersMapper usersMapper;
     @Override
     public int addAdoptAnimal(AdoptAnimal animal) {
         int i = adoptAnimalMapper.addAdoptAnimal(animal);
@@ -33,6 +39,22 @@ public class AdoptAnimalServiceImpl implements AdoptAnimalService {
     public int updateAdoptAnimal(AdoptAnimal animal) {
         int i = adoptAnimalMapper.updateAdoptAnimal(animal);
         return i;
+    }
+
+    @Override
+    public int updateAdoptState(AdoptAnimal animal) {
+        String email = animal.getUser().getEmail();
+        try {
+            MailUtil.sendMail(email,animal.getState());
+        } catch (MessagingException e) {
+            e.printStackTrace();
+        }
+        if(animal.getState()==2){
+        int i = adoptAnimalMapper.updateAdoptState(animal);
+        return i;}else {
+            return 0;
+        }
+
     }
 
     @Override

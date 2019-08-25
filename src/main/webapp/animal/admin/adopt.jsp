@@ -98,6 +98,16 @@
                                 <i class="fa fa-sitemap fa-fw"></i> 团队活动管理
                             </a>
                         </li>
+                        <li class="list-group-item my_font">
+                            <a href="${pageContext.request.contextPath}/animal/admin/disAgree.jsp">
+                                <i class="fa fa-sitemap fa-fw"></i> 同意领养列表
+                            </a>
+                        </li>
+                        <li class="list-group-item my_font">
+                            <a href="${pageContext.request.contextPath}/animal/admin/agree.jsp">
+                                <i class="fa fa-sitemap fa-fw"></i> 不同意领养列表
+                            </a>
+                        </li>
                     </ul>
                 </div>
             </div>
@@ -213,15 +223,6 @@
             var adoptTimeTd=$("<td></td>").append(adopt.adoptTime);
             var stateTd=$("<td></td>").append(adopt.state);
 
-            var editBtn = $("<button></button>").addClass("btn btn-primary btn-sm edit_btn")
-                .append($("<span></span>").addClass("glyphicon glyphicon-pencil")).append("同意");
-            //为编辑按钮添加一个自定义的属性，来表示当前员工id
-            editBtn.attr("edit-id",adopt.id);
-            var delBtn =  $("<button></button>").addClass("btn btn-danger btn-sm delete_btn")
-                .append($("<span></span>").addClass("glyphicon glyphicon-trash")).append("不同意");
-            //为删除按钮添加一个自定义的属性来表示当前删除的员工id
-            delBtn.attr("del-id",adopt.id);
-            var btnTd = $("<td></td>").append(editBtn).append(" ").append(delBtn);
             //var delBtn =
             //append方法执行完成以后还是返回原来的元素
             $("<tr></tr>").append(checkBoxTd)
@@ -230,7 +231,7 @@
                 .append(petNameTd)
                 .append(adoptTimeTd)
                 .append(stateTd)
-                .append(btnTd)
+
                 .appendTo("#adopt_table tbody");
         });
     }

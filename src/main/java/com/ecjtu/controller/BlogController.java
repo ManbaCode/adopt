@@ -53,7 +53,7 @@ public class BlogController {
         return "blog";
     }
 
-    @RequestMapping("addBlog.action")
+    @RequestMapping("create.action")
     @ResponseBody
     public Message addBlog(Blog blog){
         int i = blogService.addBlog(blog);
@@ -67,7 +67,8 @@ public class BlogController {
     @RequestMapping("delete.action")
     @ResponseBody
     public Message deleteBlog(Integer id){
-        if(blogService.deleteBlog(id)>0){
+        int i = blogService.deleteBlog(id);
+        if(i>0){
             return Message.success();
         }else {
             return Message.fail();

@@ -31,7 +31,10 @@ public class UserTest {
 
     @Test
     public void select1(){
-        Users user = usersMapper.findByName("张三丰");
+        Users users=new Users();
+        users.setUserName("张三丰");
+        users.setPassword("zsf123");
+        Users user = usersMapper.loginUser(users);
         System.out.println(user);
     }
 }

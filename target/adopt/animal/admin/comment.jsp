@@ -203,7 +203,7 @@
                         </label>
                         <div class="col-sm-4">
                             <input type="text" class="form-control" id="edit_userName" value="${comment.user.userName}" placeholder="用户名"
-                                   name="name">
+                                   name="userName">
                         </div>
                         <label for="edit_commentTime" class="col-sm-2 control-label">
                             评论时间
@@ -279,7 +279,7 @@
             var contentTd=$("<td></td>").append(comment.content);
             var commentTimeTd = $("<td></td>").append(comment.commentTime);
 
-
+            alert(comment.user.userName);
             var editBtn = $("<button></button>").addClass("btn btn-primary btn-sm edit_btn")
                 .append($("<span></span>").addClass("glyphicon glyphicon-pencil")).append("修改");
             //为编辑按钮添加一个自定义的属性，来表示当前员工id

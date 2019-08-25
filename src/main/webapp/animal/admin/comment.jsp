@@ -117,6 +117,16 @@
                                 <i class="fa fa-sitemap fa-fw"></i> 团队活动管理
                             </a>
                         </li>
+                        <li class="list-group-item my_font">
+                            <a href="${pageContext.request.contextPath}/animal/admin/disAgree.jsp">
+                                <i class="fa fa-sitemap fa-fw"></i> 同意领养列表
+                            </a>
+                        </li>
+                        <li class="list-group-item my_font">
+                            <a href="${pageContext.request.contextPath}/animal/admin/agree.jsp">
+                                <i class="fa fa-sitemap fa-fw"></i> 不同意领养列表
+                            </a>
+                        </li>
                     </ul>
                 </div>
             </div>
@@ -203,7 +213,7 @@
                         </label>
                         <div class="col-sm-4">
                             <input type="text" class="form-control" id="edit_userName" value="${comment.user.userName}" placeholder="用户名"
-                                   name="name">
+                                   name="userName">
                         </div>
                         <label for="edit_commentTime" class="col-sm-2 control-label">
                             评论时间
@@ -274,12 +284,17 @@
         $.each(comments,function(index,comment){
             var checkBoxTd = $("<td><input type='checkbox' class='check_item'/></td>");
             var commentIdTd = $("<td></td>").append(comment.id);
-            var userNameTd=$("<td></td>").append(comment.user.userName);
+            var nameTd;
+            if(comment.user.userName!=null){
+                nameTd=$("<td></td>").append(comment.user.userName);
+            }else{
+                nameTd=$("<td></td>").append(comment.admin.adminName);;
+            }
             var petNameTd = $("<td></td>").append(comment.pet.petName);
             var contentTd=$("<td></td>").append(comment.content);
             var commentTimeTd = $("<td></td>").append(comment.commentTime);
 
-
+            alert(comment.user.userName);
             var editBtn = $("<button></button>").addClass("btn btn-primary btn-sm edit_btn")
                 .append($("<span></span>").addClass("glyphicon glyphicon-pencil")).append("修改");
             //为编辑按钮添加一个自定义的属性，来表示当前员工id
@@ -293,7 +308,7 @@
             //append方法执行完成以后还是返回原来的元素
             $("<tr></tr>").append(checkBoxTd)
                 .append(commentIdTd)
-                .append(userNameTd)
+                .append(nameTd)
                 .append(petNameTd)
                 .append(contentTd)
                 .append(commentTimeTd)

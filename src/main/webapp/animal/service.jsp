@@ -34,8 +34,9 @@
 
 </head>
 <body>
-
+<jsp:include page="navigation.jsp"></jsp:include>
 <!-- services -->
+
 <div class="services" id="services">
     <div class="container">
         <h3 class="agile-title">Services Overview</h3>
@@ -52,32 +53,7 @@
                     consectetur adipiscing elit, sed do eiusmod tempor et dolore magna aliqua.
                 </fieldset>
             </div>
-            <div class="col-md-4 col-sm-4 col-xs-4 w3_agile_services_grid" data-aos="zoom-in">
-                <div class="ih-item circle effect1 agile_services_grid">
-                    <div class="spinner"></div>
-                    <div class="img">
-                        <a href="show.html">
-                            <img src="${pageContext.request.contextPath}/images/dog1.jpg" alt=" " class="img-responsive" />
-                        </a>
-                    </div>
-                </div>
-                <fieldset>
-                    <legend>Service 2</legend>
-                    consectetur adipiscing elit, sed do eiusmod tempor et dolore magna aliqua.
-                </fieldset>
-            </div>
-            <div class="col-md-4 col-sm-4 col-xs-4 w3_agile_services_grid" data-aos="zoom-in">
-                <div class="ih-item circle effect1 agile_services_grid">
-                    <div class="spinner"></div>
-                    <div class="img">
-                        <img src="${pageContext.request.contextPath}/images/cat8.jpg" alt=" " class="img-responsive" />
-                    </div>
-                </div>
-                <fieldset>
-                    <legend>Service 3</legend>
-                    consectetur adipiscing elit, sed do eiusmod tempor et dolore magna aliqua.
-                </fieldset>
-            </div>
+
             <div class="clearfix"> </div>
         </div>
         <div class="w3_agile_services_grids">
@@ -93,30 +69,7 @@
                     consectetur adipiscing elit, sed do eiusmod tempor et dolore magna aliqua.
                 </fieldset>
             </div>
-            <div class="col-md-4 col-sm-4 col-xs-4 w3_agile_services_grid" data-aos="zoom-in">
-                <div class="ih-item circle effect1 agile_services_grid">
-                    <div class="spinner"></div>
-                    <div class="img">
-                        <img src="${pageContext.request.contextPath}/images/dog3.jpg" alt=" " class="img-responsive" />
-                    </div>
-                </div>
-                <fieldset>
-                    <legend>Service 5</legend>
-                    consectetur adipiscing elit, sed do eiusmod tempor et dolore magna aliqua.
-                </fieldset>
-            </div>
-            <div class="col-md-4 col-sm-4 col-xs-4 w3_agile_services_grid" data-aos="zoom-in">
-                <div class="ih-item circle effect1 agile_services_grid">
-                    <div class="spinner"></div>
-                    <div class="img">
-                        <img src="${pageContext.request.contextPath}/images/cat11.jpg" alt=" " class="img-responsive" />
-                    </div>
-                </div>
-                <fieldset>
-                    <legend>Service 6</legend>
-                    consectetur adipiscing elit, sed do eiusmod tempor et dolore magna aliqua.
-                </fieldset>
-            </div>
+
             <div class="clearfix"> </div>
         </div>
     </div>
@@ -127,6 +80,9 @@
         <img src="${pageContext.request.contextPath}/images/cat1.png" alt="" />
     </div>
 </div>
+
+
+
 <!-- //services -->
 <!-- js -->
 <script src="${pageContext.request.contextPath}/JQuery/jquery-3.4.1.js"></script>

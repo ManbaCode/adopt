@@ -13,6 +13,7 @@ import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.servlet.ModelAndView;
 
+import javax.servlet.http.HttpServletRequest;
 import java.util.List;
 
 /**
@@ -93,15 +94,20 @@ public class UsersController {
 
     @RequestMapping("login.action")
     @ResponseBody
-    public String login(Users users,ModelAndView modelAndView){
-        Users users1 = usersService.loginUser(users);
-        if(users1!=null){
-            return "users/getUsers.action";
-        }else {
-            modelAndView.addObject("msg","账号和密码有误，请重新登录！");
-            return "index";
+    public Message login(Users users, HttpServletRequest request){
+        Users user = usersService.loginUser(users);
+        if(user!=null){
+            request.getSession().setAttribute("user",user);
+            return Message.success().add("user",user);
+        }else{
+            return Message.fail();
         }
     }
 
+    @RequestMapping("logout.action")
+    public String logout(HttpServletRequest request){
+        request.getSession().invalidate();
+        return "index";
+    }
 
 }

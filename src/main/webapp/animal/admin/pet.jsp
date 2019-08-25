@@ -98,6 +98,16 @@
                                 <i class="fa fa-sitemap fa-fw"></i> 团队活动管理
                             </a>
                         </li>
+                        <li class="list-group-item my_font">
+                            <a href="${pageContext.request.contextPath}/animal/admin/disAgree.jsp">
+                                <i class="fa fa-sitemap fa-fw"></i> 同意领养列表
+                            </a>
+                        </li>
+                        <li class="list-group-item my_font">
+                            <a href="${pageContext.request.contextPath}/animal/admin/agree.jsp">
+                                <i class="fa fa-sitemap fa-fw"></i> 不同意领养列表
+                            </a>
+                        </li>
                     </ul>
                 </div>
             </div>
@@ -177,7 +187,7 @@
                 <h4 class="modal-title" id="myModalLabel">新建宠物信息</h4>
             </div>
             <div class="modal-body">
-                <form class="form-horizontal" id="new_pet_form">
+                <form class="form-horizontal" id="new_pet_form" enctype="multipart/form-data">
                     <div class="form-group">
                         <label for="new_petName" class="col-sm-2 control-label">
                             宠物名
@@ -226,7 +236,7 @@
                             照片
                         </label>
                         <div class="col-sm-1">
-                            <input type="button" value="上传照片" id="new_pic" name="pic">
+                            <input type="file" value="上传照片" id="new_pic" name="pic">
                         </div>
                     </div>
                     <div class="form-group">
@@ -258,7 +268,7 @@
                 <h4 class="modal-title" id="myModalLabe">修改宠物信息</h4>
             </div>
             <div class="modal-body">
-                <form class="form-horizontal" id="edit_pet_form">
+                <form class="form-horizontal" id="edit_pet_form" enctype="multipart/form-data">
                     <input type="hidden" id="edit_id" name="id">
                     <div class="form-group">
                         <label for="edit_petName" class="col-sm-2 control-label">
@@ -299,7 +309,7 @@
                             照片
                         </label>
                         <div class="col-sm-4">
-                            <input type="text" value="${pet.pic}" id="edit_pic" name="pic">
+                            <input type="file" value="${pet.pic}" id="edit_pic" name="pic">
                         </div>
                         <label for="edit_state" class="col-sm-2 control-label">
                             领养状态

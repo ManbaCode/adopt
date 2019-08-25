@@ -7,19 +7,21 @@
 
     <insert id="addBlog" parameterType="Blog">
         INSERT INTO blog(actionTime,address,peoples,event,title)
-        VALUES (#{actionTime},#{address},#{peoples},#{event},#{title});
+        VALUES (#{actionTime},#{address},#{peoples},#{event},#{title})
     </insert>
 
-    <delete id="deleteBlog" parameterType="int">
+    <delete id="deleteBatch" parameterType="int">
         DELETE FROM blog
         <foreach collection="ids" item="id" separator="," open="where id in (" close=")">
              #{id}
         </foreach>
     </delete>
 
-    <delete id="deleteBatch" parameterType="int">
-        DELETE FROM blog where
+    <delete id="deleteBlog" parameterType="int">
+        DELETE FROM blog WHERE id=#{id}
     </delete>
+
+
     <update id="updateBlog" parameterType="Blog">
         UPDATE blog set actionTime=#{actionTime},address=#{address},peoples=#{peoples},
         event=#{event},title=#{title} WHERE id=#{id}

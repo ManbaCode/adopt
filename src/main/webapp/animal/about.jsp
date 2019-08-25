@@ -22,10 +22,10 @@
     <link rel="stylesheet" href="${pageContext.request.contextPath}/bootstrap/css/bootstrap.css" type="text/css" media="all">
     <!-- Owl-Carousel-CSS -->
     <link rel="stylesheet" href="${pageContext.request.contextPath}/css/style.css" type="text/css" media="all" />
-
+    <link href='${pageContext.request.contextPath}/css/simplelightbox.min.css' rel='stylesheet' type='text/css'>
 </head>
 <body>
-
+<jsp:include page="navigation.jsp"></jsp:include>
 <!-- welcome -->
 <div class="about" id="about">
     <div class="container">
@@ -165,7 +165,8 @@
         });
     });
 </script>
-<link href='${pageContext.request.contextPath}/css/simplelightbox.min.css' rel='stylesheet' type='text/css'>
+
+
 <!-- Light-box css -->
 <!-- //simple-lightbox -->
 

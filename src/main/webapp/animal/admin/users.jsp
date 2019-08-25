@@ -98,6 +98,16 @@
                                 <i class="fa fa-sitemap fa-fw"></i> 团队活动管理
                             </a>
                         </li>
+                        <li class="list-group-item my_font">
+                            <a href="${pageContext.request.contextPath}/animal/admin/disAgree.jsp">
+                                <i class="fa fa-sitemap fa-fw"></i> 同意领养列表
+                            </a>
+                        </li>
+                        <li class="list-group-item my_font">
+                            <a href="${pageContext.request.contextPath}/animal/admin/agree.jsp">
+                                <i class="fa fa-sitemap fa-fw"></i> 不同意领养列表
+                            </a>
+                        </li>
                     </ul>
                 </div>
             </div>
@@ -179,7 +189,7 @@
                 <h4 class="modal-title" id="myModalLabel">新建用户信息</h4>
             </div>
             <div class="modal-body">
-                <form class="form-horizontal" id="new_users_form">
+                <form class="form-horizontal" id="new_users_form" enctype="multipart/form-data">
                     <div class="form-group">
                         <label for="new_userName" class="col-sm-2 control-label">
                             用户名字
@@ -263,20 +273,20 @@
                 <h4 class="modal-title" id="myModalLabe">修改用户信息</h4>
             </div>
             <div class="modal-body">
-                <form class="form-horizontal" id="edit_user_form">
+                <form class="form-horizontal" id="edit_user_form" enctype="multipart/form-data">
                     <input type="hidden" id="edit_id" name="id">
                     <div class="form-group">
                         <label for="edit_userName" class="col-sm-2 control-label">
                             用户名称
                         </label>
                         <div class="col-sm-4">
-                            <input type="text" class="form-control" id="edit_userName" placeholder="用户名称" value="${users.userName}" name="userName">
+                            <input type="text" class="form-control" id="edit_userName" placeholder="用户名称" value="${user.userName}" name="userName">
                         </div>
                         <label for="edit_password" class="col-sm-2 control-label">
                             用户密码
                         </label>
                         <div class="col-sm-4">
-                            <input type="text" class="form-control" id="edit_password" placeholder="用户名称" value="${users.password}" name="password">
+                            <input type="text" class="form-control" id="edit_password" placeholder="用户密码" value="${user.password}" name="password">
                         </div>
                     </div>
                     <div class="form-group">
@@ -284,7 +294,7 @@
                             性别
                         </label>
                         <div class="col-sm-4">
-                            <select class="form-control" id="edit_sex" value="${users.sex}" name="sex">
+                            <select class="form-control" id="edit_sex" value="${user.sex}" name="sex">
                                 <option value="男">男</option>
                                 <option value="女">女</option>
                             </select>
@@ -293,7 +303,7 @@
                             电话号码
                         </label>
                         <div class="col-sm-4">
-                            <input type="text" class="form-control" id="edit_telephone" placeholder="电话" value="${users.telephone}" name="telephone">
+                            <input type="text" class="form-control" id="edit_telephone" placeholder="电话" value="${user.telephone}" name="telephone">
                         </div>
                     </div>
                     <div class="form-group">
@@ -301,13 +311,13 @@
                             Email
                         </label>
                         <div class="col-sm-4">
-                            <input type="text" class="form-control" id="edit_Email" placeholder="Email" value="${users.email}"  name="Email">
+                            <input type="text" class="form-control" id="edit_Email" placeholder="Email" value="${user.email}"  name="Email">
                         </div>
                         <label for="edit_address" class="col-sm-2 control-label">
                             地址
                         </label>
                         <div class="col-sm-4">
-                            <input type="text" class="form-control" id="edit_address" placeholder="地址" value="${users.address}" name="address">
+                            <input type="text" class="form-control" id="edit_address" placeholder="地址" value="${user.address}" name="address">
                         </div>
                     </div>
                     <div class="form-group">
@@ -315,7 +325,7 @@
                             经历
                         </label>
                         <div class="col-sm-4">
-                            <select class="form-control" id="edit_state" value="${users.state}" name="state">
+                            <select class="form-control" id="edit_state" value="${user.state}" name="state">
                                 <option value="0">有领养经历</option>
                                 <option value="1">无领养经历</option>
                             </select>
@@ -545,11 +555,11 @@
             type:"POST",
             data:$("#edit_user_form").serialize(),
             success:function (result) {
-                alert("管理员信息更新成功！");
+                alert("用户信息更新成功！");
                 to_page(1);
             },
             error:function(result){
-                alert("管理员信息更新失败！");
+                alert("用户信息更新失败！");
             }
         });
 
@@ -561,18 +571,17 @@
         var userName = $(this).parents("tr").find("td:eq(2)").text();
         var userId = $(this).attr("del-id");
 
-        if(confirm("确认删除【"+useerName+"】吗？")){
+        if(confirm("确认删除【"+userName+"】吗？")){
             //确认，发送ajax请求删除即可
             $.ajax({
                 url:"${pageContext.request.contextPath}/user/delete.action?id="+userId,
                 type:"GET",
                 success:function (result) {
-                    if(result.code==100){
                         alert("用户删除成功！");
                         to_page(1);
-                    }else{
-                        alert("用户删除失败！");
-                    }
+                },
+                error:function (result) {
+                    alert("删除失败")
                 }
             });
         }

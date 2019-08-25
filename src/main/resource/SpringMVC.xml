@@ -25,6 +25,13 @@
 <!--    </bean>-->
 
 
+    <!-- 文件上传,id必须设置为multipartResolver -->
+    <bean id="multipartResolver"
+          class="org.springframework.web.multipart.commons.CommonsMultipartResolver">
+        <!-- 设置文件上传大小 -->
+        <property name="maxUploadSize" value="5000000" />
+    </bean>
+
     <mvc:annotation-driven/>
     <!--配置SpringMVC无法使用静态文件的问题-->
     <mvc:default-servlet-handler/>

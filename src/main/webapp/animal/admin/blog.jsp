@@ -98,6 +98,16 @@
                                 <i class="fa fa-sitemap fa-fw"></i> 团队活动管理
                             </a>
                         </li>
+                        <li class="list-group-item my_font">
+                            <a href="${pageContext.request.contextPath}/animal/admin/disAgree.jsp">
+                                <i class="fa fa-sitemap fa-fw"></i> 同意领养列表
+                            </a>
+                        </li>
+                        <li class="list-group-item my_font">
+                            <a href="${pageContext.request.contextPath}/animal/admin/agree.jsp">
+                                <i class="fa fa-sitemap fa-fw"></i> 不同意领养列表
+                            </a>
+                        </li>
                     </ul>
                 </div>
             </div>
@@ -192,7 +202,7 @@
                             活动时间
                         </label>
                         <div class="col-sm-10">
-                            <input type="datetime-local" class="form-control" id="new_actionTime" placeholder="活动时间" name="actionName">
+                            <input type="date" class="form-control" id="new_actionTime" placeholder="活动时间" name="actionTime">
                         </div>
                     </div>
                     <div class="form-group">
@@ -287,7 +297,7 @@
             </div>
             <div class="modal-footer">
                 <button type="button" class="btn btn-default" data-dismiss="modal">关闭</button>
-                <button type="button" class="btn btn-primary" id="blo">保存修改</button>
+                <button type="button" class="btn btn-primary" id="blog_edit_btn">保存修改</button>
             </div>
         </div>
     </div>
@@ -503,7 +513,7 @@
     });
 
     //点击更新按钮弹出模态框。
-    $("#blog_update_btn").click(function(){
+    $("#blog_edit_btn").click(function(){
         $.ajax({
             url:"${pageContext.request.contextPath}/blog/update.action",
             type:"POST",
@@ -531,12 +541,12 @@
                 url:"${pageContext.request.contextPath}/blog/delete.action?id="+id,
                 type:"GET",
                 success:function (result) {
-                    if(result.code==100){
+
                         alert("活动删除成功！");
                         to_page(1);
-                    }else{
-                        alert("活动删除失败！");
-                    }
+                },
+                error:function (result) {
+                    alert("活动删除失败")
                 }
             });
         }

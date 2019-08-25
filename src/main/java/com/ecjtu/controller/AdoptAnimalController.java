@@ -2,6 +2,7 @@ package com.ecjtu.controller;
 
 import com.ecjtu.entity.AdoptAnimal;
 import com.ecjtu.service.AdoptAnimalService;
+import com.ecjtu.util.MailUtil;
 import com.ecjtu.util.Message;
 import com.github.pagehelper.PageHelper;
 import com.github.pagehelper.PageInfo;
@@ -12,6 +13,7 @@ import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.servlet.ModelAndView;
 
+import javax.mail.MessagingException;
 import java.util.List;
 
 /**
@@ -24,6 +26,8 @@ public class AdoptAnimalController {
 
     @Autowired
     private AdoptAnimalService animalService;
+
+
 
 
     @RequestMapping("adopts.action")
@@ -65,6 +69,32 @@ public class AdoptAnimalController {
         }
     }
 
+    @RequestMapping("disAgree.action")
+    @ResponseBody
+    public Message updateAdoptState(Integer id) throws MessagingException {
+        AdoptAnimal animal=new AdoptAnimal();
+        animal.setId(id);
+        animal.setState(0);
+        int i = animalService.updateAdoptState(animal);
+        if(i>0){
+            return Message.success();
+        }else{
+            return Message.fail();
+        }
+    }
+
+    @RequestMapping("agree.action")
+    @ResponseBody
+    public Message updateAdoptStates(Integer id) throws MessagingException {
+        AdoptAnimal animal=new AdoptAnimal();
+        animal.setId(id);
+        animal.setState(2);
+        if(animalService.updateAdoptState(animal)>0){
+            return Message.success();
+        }else{
+            return Message.fail();
+        }
+    }
     @RequestMapping("findById.action")
     @ResponseBody
     public Message findById(Integer id){

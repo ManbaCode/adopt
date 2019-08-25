@@ -355,9 +355,9 @@
 
     var totalRecord,currentPage;
 
-    $(function(){
-        to_page(1);
-    });
+    // $(function(){
+    //     to_page(1);
+    // });
     function to_page(pn){
         $.ajax({
             url:"${pageContext.request.contextPath}/admin/admins.action",
@@ -512,7 +512,7 @@
             error:function (result) {
                 console.log(result);
                 alert("管理员创建失败");
-
+                to_page(1);
             }
         });
     });
@@ -558,6 +558,7 @@
             },
             error:function(result){
                 alert("管理员信息更新失败！");
+                to_page(1);
             }
         });
 
@@ -580,6 +581,7 @@
                         to_page(1);
                     }else{
                         alert("管理员删除失败！");
+                        to_page(1);
                     }
                 }
             });
@@ -587,12 +589,11 @@
     });
     $("#admin_find_modal_btn").click(function () {
         var adminName=$("#findByName").val();
-        alert(adminName);
         $.ajax({
             url:"${pageContext.request.contextPath}/admin/findByName.action?adminName="+adminName,
             type:"Get",
-            async:"true",
             success:function (result) {
+                console.log(result);
                 //1、解析并显示员工数据
                 build_admins_table(result);
             },

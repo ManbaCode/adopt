@@ -18,11 +18,11 @@
     <link rel="stylesheet" href="${pageContext.request.contextPath}/css/show.css">
     <script src="${pageContext.request.contextPath}/js/jquery-2.2.3.min.js"></script>
     <script src="${pageContext.request.contextPath}/bootstrap/js/bootstrap.js"></script>
-    <script src="${pageContext.request.contextPath}/js/jquery.min.js" type="text/javascript"></script>
     <script src="${pageContext.request.contextPath}/js/jquery.slideBox.min.js" type="text/javascript"></script>
     <script src="${pageContext.request.contextPath}/js/jquery.comment.js"></script>
 </head>
 <body>
+<jsp:include page="navigation.jsp"></jsp:include>
 <div>
     <div>
         <h2>待领养的动物</h2>

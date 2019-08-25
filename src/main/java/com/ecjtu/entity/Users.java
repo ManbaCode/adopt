@@ -26,9 +26,10 @@ public class Users {
     public Users() {
     }
 
-    public Users(Integer id, String userName, String sex, Integer age, String telephone, String email, String address, String pic, Integer state, List<Comment> commentList, List<AdoptAnimal> animalList) {
+    public Users(Integer id, String userName, String password, String sex, Integer age, String telephone, String email, String address, String pic, Integer state, List<Comment> commentList, List<AdoptAnimal> animalList) {
         this.id = id;
         this.userName = userName;
+        this.password = password;
         this.sex = sex;
         this.age = age;
         this.telephone = telephone;
@@ -141,6 +142,7 @@ public class Users {
         return "Users{" +
                 "id=" + id +
                 ", userName='" + userName + '\'' +
+                ", password='" + password + '\'' +
                 ", sex='" + sex + '\'' +
                 ", age=" + age +
                 ", telephone='" + telephone + '\'' +

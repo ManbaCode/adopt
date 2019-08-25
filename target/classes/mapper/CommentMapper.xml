@@ -13,7 +13,7 @@
     </delete>
 
     <update id="updateComment" parameterType="comment">
-        UPDATE SET  user_id=#{user.id},pet_id=#{ped_id},commentTime=#{commentTime},content=#{content} WHERE id=#{id}
+        UPDATE comment SET  user_id=#{user.id},pet_id=#{ped_id},commentTime=#{commentTime},content=#{content} WHERE id=#{id}
     </update>
 
     <update id="updateRelationUser" parameterType="int">
@@ -99,7 +99,6 @@
                 c.pet_id=p.id and a.id=c.admin_id and c.id=#{id,jdbcType=INTEGER}
             </if>
         </where>
-
     </select>
 
     <delete id="deleteBatch" parameterType="int">

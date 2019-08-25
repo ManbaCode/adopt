@@ -7,14 +7,15 @@ import com.github.pagehelper.PageHelper;
 import com.github.pagehelper.PageInfo;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
-import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.servlet.ModelAndView;
 
+import java.text.DateFormat;
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
+import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
 
@@ -28,7 +29,6 @@ public class AdminController {
 
     @Autowired
     private AdminService adminService;
-
 
 
     @RequestMapping("/admins.action")
@@ -86,11 +86,6 @@ public class AdminController {
     @ResponseBody
     public Message findById(Integer id) throws ParseException {
         Admin admin = adminService.findById(id);
-        SimpleDateFormat simpleDateFormat = new SimpleDateFormat("yyyy-MM-dd");
-        String dt= simpleDateFormat.format(admin.getBirthday());
-        Date parse = simpleDateFormat.parse(dt);
-        System.out.println(parse);
-        admin.setBirthday(parse);
         if(admin!=null){
             return Message.success().add("admin",admin);
         }else{
@@ -98,14 +93,12 @@ public class AdminController {
         }
     }
     @RequestMapping("/findByName.action")
-    public String findByName(String adminName, ModelAndView modelAndView){
+    @ResponseBody
+    public Message findByName(String adminName){
         Admin admin = adminService.findByName(adminName);
-        if(admin!=null){
-            modelAndView.addObject("admins",admin);
-            return "admin/admin";
-        }else{
-            return null;
-        }
+        List<Admin> page=new ArrayList<>();
+        page.add(admin);
+        System.out.println(page);
+        return Message.success().add("pageInfo",page);
     }
-
 }

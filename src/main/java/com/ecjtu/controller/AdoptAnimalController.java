@@ -67,12 +67,12 @@ public class AdoptAnimalController {
 
     @RequestMapping("findById.action")
     @ResponseBody
-    public AdoptAnimal findById(Integer id){
-        AdoptAnimal byId = animalService.findById(id);
-        if(byId!=null){
-            return byId;
+    public Message findById(Integer id){
+        AdoptAnimal animal = animalService.findById(id);
+        if(animal!=null){
+            return Message.success().add("animal",animal);
         }else{
-            return null;
+            return Message.fail();
         }
     }
 }

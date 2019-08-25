@@ -70,7 +70,7 @@
                 <div id="collapseListGroup3" class="panel-collapse collapse in" role="tabpanel" aria-labelledby="collapseListGroupHeading3">
                     <ul class="list-group">
                         <li class="list-group-item my_font">
-                            <a href="${pageContext.request.contextPath}/animal/admin/user.jsp">
+                            <a href="${pageContext.request.contextPath}/animal/admin/users.jsp">
                                 <i class="fa fa-flash fa-fw"></i> 用户信息
                             </a>
                         </li>
@@ -118,10 +118,10 @@
             <div class="panel-body">
                 <form class="form-inline" method="get" >
                     <div class="form-group">
-                        <label for="fingByName">管理员名称</label>
-                        <input type="text" class="form-control" id="fingByName" value="" name="adminName">
+                        <label for="findByName">管理员名称</label>
+                        <input type="text" class="form-control" id="findByName" value="" name="adminName">
                     </div>
-                    <button type="submit" class="btn btn-primary">查询</button>
+                    <button type="submit" class="btn btn-primary" id="admin_find_modal_btn">查询</button>
                 </form>
             </div>
         </div>
@@ -374,6 +374,7 @@
         });
     }
 
+
     function build_admins_table(result){
         //清空table表格
         $("#admin_table tbody").empty();
@@ -584,6 +585,23 @@
             });
         }
     });
+    $("#admin_find_modal_btn").click(function () {
+        var adminName=$("#findByName").val();
+        alert(adminName);
+        $.ajax({
+            url:"${pageContext.request.contextPath}/admin/findByName.action?adminName="+adminName,
+            type:"Get",
+            async:"true",
+            success:function (result) {
+                //1、解析并显示员工数据
+                build_admins_table(result);
+            },
+            error:function (result) {
+                alert("拆个年间哎你是")
+            }
+        });
+    })
+
 
 </script>
 

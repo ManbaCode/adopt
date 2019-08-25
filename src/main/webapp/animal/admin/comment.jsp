@@ -88,7 +88,7 @@
                 <div id="collapseListGroup3" class="panel-collapse collapse in" role="tabpanel" aria-labelledby="collapseListGroupHeading3">
                     <ul class="list-group">
                         <li class="list-group-item my_font">
-                            <a href="${pageContext.request.contextPath}/animal/admin/user.jsp">
+                            <a href="${pageContext.request.contextPath}/animal/admin/users.jsp">
                                 <i class="fa fa-flash fa-fw"></i> 用户信息
                             </a>
                         </li>
@@ -151,6 +151,9 @@
                     <table class="table table-bordered table-striped" id="comment_table">
                         <thead>
                         <tr>
+                            <th>
+                                <input type="checkbox" id="check_all"/>
+                            </th>
                             <th>评论编号</th>
                             <th>评论人</th>
                             <th>评论动物</th>
@@ -192,21 +195,21 @@
                 <h4 class="modal-title" id="myModalLabe">修改用户评论记录</h4>
             </div>
             <div class="modal-body">
-                <form class="form-horizontal" id="edit_pinglun_form">
-                    <input type="hidden" id="edit_pinglunId" name="pinglunId">
+                <form class="form-horizontal" id="edit_pinglun_form" id="edit_comment_form">
+                    <input type="hidden" id="edit_id" name="id">
                     <div class="form-group">
-                        <label for="edit_crmUserName" class="col-sm-2 control-label">
+                        <label for="edit_userName" class="col-sm-2 control-label">
                             用户名
                         </label>
                         <div class="col-sm-4">
-                            <input type="text" class="form-control" id="edit_crmUserName" value="${comment.user.userName}" placeholder="用户名"
+                            <input type="text" class="form-control" id="edit_userName" value="${comment.user.userName}" placeholder="用户名"
                                    name="name">
                         </div>
-                        <label for="edit_commmentTime" class="col-sm-2 control-label">
+                        <label for="edit_commentTime" class="col-sm-2 control-label">
                             评论时间
                         </label>
                         <div class="col-sm-4">
-                            <input type="datetime-local" class="form-control" id="edit_commmentTime" placeholder="评论时间" value="${comment.commentTime}"
+                            <input type="date" class="form-control" id="edit_commentTime" placeholder="评论时间" value="${comment.commentTime}"
                                    name="commentTime">
                         </div>
                     </div>
@@ -218,7 +221,6 @@
                             <textarea class="form-control" id="edit_content" placeholder="内容" value= "${comment.content}" name="content" ></textarea>
                         </div>
                     </div>
-
                 </form>
             </div>
             <div class="modal-footer">
@@ -375,6 +377,70 @@
         $(ele).find("*").removeClass("has-error has-success");
         $(ele).find(".help-block").text("");
     }
+
+    //点击编辑按钮弹出模态框。
+    $(document).on("click",".edit_btn",function(){
+        //1、发送ajax,根据id获取用户信息
+        //清除表单数据（表单完整重置（表单的数据，表单的样式））
+        reset_form("#editComment form");
+        var id = $(this).attr("edit-id");
+        $.ajax({
+            url:"${pageContext.request.contextPath}/comment/findById.action",
+            type:"POST",
+            date:$("#edit_comment_form").serialize(),
+            success:function(result){
+                //填充用户信息
+                console.log(result);
+                $("#edit_id").val(result.extend.comment.id);
+                $("#edit_commentTime").val(result.extend.comment.commentTime);
+                $("#edit_content").val(result.extend.comment.content);
+            }});
+        //2、弹出模态框
+        $("#editComment").modal({
+            backdrop:"static"
+        });
+
+    });
+
+    //点击更新按钮弹出模态框。
+    $("#comment_update_btn").click(function(){
+        $.ajax({
+            url:"${pageContext.request.contextPath}/comment/update.action",
+            type:"POST",
+            data:$("#edit_comment_form").serialize(),
+            success:function (result) {
+                alert("评论更新成功！");
+                to_page(1);
+            },
+            error:function(result){
+                alert("评论更新失败！");
+            }
+        });
+
+    });
+
+    //单个删除
+    $(document).on("click",".delete_btn",function(){
+        //1、弹出是否确认删除对话框
+        var content = $(this).parents("tr").find("td:eq(2)").text();
+        var commentId = $(this).attr("del-id");
+
+        if(confirm("确认删除【"+content+"】吗？")){
+            //确认，发送ajax请求删除即可
+            $.ajax({
+                url:"${pageContext.request.contextPath}/comment/delete.action?id="+commentId,
+                type:"GET",
+                success:function (result) {
+                    if(result.code==100){
+                        alert("评论删除成功！");
+                        to_page(1);
+                    }else{
+                        alert("评论删除失败！");
+                    }
+                }
+            });
+        }
+    });
 
 </script>
 

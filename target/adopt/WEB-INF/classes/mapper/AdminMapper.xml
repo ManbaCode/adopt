@@ -59,7 +59,7 @@
     </select>
 
     <select id="findByName" resultMap="BaseAdminMap" parameterType="string">
-        SELECT * FROM (admin  LEFT JOIN comment ON admin.id=comment.admin_id) LEFT JOIN pet ON comment.pet_id=pet.id WHERE a.id=#{id} WHERE a.adminName=#{adminName}
+        SELECT * FROM (admin  LEFT JOIN comment ON admin.id=comment.admin_id) LEFT JOIN pet ON comment.pet_id=pet.id  WHERE admin.adminName=#{adminName}
     </select>
 
     <delete id="deleteBatch" parameterType="int">

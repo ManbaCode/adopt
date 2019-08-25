@@ -51,7 +51,7 @@ public interface CommentMapper {
 
     /**
      * 根据评论表id查询信息
-     *
+     * @param comment
      * @return comment
      * */
     Comment findById(Comment comment);

@@ -17,7 +17,8 @@ public class Admin {
     private String realName;
     private String telephone;
     private String Email;
-
+    @JsonFormat(pattern = "yyyy-MM-dd")
+    @DateTimeFormat(pattern = "yyyy-MM-dd")
     private Date birthday;
     private String sex;
     private String remark;

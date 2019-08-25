@@ -6,6 +6,7 @@
   To change this template use File | Settings | File Templates.
 --%>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -33,41 +34,6 @@
 
 </head>
 <body>
-<!--导航栏-->
-<!-- sticky navigation -->
-<div class="nav-links">
-    <nav class='navbar navbar-default'>
-        <div class='container'>
-            <div class='collapse navbar-collapse'>
-                <ul>
-                    <li>
-                        <a href="index.html">主页</a>
-                    </li>
-                    <li>
-                        <a href="about.html">宠物知识</a>
-                    </li>
-                    <li>
-                        <a href="services.html">领养中心</a>
-                    </li>
-                    <li>
-                        <a href="blog.html">团队博客</a>
-                    </li>
-                    <li>
-                        <a href="team.html">团队展示</a>
-                    </li>
-
-                    <li>
-                        <button class="btn-primary btn-lg" data-toggle="modal" data-target="#login">注册/登录</button>
-                    </li>
-                    <li>
-                        <button class="btn-primary btn-lg" data-toggle="modal" data-target="#editUsers">修改</button>
-                    </li>
-                </ul>
-            </div>
-        </div>
-    </nav>
-</div>
-<!-- //sticky navigation -->
 
 <!-- services -->
 <div class="services" id="services">

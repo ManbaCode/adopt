@@ -14,25 +14,18 @@
         <context:include-filter type="annotation" expression="org.springframework.stereotype.Controller"/>
     </context:component-scan>
 
-    <mvc:annotation-driven conversion-service="conversionService"/>
-    <bean id="conversionService" class="org.springframework.context.support.ConversionServiceFactoryBean">
-        <property name="converters">
-            <set>
-                <bean class="com.ecjtu.util.DataConvert"></bean>
-            </set>
-        </property>
-    </bean>
-<!--    &lt;!&ndash;配置拦截器&ndash;&gt;-->
-<!--    <mvc:interceptors>-->
-<!--        <mvc:interceptor>-->
-<!--            <mvc:mapping path="/**"/>-->
-<!--            <bean class="com.ecjtu.util.MyInterceptor"></bean>-->
-<!--        </mvc:interceptor>-->
-<!--    </mvc:interceptors>-->
 
-    <!--配置注解驱动-->
-    <mvc:annotation-driven></mvc:annotation-driven>
+<!--    <mvc:annotation-driven conversion-service="conversionService"></mvc:annotation-driven>-->
+<!--    <bean id="conversionService" class="org.springframework.context.support.ConversionServiceFactoryBean">-->
+<!--        <property name="converters">-->
+<!--            <set>-->
+<!--                <bean class="com.ecjtu.util.DataConvert"></bean>-->
+<!--            </set>-->
+<!--        </property>-->
+<!--    </bean>-->
 
+
+    <mvc:annotation-driven/>
     <!--配置SpringMVC无法使用静态文件的问题-->
     <mvc:default-servlet-handler/>
     <!--配置视图解析器-->

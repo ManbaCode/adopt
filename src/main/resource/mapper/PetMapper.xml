@@ -12,13 +12,13 @@
         DELETE FROM pet WHERE id=#{id}
     </delete>
 
-    <update id="updatePet" parameterType="Pet">
-        UPDATE SET petName=#{petName},petType=#{petType},sex=#{sex},birthday=#{birthday},pic=#{pic},state=#{state},remark=#{remark}
+    <update id="updatePet" parameterType="pet">
+        UPDATE pet SET petName=#{petName},petType=#{petType},sex=#{sex},birthday=#{birthday},pic=#{pic},state=#{state},remark=#{remark} WHERE id=#{id}
     </update>
 
 
 
-    <resultMap id="BasePetMap" type="Pet">
+    <resultMap id="BasePetMap" type="pet">
         <id column="id" property="id"></id>
         <result column="petName" property="petName"></result>
         <result column="petType" property="petType"></result>
@@ -80,11 +80,13 @@
 
 
     <select id="findById" resultMap="BasePetMap">
-       select * from (pet  left join t_adopt on pet.id=t_adopt.pet_id) left join users on t_adopt.user_id=users.id where pet.id=#{id}
+       select * from (pet  left join t_adopt on pet.id=t_adopt.pet_id) left join users on t_adopt.user_id=users.id
+       where pet.id=#{id}
     </select>
 
     <select id="findByName" resultMap="BasePetMap">
-        select * from (pet  left join t_adopt on pet.id=t_adopt.pet_id) left join users on t_adopt.user_id=users.id where pet.petName=#{petName}
+        select * from (pet  left join t_adopt on pet.id=t_adopt.pet_id) left join users on t_adopt.user_id=users.id
+        where pet.petName=#{petName}
     </select>
 
     <delete id="deleteBatch" parameterType="int">

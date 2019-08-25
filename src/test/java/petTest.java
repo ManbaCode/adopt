@@ -6,6 +6,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.test.context.ContextConfiguration;
 import org.springframework.test.context.junit4.SpringJUnit4ClassRunner;
 
+import java.util.Date;
 import java.util.List;
 
 /**
@@ -24,5 +25,10 @@ public class petTest {
     public void select(){
         List<Pet> pets = petMapper.getPets();
         System.out.println(pets);
+    }
+
+    @Test
+    public void update(){
+
     }
 }

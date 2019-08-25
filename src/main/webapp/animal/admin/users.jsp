@@ -69,7 +69,7 @@
                 <div id="collapseListGroup3" class="panel-collapse collapse in" role="tabpanel" aria-labelledby="collapseListGroupHeading3">
                     <ul class="list-group">
                         <li class="list-group-item my_font">
-                            <a href="${pageContext.request.contextPath}/animal/admin/user.jsp">
+                            <a href="${pageContext.request.contextPath}/animal/admin/users.jsp">
                                 <i class="fa fa-flash fa-fw"></i> 用户信息
                             </a>
                         </li>
@@ -134,6 +134,9 @@
                     <table class="table table-bordered table-striped" id="user_table">
                         <thead>
                         <tr>
+                            <th>
+                                <input type="checkbox" id="check_all"/>
+                            </th>
                             <th>编号</th>
                             <th>用户名</th>
                             <th>性别</th>
@@ -267,13 +270,13 @@
                             用户名称
                         </label>
                         <div class="col-sm-4">
-                            <input type="text" class="form-control" id="edit_userName" placeholder="用户名称" value="${user.userName}" name="userName">
+                            <input type="text" class="form-control" id="edit_userName" placeholder="用户名称" value="${users.userName}" name="userName">
                         </div>
                         <label for="edit_password" class="col-sm-2 control-label">
                             用户密码
                         </label>
                         <div class="col-sm-4">
-                            <input type="text" class="form-control" id="edit_password" placeholder="用户名称" value="${user.password}" name="password">
+                            <input type="text" class="form-control" id="edit_password" placeholder="用户名称" value="${users.password}" name="password">
                         </div>
                     </div>
                     <div class="form-group">
@@ -281,7 +284,7 @@
                             性别
                         </label>
                         <div class="col-sm-4">
-                            <select class="form-control" id="edit_sex" value="${user.sex}" name="sex">
+                            <select class="form-control" id="edit_sex" value="${users.sex}" name="sex">
                                 <option value="男">男</option>
                                 <option value="女">女</option>
                             </select>
@@ -290,7 +293,7 @@
                             电话号码
                         </label>
                         <div class="col-sm-4">
-                            <input type="text" class="form-control" id="edit_telephone" placeholder="电话" value="${user.telephone}" name="telephone">
+                            <input type="text" class="form-control" id="edit_telephone" placeholder="电话" value="${users.telephone}" name="telephone">
                         </div>
                     </div>
                     <div class="form-group">
@@ -298,13 +301,13 @@
                             Email
                         </label>
                         <div class="col-sm-4">
-                            <input type="text" class="form-control" id="edit_Email" placeholder="Email" value="${user.email}"  name="Email">
+                            <input type="text" class="form-control" id="edit_Email" placeholder="Email" value="${users.email}"  name="Email">
                         </div>
                         <label for="edit_address" class="col-sm-2 control-label">
                             地址
                         </label>
                         <div class="col-sm-4">
-                            <input type="text" class="form-control" id="edit_address" placeholder="地址" value="${user.address}" name="address">
+                            <input type="text" class="form-control" id="edit_address" placeholder="地址" value="${users.address}" name="address">
                         </div>
                     </div>
                     <div class="form-group">
@@ -312,7 +315,7 @@
                             经历
                         </label>
                         <div class="col-sm-4">
-                            <select class="form-control" id="edit_state" name="state">
+                            <select class="form-control" id="edit_state" value="${users.state}" name="state">
                                 <option value="0">有领养经历</option>
                                 <option value="1">无领养经历</option>
                             </select>
@@ -478,82 +481,102 @@
         $(ele).find(".help-block").text("");
     }
 
+    //点击新增按钮弹出模态框。
+    $("#user_add_modal_btn").click(function(){
+        //清除表单数据（表单完整重置（表单的数据，表单的样式））
+        reset_form("#newUsers form");
+        //弹出模态框
+        $("#newUsers").modal({
+            backdrop:"static"
+        });
+    });
 
-
-
-
-    //清空新建班级窗口中的数据
-    function clearCrmclass() {
-        $("#new_userName").val("");
-        $("#new_password").val("");
-        $("#new_sex").val("");
-        $("#new_telephone").val("");
-        $("#new_Email").val("");
-        $("#new_address").val("");
-        $("#new_state").val("");
-
-    }
-    // 创建用户
-    function createcrmclass() {
-        $.Post("crmclass/create.action",
-            $("#new_crmclass_form").serialize(),function(data){
-                if(data =="OK"){
-                    alert("班级创建成功！");
-                    window.location.reload();
-                }else{
-                    alert("班级创建失败！");
-                    window.location.reload();
-                }
-            });
-    }
-    // 通过id获取修改的用户信息
-    function editcrmclass(id) {
+    //点击保存，保存员工。
+    $("#user_save_btn").click(function(){
+        //2、发送ajax请求保存员工
         $.ajax({
-            type:"get",
-            url:"crmclass/getcrmclassById.action",
-            data:{"id":id},
-            success:function(data) {
-                $("#edit_id").val(data.id);
-                $("#edit_userName").val(data.userName);
-                $("#edit_password").val(data.password);
-                $("#edit_sex").val(data.sex);
-                $("#edit_telephone").val(data.telephone);
-                $("#edit_Email").val(data.Email);
-                $("#edit_address").val(data.address);
-                $("#edit_state").val(data.state);
+            url:"${pageContext.request.contextPath}/user/create.action",
+            type:"POST",
+            data:$("#newUsers form").serialize(),
+            success:function (result) {
+                alert("管理员创建成功");
+                to_page(1);
+            },
+            error:function (result) {
+                console.log(result);
+                alert("管理员创建失败");
 
             }
         });
-    }
-    // 执行修改用户
-    function updateUsers() {
-        $.Post("crmclass/update.action",
-            $("#edit_crmclass_form").serialize(),
-            function(data){
-                if(data =="OK"){
-                    alert("班级信息更新成功！");
-                    window.location.reload();
-                }else{
-                    alert("班级信息更新失败！");
-                    window.location.reload();
+    });
+
+    //点击编辑按钮弹出模态框。
+    $(document).on("click",".edit_btn",function(){
+        //1、发送ajax,根据id获取用户信息
+        //清除表单数据（表单完整重置（表单的数据，表单的样式））
+        reset_form("#editUsers form");
+        var id = $(this).attr("edit-id");
+        $.ajax({
+            url:"${pageContext.request.contextPath}/user/findById.action?id="+id,
+            type:"GET",
+            success:function(result){
+                //填充用户信息
+                console.log(result);
+                $("#edit_id").val(result.extend.users.id);
+                $("#edit_userName").val(result.extend.users.userName);
+                $("#edit_password").val(result.extend.users.password);
+                $("#edit_sex").val(result.extend.users.sex);
+                $("#edit_telephone").val(result.extend.users.telephone);
+                $("#edit_Email").val(result.extend.users.email);
+                $("#edit_address").val(result.extend.users.address);
+                $("#edit_state").val(result.extend.users.state);
+            }});
+        //2、弹出模态框
+        $("#editUsers").modal({
+            backdrop:"static"
+        });
+
+    });
+
+    //点击更新按钮弹出模态框。
+    $("#user_update_btn").click(function(){
+        $.ajax({
+            url:"${pageContext.request.contextPath}/user/update.action",
+            type:"POST",
+            data:$("#edit_user_form").serialize(),
+            success:function (result) {
+                alert("管理员信息更新成功！");
+                to_page(1);
+            },
+            error:function(result){
+                alert("管理员信息更新失败！");
+            }
+        });
+
+    });
+
+    //单个删除
+    $(document).on("click",".delete_btn",function(){
+        //1、弹出是否确认删除对话框
+        var userName = $(this).parents("tr").find("td:eq(2)").text();
+        var userId = $(this).attr("del-id");
+
+        if(confirm("确认删除【"+useerName+"】吗？")){
+            //确认，发送ajax请求删除即可
+            $.ajax({
+                url:"${pageContext.request.contextPath}/user/delete.action?id="+userId,
+                type:"GET",
+                success:function (result) {
+                    if(result.code==100){
+                        alert("用户删除成功！");
+                        to_page(1);
+                    }else{
+                        alert("用户删除失败！");
+                    }
                 }
             });
-    }
-    // 删除用户
-    function deleteUsers(id) {
-        if(confirm('确实要删除该用户吗?')) {
-            $.Post("/crmclass/delete.action",{"id":id},
-                function(data){
-                    if(data =="OK"){
-                        alert("用户删除成功！");
-                        window.location.reload();
-                    }else{
-                        alert("用户班级失败！");
-                        window.location.reload();
-                    }
-                });
         }
-    }
+    });
 </script>
 
 </body></html>

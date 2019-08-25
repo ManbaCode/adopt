@@ -69,7 +69,7 @@
                 <div id="collapseListGroup3" class="panel-collapse collapse in" role="tabpanel" aria-labelledby="collapseListGroupHeading3">
                     <ul class="list-group">
                         <li class="list-group-item my_font">
-                            <a href="${pageContext.request.contextPath}/animal/admin/user.jsp">
+                            <a href="${pageContext.request.contextPath}/animal/admin/users.jsp">
                                 <i class="fa fa-flash fa-fw"></i> 用户信息
                             </a>
                         </li>
@@ -133,6 +133,9 @@
                     <table class="table table-bordered table-striped" id="adopt_table">
                         <thead>
                         <tr>
+                            <th>
+                                <input type="checkbox" id="check_all"/>
+                            </th>
                             <th>编号</th>
                             <th>用户名称</th>
                             <th>宠物名字</th>
@@ -203,7 +206,6 @@
         //index：下标 user：单个对象
         var adopts=result.extend.pageInfo.list;
         $.each(adopts,function(index,adopt){
-
             var checkBoxTd = $("<td><input type='checkbox' class='check_item'/></td>");
             var adoptIdTd = $("<td></td>").append(adopt.id);
             var userNameTd = $("<td></td>").append(adopt.user.userName);
@@ -212,11 +214,11 @@
             var stateTd=$("<td></td>").append(adopt.state);
 
             var editBtn = $("<button></button>").addClass("btn btn-primary btn-sm edit_btn")
-                .append($("<span></span>").addClass("glyphicon glyphicon-pencil")).append("修改");
+                .append($("<span></span>").addClass("glyphicon glyphicon-pencil")).append("同意");
             //为编辑按钮添加一个自定义的属性，来表示当前员工id
             editBtn.attr("edit-id",adopt.id);
             var delBtn =  $("<button></button>").addClass("btn btn-danger btn-sm delete_btn")
-                .append($("<span></span>").addClass("glyphicon glyphicon-trash")).append("删除");
+                .append($("<span></span>").addClass("glyphicon glyphicon-trash")).append("不同意");
             //为删除按钮添加一个自定义的属性来表示当前删除的员工id
             delBtn.attr("del-id",adopt.id);
             var btnTd = $("<td></td>").append(editBtn).append(" ").append(delBtn);
@@ -298,17 +300,6 @@
         //把ul加入到nav
         var navEle = $("<nav></nav>").append(ul);
         navEle.appendTo("#page_nav_area");
-    }
-
-    function jsonDateFormat(jsonDate) {
-        try {
-            var date = new Date(parseInt(jsonDate.replace("/Date(", "").replace(")/", ""), 10));
-            var month = date.getMonth() + 1 < 10 ? "0" + (date.getMonth() + 1) : date.getMonth() + 1;
-            var day = date.getDate() < 10 ? "0" + date.getDate() : date.getDate();
-            return date.getFullYear() + "-" + month + "-" + day;
-        } catch (ex) {
-            return "";
-        }
     }
 
 </script>

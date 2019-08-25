@@ -64,7 +64,7 @@ public class BlogController {
         }
     }
 
-    @RequestMapping("deleteBlog.action")
+    @RequestMapping("delete.action")
     @ResponseBody
     public Message deleteBlog(Integer id){
         if(blogService.deleteBlog(id)>0){
@@ -74,7 +74,7 @@ public class BlogController {
         }
     }
 
-    @RequestMapping("updateBlog.action")
+    @RequestMapping("update.action")
     @ResponseBody
     public Message updateBlog(Blog blog){
         if(blogService.updateBlog(blog)>0){
@@ -86,9 +86,14 @@ public class BlogController {
 
     @RequestMapping("findById.action")
     @ResponseBody
-    public Blog findById(Integer id){
+    public Message findById(Integer id){
         Blog blog = blogService.findById(id);
-        return blog;
+        if(blog!=null){
+            return Message.success().add("blog",blog);
+        }else{
+            return Message.fail();
+        }
+
     }
 
     @RequestMapping("findByTime.action")

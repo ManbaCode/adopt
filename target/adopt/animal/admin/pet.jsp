@@ -69,7 +69,7 @@
                 <div id="collapseListGroup3" class="panel-collapse collapse in" role="tabpanel" aria-labelledby="collapseListGroupHeading3">
                     <ul class="list-group">
                         <li class="list-group-item my_font">
-                            <a href="${pageContext.request.contextPath}/animal/admin/user.jsp">
+                            <a href="${pageContext.request.contextPath}/animal/admin/users.jsp">
                                 <i class="fa fa-flash fa-fw"></i> 用户信息
                             </a>
                         </li>
@@ -125,7 +125,7 @@
                 </form>
             </div>
         </div>
-        <button class="btn btn-primary" id="blog_add_modal_btn">新增</button>
+        <button class="btn btn-primary" id="pet_add_modal_btn">新增</button>
         <div class="row">
             <div class="col-lg-12">
                 <div class="panel panel-default">
@@ -134,6 +134,9 @@
                     <table class="table table-bordered table-striped" id="pet_table">
                         <thead>
                         <tr>
+                            <th>
+                                <input type="checkbox" id="check_all"/>
+                            </th>
                             <th>宠物编号</th>
                             <th>宠物名</th>
                             <th>种类</th>
@@ -163,7 +166,7 @@
     </div>
     <!-- 班级列表查询部分  end-->
 </div>
-<!-- 创建用户模态框 -->
+<!-- 创建宠物模态框 -->
 <div class="modal fade" id="newPet" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
     <div class="modal-dialog" role="document">
         <div class="modal-content">
@@ -210,21 +213,6 @@
                         </div>
                     </div>
                     <div class="form-group">
-                        <label for="new_petBirthday" class="col-sm-2 control-label">
-                            生日
-                        </label>
-                        <div class="col-sm-4">
-                            <input type="datetime-local" class="form-control" id="new_petBirthday" placeholder="生日"
-                                   name="petBirthday">
-                        </div>
-                        <label for="new_pic" class="col-sm-2 control-label">
-                            照片
-                        </label>
-                        <div class="col-sm-1">
-                            <input type="button" value="上传照片" id="new_pic" name="pic">
-                        </div>
-                    </div>
-                    <div class="form-group">
                         <label for="new_state" class="col-sm-2 control-label">
                             领养状态
                         </label>
@@ -234,7 +222,12 @@
                                 <option value="1">被领养</option>
                             </select>
                         </div>
-
+                        <label for="new_pic" class="col-sm-2 control-label">
+                            照片
+                        </label>
+                        <div class="col-sm-1">
+                            <input type="button" value="上传照片" id="new_pic" name="pic">
+                        </div>
                     </div>
                     <div class="form-group">
                         <label for="new_remark" class="col-sm-2 control-label">
@@ -249,12 +242,12 @@
             </div>
             <div class="modal-footer">
                 <button type="button" class="btn btn-default" data-dismiss="modal">关闭</button>
-                <button type="button" class="btn btn-primary" onclick="createPet()">创建评论记录</button>
+                <button type="button" class="btn btn-primary" id="pet_save_btn">创建评论记录</button>
             </div>
         </div>
     </div>
 </div>
-<!-- 修改班级模态框 -->
+<!-- 修改宠物模态框 -->
 <div class="modal fade" id="editPet" tabindex="-1" role="dialog" aria-labelledby="myModalLabe">
     <div class="modal-dialog" role="document">
         <div class="modal-content">
@@ -272,14 +265,14 @@
                             宠物名
                         </label>
                         <div class="col-sm-4">
-                            <input type="text" class="form-control" id="edit_petName" placeholder="宠物名"
+                            <input type="text" class="form-control" id="edit_petName" placeholder="宠物名" value="${pet.petName}"
                                    name="petName">
                         </div>
                         <label for="edit_petType" class="col-sm-2 control-label">
                             宠物类型
                         </label>
                         <div class="col-sm-4">
-                            <input type="text" class="form-control" id="edit_petType" placeholder="宠物类型"
+                            <input type="text" class="form-control" id="edit_petType" placeholder="宠物类型" value="${pet.petType}"
                                    name="petType">
                         </div>
                     </div>
@@ -288,7 +281,7 @@
                             性别
                         </label>
                         <div class="col-sm-4">
-                            <select class="form-control" id="edit_sex" name="sex">
+                            <select class="form-control" id="edit_sex" name="sex" value="${pet.sex}">
                                 <option value="雄性">雄性</option>
                                 <option value="雌性">雌性</option>
                             </select>
@@ -297,52 +290,41 @@
                             生日
                         </label>
                         <div class="col-sm-4">
-                            <input type="datetime-local" class="form-control" id="edit_birthday" placeholder="生日"
+                            <input type="date" class="form-control" id="edit_birthday" placeholder="生日" value="${pet.birthday}"
                                    name="birthday">
                         </div>
                     </div>
                     <div class="form-group">
-                        <label for="edit_petBirthday" class="col-sm-2 control-label">
-                            生日
-                        </label>
-                        <div class="col-sm-4">
-                            <input type="datetime-local" class="form-control" id="edit_petBirthday" placeholder="生日"
-                                   name="petBirthday">
-                        </div>
-
                         <label for="edit_pic" class="col-sm-2 control-label">
                             照片
                         </label>
-                        <div class="col-sm-1">
-                            <input type="button" value="上传照片" id="edit_pic" name="pic">
+                        <div class="col-sm-4">
+                            <input type="text" value="${pet.pic}" id="edit_pic" name="pic">
                         </div>
-                    </div>
-                    <div class="form-group">
                         <label for="edit_state" class="col-sm-2 control-label">
                             领养状态
                         </label>
                         <div class="col-sm-4">
-                            <select class="form-control" id="edit_state" name="state">
+                            <select class="form-control" id="edit_state" value="${pet.state}" name="state">
                                 <option value="0">未被领养</option>
                                 <option value="1">被领养</option>
                             </select>
                         </div>
-
                     </div>
                     <div class="form-group">
-                        <label for="edit_petRemark" class="col-sm-2 control-label">
+                        <label for="edit_remark" class="col-sm-2 control-label">
                             备注
                         </label>
                         <div class="col-sm-10">
-                            <textarea class="form-control" id="edit_petRemark" placeholder="备注"
-                                      name="petRemark"></textarea>
+                            <textarea class="form-control" id="edit_remark" placeholder="备注" value="${pet.remark}"
+                                      name="remark"></textarea>
                         </div>
                     </div>
                 </form>
             </div>
             <div class="modal-footer">
                 <button type="button" class="btn btn-default" data-dismiss="modal">关闭</button>
-                <button type="button" class="btn btn-primary" onclick="updatePet()">保存修改</button>
+                <button type="button" class="btn btn-primary" id="pet_update_btn">保存修改</button>
             </div>
         </div>
     </div>
@@ -364,7 +346,6 @@
 
 
     //总的数据 当前的页面
-
     var totalRecord,currentPage;
 
     $(function(){
@@ -385,6 +366,7 @@
             }
         });
     }
+    //解析并显示员工数据
     function build_pets_table(result){
         //清空table表格
         $("#pet_table tbody").empty();
@@ -423,7 +405,6 @@
                 .appendTo("#pet_table tbody");
         });
     }
-
     //解析显示分页信息
     function build_page_info(result){
         $("#page_info_area").empty();
@@ -500,53 +481,105 @@
         $(ele).find(".help-block").text("");
     }
 
-    // 创建宠物
-    function createPet() {
-        $.Post("crmclass/create.action",
-            $("#new_pet_form").serialize(), function (data) {
-                if (data == "OK") {
-                    alert("Pet创建成功！");
-                    window.location.reload();
-                } else {
-                    alert("Pet创建失败！");
-                    window.location.reload();
-                }
-            });
-    }
-
-    // 通过id获取修改的班级信息
-    function editPet(id) {
+    //点击新增按钮弹出模态框。
+    $("#pet_add_modal_btn").click(function(){
+        //清除表单数据（表单完整重置（表单的数据，表单的样式））
+        reset_form("#newPet form");
+        //弹出模态框
+        $("#newPet").modal({
+            backdrop:"static"
+        });
+    });
+    //点击保存，保存宠物。
+    $("#pet_save_btn").click(function(){
+        //2、发送ajax请求保存员工
         $.ajax({
-            type: "get",
-            url: "crmclass/getcrmclassById.action",
-            data: {"id": id},
-            success: function (data) {
-                $("#edit_id").val(data.id);
-                $("#edit_petName").val(data.petName);
-                $("#edit_petType").val(data.petType);
-                $("#edit_sex").val(data.sex);
-                $("#edit_birthday").val(data.birthday);
-                $("#edit_pic").val(data.pic);
-                $("#edit_state").val(data.state);
-                $("#edit_remark").val(data.remark);
+            url:"${pageContext.request.contextPath}/pet/create.action",
+            type:"POST",
+            data:$("#newPet form").serialize(),
+            success:function (result) {
+                alert("宠物创建成功");
+                to_page(1);
+            },
+            error:function (result) {
+                console.log(result);
+                alert("宠物创建失败");
+
             }
         });
-    }
+    });
 
-    // 执行修改班级操作
-    function updatePet() {
-        $.Post("crmclass/update.action",
-            $("#edit_pet_form").serialize(),
-            function (data) {
-                if (data == "OK") {
-                    alert("Pet更新成功！");
-                    window.location.reload();
-                } else {
-                    alert("Pet更新失败！");
-                    window.location.reload();
+
+    //点击编辑按钮弹出模态框。
+    $(document).on("click",".edit_btn",function(){
+        //1、发送ajax,根据id获取用户信息
+        //清除表单数据（表单完整重置（表单的数据，表单的样式））
+        reset_form("#editPet form");
+        var id = $(this).attr("edit-id");
+        $.ajax({
+            url:"${pageContext.request.contextPath}/pet/findById.action?id="+id,
+            type:"GET",
+            success:function(result){
+                //填充用户信息
+                $("#edit_id").val(result.extend.pet.id);
+                $("#edit_petName").val(result.extend.pet.petName);
+                $("#edit_petType").val(result.extend.pet.petType);
+                $("#edit_sex").val(result.extend.pet.sex);
+                $("#edit_birthday").val(result.extend.pet.birthday);
+                $("#edit_pic").val(result.extend.pet.pic);
+                $("#edit_state").val(result.extend.pet.state);
+                $("#edit_remark").val(result.extend.pet.remark);
+            },
+            error:function (result) {
+                alert(1111)
+            }
+        });
+        //2、弹出模态框
+        $("#editPet").modal({
+            backdrop:"static"
+        });
+
+    });
+
+    //点击更新按钮弹出模态框。
+    $("#pet_update_btn").click(function(){
+        $.ajax({
+            url:"${pageContext.request.contextPath}/pet/update.action",
+            type:"POST",
+            data:$("#edit_pet_form").serialize(),
+            success:function (result) {
+                alert("宠物信息更新成功！");
+                to_page(1);
+            },
+            error:function(result){
+                alert("宠物信息更新失败！");
+            }
+        });
+
+    });
+
+    //单个删除
+    $(document).on("click",".delete_btn",function(){
+        //1、弹出是否确认删除对话框
+        var petName = $(this).parents("tr").find("td:eq(2)").text();
+        var petId = $(this).attr("del-id");
+
+        if(confirm("确认删除【"+petName+"】吗？")){
+            //确认，发送ajax请求删除即可
+            $.ajax({
+                url:"${pageContext.request.contextPath}/pet/delete.action?id="+petId,
+                type:"GET",
+                success:function (result) {
+                    if(result.code==100){
+                        alert("宠物删除成功！");
+                        to_page(1);
+                    }else{
+                        alert("宠物删除失败！");
+                    }
                 }
             });
-    }
+        }
+    });
 
     // 删除宠物
     function deletePet(id) {

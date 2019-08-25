@@ -29,7 +29,7 @@
         SELECT id,actionTime,address,peoples,event,title FROM blog
     </select>
 
-    <select id="findByid" parameterType="int" resultType="Blog">
+    <select id="findById" parameterType="int" resultType="Blog">
         SELECT id,actionTime,address,peoples,event,title FROM blog WHERE id=#{id}
     </select>
 

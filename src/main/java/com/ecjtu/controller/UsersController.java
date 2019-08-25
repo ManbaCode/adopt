@@ -67,26 +67,26 @@ public class UsersController {
         }
     }
 
-    @RequestMapping("findById")
+    @RequestMapping("findById.action")
     @ResponseBody
-    public Users findById(Integer id){
+    public Message findById(Integer id){
         Users user = usersService.findById(id);
         if(user!=null){
-            return user;
+            return Message.success();
         }else{
-            return null;
+            return Message.fail();
         }
     }
 
 
-    @RequestMapping("findByName.acation")
+    @RequestMapping("findByName.action")
     @ResponseBody
-    public Users findByName(String userName){
+    public Message findByName(String userName){
         Users byName = usersService.findByName(userName);
         if(byName!=null){
-            return byName;
+            return Message.success();
         }else{
-            return null;
+            return Message.fail();
         }
     }
 

@@ -1,5 +1,6 @@
 package com.ecjtu.entity;
 
+import com.fasterxml.jackson.annotation.JsonFormat;
 import org.springframework.format.annotation.DateTimeFormat;
 
 import java.util.Date;
@@ -15,6 +16,7 @@ public class Pet {
     private String petName;
     private String petType;
     private String sex;
+    @JsonFormat(pattern = "yyyy-MM-dd",timezone = "GMT+8")
     @DateTimeFormat(pattern = "yyyy-MM-dd")
     private Date birthday;
     private String pic;

@@ -25,7 +25,7 @@ public class PetController {
     @Autowired
     private PetService petService;
 
-    @RequestMapping("/pets.action")
+    @RequestMapping("pets.action")
     @ResponseBody
     public Message getPets(@RequestParam(value = "pn",defaultValue = "1")Integer pn){
         PageHelper.startPage(pn,4);
@@ -34,7 +34,7 @@ public class PetController {
         return Message.success().add("pageInfo",page);
     }
 
-    @RequestMapping("/create.action")
+    @RequestMapping("create.action")
     @ResponseBody
     public Message createPet(Pet pet){
         if(petService.addPet(pet)>0){
@@ -44,7 +44,7 @@ public class PetController {
         }
     }
 
-    @RequestMapping("/delete.action")
+    @RequestMapping("delete.action")
     @ResponseBody
     public Message deletePet(Integer id){
         if(petService.deletePet(id)>0){
@@ -54,7 +54,7 @@ public class PetController {
         }
     }
 
-    @RequestMapping("/update.action")
+    @RequestMapping("update.action")
     @ResponseBody
     public Message updatePet(Pet pet){
         if(petService.updatePet(pet)>0){
@@ -64,18 +64,18 @@ public class PetController {
         }
     }
 
-    @RequestMapping("/findById.action")
+    @RequestMapping("findById.action")
     @ResponseBody
-    public Pet findById(Integer id){
+    public Message findById(Integer id){
         Pet pet = petService.findById(id);
         if(pet!=null){
-            return pet;
+            return Message.success().add("pet",pet);
         }else{
-            return null;
+            return Message.fail();
         }
     }
 
-    @RequestMapping("/findByName.action")
+    @RequestMapping("findByName.action")
     @ResponseBody
     public Pet findByName(String petName){
         Pet byName = petService.findByName(petName);

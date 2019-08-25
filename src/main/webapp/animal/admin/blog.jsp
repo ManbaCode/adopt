@@ -69,7 +69,7 @@
                 <div id="collapseListGroup3" class="panel-collapse collapse in" role="tabpanel" aria-labelledby="collapseListGroupHeading3">
                     <ul class="list-group">
                         <li class="list-group-item my_font">
-                            <a href="${pageContext.request.contextPath}/animal/admin/user.jsp">
+                            <a href="${pageContext.request.contextPath}/animal/admin/users.jsp">
                                 <i class="fa fa-flash fa-fw"></i> 用户信息
                             </a>
                         </li>
@@ -133,6 +133,9 @@
                     <table class="table table-bordered table-striped" id="blog_table">
                         <thead>
                         <tr>
+                            <th>
+                                <input type="checkbox" id="check_all"/>
+                            </th>
                             <th>编号</th>
                             <th>活动事件</th>
                             <th>活动地点</th>
@@ -180,7 +183,7 @@
                             活动标题
                         </label>
                         <div class="col-sm-10">
-                            <input type="date" class="form-control" id="new_title" placeholder="标题" name="title">
+                            <input type="text" class="form-control" id="new_title" placeholder="标题" name="title">
                         </div>
                     </div>
 
@@ -243,7 +246,7 @@
                             活动标题
                         </label>
                         <div class="col-sm-10">
-                            <input type="datetime-local" class="form-control" id="edit_title" placeholder="标题" value="${blog.title}" name="title">
+                            <input type="text" class="form-control" id="edit_title" placeholder="标题" value="${blog.title}" name="title">
                         </div>
                     </div>
 
@@ -538,21 +541,6 @@
             });
         }
     });
-    // 删除用户
-    function deleteUsers(id) {
-        if(confirm('确实要删除该用户吗?')) {
-            $.Post("/crmclass/delete.action",{"id":id},
-                function(data){
-                    if(data =="OK"){
-                        alert("用户删除成功！");
-                        window.location.reload();
-                    }else{
-                        alert("用户班级失败！");
-                        window.location.reload();
-                    }
-                });
-        }
-    }
 </script>
 
 </body></html>

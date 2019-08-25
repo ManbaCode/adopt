@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<sitemesh>
+    <!-- 指明满足“/*”的页面，将被“/pub.jsp”所装饰 -->
+    <mapping path="/animal/*" decorator="/animal/navigation.jsp" />
+
+    <!-- 指明满足“/no_mytest*”的页面，将被排除，不被装饰 -->
+    <mapping path="/animal/admin/*" exclue="true" />
+</sitemesh>

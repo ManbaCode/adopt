@@ -68,12 +68,12 @@ public class CommentController {
 
     @RequestMapping("/findById.action")
     @ResponseBody
-    public Comment findById(Comment comment){
-        Comment byId = commentService.findById(comment);
-        if(byId!=null){
-            return byId;
+    public Message findById(Comment comment){
+        Comment comment1 = commentService.findById(comment);
+        if(comment1!=null){
+            return Message.success().add("comment",comment1);
         }else{
-            return null;
+            return Message.fail();
         }
     }
 

@@ -2383,4 +2383,8 @@ section.footer-w3 ul.tweet-agile li p.tweet-p2 {
 .my-style{
     padding: 5px;
 }
+.my-font{
+    font-size: 120px;
+    color: red;
+}
 /*--//responsive--*/

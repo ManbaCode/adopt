@@ -365,9 +365,9 @@
 
     var totalRecord,currentPage;
 
-    // $(function(){
-    //     to_page(1);
-    // });
+    $(function(){
+        to_page(1);
+    });
     function to_page(pn){
         $.ajax({
             url:"${pageContext.request.contextPath}/admin/admins.action",

@@ -7,7 +7,9 @@
 --%>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <!DOCTYPE html>
-<html><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<html><head>
+    <meta content="text/html; charset=UTF-8">
+    <meta http-equiv="Content-Type" content="multipart/form-data; charset=utf-8" />
     <title>宠物领养管理后台</title>
     <!-- 引入css样式文件 -->
     <!-- Bootstrap Core CSS -->
@@ -98,6 +100,16 @@
                                 <i class="fa fa-sitemap fa-fw"></i> 团队活动管理
                             </a>
                         </li>
+                        <li class="list-group-item my_font">
+                            <a href="${pageContext.request.contextPath}/animal/admin/disAgree.jsp">
+                                <i class="fa fa-sitemap fa-fw"></i> 同意领养列表
+                            </a>
+                        </li>
+                        <li class="list-group-item my_font">
+                            <a href="${pageContext.request.contextPath}/animal/admin/agree.jsp">
+                                <i class="fa fa-sitemap fa-fw"></i> 不同意领养列表
+                            </a>
+                        </li>
                     </ul>
                 </div>
             </div>
@@ -177,7 +189,7 @@
                 <h4 class="modal-title" id="myModalLabel">新建宠物信息</h4>
             </div>
             <div class="modal-body">
-                <form class="form-horizontal" id="new_pet_form" enctype="multipart/form-data">
+                <form class="form-horizontal" id="new_pet_form" method="post" enctype="multipart/form-data">
                     <div class="form-group">
                         <label for="new_petName" class="col-sm-2 control-label">
                             宠物名
@@ -208,7 +220,7 @@
                             生日
                         </label>
                         <div class="col-sm-4">
-                            <input type="datetime-local" class="form-control" id="new_birthday" placeholder="生日"
+                            <input type="date" class="form-control" id="new_birthday" placeholder="生日"
                                    name="birthday">
                         </div>
                     </div>
@@ -226,7 +238,7 @@
                             照片
                         </label>
                         <div class="col-sm-1">
-                            <input type="file" value="上传照片" id="new_pic" name="pic">
+                            <input type="file" value="上传照片" id="new_pic" name="file">
                         </div>
                     </div>
                     <div class="form-group">
@@ -235,7 +247,7 @@
                         </label>
                         <div class="col-sm-10">
                             <textarea class="form-control" id="new_remark" placeholder="备注"
-                                      name="petRemark"></textarea>
+                                      name="remark"></textarea>
                         </div>
                     </div>
                 </form>
@@ -493,6 +505,7 @@
     //点击保存，保存宠物。
     $("#pet_save_btn").click(function(){
         //2、发送ajax请求保存员工
+        console.log($("#newPet form").serialize());
         $.ajax({
             url:"${pageContext.request.contextPath}/pet/create.action",
             type:"POST",

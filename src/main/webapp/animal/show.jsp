@@ -1,3 +1,4 @@
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <%--
   Created by IntelliJ IDEA.
   User: 24255
@@ -29,48 +30,47 @@
         <center>
             <div id="demo1" class="slideBox">
                 <ul class="items">
-                    <li><a href="" ><img class="my-img" src="${pageContext.request.contextPath}/images/1.jpg"></a></li>
-                    <li><a href="" ><img class="my-img" src="${pageContext.request.contextPath}/images/2.jpg"></a></li>
-                    <li><a href="" ><img class="my-img" src="${pageContext.request.contextPath}/images/3.jpg"></a></li>
-                    <li><a href="" ><img class="my-img" src="${pageContext.request.contextPath}/images/4.jpg"></a></li>
+                    <c:forEach items="${pics}" var="pic">
+                    <li><a href="" ><img class="my-img" src="${pageContext.request.contextPath}/images/${pic}"></a></li>
+                    </c:forEach>
                 </ul>
             </div>
             <div class="name">
                 <img src="${pageContext.request.contextPath}/images/p9.jpg">
-                <span>kitty</span>
+                <span>${pet.petName}</span>
             </div>
         </center>
         <div class="animal">
             <div class="group">
                 <div class="animalX1">
                     <img src="${pageContext.request.contextPath}/images/P7.jpg"><span>编号</span><br>
-                    <p>123123</p>
+                    <p>${pet.id}</p>
                 </div>
                 <div class="animalX2">
                     <img src="${pageContext.request.contextPath}/images/P6.jpg"><span>生日</span><br>
-                    <p>2019/09/23</p>
+                    <p>${pet.birthday}</p>
                 </div>
             </div>
             <div class="group">
                 <div class="animalX3">
                     <img src="${pageContext.request.contextPath}/images/catsm1.jpg"><span>品种</span><br>
-                    <p>波斯猫</p>
+                    <p>${pet.petType}</p>
                 </div>
                 <div class="animalX4">
                     <img src="${pageContext.request.contextPath}/images/p4.jpg"><span>性别</span><br>
-                    <p>雄性</p>
+                    <p>${pet.sex}</p>
                 </div>
             </div>
             <div class="group">
                 <div class="animalX5">
                     <img src="${pageContext.request.contextPath}/images/p8.jpg"><span>备注</span><br>
-                    <p>好动</p>
+                    <p>${pet.reamrk}</p>
                 </div>
             </div>
         </div>
         <div class="animal_me">
             <div class="animal_me1"><img src="${pageContext.request.contextPath}/images/p11.jpg"></div>
-            <div class="animal_me2"><p>大家好，我是Salon。我的特徵是一豎一摺的耳朵和會說話的眼神。我非常有活力，最愛和人玩耍逛街做運動。我很喜歡認識朋友，我有自信能和大部份狗狗友好相處。
+            <div class="animal_me2"><p>大家好，我是${pet.name}。我的特徵是${pet.remark}。我非常有活力，最愛和人玩耍逛街做運動。我很喜歡認識朋友，我有自信能和大部份狗狗友好相處。
                 我已經準備好當你的好朋友，你能帶我回家給我永遠的溫暖嗎?</p></div>
             <div class="animal_me3"><img src="${pageContext.request.contextPath}/images/p10.jpg"></div>
         </div>
@@ -97,7 +97,7 @@
                                 姓名： </label>
                             <div class="col-sm-10">
                                 <input type="text" class="form-control" id="new_Name"
-                                       placeholder="name" name="name">
+                                       placeholder="name" name="name" value="">
                             </div>
                         </div>
                         <div class="form-group">
@@ -186,6 +186,52 @@
             $(".comment-list").addCommentList({data:[],add:obj});
         });
     })
+</script>
+<script type="text/javascript">
+
+    //点击编辑按钮弹出模态框。
+    $(document).on("click",".edit_btn",function(){
+        //1、发送ajax,根据id获取用户信息
+        //清除表单数据（表单完整重置（表单的数据，表单的样式））
+        var id = $(this).attr("edit-id");
+        $.ajax({
+            url:"${pageContext.request.contextPath}/user/findById.action?id="+id,
+            type:"GET",
+            success:function(result){
+                //填充用户信息
+                console.log(result);
+                $("#edit_id").val(result.extend.users.id);
+                $("#edit_userName").val(result.extend.users.userName);
+                $("#edit_password").val(result.extend.users.password);
+                $("#edit_sex").val(result.extend.users.sex);
+                $("#edit_telephone").val(result.extend.users.telephone);
+                $("#edit_Email").val(result.extend.users.email);
+                $("#edit_address").val(result.extend.users.address);
+                $("#edit_state").val(result.extend.users.state);
+            }});
+        //2、弹出模态框
+        $("#editUsers").modal({
+            backdrop:"static"
+        });
+
+    });
+
+    //点击更新按钮弹出模态框。
+    $("#user_update_btn").click(function(){
+        $.ajax({
+            url:"${pageContext.request.contextPath}/user/update.action",
+            type:"POST",
+            data:$("#edit_user_form").serialize(),
+            success:function (result) {
+                alert("用户信息更新成功！");
+                to_page(1);
+            },
+            error:function(result){
+                alert("用户信息更新失败！");
+            }
+        });
+
+    });
 </script>
 </body>
 </html>

@@ -2,16 +2,21 @@ package com.ecjtu.controller;
 
 import com.ecjtu.entity.Pet;
 import com.ecjtu.service.PetService;
+import com.ecjtu.util.MailUtil;
 import com.ecjtu.util.Message;
 import com.github.pagehelper.PageHelper;
 import com.github.pagehelper.PageInfo;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
+import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.ResponseBody;
+import org.springframework.web.multipart.MultipartFile;
 import org.springframework.web.servlet.ModelAndView;
 
+import java.util.ArrayList;
 import java.util.List;
 
 /**
@@ -28,15 +33,17 @@ public class PetController {
     @RequestMapping("pets.action")
     @ResponseBody
     public Message getPets(@RequestParam(value = "pn",defaultValue = "1")Integer pn){
-        PageHelper.startPage(pn,4);
+        PageHelper.startPage(pn,3);
         List<Pet> pets = petService.getPets();
         PageInfo page=new PageInfo(pets,2);
         return Message.success().add("pageInfo",page);
     }
 
-    @RequestMapping("create.action")
+    @RequestMapping(value = "create.action")
     @ResponseBody
-    public Message createPet(Pet pet){
+    public Message createPet(Pet pet,@RequestParam(value = "file") MultipartFile file){
+        String load = FileLoad.load(file);
+        pet.setPic(load);
         if(petService.addPet(pet)>0){
             return Message.success();
         }else{
@@ -66,8 +73,16 @@ public class PetController {
 
     @RequestMapping("findById.action")
     @ResponseBody
-    public Message findById(Integer id){
+    public Message findById(Integer id, Model model){
         Pet pet = petService.findById(id);
+        String pic = pet.getPic();
+        String[] split = pic.split(",");
+        List<String> pics=new ArrayList<>();
+        for(int i=0;i<split.length;i++){
+            pics.add(split[i]);
+        }
+        model.addAttribute("pics",pic);
+        model.addAttribute("pet",pet);
         if(pet!=null){
             return Message.success().add("pet",pet);
         }else{

@@ -21,6 +21,7 @@ public class Admin {
     @DateTimeFormat(pattern = "yyyy-MM-dd")
     private Date birthday;
     private String sex;
+    private String pic;
     private String remark;
 
     List<Comment> commentList;
@@ -29,7 +30,7 @@ public class Admin {
     }
 
 
-        public Admin(Integer id, String adminName, String adminPwd, String realName, String telephone, String email, Date birthday, String sex, String remark, List<Comment> commentList) {
+    public Admin(Integer id, String adminName, String adminPwd, String realName, String telephone, String email, Date birthday, String sex, String pic, String remark, List<Comment> commentList) {
         this.id = id;
         this.adminName = adminName;
         this.adminPwd = adminPwd;
@@ -38,6 +39,7 @@ public class Admin {
         Email = email;
         this.birthday = birthday;
         this.sex = sex;
+        this.pic = pic;
         this.remark = remark;
         this.commentList = commentList;
     }
@@ -106,6 +108,14 @@ public class Admin {
         this.sex = sex;
     }
 
+    public String getPic() {
+        return pic;
+    }
+
+    public void setPic(String pic) {
+        this.pic = pic;
+    }
+
     public String getRemark() {
         return remark;
     }
@@ -122,8 +132,9 @@ public class Admin {
         this.commentList = commentList;
     }
 
+
     @Override
-    public String  toString() {
+    public String toString() {
         return "Admin{" +
                 "id=" + id +
                 ", adminName='" + adminName + '\'' +
@@ -133,6 +144,7 @@ public class Admin {
                 ", Email='" + Email + '\'' +
                 ", birthday=" + birthday +
                 ", sex='" + sex + '\'' +
+                ", pic='" + pic + '\'' +
                 ", remark='" + remark + '\'' +
                 ", commentList=" + commentList +
                 '}';

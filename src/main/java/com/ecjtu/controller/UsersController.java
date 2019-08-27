@@ -1,6 +1,5 @@
 package com.ecjtu.controller;
 
-import com.ecjtu.entity.Admin;
 import com.ecjtu.entity.Users;
 import com.ecjtu.service.UsersService;
 import com.ecjtu.util.Message;
@@ -11,7 +10,7 @@ import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.ResponseBody;
-import org.springframework.web.servlet.ModelAndView;
+import org.springframework.web.multipart.MultipartFile;
 
 import javax.servlet.http.HttpServletRequest;
 import java.util.List;
@@ -40,7 +39,12 @@ public class UsersController {
 
     @RequestMapping("create.action")
     @ResponseBody
-    public Message create(Users users){
+    public Message create(Users users,@RequestParam("file") MultipartFile file){
+        System.out.println(file);
+        if(file!=null){
+            String load = FileLoad.load(file);
+            users.setPic(load);
+        }
         if(usersService.addUser(users)>0){
             return Message.success();
         }else{
@@ -60,7 +64,11 @@ public class UsersController {
 
     @RequestMapping("update.action")
     @ResponseBody
-    public Message updateUser(Users users){
+    public Message updateUser(Users users,MultipartFile file){
+        if(file!=null){
+            String load = FileLoad.load(file);
+            users.setPic(load);
+        }
         if(usersService.updateUser(users)>0){
             return Message.success();
         }else{

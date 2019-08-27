@@ -14,12 +14,10 @@ import java.util.UUID;
  * @create: 2019-08-25 19:09
  */
 @Controller
-@RequestMapping("file")
-public class FileController {
+public class FileLoad {
 
 
-    @RequestMapping("upload.action")
-    public String load(MultipartFile file, Model model) {
+    public static String load(MultipartFile file) {
         String picName = UUID.randomUUID().toString();
         //获取上传文件得元素得名称
         String fileName = file.getOriginalFilename();
@@ -31,9 +29,7 @@ public class FileController {
             e.printStackTrace();
         }
         String name = picName + substring;
-        //存储数据库中，自需要把fileName写入数据库中
-        model.addAttribute("files", name);
-        //对象
-        return "file";
+
+        return name;
     }
 }

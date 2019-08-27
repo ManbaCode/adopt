@@ -6,8 +6,11 @@
   To change this template use File | Settings | File Templates.
 --%>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
+
 <!DOCTYPE html>
-<html><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<html><head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <meta http-equiv="Content-Type" content="multipart/form-data; charset=utf-8" />
     <title>宠物领养管理后台</title>
     <!-- 引入css样式文件 -->
     <!-- Bootstrap Core CSS -->
@@ -98,6 +101,16 @@
                                 <i class="fa fa-sitemap fa-fw"></i> 团队活动管理
                             </a>
                         </li>
+                        <li class="list-group-item my_font">
+                            <a href="${pageContext.request.contextPath}/animal/admin/disAgree.jsp">
+                                <i class="fa fa-sitemap fa-fw"></i> 同意领养列表
+                            </a>
+                        </li>
+                        <li class="list-group-item my_font">
+                            <a href="${pageContext.request.contextPath}/animal/admin/agree.jsp">
+                                <i class="fa fa-sitemap fa-fw"></i> 不同意领养列表
+                            </a>
+                        </li>
                     </ul>
                 </div>
             </div>
@@ -179,7 +192,7 @@
                 <h4 class="modal-title" id="myModalLabel">新建用户信息</h4>
             </div>
             <div class="modal-body">
-                <form class="form-horizontal" id="new_users_form" enctype="multipart/form-data">
+                <form class="form-horizontal" id="new_users_form" method="post" enctype="multipart/form-data">
                     <div class="form-group">
                         <label for="new_userName" class="col-sm-2 control-label">
                             用户名字
@@ -205,7 +218,7 @@
                             </select>
                         </div>
                         <label for="new_age" class="col-sm-2 control-label">
-                            电话号码
+                            年龄
                         </label>
                         <div class="col-sm-4">
                             <input type="text" class="form-control" id="new_age" placeholder="年龄" name="age">
@@ -522,14 +535,14 @@
             success:function(result){
                 //填充用户信息
                 console.log(result);
-                $("#edit_id").val(result.extend.users.id);
-                $("#edit_userName").val(result.extend.users.userName);
-                $("#edit_password").val(result.extend.users.password);
-                $("#edit_sex").val(result.extend.users.sex);
-                $("#edit_telephone").val(result.extend.users.telephone);
-                $("#edit_Email").val(result.extend.users.email);
-                $("#edit_address").val(result.extend.users.address);
-                $("#edit_state").val(result.extend.users.state);
+                $("#edit_id").val(result.extend.user.id);
+                $("#edit_userName").val(result.extend.user.userName);
+                $("#edit_password").val(result.extend.user.password);
+                $("#edit_sex").val(result.extend.user.sex);
+                $("#edit_telephone").val(result.extend.user.telephone);
+                $("#edit_Email").val(result.extend.user.email);
+                $("#edit_address").val(result.extend.user.address);
+                $("#edit_state").val(result.extend.user.state);
             }});
         //2、弹出模态框
         $("#editUsers").modal({

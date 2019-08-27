@@ -99,6 +99,16 @@
                                 <i class="fa fa-sitemap fa-fw"></i> 团队活动管理
                             </a>
                         </li>
+                        <li class="list-group-item my_font">
+                            <a href="${pageContext.request.contextPath}/animal/admin/disAgree.jsp">
+                                <i class="fa fa-sitemap fa-fw"></i> 同意领养列表
+                            </a>
+                        </li>
+                        <li class="list-group-item my_font">
+                            <a href="${pageContext.request.contextPath}/animal/admin/agree.jsp">
+                                <i class="fa fa-sitemap fa-fw"></i> 不同意领养列表
+                            </a>
+                        </li>
                     </ul>
                 </div>
             </div>
@@ -355,9 +365,9 @@
 
     var totalRecord,currentPage;
 
-    // $(function(){
-    //     to_page(1);
-    // });
+    $(function(){
+        to_page(1);
+    });
     function to_page(pn){
         $.ajax({
             url:"${pageContext.request.contextPath}/admin/admins.action",

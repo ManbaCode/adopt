@@ -17,6 +17,10 @@
         UPDATE t_adopt SET user_id=#{user.id},pet_id=#{pet.id},adoptTime=#{adoptTime},state=#{state} WHERE id=#{id}
     </update>
 
+    <update id="updateAdoptState" parameterType="adoptAnimal">
+        UPDATE t_adopt SET state=#{state} WHERE id=#{id}
+    </update>
+
     <update id="updateRelationUser" parameterType="int">
          UPDATE t_adopt SET user_id=NULL WHERE user_id=#{user_id}
     </update>

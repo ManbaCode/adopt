@@ -30,120 +30,36 @@
 <!-- blog -->
 <div class="blog" id="blog">
     <div class="container">
-        <h3 class="agile-title">Our Blog</h3>
+        <h3 class="agile-title">团队活动</h3>
         <div class="col-md-5 col-xs-6 blog-grids">
-            <div class="blog-full-wthree">
-                <div class="blog-left-agileits">
-                    <p>Jan</p>
-                    <span>18</span>
-                </div>
-                <div class="blog-right-agileits-w3layouts">
-                    <h4>
-                        <a href="#" data-toggle="modal" data-target="#myModal2">eoquie int temporant 2018</a>
-                    </h4>
-                    <p>
-                        <a href="#" data-toggle="modal" data-target="#myModal2">Cat Life</a>
-                    </p>
-                </div>
-                <div class="clearfix"> </div>
-            </div>
-            <div class="blog-full-wthree">
-                <div class="blog-left-agileits">
-                    <p>Feb</p>
-                    <span>22</span>
-                </div>
-                <div class="blog-right-agileits-w3layouts">
-                    <h4>
-                        <a href="#" data-toggle="modal" data-target="#myModal2">eoquie int temporant 2018</a>
-                    </h4>
-                    <p>
-                        <a href="#" data-toggle="modal" data-target="#myModal2">Cat Life</a>
-                    </p>
-                </div>
-                <div class="clearfix"> </div>
-            </div>
-            <div class="blog-full-wthree">
-                <div class="blog-left-agileits">
-                    <p>Feb</p>
-                    <span>15</span>
-                </div>
-                <div class="blog-right-agileits-w3layouts">
-                    <h4>
-                        <a href="#" data-toggle="modal" data-target="#myModal2">eoquie int temporant 2018</a>
-                    </h4>
-                    <p>
-                        <a href="#" data-toggle="modal" data-target="#myModal2">Cat Life</a>
-                    </p>
-                </div>
-                <div class="clearfix"> </div>
-            </div>
+
+
+            <div class="clearfix"></div>
         </div>
-        <div class="col-md-5 col-xs-6 blog-grids">
-            <div class="blog-full-wthree">
-                <div class="blog-left-agileits">
-                    <p>Jan</p>
-                    <span>26</span>
-                </div>
-                <div class="blog-right-agileits-w3layouts">
-                    <h4>
-                        <a href="#" data-toggle="modal" data-target="#myModal2">eoquie int temporant 2018</a>
-                    </h4>
-                    <p>
-                        <a href="#" data-toggle="modal" data-target="#myModal2">Cat Life</a>
-                    </p>
-                </div>
-                <div class="clearfix"> </div>
-            </div>
-            <div class="blog-full-wthree">
-                <div class="blog-left-agileits">
-                    <p>Feb</p>
-                    <span>06</span>
-                </div>
-                <div class="blog-right-agileits-w3layouts">
-                    <h4>
-                        <a href="#" data-toggle="modal" data-target="#myModal2">eoquie int temporant 2018</a>
-                    </h4>
-                    <p>
-                        <a href="#" data-toggle="modal" data-target="#myModal2">Cat Life</a>
-                    </p>
-                </div>
-                <div class="clearfix"> </div>
-            </div>
-            <div class="blog-full-wthree">
-                <div class="blog-left-agileits">
-                    <p>Feb</p>
-                    <span>12</span>
-                </div>
-                <div class="blog-right-agileits-w3layouts">
-                    <h4>
-                        <a href="#" data-toggle="modal" data-target="#myModal2">eoquie int temporant 2018</a>
-                    </h4>
-                    <p>
-                        <a href="#" data-toggle="modal" data-target="#myModal2">Cat Life</a>
-                    </p>
-                </div>
-                <div class="clearfix"> </div>
-            </div>
-        </div>
-        <div class="clearfix"> </div>
+
+
+    </div>
+    <!-- 显示分页信息 -->
+    <div class="row">
+        <!-- 分页条信息 -->
+        <div class="col-md-6" id="page_nav_area"></div>
     </div>
     <div class="blog-grids mid-blog-agile">
         <img src="${pageContext.request.contextPath}/images/cat2.png" class="img-responsive" alt="">
     </div>
 </div>
 <!-- Modal5 -->
-<div class="modal fade" id="myModal2" tabindex="-1" role="dialog">
+<div class="modal fade" id="showTeam" tabindex="-1" role="dialog">
     <div class="modal-dialog">
         <!-- Modal content-->
         <div class="modal-content">
             <div class="modal-header">
                 <button type="button" class="close" data-dismiss="modal">&times;</button>
                 <div class="modal-info">
-                    <h4>Cat Life</h4>
-                    <img src="${pageContext.request.contextPath}/images/g2.jpg" alt=" " class="img-responsive" />
-                    <h5>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</h5>
-                    <p class="para-agileits-w3layouts">Duis sit amet nisi quis leo fermentum vestibulum vitae eget augue. Nulla quam nunc, vulputate id urna at, tempor tincidunt
-                        metus. Sed feugiat quam nec mauris mattis malesuada.</p>
+
+                    <h4 id="edit_title"></h4>
+                    <p id="edit_address"></p>
+                    <p class="para-agileits-w3layouts" id="edit_event"></p>
                 </div>
             </div>
         </div>
@@ -159,19 +75,18 @@
 <script type="text/javascript">
     var totalRecord,currentPage;
 
-    // $(function(){
-    //     to_page(1);
-    // });
+    $(function(){
+        to_page(1);
+    });
     function to_page(pn){
         $.ajax({
-            url:"${pageContext.request.contextPath}/admin/admins.action",
+            url:"${pageContext.request.contextPath}/blog/blogs.action",
             data:"pn="+pn,
             type:"GET",
             success:function(result){
                 //1、解析并显示员工数据
-                build_admins_table(result);
-                //2、解析并显示分页信息
-                build_page_info(result);
+                build_blogs_table(result);
+
                 //3、解析显示分页条数据
                 build_page_nav(result);
             }
@@ -179,54 +94,38 @@
     }
 
 
-    function build_admins_table(result){
+    function build_blogs_table(result){
         //清空table表格
-        $("#admin_table tbody").empty();
+        $(".col-md-5").empty();
         //index：下标 user：单个对象
-        var admins=result.extend.pageInfo.list;
-        $.each(admins,function(index,admin){
-            var checkBoxTd = $("<td><input type='checkbox' class='check_item'/></td>");
-            var adminIdTd = $("<td></td>").append(admin.id);
-            var adminNameTd = $("<td></td>").append(admin.adminName);
-            var realNameTd = $("<td></td>").append(admin.realName);
-            var telephoneTd=$("<td></td>").append(admin.telephone);
-            var emailTd=$("<td></td>").append(admin.email);
-            var birthdayTd=$("<td></td>").append(admin.birthday);
-            var sexTd=$("<td></td>").append(admin.sex);
+        var blogs=result.extend.pageInfo.list;
+        $.each(blogs,function(index,blog){
 
-            var editBtn = $("<button></button>").addClass("btn btn-primary btn-sm edit_btn")
-                .append($("<span></span>").addClass("glyphicon glyphicon-pencil")).append("修改");
-            //为编辑按钮添加一个自定义的属性，来表示当前员工id
-            editBtn.attr("edit-id",admin.id);
-            var delBtn =  $("<button></button>").addClass("btn btn-danger btn-sm delete_btn")
-                .append($("<span></span>").addClass("glyphicon glyphicon-trash")).append("删除");
-            //为删除按钮添加一个自定义的属性来表示当前删除的员工id
-            delBtn.attr("del-id",admin.id);
-            var btnTd = $("<td></td>").append(editBtn).append(" ").append(delBtn);
-            //var delBtn =
+            var yearTd=$("<div></div>").addClass("blog-left-agileits").append($("<p></p>")).append(blog.actionTime);
+
+            var blogTd=$("<div></div>").addClass("blog-right-agileits-w3layouts");
+
+            var titleTd=$("<h4></h4>").append($("<a></a>")).addClass("my-font").append(blog.title);
+            titleTd.attr("id","title_btn");
+            titleTd.attr("title-id",blog.id);
+
+            var peopelsTd=$("<p></p>").append($("<a></a>")).append(blog.peoples);
+
+           blogTd.append(titleTd);
+
+           blogTd.append(peopelsTd);
+
+            var clear=$("<div></div>").addClass("clearfix");
             //append方法执行完成以后还是返回原来的元素
-            $("<tr></tr>").append(checkBoxTd)
-                .append(adminIdTd)
-                .append(adminNameTd)
-                .append(realNameTd)
-                .append(telephoneTd)
-                .append(emailTd)
-                .append(birthdayTd)
-                .append(sexTd)
-                .append(btnTd)
-                .appendTo("#admin_table tbody");
+                $("<div></div>").addClass("blog-full-wthree")
+                    .append(yearTd)
+                    .append(blogTd)
+                    .after(clear)
+                    .appendTo(".col-md-5");
+
         });
     }
 
-    //解析显示分页信息
-    function build_page_info(result){
-        $("#page_info_area").empty();
-        $("#page_info_area").append("当前"+result.extend.pageInfo.pageNum+"页,总"+
-            result.extend.pageInfo.pages+"页,总"+
-            result.extend.pageInfo.total+"条记录");
-        totalRecord = result.extend.pageInfo.total;//最后的数据
-        currentPage = result.extend.pageInfo.pageNum;//当前页
-    }
     //解析显示分页条，点击分页要能去下一页....
     function build_page_nav(result){
         //page_nav_area
@@ -284,6 +183,27 @@
         var navEle = $("<nav></nav>").append(ul);
         navEle.appendTo("#page_nav_area");
     }
+
+    //点击编辑按钮弹出模态框。
+
+    $(document).on("click","#title_btn",function(){
+
+        var id = $(this).attr("title-id");
+        $.ajax({
+            url:"${pageContext.request.contextPath}/blog/findById.action?id="+id,
+            type:"GET",
+            success:function(result){
+                //填充用户信息
+                $("#edit_title").text(result.extend.blog.title);
+                $("#edit_address").text(result.extend.blog.address);
+                $("#edit_event").text(result.extend.blog.event);
+
+            }});
+        //2、弹出模态框
+        $("#showTeam").modal({
+            backdrop:"static"
+        });
+    });
 </script>
 </body>
 </html>

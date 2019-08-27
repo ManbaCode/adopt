@@ -49,6 +49,7 @@
             <result column="Email" property="Email"></result>
             <result column="birthday" property="birthday"></result>
             <result column="sex" property="sex"></result>
+            <result column="pic" property="pic"></result>
             <result column="remark" property="remark"></result>
         </association>
 

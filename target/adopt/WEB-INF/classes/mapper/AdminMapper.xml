@@ -6,8 +6,8 @@
 
 
     <insert id="addAdmin" parameterType="admin">
-       INSERT INTO admin (adminName,adminPwd,realName,telephone,Email,birthday,sex,remark) VALUES
-       (#{adminName},#{adminPwd},#{realName},#{telephone},#{Email},#{birthday},#{sex},#{remark})
+       INSERT INTO admin (adminName,adminPwd,realName,telephone,Email,birthday,sex,pic,remark) VALUES
+       (#{adminName},#{adminPwd},#{realName},#{telephone},#{Email},#{birthday},#{sex},#{pic},#{remark})
     </insert>
 
 
@@ -16,7 +16,7 @@
     </delete>
 
     <update id="updateAdmin" parameterType="Admin">
-        UPDATE admin SET adminName=#{adminName},adminPwd=#{adminPwd},realName=#{realName},telephone=#{telephone},Email=#{Email},birthday=#{birthday},sex=#{sex},remark=#{remark} WHERE id=#{id}
+        UPDATE admin SET adminName=#{adminName},adminPwd=#{adminPwd},realName=#{realName},telephone=#{telephone},Email=#{Email},birthday=#{birthday},sex=#{sex},#{pic},remark=#{remark} WHERE id=#{id}
     </update>
 
     <resultMap id="BaseAdminMap" type="Admin">
@@ -28,6 +28,7 @@
         <result column="Email" property="Email"></result>
         <result column="birthday" property="birthday"></result>
         <result column="sex" property="sex"></result>
+        <result column="pic" property="pic"></result>
         <result column="remark" property="remark"></result>
         <collection property="commentList" ofType="comment" javaType="list" >
             <id column="id" property="id"></id>

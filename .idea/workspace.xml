@@ -9,7 +9,9 @@
     <bookmark url="file://$PROJECT_DIR$/src/main/webapp/animal/team.jsp" line="120" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="f591194b-05f8-45ac-87db-2b419717f508" name="Default Changelist" comment="" />
+    <list default="true" id="f591194b-05f8-45ac-87db-2b419717f508" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+    </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <ignored path="$PROJECT_DIR$/target/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -67,8 +69,8 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/main/webapp/animal/show.jsp">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="424">
-              <caret line="192" column="43" lean-forward="true" selection-start-line="192" selection-start-column="43" selection-end-line="192" selection-end-column="43" />
+            <state relative-caret-position="-445">
+              <caret line="11" selection-start-line="11" selection-end-line="11" />
             </state>
           </provider>
         </entry>
@@ -532,7 +534,7 @@
       <workItem from="1566779449714" duration="41440000" />
       <workItem from="1566865443462" duration="8138000" />
       <workItem from="1566877265031" duration="27699000" />
-      <workItem from="1566953185170" duration="473000" />
+      <workItem from="1566953185170" duration="1169000" />
     </task>
     <task id="LOCAL-00001" summary="基于SSM的流浪猫狗领养网站的设计与实现的第一次提交">
       <created>1566461234342</created>
@@ -590,7 +592,14 @@
       <option name="project" value="LOCAL" />
       <updated>1566953467378</updated>
     </task>
-    <option name="localTasksCounter" value="9" />
+    <task id="LOCAL-00009" summary="基于SSM的流浪猫狗领养网站的设计与实现">
+      <created>1566953794067</created>
+      <option name="number" value="00009" />
+      <option name="presentableId" value="LOCAL-00009" />
+      <option name="project" value="LOCAL" />
+      <updated>1566953794067</updated>
+    </task>
+    <option name="localTasksCounter" value="10" />
     <servers />
   </component>
   <component name="TestHistory">
@@ -626,7 +635,7 @@
     </history-entry>
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="253659000" />
+    <option name="totallyTimeSpent" value="254355000" />
   </component>
   <component name="TodoView" selected-index="2">
     <todo-panel id="selected-file">
@@ -639,9 +648,8 @@
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1382" height="744" extended-state="6" />
-    <editor active="true" />
     <layout>
-      <window_info active="true" content_ui="combo" id="Project" order="0" sideWeight="0.499002" visible="true" weight="0.22314675" />
+      <window_info content_ui="combo" id="Project" order="0" sideWeight="0.499002" visible="true" weight="0.22314675" />
       <window_info id="Structure" order="1" sideWeight="0.500998" side_tool="true" weight="0.20574887" />
       <window_info id="Web" order="2" side_tool="true" />
       <window_info id="Designer" order="3" />
@@ -658,7 +666,7 @@
       <window_info anchor="bottom" id="Version Control" order="8" weight="0.8868852" />
       <window_info anchor="bottom" id="Database Changes" order="9" />
       <window_info anchor="bottom" id="Spring" order="10" weight="0.3295082" />
-      <window_info anchor="bottom" id="Terminal" order="11" weight="0.3295082" />
+      <window_info active="true" anchor="bottom" id="Terminal" order="11" visible="true" weight="0.67704916" />
       <window_info anchor="bottom" id="Event Log" order="12" sideWeight="0.50075644" side_tool="true" weight="0.42131147" />
       <window_info anchor="bottom" id="Java Enterprise" order="13" weight="0.3295082" />
       <window_info anchor="bottom" id="Messages" order="14" sideWeight="0.49924356" weight="0.72131145" />
@@ -1056,8 +1064,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/webapp/animal/show.jsp">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="424">
-          <caret line="192" column="43" lean-forward="true" selection-start-line="192" selection-start-column="43" selection-end-line="192" selection-end-column="43" />
+        <state relative-caret-position="-445">
+          <caret line="11" selection-start-line="11" selection-end-line="11" />
         </state>
       </provider>
     </entry>

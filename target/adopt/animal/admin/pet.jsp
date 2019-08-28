@@ -3,7 +3,7 @@
   User: 24255
   Date: 2019/8/22
   Time: 23:49
-  To change this template use File | Settings | File Templates.
+  To change this template use /images | Settings | /images Templates.
 --%>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <!DOCTYPE html>
@@ -52,7 +52,7 @@
                     <li><a href="crmclass/list.action#"><i class="fa fa-gear fa-fw"></i> 系统设置</a></li>
                     <li class="divider"></li>
                     <li>
-                        <a href="logout.action">
+                        <a href="${pageContext.request.contextPath}/admin/logout.action">
                             <i class="fa fa-sign-out fa-fw"></i>退出登录
                         </a>
                     </li>
@@ -101,12 +101,12 @@
                             </a>
                         </li>
                         <li class="list-group-item my_font">
-                            <a href="${pageContext.request.contextPath}/animal/admin/disAgree.jsp">
+                            <a href="${pageContext.request.contextPath}/animal/admin/agree.jsp">
                                 <i class="fa fa-sitemap fa-fw"></i> 同意领养列表
                             </a>
                         </li>
                         <li class="list-group-item my_font">
-                            <a href="${pageContext.request.contextPath}/animal/admin/agree.jsp">
+                            <a href="${pageContext.request.contextPath}/animal/admin/disAgree.jsp">
                                 <i class="fa fa-sitemap fa-fw"></i> 不同意领养列表
                             </a>
                         </li>
@@ -254,7 +254,7 @@
             </div>
             <div class="modal-footer">
                 <button type="button" class="btn btn-default" data-dismiss="modal">关闭</button>
-                <button type="button" class="btn btn-primary" id="pet_save_btn">创建评论记录</button>
+                <button type="button" class="btn btn-primary" id="pet_save_btn">提交宠物信息</button>
             </div>
         </div>
     </div>
@@ -311,7 +311,7 @@
                             照片
                         </label>
                         <div class="col-sm-4">
-                            <input type="file" value="${pet.pic}" id="edit_pic" name="pic">
+                            <input type="file" value="/images/${pet.pic}" id="edit_pic" name="file">
                         </div>
                         <label for="edit_state" class="col-sm-2 control-label">
                             领养状态
@@ -504,12 +504,14 @@
     });
     //点击保存，保存宠物。
     $("#pet_save_btn").click(function(){
-        //2、发送ajax请求保存员工
-        console.log($("#newPet form").serialize());
+        var pet=document.getElementById("new_pet_form");
+        var petTd=new FormData(pet);
         $.ajax({
             url:"${pageContext.request.contextPath}/pet/create.action",
             type:"POST",
-            data:$("#newPet form").serialize(),
+            processData: false,  // 告诉jQuery不要去处理发送的数据
+            contentType: false, // 告诉jQuery不要去设置Content-Type请求头
+            data:petTd,
             success:function (result) {
                 alert("宠物创建成功");
                 to_page(1);
@@ -517,7 +519,6 @@
             error:function (result) {
                 console.log(result);
                 alert("宠物创建失败");
-
             }
         });
     });
@@ -539,7 +540,7 @@
                 $("#edit_petType").val(result.extend.pet.petType);
                 $("#edit_sex").val(result.extend.pet.sex);
                 $("#edit_birthday").val(result.extend.pet.birthday);
-                $("#edit_pic").val(result.extend.pet.pic);
+                // $("#edit_pic").val(result.extend.pet.pic);
                 $("#edit_state").val(result.extend.pet.state);
                 $("#edit_remark").val(result.extend.pet.remark);
             },
@@ -556,10 +557,12 @@
 
     //点击更新按钮弹出模态框。
     $("#pet_update_btn").click(function(){
+        var pet=document.getElementById("edit_pet_from");
+        var petTd=new FormData(pet);
         $.ajax({
             url:"${pageContext.request.contextPath}/pet/update.action",
             type:"POST",
-            data:$("#edit_pet_form").serialize(),
+            data:pet,
             success:function (result) {
                 alert("宠物信息更新成功！");
                 to_page(1);
@@ -593,22 +596,6 @@
             });
         }
     });
-
-    // 删除宠物
-    function deletePet(id) {
-        if (confirm('确实要删除该宠物吗?')) {
-            $.Post("crmclass/delete.action", {"id": id},
-                function (data) {
-                    if (data == "OK") {
-                        alert("记录删除成功！");
-                        window.location.reload();
-                    } else {
-                        alert("删除记录失败！");
-                        window.location.reload();
-                    }
-                });
-        }
-    }
 </script>
 
 </body>

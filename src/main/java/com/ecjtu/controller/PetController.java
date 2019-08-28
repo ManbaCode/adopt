@@ -15,7 +15,9 @@ import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.multipart.MultipartFile;
 import org.springframework.web.servlet.ModelAndView;
+import org.springframework.web.servlet.mvc.annotation.ModelAndViewResolver;
 
+import javax.servlet.http.HttpServletRequest;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -73,7 +75,17 @@ public class PetController {
 
     @RequestMapping("findById.action")
     @ResponseBody
-    public Message findById(Integer id, Model model){
+    public Message findById(Integer id){
+        Pet pet = petService.findById(id);
+        if(pet!=null){
+            return Message.success().add("pet",pet);
+        }else{
+            return Message.fail();
+        }
+    }
+    @RequestMapping("findByPet.action")
+    @ResponseBody
+    public Message findByPet(Integer id, HttpServletRequest request){
         Pet pet = petService.findById(id);
         String pic = pet.getPic();
         String[] split = pic.split(",");
@@ -81,15 +93,15 @@ public class PetController {
         for(int i=0;i<split.length;i++){
             pics.add(split[i]);
         }
-        model.addAttribute("pics",pic);
-        model.addAttribute("pet",pet);
+        request.getSession().setAttribute("pics",pic);
+        request.getSession().setAttribute("pet",pet);
         if(pet!=null){
             return Message.success().add("pet",pet);
-        }else{
+        } else{
             return Message.fail();
         }
-    }
 
+    }
     @RequestMapping("findByName.action")
     @ResponseBody
     public Pet findByName(String petName){

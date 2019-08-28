@@ -11,7 +11,7 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Title</title>
+    <title>具体动物信息的展示</title>
     <!-- Meta tag Keywords -->
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta charset="UTF-8" />
@@ -45,10 +45,10 @@
         </div>
     </div>
     <div class="w3l-img-side">
-        <img src="${pageContext.request.contextPath}/images/cat11.png" alt="" />
+        <img src="/images/cat11.png" alt="" />
     </div>
     <div class="w3l-img-side w3l-img-side2">
-        <img src="${pageContext.request.contextPath}/images/cat1.png" alt="" />
+        <img src="/images/cat1.png" alt="" />
     </div>
 </div>
 
@@ -118,12 +118,14 @@
 
             var divTd=$("<div></div>").addClass("ih-item circle effect1 agile_services_grid");
             var headTd=$("<div></div>").addClass("spinner");
-            var imgTd=$("<div></div>").addClass("img").append($("<img/>")).addClass("img-responsive").attr("src","${pageContext.request.contextPath}/images/"+pet.pic);
+            var imgTd=$("<div></div>").addClass("img").append($("<img/>")).addClass("img-responsive").attr("src","/images/"+pet.pic);
+            imgTd.attr("pet-id",pet.id);
             divTd.append(headTd);
             divTd.append(imgTd);
 
             var fileTd=$("<fieldset></fieldset>");
             var animalTd=$("<legend></legend>").append(pet.petName);
+
             fileTd.append(animalTd).append(pet.remark);
             $("<div></div>").addClass("col-md-4 col-sm-4 col-xs-4 w3_agile_services_grid").attr("data-aos","zoom-in")
                 .append(divTd)
@@ -190,6 +192,60 @@
         navEle.appendTo("#page_nav_area");
 
     }
+
+    $(document).on("click",".img-responsive",function(){
+        var id = $(this).attr("pet-id");
+        $.ajax({
+            url:"${pageContext.request.contextPath}/pet/findByPet.action?id="+id,
+            type:"GET",
+            success:function (result) {
+                alert("查询跳转成功");
+                window.location.href="${pageContext.request.contextPath}/animal/show.jsp";
+            },
+            error:function (result) {
+                alert("跳转查询失败")
+            }
+
+        })
+    })
+
+    //清空表单样式及内容
+    function reset_form(ele){
+        $(ele)[0].reset();
+        //清空表单样式
+        $(ele).find("*").removeClass("has-error has-success");
+        $(ele).find(".help-block").text("");
+    }
+
+    //点击新增按钮弹出模态框。
+    $("#pet_add_modal_btn").click(function(){
+        //清除表单数据（表单完整重置（表单的数据，表单的样式））
+        reset_form("#newPet form");
+        //弹出模态框
+        $("#newPet").modal({
+            backdrop:"static"
+        });
+    });
+    //点击保存，保存宠物。
+    $("#pet_save_btn").click(function(){
+        var pet=document.getElementById("new_pet_form");
+        var petTd=new FormData(pet);
+        $.ajax({
+            url:"${pageContext.request.contextPath}/pet/create.action",
+            type:"POST",
+            processData: false,  // 告诉jQuery不要去处理发送的数据
+            contentType: false, // 告诉jQuery不要去设置Content-Type请求头
+            data:petTd,
+            success:function (result) {
+                alert("宠物创建成功");
+                to_page(1);
+            },
+            error:function (result) {
+                console.log(result);
+                alert("宠物创建失败");
+            }
+        });
+    });
 </script>
 
 </body>

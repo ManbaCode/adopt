@@ -124,7 +124,7 @@
             var remarkTd=null;
             if(index%2!=0){
                 pic=$("<div></div>").addClass("team-grid-right aliquam").append($("<img/>").
-                addClass("img-responsive").attr("src","${pageContext.request.contextPath}/images/"+admin.pic));
+                addClass("img-responsive").attr("src","/images/"+admin.pic));
                 adminNameTd=$("<div></div>").addClass("team-grid-left non").append($("<h4></h4>")).append(admin.adminName);
                 remarkTd=$("<p></p>").append(admin.remark);
                 adminNameTd.append(remarkTd);
@@ -132,7 +132,7 @@
             }else{
 
                 pic=$("<div></div>").addClass("team-grid-right").append($("<img/>").
-                addClass("img-responsive").attr("src","${pageContext.request.contextPath}/images/"+admin.pic));
+                addClass("img-responsive").attr("src","/images/"+admin.pic));
                 adminNameTd=$("<div></div>").addClass("team-grid-left").append($("<h4></h4>")).append(admin.adminName);
                 remarkTd=$("<p></p>").append(admin.remark);
                 adminNameTd.append(remarkTd);

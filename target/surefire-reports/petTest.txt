@@ -1,0 +1,14 @@
+-------------------------------------------------------------------------------
+Test set: petTest
+-------------------------------------------------------------------------------
+Tests run: 2, Failures: 0, Errors: 2, Skipped: 0, Time elapsed: 0.122 s <<< FAILURE! - in petTest
+select(petTest)  Time elapsed: 0 s  <<< ERROR!
+java.lang.IllegalStateException: Failed to load ApplicationContext
+Caused by: org.springframework.beans.factory.BeanDefinitionStoreException: IOException parsing XML document from class path resource [Spring-dao.xml]; nested exception is java.io.FileNotFoundException: class path resource [Spring-dao.xml] cannot be opened because it does not exist
+Caused by: java.io.FileNotFoundException: class path resource [Spring-dao.xml] cannot be opened because it does not exist
+
+update(petTest)  Time elapsed: 0 s  <<< ERROR!
+java.lang.IllegalStateException: Failed to load ApplicationContext
+Caused by: org.springframework.beans.factory.BeanDefinitionStoreException: IOException parsing XML document from class path resource [Spring-dao.xml]; nested exception is java.io.FileNotFoundException: class path resource [Spring-dao.xml] cannot be opened because it does not exist
+Caused by: java.io.FileNotFoundException: class path resource [Spring-dao.xml] cannot be opened because it does not exist
+

@@ -53,7 +53,7 @@
                     %>
                     <c:if test="${sessionScope.isLogin}" var="flage" scope="session">
                         <li id="edit_logout">
-                            <div class="img"><img src="${pageContext.request.contextPath}/images/${user.getPic()}" alt="" width="60px" style="border-radius:50% " value="${user.getId()}" id="user_edit_modal_btn"></div>
+                            <div class="img"><img src="/images/${user.getPic()}" alt="" width="60px" style="border-radius:50% " value="${user.getId()}" id="user_edit_modal_btn"></div>
                         </li>
                         <a href="${pageContext.request.contextPath}/user/logout.action" id="logout">退出</a>
                     </c:if>
@@ -90,7 +90,7 @@
             <div class="tab-content">
                 <div role="tabpanel" class="tab-pane active" id="home">
                     <div class="modal-body">
-                        <form class="form-horizontal" id="user_login_form" method="post" enctype="multipart/form-data">
+                        <form class="form-horizontal" id="user_login_form">
                             <div class="form-group">
                                 <label for="new_loginName" class="col-sm-2 control-label">账号</label>
                                 <div class="col-sm-8">
@@ -200,100 +200,100 @@
 </div>
 <!-- 注册登录模块框 -->
 <!--个人信息修改的模态框-->
-<%--<div class="modal fade" id="editUser" tabindex="-1" role="dialog" aria-labelledby="myModalLabe">--%>
-<%--    <div class="modal-dialog" role="document">--%>
-<%--        <div class="modal-content">--%>
-<%--            <div class="modal-header">--%>
-<%--                <button type="button" class="close" data-dismiss="modal" aria-label="Close">--%>
-<%--                    <span aria-hidden="true">×</span>--%>
-<%--                </button>--%>
-<%--                <h4 class="modal-title" id="myModalLabe">修改用户信息</h4>--%>
-<%--            </div>--%>
-<%--            <div class="modal-body">--%>
-<%--                <form class="form-horizontal" id="user_edit_form" method="post" enctype="multipart/form-data">--%>
-<%--                    <input type="hidden" id="edit_id" name="id">--%>
-<%--                    <div class="form-group">--%>
-<%--                        <label for="edit_userName" class="col-sm-2 control-label">--%>
-<%--                            用户名称--%>
-<%--                        </label>--%>
-<%--                        <div class="col-sm-4">--%>
-<%--                            <input type="text" class="form-control" id="edit_userName" placeholder="用户名称" name="userName" value="${user.userName}">--%>
-<%--                        </div>--%>
-<%--                        <label for="edit_password" class="col-sm-2 control-label">--%>
-<%--                            用户密码--%>
-<%--                        </label>--%>
-<%--                        <div class="col-sm-4">--%>
-<%--                            <input type="password" class="form-control" id="edit_password" placeholder="用户密码" name="password" value="${user.password}">--%>
-<%--                        </div>--%>
-<%--                    </div>--%>
-<%--                    <div class="form-group">--%>
-<%--                        <label for="edit_age" class="col-sm-2 control-label">--%>
-<%--                            年龄--%>
-<%--                        </label>--%>
-<%--                        <div class="col-sm-4">--%>
-<%--                            <input type="text" class="form-control" id="edit_age" placeholder="年龄" name="age" value="${user.age}">--%>
-<%--                        </div>--%>
-<%--                        <label for="edit_sex" class="col-sm-2 control-label">--%>
-<%--                            性别--%>
-<%--                        </label>--%>
-<%--                        <div class="col-sm-4">--%>
-<%--                            <select class="form-control" id="edit_sex" name="sex" value="${user.sex}">--%>
-<%--                                <option value="男">男</option>--%>
-<%--                                <option value="女">女</option>--%>
-<%--                            </select>--%>
-<%--                        </div>--%>
+<div class="modal fade" id="editUser" tabindex="-1" role="dialog" aria-labelledby="myModalLabe">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">×</span>
+                </button>
+                <h4 class="modal-title" id="myModalLabe">修改用户信息</h4>
+            </div>
+            <div class="modal-body">
+                <form class="form-horizontal" id="user_edit_form" method="post" enctype="multipart/form-data">
+                    <input type="hidden" id="edit_id" name="id">
+                    <div class="form-group">
+                        <label for="edit_userName" class="col-sm-2 control-label">
+                            用户名称
+                        </label>
+                        <div class="col-sm-4">
+                            <input type="text" class="form-control" id="edit_userName" placeholder="用户名称" name="userName" value="${user.userName}">
+                        </div>
+                        <label for="edit_password" class="col-sm-2 control-label">
+                            用户密码
+                        </label>
+                        <div class="col-sm-4">
+                            <input type="password" class="form-control" id="edit_password" placeholder="用户密码" name="password" value="${user.password}">
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label for="edit_age" class="col-sm-2 control-label">
+                            年龄
+                        </label>
+                        <div class="col-sm-4">
+                            <input type="text" class="form-control" id="edit_age" placeholder="年龄" name="age" value="${user.age}">
+                        </div>
+                        <label for="edit_sex" class="col-sm-2 control-label">
+                            性别
+                        </label>
+                        <div class="col-sm-4">
+                            <select class="form-control" id="edit_sex" name="sex" value="${user.sex}">
+                                <option value="男">男</option>
+                                <option value="女">女</option>
+                            </select>
+                        </div>
 
-<%--                    </div>--%>
-<%--                    <div class="form-group">--%>
-<%--                        <label for="edit_telephone" class="col-sm-2 control-label">--%>
-<%--                            电话号码--%>
-<%--                        </label>--%>
-<%--                        <div class="col-sm-4">--%>
-<%--                            <input type="text" class="form-control" id="edit_telephone" placeholder="电话" name="telephone" value="${user.telephone}">--%>
-<%--                        </div>--%>
-<%--                        <label for="edit_Email" class="col-sm-2 control-label">--%>
-<%--                            Email--%>
-<%--                        </label>--%>
-<%--                        <div class="col-sm-4">--%>
-<%--                            <input type="text" class="form-control" id="edit_Email" placeholder="Email"  name="Email" value="${user.email}">--%>
-<%--                        </div>--%>
+                    </div>
+                    <div class="form-group">
+                        <label for="edit_telephone" class="col-sm-2 control-label">
+                            电话号码
+                        </label>
+                        <div class="col-sm-4">
+                            <input type="text" class="form-control" id="edit_telephone" placeholder="电话" name="telephone" value="${user.telephone}">
+                        </div>
+                        <label for="edit_Email" class="col-sm-2 control-label">
+                            Email
+                        </label>
+                        <div class="col-sm-4">
+                            <input type="text" class="form-control" id="edit_Email" placeholder="Email"  name="Email" value="${user.email}">
+                        </div>
 
-<%--                    </div>--%>
-<%--                    <div class="form-group">--%>
-<%--                        <label for="edit_address" class="col-sm-2 control-label">--%>
-<%--                            地址--%>
-<%--                        </label>--%>
-<%--                        <div class="col-sm-4">--%>
-<%--                            <input type="text" class="form-control" id="edit_address" placeholder="地址" name="address" value="${user.address}">--%>
-<%--                        </div>--%>
-<%--                        <label for="edit_state" class="col-sm-2 control-label">--%>
-<%--                            经历--%>
-<%--                        </label>--%>
-<%--                        <div class="col-sm-4">--%>
-<%--                            <select class="form-control" id="edit_state" name="state" value="${user.state}">--%>
-<%--                                <option value="0">有领养经历</option>--%>
-<%--                                <option value="1">无领养经历</option>--%>
-<%--                            </select>--%>
-<%--                        </div>--%>
-<%--                    </div>--%>
-<%--                    <div class="form-group">--%>
-<%--                        <label for="edit_pic" class="col-sm-2 control-label">--%>
-<%--                            头像--%>
-<%--                        </label>--%>
-<%--                        <div class="col-sm-4">--%>
-<%--                            <input type="file" class="form-control" id="edit_pic" placeholder="头像" name="pic" value="/pic/${user.pic}">--%>
-<%--                        </div>--%>
+                    </div>
+                    <div class="form-group">
+                        <label for="edit_address" class="col-sm-2 control-label">
+                            地址
+                        </label>
+                        <div class="col-sm-4">
+                            <input type="text" class="form-control" id="edit_address" placeholder="地址" name="address" value="${user.address}">
+                        </div>
+                        <label for="edit_state" class="col-sm-2 control-label">
+                            经历
+                        </label>
+                        <div class="col-sm-4">
+                            <select class="form-control" id="edit_state" name="state" value="${user.state}">
+                                <option value="0">有领养经历</option>
+                                <option value="1">无领养经历</option>
+                            </select>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label for="edit_pic" class="col-sm-2 control-label">
+                            头像
+                        </label>
+                        <div class="col-sm-4">
+                            <input type="file" class="form-control" id="edit_pic" placeholder="头像" name="pic" value="/pic/${user.pic}">
+                        </div>
 
-<%--                    </div>--%>
-<%--                </form>--%>
-<%--            </div>--%>
-<%--            <div class="modal-footer">--%>
-<%--                <button type="button" class=" btn-default" data-dismiss="modal">关闭</button>--%>
-<%--                <button type="button" class=" btn-primary" id="user_update_btn">保存修改</button>--%>
-<%--            </div>--%>
-<%--        </div>--%>
-<%--    </div>--%>
-<%--</div>--%>
+                    </div>
+                </form>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class=" btn-default" data-dismiss="modal">关闭</button>
+                <button type="button" class=" btn-primary" id="user_update_btn">保存修改</button>
+            </div>
+        </div>
+    </div>
+</div>
 
 
 <script type="text/javascript">
@@ -335,10 +335,14 @@
 
     //点击更新按钮弹出模态框。
     $("#user_update_btn").click(function(){
+        var file=document.getElementById("user_edit_form");
+        var fd = new FormData(file);
         $.ajax({
             url:"${pageContext.request.contextPath}/user/update.action",
             type:"POST",
-            data:$("#user_edit_form").serialize(),
+            processData: false,  // 告诉jQuery不要去处理发送的数据
+            contentType: false, // 告诉jQuery不要去设置Content-Type请求头
+            data:fd,
             success:function (result) {
                 alert("用户信息更新成功！");
             },

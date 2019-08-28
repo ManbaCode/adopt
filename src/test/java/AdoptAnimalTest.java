@@ -8,6 +8,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.test.context.ContextConfiguration;
 import org.springframework.test.context.junit4.SpringJUnit4ClassRunner;
 
+import java.text.SimpleDateFormat;
 import java.util.Date;
 import java.util.List;
 
@@ -56,6 +57,14 @@ public class AdoptAnimalTest {
     public void delet(){
         int i = adoptAnimalMapper.deleteAdoptAnimal(10);
         System.out.println(i);
+    }
+
+    @Test
+    public void tiem(){
+       AdoptAnimal animal=new AdoptAnimal();
+       SimpleDateFormat format=new SimpleDateFormat("yyyy-MM-dd");
+        String format1 = format.format(new Date());
+        System.out.println(animal);
     }
 
 }

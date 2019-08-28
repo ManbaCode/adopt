@@ -36,6 +36,18 @@ public class CommentController {
         return Message.success().add("pageInfo",page);
     }
 
+    @RequestMapping("comment.action")
+    @ResponseBody
+    public Message getComment(){
+        List<Comment> comments = commentService.getComments();
+        if(comments!=null){
+            return Message.success().add("comment",comments);
+        }else{
+            return Message.fail();
+        }
+
+    }
+
     @RequestMapping("/create.action")
     @ResponseBody
     public Message createComment(Comment comment){

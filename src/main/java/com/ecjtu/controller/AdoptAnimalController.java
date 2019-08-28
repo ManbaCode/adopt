@@ -1,6 +1,8 @@
 package com.ecjtu.controller;
 
 import com.ecjtu.entity.AdoptAnimal;
+import com.ecjtu.entity.Pet;
+import com.ecjtu.entity.Users;
 import com.ecjtu.service.AdoptAnimalService;
 import com.ecjtu.util.MailUtil;
 import com.ecjtu.util.Message;
@@ -13,7 +15,10 @@ import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.servlet.ModelAndView;
 
+import javax.jws.soap.SOAPBinding;
 import javax.mail.MessagingException;
+import javax.servlet.http.HttpServletRequest;
+import java.util.Date;
 import java.util.List;
 
 /**
@@ -39,10 +44,38 @@ public class AdoptAnimalController {
         return Message.success().add("pageInfo",page);
     }
 
+
+    @RequestMapping("ByAgree.action")
+    @ResponseBody
+    public Message getAdoptStates(@RequestParam(value = "pn",defaultValue = "1") Integer pn){
+        PageHelper.startPage(pn,4);
+        int state=2;
+        List<AdoptAnimal> adoptAnimals = animalService.findByState(state);
+        PageInfo page=new PageInfo(adoptAnimals,2);
+        return Message.success().add("pageInfo",page);
+    }
+
+    @RequestMapping("ByDisAgree.action")
+    @ResponseBody
+    public Message getAdoptDisagress(@RequestParam(value = "pn",defaultValue = "1") Integer pn){
+        PageHelper.startPage(pn,4);
+        int state=0;
+        List<AdoptAnimal> adoptAnimals = animalService.findByState(state);
+        PageInfo page=new PageInfo(adoptAnimals,2);
+        return Message.success().add("pageInfo",page);
+    }
+
     @RequestMapping("create.action")
     @ResponseBody
-    public Message createAdopt(AdoptAnimal adoptAnimal){
-        if(animalService.addAdoptAnimal(adoptAnimal)>0){
+    public Message createAdopt(HttpServletRequest request){
+        Pet pet = (Pet)request.getSession().getAttribute("pet");
+        Users user = (Users)request.getSession().getAttribute("user");
+        AdoptAnimal animal=new AdoptAnimal();
+        animal.setUser(user);
+        animal.setPet(pet);
+        animal.setAdoptTime(new Date());
+        int i = animalService.addAdoptAnimal(animal);
+        if(i>0){
             return Message.success();
         }else{
             return Message.fail();
@@ -51,7 +84,7 @@ public class AdoptAnimalController {
 
     @RequestMapping("delete.action")
     @ResponseBody
-    public Message deletAdopt(Integer id){
+    public Message deleteAdopt(Integer id){
         if(animalService.deleteAdoptAnimal(id)>0){
             return Message.success();
         }else{

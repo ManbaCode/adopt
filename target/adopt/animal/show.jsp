@@ -23,7 +23,6 @@
     <script src="${pageContext.request.contextPath}/js/jquery.comment.js"></script>
 </head>
 <body>
-<jsp:include page="navigation.jsp"></jsp:include>
 <div>
     <div>
         <h2>待领养的动物</h2>
@@ -31,55 +30,58 @@
             <div id="demo1" class="slideBox">
                 <ul class="items">
                     <c:forEach items="${pics}" var="pic">
-                    <li><a href="" ><img class="my-img" src="${pageContext.request.contextPath}/images/${pic}"></a></li>
+                        <li>
+                            <a href="" ><img class="my-img" src="/images/${pic}"></a>
+                        </li>
                     </c:forEach>
                 </ul>
             </div>
             <div class="name">
-                <img src="${pageContext.request.contextPath}/images/p9.jpg">
+                <img src="/images/p9.jpg">
                 <span>${pet.petName}</span>
             </div>
         </center>
         <div class="animal">
             <div class="group">
                 <div class="animalX1">
-                    <img src="${pageContext.request.contextPath}/images/P7.jpg"><span>编号</span><br>
+                    <img src="/images/P7.jpg"><span>编号</span><br>
                     <p>${pet.id}</p>
                 </div>
                 <div class="animalX2">
-                    <img src="${pageContext.request.contextPath}/images/P6.jpg"><span>生日</span><br>
+                    <img src="/images/p6.jpg"><span>生日</span><br>
                     <p>${pet.birthday}</p>
                 </div>
             </div>
             <div class="group">
                 <div class="animalX3">
-                    <img src="${pageContext.request.contextPath}/images/catsm1.jpg"><span>品种</span><br>
+                    <img src="/images/catsm1.jpg"><span>品种</span><br>
                     <p>${pet.petType}</p>
                 </div>
                 <div class="animalX4">
-                    <img src="${pageContext.request.contextPath}/images/p4.jpg"><span>性别</span><br>
+                    <img src="/images/p4.jpg"><span>性别</span><br>
                     <p>${pet.sex}</p>
                 </div>
             </div>
             <div class="group">
                 <div class="animalX5">
-                    <img src="${pageContext.request.contextPath}/images/p8.jpg"><span>备注</span><br>
-                    <p>${pet.reamrk}</p>
+                    <img src="/images/p8.jpg"><span>备注</span><br>
+                    <p>${pet.remark}</p>
                 </div>
             </div>
         </div>
         <div class="animal_me">
-            <div class="animal_me1"><img src="${pageContext.request.contextPath}/images/p11.jpg"></div>
-            <div class="animal_me2"><p>大家好，我是${pet.name}。我的特徵是${pet.remark}。我非常有活力，最愛和人玩耍逛街做運動。我很喜歡認識朋友，我有自信能和大部份狗狗友好相處。
+            <div class="animal_me1"><img src="/images/p11.jpg"></div>
+            <div class="animal_me2"><p>大家好，我是${pet.petName}。我的特徵是${pet.remark}。我非常有活力，最愛和人玩耍逛街做運動。我很喜歡認識朋友，我有自信能和大部份狗狗友好相處。
                 我已經準備好當你的好朋友，你能帶我回家給我永遠的溫暖嗎?</p></div>
-            <div class="animal_me3"><img src="${pageContext.request.contextPath}/images/p10.jpg"></div>
+            <div class="animal_me3"><img src="/images/p10.jpg"></div>
         </div>
         <div class="my_btn">
-            <button class="btn btn-primary btn-lg" data-toggle="modal" data-target="#myModal">想要领养</button>
+            <button class="btn btn-primary btn-lg" id="pet_adopt_modal_btn">想要领养</button>
         </div>
     </div>
+
     <!-- 模态框（Modal） -->
-    <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+    <div class="modal fade" id="myAdopt" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
         <div class="modal-dialog">
             <div class="modal-content">
                 <div class="modal-header">
@@ -91,13 +93,22 @@
                     </h4>
                 </div>
                 <div class="modal-body">
-                    <form class="form-horizontal" id="new_department_form">
+                    <form class="form-horizontal" id="new_adopt_form">
+                        <input type="hidden" value="${user.id}" name="id">
                         <div class="form-group">
                             <label for="new_Name" class="col-sm-2 control-label">
                                 姓名： </label>
                             <div class="col-sm-10">
                                 <input type="text" class="form-control" id="new_Name"
-                                       placeholder="name" name="name" value="">
+                                       placeholder="userName" name="userName" value="${user.userName}">
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label for="new_petName" class="col-sm-2 control-label">
+                                姓名： </label>
+                            <div class="col-sm-10">
+                                <input type="text" class="form-control" id="new_petName"
+                                       placeholder="petName" name="petName" value="${pet.petName}">
                             </div>
                         </div>
                         <div class="form-group">
@@ -105,7 +116,7 @@
                                 性别： </label>
                             <div class="col-sm-10">
                                 <input type="text" class="form-control" id="new_Sex"
-                                       placeholder="sex" name="sex">
+                                       placeholder="sex" name="sex" value="${user.sex}">
                             </div>
                         </div>
                         <div class="form-group">
@@ -113,7 +124,7 @@
                                 联系方式： </label>
                             <div class="col-sm-10">
                                 <input type="text" class="form-control" id="new_tel"
-                                       placeholder="telephone" name="telephone">
+                                       placeholder="telephone" name="telephone" value="${user.telephone}">
                             </div>
                         </div>
                         <div class="form-group">
@@ -121,7 +132,7 @@
                                 邮件： </label>
                             <div class="col-sm-10">
                                 <input type="text" class="form-control" id="new_Email"
-                                       placeholder="Email" name="new_Email">
+                                       placeholder="Email" name="new_Email" value="${user.email}">
                             </div>
                         </div>
                         <div class="form-group">
@@ -129,15 +140,7 @@
                                 地址： </label>
                             <div class="col-sm-10">
                                 <input type="text" class="form-control" id="new_Adress"
-                                       placeholder="adress" name="address">
-                            </div>
-                        </div>
-                        <div class="form-group">
-                            <label for="new_remark" class="col-sm-2 control-label">
-                                备注： </label>
-                            <div class="col-sm-10">
-                            <textarea type="text" class="form-control" id="new_remark"
-                                      placeholder="remark" name="remark"></textarea>
+                                       placeholder="地址" name="address" value="${user.address}">
                             </div>
                         </div>
                     </form>
@@ -145,7 +148,7 @@
                 <div class="modal-footer">
                     <button type="button" class="btn btn-default" data-dismiss="modal">关闭
                     </button>
-                    <button type="button" class="btn btn-primary">提交申请</button>
+                    <button type="button" class="btn btn-primary" id="submit_btn">提交申请</button>
                 </div>
             </div><!-- /.modal-content -->
         </div><!-- /.modal -->
@@ -156,81 +159,109 @@
     </div>
     <div class="container">
         <div class="commentbox">
-            <textarea cols="80" rows="50" placeholder="来说几句吧${pageContext.request.contextPath}${pageContext.request.contextPath}${pageContext.request.contextPath}" class="mytextarea" id="content"></textarea>
+            <textarea cols="80" rows="50" placeholder="来说几句吧" class="mytextarea" id="content"></textarea>
             <div class="btn btn-info pull-right" id="comment">评论</div>
         </div>
 
     </div>
 </div>
+
 <script>
-    jQuery(function($){
-        $('#demo1').slideBox();
+    var user="${sessionScope.user}";
 
+    <%--jQuery(function($){--%>
+    <%--    $('#demo1').slideBox();--%>
+    <%--});--%>
+
+
+    $(function () {
+        to_page(1);
     });
-
-    var arr = [
-        {id:1,img:"./images/img.jpg",replyName:"帅大叔",beReplyName:"匿名",content:"同学聚会，看到当年追我的屌丝开着宝马车带着他老婆来了，他老婆是我隔壁宿舍的同班同学，心里后悔极了。",time:"2017-10-17 11:42:53",address:"深圳",osname:"",browse:"谷歌",replyBody:[]},
-        {id:2,img:"./images/img.jpg",replyName:"匿名",beReplyName:"",content:"到菜市场买菜，看到一个孩子在看摊，我问：“一只鸡多少钱？” 那孩子回答：“23。” 我又问：“两只鸡多少钱？” 孩子愣了一下，一时间没算过来，急中生智大吼一声：“一次只能买一只！”",time:"2017-10-17 11:42:53",address:"深圳",osname:"",browse:"谷歌",replyBody:[{id:3,img:"",replyName:"帅大叔",beReplyName:"匿名",content:"来啊，我们一起吃鸡",time:"2017-10-17 11:42:53",address:"",osname:"",browse:"谷歌"}]},
-        {id:3,img:"./images/img.jpg",replyName:"帅大叔",beReplyName:"匿名",content:"同学聚会，看到当年追我的屌丝开着宝马车带着他老婆来了，他老婆是我隔壁宿舍的同班同学，心里后悔极了。",time:"2017-10-17 11:42:53",address:"深圳",osname:"win10",browse:"谷歌",replyBody:[]}
-    ];
-    $(function(){
-        $(".comment-list").addCommentList({data:arr,add:""});
-        $("#comment").click(function(){
-            var obj = new Object();
-            obj.img="./images/img.jpg";
-            obj.replyName="匿名";
-            obj.content=$("#content").val();
-            obj.browse="深圳";
-            obj.osname="win10";
-            obj.replyBody="";
-            $(".comment-list").addCommentList({data:[],add:obj});
-        });
-    })
-</script>
-<script type="text/javascript">
-
-    //点击编辑按钮弹出模态框。
-    $(document).on("click",".edit_btn",function(){
-        //1、发送ajax,根据id获取用户信息
-        //清除表单数据（表单完整重置（表单的数据，表单的样式））
-        var id = $(this).attr("edit-id");
+    function to_page(pn){
         $.ajax({
-            url:"${pageContext.request.contextPath}/user/findById.action?id="+id,
+            url:"${pageContext.request.contextPath}/comment/comment.action",
             type:"GET",
             success:function(result){
-                //填充用户信息
-                console.log(result);
-                $("#edit_id").val(result.extend.users.id);
-                $("#edit_userName").val(result.extend.users.userName);
-                $("#edit_password").val(result.extend.users.password);
-                $("#edit_sex").val(result.extend.users.sex);
-                $("#edit_telephone").val(result.extend.users.telephone);
-                $("#edit_Email").val(result.extend.users.email);
-                $("#edit_address").val(result.extend.users.address);
-                $("#edit_state").val(result.extend.users.state);
-            }});
-        //2、弹出模态框
-        $("#editUsers").modal({
-            backdrop:"static"
-        });
-
-    });
-
-    //点击更新按钮弹出模态框。
-    $("#user_update_btn").click(function(){
-        $.ajax({
-            url:"${pageContext.request.contextPath}/user/update.action",
-            type:"POST",
-            data:$("#edit_user_form").serialize(),
-            success:function (result) {
-                alert("用户信息更新成功！");
-                to_page(1);
+                submit(result);
             },
-            error:function(result){
-                alert("用户信息更新失败！");
+            error:function (result) {
+                alert("1111");
             }
         });
+    }
+    function submit(result) {
+        var comments=result.extend.comment;
+        console.log(comments);
+        // $.each(users,function(index,user){
+        //     var obj = new Object();
+        //     obj.img="/images/"+user.pic;
+        //     obj.replyName=user.userName;
+        //     obj.content=$("#content").val();
+        //     $(".comment-list").addCommentList({data:[],add:obj});
+        // });
+    };
+    $("comment").click(function () {
+        var comment=$("#content").val();
+        if(comment==null){
+            alert("请填入评论后才能发表")
+        };
+        $.ajax({
+            url:"${pageContext.request.contextPath}/comment/creat.action",
+            type:"POST",
+            date:comment,
+            success:function (result) {
+                alert("插入成功");
+                to_page();
+            },
+            error:function (result) {
+                alert("插入失败")
+            }
+        })
+    })
 
+
+    //清空表单样式及内容
+    function reset_form(ele){
+        $(ele)[0].reset();
+        //清空表单样式
+        $(ele).find("*").removeClass("has-error has-success");
+        $(ele).find(".help-block").text("");
+    }
+
+    //点击新增按钮弹出模态框。
+    $("#pet_adopt_modal_btn").click(function(){
+        //清除表单数据（表单完整重置（表单的数据，表单的样式））
+        reset_form("#new_adopt_form");
+        $("#new_id").val("${user.id}");
+        $("#new_userName").val("${user.userName}");
+        $("#new_sex").val("${user.sex}");
+        $("#new_telephone").val("${user.telephone}");
+        $("#new_Email").val("${user.email}");
+        $("#new_address").val("${user.address}");
+        //弹出模态框
+        $("#myAdopt").modal({
+            backdrop:"static"
+        });
+    });
+    //点击保存，保存到申请表
+    $("#submit_btn").click(function(){
+        var ted=document.getElementById("new_adopt_form");
+        var adopt=new FormData(ted);
+        console.log(adopt);
+        $.ajax({
+            url:"${pageContext.request.contextPath}/adopt/create.action",
+            type:"POST",
+            processData: false,  // 告诉jQuery不要去处理发送的数据
+            contentType: false, // 告诉jQuery不要去设置Content-Type请求头
+            date:adopt,
+            success:function (result) {
+                alert("提交申请成功");
+            },
+            error:function (result) {
+                console.log(result);
+                alert("提交申请失败");
+            }
+        });
     });
 </script>
 </body>

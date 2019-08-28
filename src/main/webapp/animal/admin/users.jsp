@@ -3,7 +3,7 @@
   User: 24255
   Date: 2019/8/22
   Time: 23:49
-  To change this template use File | Settings | File Templates.
+  To change this template use /images | Settings | /images Templates.
 --%>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 
@@ -53,7 +53,7 @@
                     <li><a href="#"><i class="fa fa-gear fa-fw"></i> 系统设置</a></li>
                     <li class="divider"></li>
                     <li>
-                        <a href="logout.action">
+                        <a href="${pageContext.request.contextPath}/admin/logout.action">
                             <i class="fa fa-sign-out fa-fw"></i>退出登录
                         </a>
                     </li>
@@ -102,12 +102,12 @@
                             </a>
                         </li>
                         <li class="list-group-item my_font">
-                            <a href="${pageContext.request.contextPath}/animal/admin/disAgree.jsp">
+                            <a href="${pageContext.request.contextPath}/animal/admin/agree.jsp">
                                 <i class="fa fa-sitemap fa-fw"></i> 同意领养列表
                             </a>
                         </li>
                         <li class="list-group-item my_font">
-                            <a href="${pageContext.request.contextPath}/animal/admin/agree.jsp">
+                            <a href="${pageContext.request.contextPath}/animal/admin/disAgree.jsp">
                                 <i class="fa fa-sitemap fa-fw"></i> 不同意领养列表
                             </a>
                         </li>

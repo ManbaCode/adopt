@@ -74,6 +74,12 @@ public class AdoptAnimalServiceImpl implements AdoptAnimalService {
     }
 
     @Override
+    public List<AdoptAnimal> findByState(Integer state) {
+        List<AdoptAnimal> byState = adoptAnimalMapper.findByState(state);
+        return byState;
+    }
+
+    @Override
     public AdoptAnimal findById(Integer id) {
         AdoptAnimal byId = adoptAnimalMapper.findById(id);
         return byId;

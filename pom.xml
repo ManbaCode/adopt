@@ -186,19 +186,6 @@
             <artifactId>mail</artifactId>
             <version>1.4.7</version>
         </dependency>
-        <!-- https://mvnrepository.com/artifact/org.glassfish.jersey.media/jersey-media-json-jettison -->
-        <dependency>
-            <groupId>org.glassfish.jersey.media</groupId>
-            <artifactId>jersey-media-json-jettison</artifactId>
-            <version>2.29</version>
-        </dependency>
-        <!-- https://mvnrepository.com/artifact/org.glassfish.jersey.media/jersey-media-json-jackson -->
-        <dependency>
-            <groupId>org.glassfish.jersey.media</groupId>
-            <artifactId>jersey-media-json-jackson</artifactId>
-            <version>2.29</version>
-        </dependency>
-
 
     </dependencies>
 

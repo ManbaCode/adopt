@@ -6,7 +6,7 @@
 
 
     <insert id="addAdoptAnimal" parameterType="AdoptAnimal" useGeneratedKeys="true" keyProperty="id">
-        INSERT INTO t_adopt (id,user_id,pet_id,adoptTime,state) VALUES (#{id},#{user.id},#{pet.id},#{adoptTime},#{state})
+        INSERT INTO t_adopt (user_id,pet_id,adoptTime,state) VALUES (#{user.id},#{pet.id},#{adoptTime},#{state})
     </insert>
 
     <delete id="deleteAdoptAnimal" parameterType="int">
@@ -60,12 +60,14 @@
 
 
     <select id="getAdoptAnimals" resultMap="BaseAdoptAnimalMap">
-        SELECT * FROM t_adopt as t,users As u,pet As p WHERE t.user_id=u.id AND t.pet_id=p.id
+        SELECT * FROM t_adopt as t,users As u,pet As p WHERE t.user_id=u.id AND t.pet_id=p.id AND t.state != 0
     </select>
 
     <select id="findById" resultMap="BaseAdoptAnimalMap" parameterType="int">
         SELECT * FROM t_adopt as t,users As u,pet As p WHERE t.user_id=u.id AND t.pet_id=p.id AND t.id=#{id}
     </select>
 
-
+    <select id="findByState" resultMap="BaseAdoptAnimalMap" parameterType="int">
+        SELECT * FROM t_adopt as t,users As u,pet As p WHERE t.user_id=u.id AND t.pet_id=p.id AND t.state=#{state}
+    </select>
 </mapper>

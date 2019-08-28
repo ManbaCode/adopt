@@ -56,6 +56,12 @@ public interface AdoptAnimalMapper {
     List<AdoptAnimal> getAdoptAnimals();
 
     /**
+    * 查询不同状态的动物
+     * @param state  动物的状态
+     * @return list
+    * */
+    List<AdoptAnimal> findByState(Integer state);
+    /**
      * 根据领养id查询信息
      * @param id 用户id
      * @return adoptAnimal

@@ -47,10 +47,8 @@
                     <li><a href="crmclass/list.action#"><i class="fa fa-user fa-fw"></i>
                         用户：</a>
                     </li>
-                    <li><a href="crmclass/list.action#"><i class="fa fa-gear fa-fw"></i> 系统设置</a></li>
-                    <li class="divider"></li>
                     <li>
-                        <a href="logout.action">
+                        <a href="${pageContext.request.contextPath}/admin/logout.action">
                             <i class="fa fa-sign-out fa-fw"></i>退出登录
                         </a>
                     </li>
@@ -99,12 +97,12 @@
                             </a>
                         </li>
                         <li class="list-group-item my_font">
-                            <a href="${pageContext.request.contextPath}/animal/admin/disAgree.jsp">
+                            <a href="${pageContext.request.contextPath}/animal/admin/agree.jsp">
                                 <i class="fa fa-sitemap fa-fw"></i> 同意领养列表
                             </a>
                         </li>
                         <li class="list-group-item my_font">
-                            <a href="${pageContext.request.contextPath}/animal/admin/agree.jsp">
+                            <a href="${pageContext.request.contextPath}/animal/admin/disAgree.jsp">
                                 <i class="fa fa-sitemap fa-fw"></i> 不同意领养列表
                             </a>
                         </li>
@@ -118,7 +116,7 @@
     <div id="page-wrapper">
         <div class="row">
             <div class="col-lg-12">
-                <h1 class="page-header">用户管理</h1>
+                <h1 class="page-header">不同意领养的申请</h1>
             </div>
             <!-- /.col-lg-12 -->
         </div>
@@ -151,7 +149,6 @@
                             <th>宠物名字</th>
                             <th>领养时间</th>
                             <th>状态</th>
-                            <th>操作</th>
                         </tr>
                         </thead>
                         <tbody>
@@ -196,7 +193,7 @@
     });
     function to_page(pn){
         $.ajax({
-            url:"${pageContext.request.contextPath}/adopt/adopts.action",
+            url:"${pageContext.request.contextPath}/adopt/ByDisAgree.action",
             data:"pn="+pn,
             type:"GET",
             success:function(result){
@@ -221,17 +218,9 @@
             var userNameTd = $("<td></td>").append(adopt.user.userName);
             var petNameTd = $("<td></td>").append(adopt.pet.petName);
             var adoptTimeTd=$("<td></td>").append(adopt.adoptTime);
-            var stateTd=$("<td></td>").append(adopt.state);
+            var stateTd=$("<td></td>").append("不同意");
 
-            var editBtn = $("<button></button>").addClass("btn btn-primary btn-sm agree_btn")
-                .append($("<span></span>").addClass("glyphicon glyphicon-pencil")).append("同意");
-            //为编辑按钮添加一个自定义的属性，来表示当前员工id
-            editBtn.attr("agree-id",adopt.id);
-            var delBtn =  $("<button></button>").addClass("btn btn-danger btn-sm diaAgree_btn")
-                .append($("<span></span>").addClass("glyphicon glyphicon-trash")).append("不同意");
-            //为删除按钮添加一个自定义的属性来表示当前删除的员工id
-            delBtn.attr("disagree-id",adopt.id);
-            var btnTd = $("<td></td>").append(editBtn).append(" ").append(delBtn);
+
             //var delBtn =
             //append方法执行完成以后还是返回原来的元素
             $("<tr></tr>").append(checkBoxTd)
@@ -240,7 +229,6 @@
                 .append(petNameTd)
                 .append(adoptTimeTd)
                 .append(stateTd)
-                .append(btnTd)
                 .appendTo("#adopt_table tbody");
         });
     }

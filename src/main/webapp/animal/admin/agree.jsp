@@ -50,7 +50,7 @@
                     <li><a href="crmclass/list.action#"><i class="fa fa-gear fa-fw"></i> 系统设置</a></li>
                     <li class="divider"></li>
                     <li>
-                        <a href="logout.action">
+                        <a href="${pageContext.request.contextPath}/admin/logout.action">
                             <i class="fa fa-sign-out fa-fw"></i>退出登录
                         </a>
                     </li>
@@ -98,6 +98,16 @@
                                 <i class="fa fa-sitemap fa-fw"></i> 团队活动管理
                             </a>
                         </li>
+                        <li class="list-group-item my_font">
+                            <a href="${pageContext.request.contextPath}/animal/admin/agree.jsp">
+                                <i class="fa fa-sitemap fa-fw"></i> 同意领养列表
+                            </a>
+                        </li>
+                        <li class="list-group-item my_font">
+                            <a href="${pageContext.request.contextPath}/animal/admin/disAgree.jsp">
+                                <i class="fa fa-sitemap fa-fw"></i> 不同意领养列表
+                            </a>
+                        </li>
                     </ul>
                 </div>
             </div>
@@ -108,7 +118,7 @@
     <div id="page-wrapper">
         <div class="row">
             <div class="col-lg-12">
-                <h1 class="page-header">用户管理</h1>
+                <h1 class="page-header">申请同意</h1>
             </div>
             <!-- /.col-lg-12 -->
         </div>
@@ -186,7 +196,7 @@
     });
     function to_page(pn){
         $.ajax({
-            url:"${pageContext.request.contextPath}/adopt/adopts.action",
+            url:"${pageContext.request.contextPath}/adopt/ByAgree.action",
             data:"pn="+pn,
             type:"GET",
             success:function(result){
@@ -211,9 +221,7 @@
             var userNameTd = $("<td></td>").append(adopt.user.userName);
             var petNameTd = $("<td></td>").append(adopt.pet.petName);
             var adoptTimeTd=$("<td></td>").append(adopt.adoptTime);
-            var stateTd=$("<td></td>").append(adopt.state);
-
-
+            var stateTd=$("<td></td>").append("同意");
             //var delBtn =
             //append方法执行完成以后还是返回原来的元素
             $("<tr></tr>").append(checkBoxTd)

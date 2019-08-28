@@ -45,7 +45,7 @@
         <div class="col-md-6" id="page_nav_area"></div>
     </div>
     <div class="blog-grids mid-blog-agile">
-        <img src="${pageContext.request.contextPath}/images/cat2.png" class="img-responsive" alt="">
+        <img src="/images/cat2.png" class="img-responsive" alt="">
     </div>
 </div>
 <!-- Modal5 -->

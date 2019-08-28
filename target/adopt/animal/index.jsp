@@ -41,7 +41,7 @@
             <div class="logo">
                 <h1>
                     <a href="index.html">
-                        <img class="logo-img center-block" src="${pageContext.request.contextPath}/images/logo.png" alt="" /> 猫狗生活
+                        <img class="logo-img center-block" src="/images/logo.png" alt="" /> 猫狗生活
                     </a>
                 </h1>
             </div>
@@ -135,32 +135,32 @@
             <h3>宠物展示</h3>
             <div class="agileinfo_footer_grid1">
                 <a href="#">
-                    <img src="${pageContext.request.contextPath}/images/f1.jpg" alt=" " class="img-responsive">
+                    <img src="/images/f1.jpg" alt=" " class="img-responsive">
                 </a>
             </div>
             <div class="agileinfo_footer_grid1">
                 <a href="#">
-                    <img src="${pageContext.request.contextPath}/images/f2.jpg" alt=" " class="img-responsive">
+                    <img src="/images/f2.jpg" alt=" " class="img-responsive">
                 </a>
             </div>
             <div class="agileinfo_footer_grid1">
                 <a href="#">
-                    <img src="${pageContext.request.contextPath}/images/f3.jpg" alt=" " class="img-responsive">
+                    <img src="/images/f3.jpg" alt=" " class="img-responsive">
                 </a>
             </div>
             <div class="agileinfo_footer_grid1">
                 <a href="#">
-                    <img src="${pageContext.request.contextPath}/images/f4.jpg" alt=" " class="img-responsive">
+                    <img src="/images/f4.jpg" alt=" " class="img-responsive">
                 </a>
             </div>
             <div class="agileinfo_footer_grid1">
                 <a href="#">
-                    <img src="${pageContext.request.contextPath}/images/f5.jpg" alt=" " class="img-responsive">
+                    <img src="/images/f5.jpg" alt=" " class="img-responsive">
                 </a>
             </div>
             <div class="agileinfo_footer_grid1">
                 <a href="#">
-                    <img src="${pageContext.request.contextPath}/images/f6.jpg" alt=" " class="img-responsive">
+                    <img src="/images/f6.jpg" alt=" " class="img-responsive">
                 </a>
             </div>
             <div class="clearfix"> </div>

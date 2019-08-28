@@ -32,7 +32,7 @@
         <h3 class="agile-title">欢迎</h3>
         <div class="about-top w3ls-agile">
             <div class="col-md-6 red">
-                <img class="img-responsive" src="${pageContext.request.contextPath}/images/ab.jpg" alt="">
+                <img class="img-responsive" src="/images/ab.jpg" alt="">
             </div>
             <div class="col-md-6 come">
                 <div class="about-wel">
@@ -68,43 +68,43 @@
     </div>
     <div class="agileinfo-gallery-row">
         <div class="col-md-3 col-sm-3 col-xs-4 w3gallery-grids">
-            <a href="${pageContext.request.contextPath}/images/m1.jpg" class="imghvr-hinge-right figure">
-                <img src="${pageContext.request.contextPath}/images/m1.jpg" alt="" title="Cat Life Image" />
+            <a href="/images/m1.jpg" class="imghvr-hinge-right figure">
+                <img src="/images/m1.jpg" alt="" title="Cat Life Image" />
             </a>
         </div>
         <div class="col-md-3 col-sm-3 col-xs-4 w3gallery-grids">
-            <a href="${pageContext.request.contextPath}/images/g2.jpg" class="imghvr-hinge-right figure">
-                <img src="${pageContext.request.contextPath}/images/g2.jpg" alt="" title="Cat Life Image" />
+            <a href="/images/g2.jpg" class="imghvr-hinge-right figure">
+                <img src="/images/g2.jpg" alt="" title="Cat Life Image" />
             </a>
         </div>
         <div class="col-md-3 col-sm-3 col-xs-4 w3gallery-grids">
-            <a href="${pageContext.request.contextPath}/images/g3.jpg" class="imghvr-hinge-right figure">
-                <img src="${pageContext.request.contextPath}/images/g3.jpg" alt="" title="Cat Life Image" />
+            <a href="/images/g3.jpg" class="imghvr-hinge-right figure">
+                <img src="/images/g3.jpg" alt="" title="Cat Life Image" />
             </a>
         </div>
         <div class="col-md-3 col-sm-3 col-xs-4 w3gallery-grids">
-            <a href="${pageContext.request.contextPath}/images/m4.jpg" class="imghvr-hinge-right figure">
-                <img src="${pageContext.request.contextPath}/images/m4.jpg" alt="" title="Cat Life Image" />
+            <a href="/images/m4.jpg" class="imghvr-hinge-right figure">
+                <img src="/images/m4.jpg" alt="" title="Cat Life Image" />
             </a>
         </div>
         <div class="col-md-3 col-sm-3 col-xs-4 w3gallery-grids">
-            <a href="${pageContext.request.contextPath}/images/m5.jpg" class="imghvr-hinge-right figure">
-                <img src="${pageContext.request.contextPath}/images/m5.jpg" alt="" title="Cat Life Image" />
+            <a href="/images/m5.jpg" class="imghvr-hinge-right figure">
+                <img src="/images/m5.jpg" alt="" title="Cat Life Image" />
             </a>
         </div>
         <div class="col-md-3 col-sm-3 col-xs-4 w3gallery-grids">
-            <a href="${pageContext.request.contextPath}/images/m6.jpg" class="imghvr-hinge-right figure">
-                <img src="${pageContext.request.contextPath}/images/m6.jpg" alt="" title="Cat Life Image" />
+            <a href="/images/m6.jpg" class="imghvr-hinge-right figure">
+                <img src="/images/m6.jpg" alt="" title="Cat Life Image" />
             </a>
         </div>
         <div class="col-md-3 col-sm-3 col-xs-4 w3gallery-grids">
-            <a href="${pageContext.request.contextPath}/images/m3.jpg" class="imghvr-hinge-right figure">
-                <img src="${pageContext.request.contextPath}/images/m3.jpg" alt="" title="Cat Life Image" />
+            <a href="/images/m3.jpg" class="imghvr-hinge-right figure">
+                <img src="/images/m3.jpg" alt="" title="Cat Life Image" />
             </a>
         </div>
         <div class="col-md-3 col-sm-3 col-xs-4 w3gallery-grids">
-            <a href="${pageContext.request.contextPath}/images/m2.jpg" class="imghvr-hinge-right figure">
-                <img src="${pageContext.request.contextPath}/images/m2.jpg" alt="" title="Cat Life Image" />
+            <a href="/images/m2.jpg" class="imghvr-hinge-right figure">
+                <img src="/images/m2.jpg" alt="" title="Cat Life Image" />
             </a>
         </div>
         <div class="clearfix"> </div>

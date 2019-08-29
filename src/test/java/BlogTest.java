@@ -1,4 +1,5 @@
 import com.ecjtu.entity.Blog;
+import com.ecjtu.mapper.BlogMapper;
 import com.ecjtu.service.BlogService;
 import org.junit.Test;
 import org.junit.runner.RunWith;
@@ -19,6 +20,8 @@ public class BlogTest {
     @Autowired
     private BlogService blogService;
 
+    @Autowired
+    private BlogMapper blogMapper;
     @Test
     public void findById(){
         List<Blog> blogs = blogService.getBlogs();
@@ -27,10 +30,10 @@ public class BlogTest {
         }
     }
 
-    @Test
-    public void delete(){
-        int i = blogService.deleteBlog(12);
-        System.out.println(i);
 
+    @Test
+    public void select(){
+        Blog byId = blogService.findById(1);
+        System.out.println(byId);
     }
 }

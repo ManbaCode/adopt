@@ -33,10 +33,23 @@ public interface PetMapper {
     int updatePet(Pet pet);
 
     /**
+     * 更新宠物的状态
+     * @param pet 更新的宠物信息
+     * @return int
+     * */
+    int updateState(Pet pet);
+    /**
      * 查询所有的动物
      * @return list
      * */
     List<Pet> getPets();
+
+    /**
+     * 查询所有的动物
+     * @param state 宠物现在的状态
+     * @return list
+     * */
+    List<Pet> findByState(Integer state);
 
     /**
      * 根据动物id查询信息

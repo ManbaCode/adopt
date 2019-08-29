@@ -37,8 +37,20 @@ public class PetServiceImpl implements PetService {
     }
 
     @Override
+    public int updateState(Pet pet) {
+        int i = petMapper.updateState(pet);
+        return i;
+    }
+
+    @Override
     public List<Pet> getPets() {
         List<Pet> pets = petMapper.getPets();
+        return pets;
+    }
+
+    @Override
+    public List<Pet> findByState(Integer state) {
+        List<Pet> pets = petMapper.findByState(state);
         return pets;
     }
 

@@ -10,25 +10,38 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-
     <meta charset="UTF-8">
     <title>Title</title>
     <!-- Meta tag Keywords -->
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta charset="UTF-8" />
     <meta name="keywords" content=""/>
+    <style type="text/css">
+        #blog{
+            background: url(/images/bg3.jpg)no-repeat center fixed;
+            background-size: cover;
+            -webkit-background-size: cover;
+            -moz-background-size: cover;
+            -o-background-size: cover;
+            -ms-background-size: cover;
+            position: relative;
+        }
+        .myfont{
+            font-size: 10px;
+            color: red;
+        }
+    </style>
     <!--// Meta tag Keywords -->
     <!-- css files -->
     <link rel="stylesheet" href="${pageContext.request.contextPath}/bootstrap/css/bootstrap.css" type="text/css" media="all">
     <!-- Owl-Carousel-CSS -->
     <link rel="stylesheet" href="${pageContext.request.contextPath}/css/style.css" type="text/css" media="all" />
 
-
 </head>
 <body>
 <jsp:include page="navigation.jsp"></jsp:include>
 <!-- blog -->
-<div class="blog" id="blog">
+<div class="blog" id="blog" >
     <div class="container">
         <h3 class="agile-title">团队活动</h3>
         <div class="col-md-5 col-xs-6 blog-grids">
@@ -36,8 +49,6 @@
 
             <div class="clearfix"></div>
         </div>
-
-
     </div>
     <!-- 显示分页信息 -->
     <div class="row">
@@ -105,22 +116,20 @@
 
             var blogTd=$("<div></div>").addClass("blog-right-agileits-w3layouts");
 
-            var titleTd=$("<h4></h4>").append($("<a></a>")).addClass("my-font").append(blog.title);
+            var titleTd=$("<h4></h4>").append($("<a></a>")).addClass("myfont").append(blog.title);
             titleTd.attr("id","title_btn");
             titleTd.attr("title-id",blog.id);
 
             var peopelsTd=$("<p></p>").append($("<a></a>")).append(blog.peoples);
 
-           blogTd.append(titleTd);
+           blogTd.append(titleTd).append(peopelsTd);
 
-           blogTd.append(peopelsTd);
-
-            var clear=$("<div></div>").addClass("clearfix");
+           var clear=$("<div></div>").addClass("clearfix");
             //append方法执行完成以后还是返回原来的元素
                 $("<div></div>").addClass("blog-full-wthree")
                     .append(yearTd)
                     .append(blogTd)
-                    .after(clear)
+                    .append(clear)
                     .appendTo(".col-md-5");
 
         });

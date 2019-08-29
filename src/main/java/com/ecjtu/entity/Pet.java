@@ -23,14 +23,14 @@ public class Pet {
     private Integer state;
     private String remark;
 
-    private AdoptAnimal adoptAnimal;
+    private List<AdoptAnimal> adoptAnimal;
 
     private List<Comment> commentList;
 
     public Pet() {
     }
 
-    public Pet(Integer id, String petName, String petType, String sex, Date birthday, String pic, Integer state, String remark, AdoptAnimal adoptAnimal, List<Comment> commentList) {
+    public Pet(Integer id, String petName, String petType, String sex, Date birthday, String pic, Integer state, String remark, List<AdoptAnimal> adoptAnimal, List<Comment> commentList) {
         this.id = id;
         this.petName = petName;
         this.petType = petType;
@@ -42,6 +42,7 @@ public class Pet {
         this.adoptAnimal = adoptAnimal;
         this.commentList = commentList;
     }
+
 
     public Integer getId() {
         return id;
@@ -107,11 +108,11 @@ public class Pet {
         this.remark = remark;
     }
 
-    public AdoptAnimal getAdoptAnimal() {
+    public List<AdoptAnimal> getAdoptAnimal() {
         return adoptAnimal;
     }
 
-    public void setAdoptAnimal(AdoptAnimal adoptAnimal) {
+    public void setAdoptAnimal(List<AdoptAnimal> adoptAnimal) {
         this.adoptAnimal = adoptAnimal;
     }
 

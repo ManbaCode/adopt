@@ -39,7 +39,6 @@ public class CommentTest {
         comment.setId(3);
         Comment byId = commentMapper.findById(comment);
         System.out.println(byId);
-//        JdbcType.INTEGER
     }
 
     @Test
@@ -49,6 +48,10 @@ public class CommentTest {
     }
     @Test
     public void selectName(){
+        Comment comment=new Comment();
+        comment.setId(10);
+       Comment comment1= commentMapper.findById(comment);
+        System.out.println(comment1);
 
     }
 }

@@ -17,6 +17,7 @@ public class AdoptAnimal {
     @DateTimeFormat(pattern = "yyyy-MM-dd")
     private Date adoptTime;
     private Integer state;
+
     private Pet pet;
     private Users user;
 

@@ -118,7 +118,7 @@
     <div id="page-wrapper">
         <div class="row">
             <div class="col-lg-12">
-                <h1 class="page-header">领养申请的审核</h1>
+                <h1 class="page-header">猫狗领养申请的审核</h1>
             </div>
             <!-- /.col-lg-12 -->
         </div>
@@ -138,7 +138,7 @@
         <div class="row">
             <div class="col-lg-12">
                 <div class="panel panel-default">
-                    <div class="panel-heading">领养信息列表</div>
+                    <div class="panel-heading">申请信息列表</div>
                     <!-- /.panel-heading -->
                     <table class="table table-bordered table-striped" id="adopt_table">
                         <thead>
@@ -149,7 +149,7 @@
                             <th>编号</th>
                             <th>用户名称</th>
                             <th>宠物名字</th>
-                            <th>领养时间</th>
+                            <th>申请时间</th>
                             <th>状态</th>
                             <th>操作</th>
                         </tr>
@@ -221,7 +221,7 @@
             var userNameTd = $("<td></td>").append(adopt.user.userName);
             var petNameTd = $("<td></td>").append(adopt.pet.petName);
             var adoptTimeTd=$("<td></td>").append(adopt.adoptTime);
-            var stateTd=$("<td></td>").append(adopt.state);
+            var stateTd=$("<td></td>").append("还在审核");
 
             var editBtn = $("<button></button>").addClass("btn btn-primary btn-sm agree_btn")
                 .append($("<span></span>").addClass("glyphicon glyphicon-pencil")).append("同意");
@@ -240,7 +240,7 @@
                 .append(petNameTd)
                 .append(adoptTimeTd)
                 .append(stateTd)
-
+                .append(btnTd)
                 .appendTo("#adopt_table tbody");
         });
     }
@@ -312,9 +312,10 @@
         navEle.appendTo("#page_nav_area");
     }
 
-    $(".agree_btn").click(function () {
+    $(document).on("click",".agree_btn",function(){
+        alert(111);
         var id=$(this).attr("agree-id");
-        if(confirm("确认删除不同意吗？")){
+        if(confirm("确认同意吗？")){
             $.ajax({
                 url:"${pageContext.request.contextPath}/adopt/agree.action?id="+id,
                 type:"GET",
@@ -323,18 +324,16 @@
                 },
                 error:function (result) {
                     alert("审核失败");
-
                 }
             })
         }
 
     });
-
-    $(".disagree").click(function () {
-        var id=$(this).attr("agree-id");
-        if(confirm("确认删除不同意吗？")){
+    $(document).on("click",".disagree_btn",function(){
+        var id=$(this).attr("disagree-id");
+        if(confirm("确认不同意吗？")){
             $.ajax({
-                url:"${pageContext.request.contextPath}/adopt/agree.action?id="+id,
+                url:"${pageContext.request.contextPath}/adopt/disAgree.action?id="+id,
                 type:"GET",
                 success:function (result) {
                     alert("审核成功");

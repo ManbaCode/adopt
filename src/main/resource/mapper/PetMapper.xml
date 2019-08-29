@@ -16,7 +16,9 @@
         UPDATE pet SET petName=#{petName},petType=#{petType},sex=#{sex},birthday=#{birthday},pic=#{pic},state=#{state},remark=#{remark} WHERE id=#{id}
     </update>
 
-
+    <update id="updateState" parameterType="pet">
+        UPDATE pet SET state=#{state} WHERE id=#{id}
+    </update>
 
     <resultMap id="BasePetMap" type="pet">
         <id column="id" property="id"></id>
@@ -27,7 +29,7 @@
         <result column="pic" property="pic"></result>
         <result column="state" property="state"></result>
         <result column="remark" property="remark"></result>
-        <association property="adoptAnimal" javaType="adoptAnimal">
+        <collection property="adoptAnimal" javaType="adoptAnimal">
             <id column="id" property="id"></id>
             <result column="adoptTime" property="adoptTime"></result>
             <result column="state" property="state"></result>
@@ -43,50 +45,31 @@
                 <result column="pic" property="pic"></result>
                 <result column="state" property="state"></result>
             </association>
-        </association>
+        </collection>
         <collection property="commentList" ofType="comment" javaType="list">
             <id column="id" property="id"></id>
             <result column="commentTime" property="commentTime"></result>
             <result column="content" property="content"></result>
-            <association property="admin" javaType="admin">
-                <id column="id" property="id"></id>
-                <result column="adminName"  property="adminName"></result>
-                <result column="adminPwd"  property="adminPwd"></result>
-                <result column="realName"  property="realName"></result>
-                <result column="telephone" property="telephone"></result>
-                <result column="Email" property="Email"></result>
-                <result column="birthday" property="birthday"></result>
-                <result column="sex" property="sex"></result>
-                <result column="remark" property="remark"></result>
-            </association>
-            <association property="user" javaType="users">
-                <id property="id" column="id"></id>
-                <result column="userName" property="userName"></result>
-                <result column="password" property="password"></result>
-                <result column="sex" property="sex"></result>
-                <result column="age" property="age"></result>
-                <result column="telephone" property="telephone"></result>
-                <result column="Email" property="Email"></result>
-                <result column="address" property="address"></result>
-                <result column="pic" property="pic"></result>
-                <result column="state" property="state"></result>
-            </association>
         </collection>
     </resultMap>
 
-    <select id="getPets" resultMap="BasePetMap">
-        select * from (pet  left join t_adopt on pet.id=t_adopt.pet_id) left join users on t_adopt.user_id=users.id
+    <select id="getPets" resultType="pet">
+        SELECT * FROM pet
     </select>
 
-
-    <select id="findById" resultMap="BasePetMap">
-       select * from (pet  left join t_adopt on pet.id=t_adopt.pet_id) left join users on t_adopt.user_id=users.id
-       where pet.id=#{id}
+    <!--select * from (pet left join t_adopt ON pet.id=pet_id) left join users on user_id=users.id where pet.state=#{state} group by  pet.id;-->
+    <select id="findByState" parameterType="int" resultType="pet">
+         SELECT * FROM pet WHERE state=0
     </select>
 
-    <select id="findByName" resultMap="BasePetMap">
-        select * from (pet  left join t_adopt on pet.id=t_adopt.pet_id) left join users on t_adopt.user_id=users.id
-        where pet.petName=#{petName}
+    <!--select * from (pet left join t_adopt on pet.id=t_adopt.pet_id) left join users on t_adopt.user_id=users.id
+       where pet.id=#{id}-->
+    <select id="findById" resultType="pet" parameterType="int">
+       SELECT * FROM pet WHERE id=#{id}
+    </select>
+
+    <select id="findByName" resultType="pet" parameterType="string">
+        SELECT * FROM pet FROM petName=#{petName}
     </select>
 
     <delete id="deleteBatch" parameterType="int">

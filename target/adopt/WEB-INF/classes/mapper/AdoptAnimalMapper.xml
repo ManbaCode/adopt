@@ -13,7 +13,7 @@
         DELETE FROM t_adopt WHERE id=#{id}
     </delete>
 
-    <update id="updateAdoptAnimal" parameterType="AdoptAnimal">
+    <update id="updateAdoptAnimal" parameterType="adoptAnimal">
         UPDATE t_adopt SET user_id=#{user.id},pet_id=#{pet.id},adoptTime=#{adoptTime},state=#{state} WHERE id=#{id}
     </update>
 
@@ -59,8 +59,8 @@
     </resultMap>
 
 
-    <select id="getAdoptAnimals" resultMap="BaseAdoptAnimalMap">
-        SELECT * FROM t_adopt as t,users As u,pet As p WHERE t.user_id=u.id AND t.pet_id=p.id AND t.state != 0
+    <select id="getAdoptAnimals" parameterType="int" resultMap="BaseAdoptAnimalMap">
+        SELECT * FROM t_adopt as t,users As u,pet As p WHERE t.user_id=u.id AND t.pet_id=p.id
     </select>
 
     <select id="findById" resultMap="BaseAdoptAnimalMap" parameterType="int">

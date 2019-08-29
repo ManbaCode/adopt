@@ -284,6 +284,7 @@
         $.each(comments,function(index,comment){
             var checkBoxTd = $("<td><input type='checkbox' class='check_item'/></td>");
             var commentIdTd = $("<td></td>").append(comment.id);
+            console.log(comment);
             var nameTd;
             if(comment.user.userName!=null){
                 nameTd=$("<td></td>").append(comment.user.userName);
@@ -294,7 +295,6 @@
             var contentTd=$("<td></td>").append(comment.content);
             var commentTimeTd = $("<td></td>").append(comment.commentTime);
 
-            alert(comment.user.userName);
             var editBtn = $("<button></button>").addClass("btn btn-primary btn-sm edit_btn")
                 .append($("<span></span>").addClass("glyphicon glyphicon-pencil")).append("修改");
             //为编辑按钮添加一个自定义的属性，来表示当前员工id

@@ -4,6 +4,7 @@ import com.ecjtu.entity.AdoptAnimal;
 import com.ecjtu.entity.Pet;
 import com.ecjtu.entity.Users;
 import com.ecjtu.service.AdoptAnimalService;
+import com.ecjtu.service.PetService;
 import com.ecjtu.util.MailUtil;
 import com.ecjtu.util.Message;
 import com.github.pagehelper.PageHelper;
@@ -32,14 +33,15 @@ public class AdoptAnimalController {
     @Autowired
     private AdoptAnimalService animalService;
 
-
-
+    @Autowired
+    private PetService petService;
 
     @RequestMapping("adopts.action")
     @ResponseBody
     public Message getAdoptAnimals(@RequestParam(value = "pn",defaultValue = "1") Integer pn){
         PageHelper.startPage(pn,4);
-        List<AdoptAnimal> adoptAnimals = animalService.getAdoptAnimals();
+        AdoptAnimal animal=new AdoptAnimal();
+        List<AdoptAnimal> adoptAnimals = animalService.findByState(1);
         PageInfo page=new PageInfo(adoptAnimals,2);
         return Message.success().add("pageInfo",page);
     }
@@ -70,12 +72,14 @@ public class AdoptAnimalController {
     public Message createAdopt(HttpServletRequest request){
         Pet pet = (Pet)request.getSession().getAttribute("pet");
         Users user = (Users)request.getSession().getAttribute("user");
+        pet.setState(1);
         AdoptAnimal animal=new AdoptAnimal();
         animal.setUser(user);
         animal.setPet(pet);
         animal.setAdoptTime(new Date());
         int i = animalService.addAdoptAnimal(animal);
-        if(i>0){
+        int t=petService.updateState(pet);
+        if(i>0&&t>0){
             return Message.success();
         }else{
             return Message.fail();
@@ -108,8 +112,12 @@ public class AdoptAnimalController {
         AdoptAnimal animal=new AdoptAnimal();
         animal.setId(id);
         animal.setState(0);
+        Pet pet=new Pet();
+        pet.setId(id);
+        pet.setState(0);
         int i = animalService.updateAdoptState(animal);
-        if(i>0){
+        int t=petService.updateState(pet);
+        if(i>0&&t>0){
             return Message.success();
         }else{
             return Message.fail();
@@ -122,7 +130,12 @@ public class AdoptAnimalController {
         AdoptAnimal animal=new AdoptAnimal();
         animal.setId(id);
         animal.setState(2);
-        if(animalService.updateAdoptState(animal)>0){
+        Pet pet=new Pet();
+        pet.setId(id);
+        pet.setState(2);
+        int a=animalService.updateAdoptState(animal);
+        int b=petService.updateState(pet);
+        if(a>0&&b>0){
             return Message.success();
         }else{
             return Message.fail();

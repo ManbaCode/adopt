@@ -20,7 +20,6 @@ public class Users {
     private Integer state=0;
 
     List<Comment> commentList;
-
     List<AdoptAnimal> animalList;
 
     public Users() {

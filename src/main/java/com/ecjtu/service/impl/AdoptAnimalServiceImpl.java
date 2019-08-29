@@ -43,18 +43,14 @@ public class AdoptAnimalServiceImpl implements AdoptAnimalService {
 
     @Override
     public int updateAdoptState(AdoptAnimal animal) {
-        String email = animal.getUser().getEmail();
-        try {
-            MailUtil.sendMail(email,animal.getState());
-        } catch (MessagingException e) {
-            e.printStackTrace();
-        }
-        if(animal.getState()==2){
+//        String email = animal.getUser().getEmail();
+//        try {
+//            MailUtil.sendMail(email,animal.getState());
+//        } catch (MessagingException e) {
+//            e.printStackTrace();
+//        }
         int i = adoptAnimalMapper.updateAdoptState(animal);
-        return i;}else {
-            return 0;
-        }
-
+        return i;
     }
 
     @Override

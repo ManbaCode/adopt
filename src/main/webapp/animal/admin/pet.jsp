@@ -230,8 +230,9 @@
                         </label>
                         <div class="col-sm-4">
                             <select class="form-control" id="new_state" name="state">
-                                <option value="0">未被领养</option>
-                                <option value="1">被领养</option>
+                                <option value="0">还未被申请领养</option>
+                                <option value="2">被领养</option>
+                                <option value="1">被申请领养</option>
                             </select>
                         </div>
                         <label for="new_pic" class="col-sm-2 control-label">
@@ -318,8 +319,9 @@
                         </label>
                         <div class="col-sm-4">
                             <select class="form-control" id="edit_state" value="${pet.state}" name="state">
-                                <option value="0">未被领养</option>
-                                <option value="1">被领养</option>
+                                <option value="0">还未被申请领养</option>
+                                <option value="1">正在被申请领养</option>
+                                <option value="2">已经被人领养</option>
                             </select>
                         </div>
                     </div>
@@ -392,7 +394,14 @@
             var sexTd=$("<td></td>").append(pet.sex);
             var birthdayTd=$("<td></td>").append(pet.birthday);
             var picTd=$("<td></td>").append(pet.id);
-            var stateTd=$("<td></td>").append(pet.state);
+            var stateTd=null;
+            if(pet.state==0){
+                stateTd=$("<td></td>").append("还未被申请领养");
+            }else if(pet.state==1){
+                stateTd=$("<td></td>").append("正在被申请领养");
+            }else{
+                stateTd=$("<td></td>").append("已经被领养");
+            }
 
             var editBtn = $("<button></button>").addClass("btn btn-primary btn-sm edit_btn")
                 .append($("<span></span>").addClass("glyphicon glyphicon-pencil")).append("修改");

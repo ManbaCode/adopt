@@ -58,4 +58,6 @@ public interface BlogMapper {
      * @param ids id的集合
      * */
     void deleteBatch(@Param("ids")List<Integer>ids);
+
+
 }

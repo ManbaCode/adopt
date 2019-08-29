@@ -44,6 +44,10 @@
 
         </div>
     </div>
+    <div class="row">
+        <!-- 分页条信息 -->
+        <div class="col-md-6" id="page_nav_area"></div>
+    </div>
     <div class="w3l-img-side">
         <img src="/images/cat11.png" alt="" />
     </div>
@@ -97,10 +101,11 @@
     });
     function to_page(pn){
         $.ajax({
-            url:"${pageContext.request.contextPath}/pet/pets.action",
+            url:"${pageContext.request.contextPath}/pet/petState.action",
             data:"pn="+pn,
             type:"GET",
             success:function(result){
+                console.log(result);
                 //1、解析并显示员工数据
                 build_pets_table(result);
                 //3、解析显示分页条数据
@@ -115,7 +120,7 @@
         //index：下标 user：单个对象
         var pets=result.extend.pageInfo.list;
         $.each(pets,function(index,pet){
-
+            console.log(index);
             var divTd=$("<div></div>").addClass("ih-item circle effect1 agile_services_grid");
             var headTd=$("<div></div>").addClass("spinner");
             var imgTd=$("<div></div>").addClass("img").append($("<img/>")).addClass("img-responsive").attr("src","/images/"+pet.pic);

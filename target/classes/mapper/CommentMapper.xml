@@ -23,11 +23,11 @@
     <update id="updateRelationPet" parameterType="int">
         UPDATE comment SET pet_id=NULL WHERE pet_id=#{pet_id}
     </update>
-
     <resultMap id="BaseCommentMap" type="comment">
         <id column="id" property="id"></id>
         <result column="commentTime" property="commentTime"></result>
         <result column="content" property="content"></result>
+
         <association property="user" javaType="users">
             <id property="id" column="id"></id>
             <result column="userName" property="userName"></result>
@@ -40,6 +40,8 @@
             <result column="pic" property="pic"></result>
             <result column="state" property="state"></result>
         </association>
+
+
         <association property="admin" javaType="admin">
             <id column="id" property="id"></id>
             <result column="adminName"  property="adminName"></result>
@@ -63,29 +65,16 @@
             <result column="state" property="state"></result>
             <result column="remark" property="remark"></result>
         </association>
+
     </resultMap>
 
-   <select id="getComments" resultMap="BaseCommentMap">
-        SELECT * FROM comment As c,pet As p
-        <if test=" comment != null and comment.user_id != null">
-            ,users as u
-        </if>
-        <if test=" comment != null and comment.admin_id != null">
-            ,admin as a
-        </if>
-        <where>
-            c.pet_id=p.id
-           <if test="comment != null and comment.user_id != null">
-                AND u.id=c.user_id
-            </if>
-            <if test=" comment != null and comment.admin_id != null">
-                AND a.id=c.admin_id
-            </if>
-        </where>
+
+   <select id="getComments" resultMap="BaseCommentMap" >
+       SELECT * FROM (comment  LEFT JOIN users ON comment.user_id=users.id) LEFT JOIN admin  ON admin.id=comment.admin_id where 1=1 GROUP BY comment.id
     </select>
 
-    <select id="findById" parameterType="comment" resultMap="BaseCommentMap" >
-        SELECT *  FROM comment as c ,pet as p
+    <!--SELECT *  FROM comment as c ,pet as p
+
         <if test="user != null ">
             ,users as u
         </if>
@@ -93,13 +82,17 @@
             ,admin as a
         </if>
         <where>
-            <if test="user != null">
-                c.pet_id=p.id and u.id=c.user_id and c.id=#{id,jdbcType=INTEGER}
+            c.pet_id=p.id
+            <if test=" user != null ">
+                 and u.id=c.user_id
             </if>
-            <if test="admin != null">
-                c.pet_id=p.id and a.id=c.admin_id and c.id=#{id,jdbcType=INTEGER}
+            <if test=" admin != null ">
+                 and a.id=c.admin_id
             </if>
-        </where>
+            and c.id=#{id,jdbcType=INTEGER}
+        </where>-->
+    <select id="findById" parameterType="comment" resultMap="BaseCommentMap" >
+        SELECT * FROM (comment AS c LEFT JOIN users AS u ON c.user_id=u.id) LEFT JOIN admin as a ON a.id=c.admin_id where c.id=#{id}
     </select>
 
     <delete id="deleteBatch" parameterType="int">

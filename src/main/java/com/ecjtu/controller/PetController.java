@@ -37,6 +37,18 @@ public class PetController {
     public Message getPets(@RequestParam(value = "pn",defaultValue = "1")Integer pn){
         PageHelper.startPage(pn,3);
         List<Pet> pets = petService.getPets();
+        System.out.println(pets);
+        PageInfo page=new PageInfo(pets,2);
+        return Message.success().add("pageInfo",page);
+    }
+
+    @RequestMapping("petState.action")
+    @ResponseBody
+    public Message findByState(@RequestParam(value = "pn",defaultValue = "1")Integer pn){
+        PageHelper.startPage(pn,3);
+        int state=0;
+        List<Pet> pets = petService.findByState(0);
+        System.out.println(pets);
         PageInfo page=new PageInfo(pets,2);
         return Message.success().add("pageInfo",page);
     }

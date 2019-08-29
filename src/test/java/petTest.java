@@ -1,5 +1,9 @@
 import com.ecjtu.entity.Pet;
 import com.ecjtu.mapper.PetMapper;
+import com.ecjtu.service.PetService;
+import com.ecjtu.util.Message;
+import com.github.pagehelper.PageHelper;
+import com.github.pagehelper.PageInfo;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -20,6 +24,8 @@ public class petTest {
     @Autowired
     private PetMapper petMapper;
 
+    @Autowired
+    private PetService petService;
 
     @Test
     public void select(){
@@ -29,6 +35,8 @@ public class petTest {
 
     @Test
     public void update(){
-
+        PageHelper.startPage(1,3);
+        List<Pet> pets = petService.getPets();
+        System.out.println(pets);
     }
 }

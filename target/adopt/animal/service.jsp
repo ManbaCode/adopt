@@ -200,11 +200,11 @@
 
     $(document).on("click",".img-responsive",function(){
         var id = $(this).attr("pet-id");
+        console.log(id);
         $.ajax({
             url:"${pageContext.request.contextPath}/pet/findByPet.action?id="+id,
             type:"GET",
             success:function (result) {
-                alert("查询跳转成功");
                 window.location.href="${pageContext.request.contextPath}/animal/show.jsp";
             },
             error:function (result) {

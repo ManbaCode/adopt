@@ -4,6 +4,7 @@ import com.fasterxml.jackson.annotation.JsonFormat;
 import org.springframework.format.annotation.DateTimeFormat;
 
 import java.util.Date;
+import java.util.List;
 
 /**
  * @author Mr Wu
@@ -20,7 +21,7 @@ public class Comment {
     private Users user;
     private Admin admin;
     private Pet pet;
-
+    private List<Answer> answers;
     public Comment() {
     }
 
@@ -29,13 +30,14 @@ public class Comment {
         this.content = content;
     }
 
-    public Comment(Integer id, Date commentTime, String content, Admin admin, Users user, Pet pet) {
+    public Comment(Integer id, Date commentTime, String content, Users user, Admin admin, Pet pet, List<Answer> answers) {
         this.id = id;
         this.commentTime = commentTime;
         this.content = content;
-        this.admin = admin;
         this.user = user;
+        this.admin = admin;
         this.pet = pet;
+        this.answers = answers;
     }
 
     public Integer getId() {
@@ -92,9 +94,10 @@ public class Comment {
                 "id=" + id +
                 ", commentTime=" + commentTime +
                 ", content='" + content + '\'' +
-                ", admin=" + admin +
                 ", user=" + user +
+                ", admin=" + admin +
                 ", pet=" + pet +
+                ", answers=" + answers +
                 '}';
     }
 }

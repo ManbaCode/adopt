@@ -16,7 +16,7 @@
     </delete>
 
     <update id="updateAdmin" parameterType="Admin">
-        UPDATE admin SET adminName=#{adminName},adminPwd=#{adminPwd},realName=#{realName},telephone=#{telephone},Email=#{Email},birthday=#{birthday},sex=#{sex},#{pic},remark=#{remark} WHERE id=#{id}
+        UPDATE admin SET adminName=#{adminName},adminPwd=#{adminPwd},realName=#{realName},telephone=#{telephone},Email=#{Email},birthday=#{birthday},sex=#{sex},pic=#{pic},remark=#{remark} WHERE id=#{id}
     </update>
 
     <resultMap id="BaseAdminMap" type="Admin">
@@ -31,7 +31,7 @@
         <result column="pic" property="pic"></result>
         <result column="remark" property="remark"></result>
         <collection property="commentList" ofType="comment" javaType="list" >
-            <id column="id" property="id"></id>
+            <id column="tid" property="id"></id>
             <result column="commentTime" property="commentTime"></result>
             <result column="content" property="content"></result>
             <association property="pet" javaType="pet">
@@ -52,15 +52,16 @@
     </select>
 
     <select id="getAdmins" resultMap="BaseAdminMap">
-        SELECT * FROM (admin  LEFT JOIN comment ON admin.id=comment.admin_id) LEFT JOIN pet ON comment.pet_id=pet.id
+        SELECT admin.*,comment.id tid,comment.commentTime,comment.content
+         FROM (admin  LEFT JOIN comment ON admin.id=comment.admin_id) LEFT JOIN pet ON comment.pet_id=pet.id
     </select>
 
     <select id="findById" resultMap="BaseAdminMap" parameterType="int">
-        SELECT * FROM (admin  LEFT JOIN comment ON admin.id=comment.admin_id) LEFT JOIN pet ON comment.pet_id=pet.id WHERE admin.id=#{id}
+        SELECT admin.*,comment.id tid,comment.commentTime,comment.content FROM (admin  LEFT JOIN comment ON admin.id=comment.admin_id) LEFT JOIN pet ON comment.pet_id=pet.id WHERE admin.id=#{id}
     </select>
 
     <select id="findByName" resultMap="BaseAdminMap" parameterType="string">
-        SELECT * FROM (admin  LEFT JOIN comment ON admin.id=comment.admin_id) LEFT JOIN pet ON comment.pet_id=pet.id  WHERE admin.adminName=#{adminName}
+        SELECT admin.*,comment.id tid,comment.commentTime,comment.content FROM (admin  LEFT JOIN comment ON admin.id=comment.admin_id) LEFT JOIN pet ON comment.pet_id=pet.id  WHERE admin.adminName=#{adminName}
     </select>
 
     <delete id="deleteBatch" parameterType="int">

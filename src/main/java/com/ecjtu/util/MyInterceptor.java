@@ -1,5 +1,6 @@
 package com.ecjtu.util;
 
+import com.ecjtu.entity.Admin;
 import org.springframework.web.servlet.HandlerInterceptor;
 import org.springframework.web.servlet.ModelAndView;
 
@@ -22,13 +23,16 @@ public class MyInterceptor implements HandlerInterceptor {
         if(requestURI.indexOf("/login")>0){
             return true;
         }
-        System.out.println("login");
-        String name =(String)request.getSession().getAttribute("adminName");
-        if(name!=null){
+        Admin admin = (Admin)request.getSession().getAttribute("admin");
+        System.out.println(admin+"admin");
+        if(admin!=null){
             return true;
         }
-        request.setAttribute("msg","你还没有登录，请先登录！");
-        request.getRequestDispatcher("login.jsp").forward(request,response);
+
+        request.getSession().setAttribute("msg","你还没有登录，请先登录！");
+
+//        response.sendRedirect("animal/admin/login.jsp");
+        request.getRequestDispatcher("/animal/admin/login.jsp").forward(request,response);
         return false;
     }
 

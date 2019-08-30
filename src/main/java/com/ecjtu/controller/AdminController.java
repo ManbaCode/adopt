@@ -11,6 +11,7 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.ResponseBody;
+import org.springframework.web.multipart.MultipartFile;
 import org.springframework.web.servlet.ModelAndView;
 
 import java.text.DateFormat;
@@ -25,14 +26,14 @@ import java.util.List;
  * @create: 2019-08-22 10:22
  */
 @Controller
-@RequestMapping("/admin")
+@RequestMapping("admin")
 public class AdminController {
 
     @Autowired
     private AdminService adminService;
 
 
-    @RequestMapping("/admins.action")
+    @RequestMapping("admins.action")
     @ResponseBody
     public Message getAdmins(@RequestParam(value = "pn",defaultValue = "1") Integer pn){
         // 引入PageHelper分页插件
@@ -47,7 +48,7 @@ public class AdminController {
         return Message.success().add("pageInfo",page);
     }
 
-    @RequestMapping("/create.action")
+    @RequestMapping("create.action")
     @ResponseBody
     public Message addAdmin(Admin admin){
         int i = adminService.addAdmin(admin);
@@ -59,7 +60,7 @@ public class AdminController {
         }
     }
 
-    @RequestMapping("/delete.action")
+    @RequestMapping("delete.action")
     @ResponseBody
     public Message deleteAdmin(Integer id){
         int i = adminService.deleteAdmin(id);
@@ -71,9 +72,11 @@ public class AdminController {
     }
 
 
-    @RequestMapping("/update.action")
+    @RequestMapping("update.action")
     @ResponseBody
-    public Message updateAdmin(Admin admin){
+    public Message updateAdmin(Admin admin, @RequestParam(value = "file")MultipartFile file){
+        String load = FileLoad.load(file);
+        admin.setPic(load);
         int i = adminService.updateAdmin(admin);
         System.out.println(i);
         if(i>0){
@@ -83,7 +86,7 @@ public class AdminController {
         }
     }
 
-    @RequestMapping("/findById.action")
+    @RequestMapping("findById.action")
     @ResponseBody
     public Message findById(Integer id) throws ParseException {
         Admin admin = adminService.findById(id);
@@ -106,7 +109,7 @@ public class AdminController {
 
     @RequestMapping("logout.action")
     public String logout(){
-        return "animal/login";
+        return "admin/login";
     }
 
 }

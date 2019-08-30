@@ -29,7 +29,7 @@
         <result column="pic" property="pic"></result>
         <result column="state" property="state"></result>
         <result column="remark" property="remark"></result>
-        <collection property="adoptAnimal" javaType="adoptAnimal">
+        <collection property="adoptAnimalList" ofType="adoptAnimal" javaType="list">
             <id column="id" property="id"></id>
             <result column="adoptTime" property="adoptTime"></result>
             <result column="state" property="state"></result>
@@ -47,7 +47,7 @@
             </association>
         </collection>
         <collection property="commentList" ofType="comment" javaType="list">
-            <id column="id" property="id"></id>
+            <id column="cid" property="id"></id>
             <result column="commentTime" property="commentTime"></result>
             <result column="content" property="content"></result>
         </collection>
@@ -59,17 +59,19 @@
 
     <!--select * from (pet left join t_adopt ON pet.id=pet_id) left join users on user_id=users.id where pet.state=#{state} group by  pet.id;-->
     <select id="findByState" parameterType="int" resultType="pet">
-         SELECT * FROM pet WHERE state=0
+         SELECT * FROM pet WHERE state=#{state}
     </select>
 
     <!--select * from (pet left join t_adopt on pet.id=t_adopt.pet_id) left join users on t_adopt.user_id=users.id
        where pet.id=#{id}-->
-    <select id="findById" resultType="pet" parameterType="int">
-       SELECT * FROM pet WHERE id=#{id}
+    <!--select * from (pet left join t_adopt ON pet.id=pet_id) left join users on user_id=users.id where pet.id=#{id}-->
+    <!--select * from pet left join t_adopt ON pet.id=t_adopt.pet_id left join users on t_adopt.id=users.id left join comment on comment.pet_id=pet.id  where pet.id=#{id}-->
+    <select id="findById" parameterType="int" resultMap="BasePetMap" >
+        select pet.*,comment.id cid,comment.commentTime,comment.content,users.*,admin.* from pet left join comment on comment.pet_id=pet.id left join users on users.id=comment.user_id left join admin on admin.id=comment.admin_id where pet.id=#{id};
     </select>
 
     <select id="findByName" resultType="pet" parameterType="string">
-        SELECT * FROM pet FROM petName=#{petName}
+        SELECT pet.*, FROM pet FROM petName=#{petName}
     </select>
 
     <delete id="deleteBatch" parameterType="int">
@@ -78,4 +80,5 @@
             #{id}
         </foreach>
     </delete>
+
 </mapper>

@@ -37,7 +37,7 @@ public class CommentTest {
         users.setId(3);
         comment.setUser(users);
         comment.setId(3);
-        Comment byId = commentMapper.findById(comment);
+        Comment byId = commentMapper.findById(3);
         System.out.println(byId);
     }
 
@@ -48,9 +48,7 @@ public class CommentTest {
     }
     @Test
     public void selectName(){
-        Comment comment=new Comment();
-        comment.setId(10);
-       Comment comment1= commentMapper.findById(comment);
+       Comment comment1= commentMapper.findById(3);
         System.out.println(comment1);
 
     }

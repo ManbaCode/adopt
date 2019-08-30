@@ -274,7 +274,7 @@
                 <h4 class="modal-title" id="myModalLabe">修改用户信息</h4>
             </div>
             <div class="modal-body">
-                <form class="form-horizontal" id="edit_admin_form">
+                <form class="form-horizontal" id="edit_admin_form" method="post" enctype="multipart/form-data">
                     <input type="hidden" id="edit_id" name="id">
                     <div class="form-group">
                         <label for="edit_adminName" class="col-sm-2 control-label">
@@ -328,6 +328,12 @@
                         <div class="col-sm-4">
                             <input type="date" class="form-control" id="edit_birthday" placeholder="生日" value="${admin.birthday}" name="birthday">
                         </div>
+                        <label for="edit_pic" class="col-sm-2 control-label">
+                            头像
+                        </label>
+                        <div class="col-sm-4">
+                            <input type="file" class="form-control" id="edit_pic" placeholder="文件"  name="file">
+                        </div>
                     </div>
                     <div class="form-group">
                         <label for="edit_remark" class="col-sm-2 control-label">
@@ -364,6 +370,7 @@
     //总的数据 当前的页面
 
     var totalRecord,currentPage;
+
 
     $(function(){
         to_page(1);
@@ -558,10 +565,14 @@
 
     //点击更新按钮弹出模态框。
     $("#admin_update_btn").click(function(){
+        var admin=document.getElementById("edit_admin_form");
+        var adminInfo=new FormData(admin);
         $.ajax({
             url:"${pageContext.request.contextPath}/admin/update.action",
             type:"POST",
-            data:$("#edit_admin_form").serialize(),
+            processData: false,  // 告诉jQuery不要去处理发送的数据
+            contentType: false, // 告诉jQuery不要去设置Content-Type请求头
+            data:adminInfo,
             success:function (result) {
                 alert("管理员信息更新成功！");
                 to_page(1);
@@ -598,6 +609,8 @@
         }
     });
     $("#admin_find_modal_btn").click(function () {
+
+        $("#admin_table tbody").empty();
         var adminName=$("#findByName").val();
         $.ajax({
             url:"${pageContext.request.contextPath}/admin/findByName.action?adminName="+adminName,

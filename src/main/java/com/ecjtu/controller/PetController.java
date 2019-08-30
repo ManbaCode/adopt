@@ -99,6 +99,7 @@ public class PetController {
     @ResponseBody
     public Message findByPet(Integer id, HttpServletRequest request){
         Pet pet = petService.findById(id);
+        System.out.println(pet);
         String pic = pet.getPic();
         String[] split = pic.split(",");
         List<String> pics=new ArrayList<>();

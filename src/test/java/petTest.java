@@ -39,4 +39,10 @@ public class petTest {
         List<Pet> pets = petService.getPets();
         System.out.println(pets);
     }
+
+    @Test
+    public void select1(){
+        Pet byId = petService.findById(10);
+        System.out.println(byId);
+    }
 }

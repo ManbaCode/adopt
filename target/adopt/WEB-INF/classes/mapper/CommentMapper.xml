@@ -13,7 +13,7 @@
     </delete>
 
     <update id="updateComment" parameterType="comment">
-        UPDATE comment SET  user_id=#{user.id},pet_id=#{ped_id},commentTime=#{commentTime},content=#{content} WHERE id=#{id}
+        UPDATE comment SET commentTime=#{commentTime},content=#{content} WHERE id=#{id}
     </update>
 
     <update id="updateRelationUser" parameterType="int">
@@ -65,14 +65,16 @@
             <result column="state" property="state"></result>
             <result column="remark" property="remark"></result>
         </association>
-
     </resultMap>
 
 
    <select id="getComments" resultMap="BaseCommentMap" >
-       SELECT * FROM (comment  LEFT JOIN users ON comment.user_id=users.id) LEFT JOIN admin  ON admin.id=comment.admin_id where 1=1 GROUP BY comment.id
+        select comment.*,users.userName,admin.adminName,pet.petName from comment  LEFT JOIN users ON comment.user_id=users.id  LEFT JOIN admin  ON admin.id=comment.admin_id inner join pet on comment.pet_id=pet.id
     </select>
 
+    <select id="findByPetId" resultMap="BaseCommentMap" parameterType="int">
+        select comment.*,users.userName,users.pic,admin.adminName,pet.petName from comment  LEFT JOIN users ON comment.user_id=users.id  LEFT JOIN admin  ON admin.id=comment.admin_id inner join pet on comment.pet_id=pet.id where comment.pet_id=#{pet_id}
+    </select>
     <!--SELECT *  FROM comment as c ,pet as p
 
         <if test="user != null ">
@@ -91,8 +93,9 @@
             </if>
             and c.id=#{id,jdbcType=INTEGER}
         </where>-->
-    <select id="findById" parameterType="comment" resultMap="BaseCommentMap" >
-        SELECT * FROM (comment AS c LEFT JOIN users AS u ON c.user_id=u.id) LEFT JOIN admin as a ON a.id=c.admin_id where c.id=#{id}
+    <select id="findById" parameterType="int" resultMap="BaseCommentMap" >
+        select comment.*,users.userName,admin.adminName,pet.petName from comment  LEFT JOIN users ON comment.user_id=users.id  LEFT JOIN admin  ON admin.id=comment.admin_id inner join pet on comment.pet_id=pet.id
+        where comment.id=#{id}
     </select>
 
     <delete id="deleteBatch" parameterType="int">

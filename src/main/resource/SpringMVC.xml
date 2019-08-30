@@ -15,14 +15,15 @@
     </context:component-scan>
 
 
-<!--    <mvc:annotation-driven conversion-service="conversionService"></mvc:annotation-driven>-->
-<!--    <bean id="conversionService" class="org.springframework.context.support.ConversionServiceFactoryBean">-->
-<!--        <property name="converters">-->
-<!--            <set>-->
-<!--                <bean class="com.ecjtu.util.DataConvert"></bean>-->
-<!--            </set>-->
-<!--        </property>-->
-<!--    </bean>-->
+    <!--配置SpringMVC的拦截器-->
+        <mvc:interceptors>
+            <mvc:interceptor>
+                <!--拦截的路径，这是拦截所有请求-->
+                <mvc:mapping path="/**"/>
+                <!--配置具体的拦截器-->
+                <bean class="com.ecjtu.util.MyInterceptor"></bean>
+            </mvc:interceptor>
+        </mvc:interceptors>
 
 
     <!-- 文件上传,id必须设置为multipartResolver -->

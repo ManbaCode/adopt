@@ -1,6 +1,8 @@
 package com.ecjtu.controller;
 
 import com.ecjtu.entity.Comment;
+import com.ecjtu.entity.Pet;
+import com.ecjtu.entity.Users;
 import com.ecjtu.service.CommentService;
 import com.ecjtu.util.Message;
 import com.github.pagehelper.PageHelper;
@@ -13,6 +15,8 @@ import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.servlet.ModelAndView;
 
+import javax.servlet.http.HttpServletRequest;
+import java.util.Date;
 import java.util.List;
 
 /**
@@ -48,9 +52,31 @@ public class CommentController {
 
     }
 
+    @RequestMapping("petComments.action")
+    @ResponseBody
+    public Message getPetComment(Integer pet_id){
+        List<Comment> comments = commentService.findByPetId(pet_id);
+        for(Comment c:comments){
+            System.out.println(c);
+        }
+        if(comments!=null){
+            return Message.success().add("comment",comments);
+        }else{
+            return Message.fail();
+        }
+
+    }
+
     @RequestMapping("/create.action")
     @ResponseBody
-    public Message createComment(Comment comment){
+    public Message createComment(String content, HttpServletRequest request){
+        Comment comment=new Comment();
+        Users user = (Users)request.getSession().getAttribute("user");
+        Pet pet =(Pet) request.getSession().getAttribute("pet");
+        comment.setUser(user);
+        comment.setPet(pet);
+        comment.setContent(content);
+        comment.setCommentTime(new Date());
         if(commentService.addComment(comment)>0){
             return Message.success();
         }else{
@@ -80,8 +106,8 @@ public class CommentController {
 
     @RequestMapping("/findById.action")
     @ResponseBody
-    public Message findById(Comment comment){
-        Comment comment1 = commentService.findById(comment);
+    public Message findById(Integer id){
+        Comment comment1 = commentService.findById(id);
         if(comment1!=null){
             return Message.success().add("comment",comment1);
         }else{

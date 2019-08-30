@@ -24,6 +24,7 @@
     <!-- Owl-Carousel-CSS -->
     <link rel="stylesheet" href="${pageContext.request.contextPath}/css/style.css" type="text/css" media="all" />
 
+
     <!-- Style-CSS -->
     <!-- //css files -->
     <!-- web fonts -->
@@ -40,7 +41,7 @@
         <div class="header">
             <div class="logo">
                 <h1>
-                    <a href="index.html">
+                    <a href="${pageContext.request.contextPath}/index.jsp">
                         <img class="logo-img center-block" src="/images/logo.png" alt="" /> 猫狗生活
                     </a>
                 </h1>

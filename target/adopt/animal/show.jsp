@@ -154,9 +154,11 @@
         </div><!-- /.modal -->
     </div>
 
+    <%--存放评论的地方--%>
     <div class="comment-list">
 
     </div>
+
     <div class="container">
         <div class="commentbox">
             <textarea cols="80" rows="50" placeholder="来说几句吧" class="mytextarea" id="content"></textarea>
@@ -169,52 +171,72 @@
 <script>
     var user="${sessionScope.user}";
 
-    <%--jQuery(function($){--%>
-    <%--    $('#demo1').slideBox();--%>
-    <%--});--%>
+    jQuery(function($){
+        $('#demo1').slideBox();
+    });
 
+    var id="${sessionScope.pet}";
 
     $(function () {
-        to_page(1);
+        to_page();
     });
-    function to_page(pn){
+
+    function to_page(){
+        //session里面的数据
+        console.log("${pet.id}");
         $.ajax({
-            url:"${pageContext.request.contextPath}/comment/comment.action",
+            url:"${pageContext.request.contextPath}/comment/petComments.action?pet_id="+"${pet.id}",
             type:"GET",
             success:function(result){
+                console.log(result.extend.comment);
                 submit(result);
             },
             error:function (result) {
-                alert("1111");
+                alert("评论导出失败");
             }
         });
     }
+    //字符串拼接
     function submit(result) {
+        //清空数据
+        $(".comment-list").empty();
+        //对结果进行遍历
         var comments=result.extend.comment;
         console.log(comments);
-        // $.each(users,function(index,user){
-        //     var obj = new Object();
-        //     obj.img="/images/"+user.pic;
-        //     obj.replyName=user.userName;
-        //     obj.content=$("#content").val();
-        //     $(".comment-list").addCommentList({data:[],add:obj});
-        // });
+        $.each(comments,function(index,comment){
+
+            var headTd=$("<header></header>").append($("<img>").attr("src","/images/"+(comment.user.pic)));
+            var head=$("<div></div>").addClass("comment-right");
+            var userNameTd=$("<h3></h3>").append(comment.user.userName);
+            var bodyTd=$("<div></div>").addClass("comment-content-header");
+            var timeTd=$("<span></span>").append($("<i></i>").addClass("glyphicon glyphicon-time")).append(comment.commentTime);
+            bodyTd.append(timeTd);
+            var commentTd=$("<p></p>").addClass("content").append(comment.content);
+            head.append(userNameTd).append(bodyTd).append(commentTd);
+            $("<div></div>").addClass("comment-info")
+                .append(headTd)
+                .append(head)
+                .appendTo(".comment-list");
+        });
     };
-    $("comment").click(function () {
+
+
+    $("#comment").click(function () {
+        alert(111);
         var comment=$("#content").val();
+        console.log(comment);
         if(comment==null){
             alert("请填入评论后才能发表")
         };
         $.ajax({
-            url:"${pageContext.request.contextPath}/comment/creat.action",
-            type:"POST",
-            date:comment,
+            url:"${pageContext.request.contextPath}/comment/create.action?content="+comment,
+            type:"GET",
             success:function (result) {
-                alert("插入成功");
+                alert("评论插入成功");
                 to_page();
             },
             error:function (result) {
-                alert("插入失败")
+                alert("评论插入失败")
             }
         })
     })

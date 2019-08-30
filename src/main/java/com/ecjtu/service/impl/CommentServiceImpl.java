@@ -56,8 +56,14 @@ public class CommentServiceImpl implements CommentService {
     }
 
     @Override
-    public Comment findById(Comment comment) {
-        Comment byId = commentMapper.findById(comment);
+    public List<Comment> findByPetId(Integer pet_id) {
+        List<Comment> byPetId = commentMapper.findByPetId(pet_id);
+        return byPetId;
+    }
+
+    @Override
+    public Comment findById(Integer id) {
+        Comment byId = commentMapper.findById(id);
         return byId;
     }
 

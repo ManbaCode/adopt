@@ -59,4 +59,9 @@ public class BlogServiceImpl implements BlogService {
     public void deleteBatch(List<Integer> ids) {
         blogMapper.deleteBatch(ids);
     }
+
+
+    public void judge(Blog blog){
+        
+    }
 }

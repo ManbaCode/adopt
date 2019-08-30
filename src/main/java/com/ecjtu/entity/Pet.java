@@ -3,6 +3,7 @@ package com.ecjtu.entity;
 import com.fasterxml.jackson.annotation.JsonFormat;
 import org.springframework.format.annotation.DateTimeFormat;
 
+import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
 
@@ -23,9 +24,10 @@ public class Pet {
     private Integer state;
     private String remark;
 
-    private List<AdoptAnimal> adoptAnimal;
+    private List<AdoptAnimal> adoptAnimalList=new ArrayList<>();
 
-    private List<Comment> commentList;
+    private List<Comment> commentList=new ArrayList<>();
+
 
     public Pet() {
     }
@@ -39,10 +41,9 @@ public class Pet {
         this.pic = pic;
         this.state = state;
         this.remark = remark;
-        this.adoptAnimal = adoptAnimal;
+        this.adoptAnimalList = adoptAnimal;
         this.commentList = commentList;
     }
-
 
     public Integer getId() {
         return id;
@@ -109,11 +110,11 @@ public class Pet {
     }
 
     public List<AdoptAnimal> getAdoptAnimal() {
-        return adoptAnimal;
+        return adoptAnimalList;
     }
 
     public void setAdoptAnimal(List<AdoptAnimal> adoptAnimal) {
-        this.adoptAnimal = adoptAnimal;
+        this.adoptAnimalList = adoptAnimal;
     }
 
     public List<Comment> getCommentList() {
@@ -123,6 +124,8 @@ public class Pet {
     public void setCommentList(List<Comment> commentList) {
         this.commentList = commentList;
     }
+
+
 
     @Override
     public String toString() {
@@ -135,7 +138,7 @@ public class Pet {
                 ", pic='" + pic + '\'' +
                 ", state=" + state +
                 ", remark='" + remark + '\'' +
-                ", adoptAnimal=" + adoptAnimal +
+                ", adoptAnimal=" + adoptAnimalList +
                 ", commentList=" + commentList +
                 '}';
     }

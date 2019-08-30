@@ -276,7 +276,7 @@
                 <h4 class="modal-title" id="myModalLabe">修改用户信息</h4>
             </div>
             <div class="modal-body">
-                <form class="form-horizontal" id="edit_user_form" enctype="multipart/form-data">
+                <form class="form-horizontal" id="edit_user_form" method="post" enctype="multipart/form-data">
                     <input type="hidden" id="edit_id" name="id">
                     <div class="form-group">
                         <label for="edit_userName" class="col-sm-2 control-label">
@@ -534,7 +534,7 @@
             type:"GET",
             success:function(result){
                 //填充用户信息
-                console.log(result);
+                console.log(result.extend.user);
                 $("#edit_id").val(result.extend.user.id);
                 $("#edit_userName").val(result.extend.user.userName);
                 $("#edit_password").val(result.extend.user.password);

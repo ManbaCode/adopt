@@ -59,11 +59,11 @@
         select * from users
     </select>
 
-    <select id="findByName" resultMap="BaseUserMap">
+    <select id="findByName" resultType="users" parameterType="string">
         SELECT * FROM users WHERE userName=#{userName}
     </select>
 
-    <select id="findById" resultMap="BaseUserMap">
+    <select id="findById" resultType="users" parameterType="int">
         SELECT * FROM users WHERE id=#{id}
     </select>
 

@@ -52,11 +52,17 @@ public interface CommentService {
     List<Comment> getComments();
 
     /**
+     * 查询所有的评论
+     * @param pet_id 宠物狗的外键
+     * @return list
+     * */
+    List<Comment> findByPetId(Integer pet_id);
+    /**
      * 根据评论表id查询信息
-     *
+     * @param id 评论的id
      * @return comment
      * */
-    Comment findById(Comment comment);
+    Comment findById(Integer id);
 
 
     /**

@@ -81,7 +81,7 @@ public class UsersController {
     public Message findById(Integer id){
         Users user = usersService.findById(id);
         if(user!=null){
-            return Message.success();
+            return Message.success().add("user",user);
         }else{
             return Message.fail();
         }

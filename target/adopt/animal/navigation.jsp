@@ -11,7 +11,8 @@
 <html>
 <head>
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-    <title><sitemesh:write property='title' /></title>
+    <title>
+        <sitemesh:write property='title' /></title>
     <sitemesh:write property='head' />
     <link rel="stylesheet" href="${pageContext.request.contextPath}/bootstrap/css/bootstrap.min.css">
     <script src="${pageContext.request.contextPath}/js/jquery-2.2.3.min.js"></script>

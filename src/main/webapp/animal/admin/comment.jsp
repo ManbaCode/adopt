@@ -205,16 +205,9 @@
                 <h4 class="modal-title" id="myModalLabe">修改用户评论记录</h4>
             </div>
             <div class="modal-body">
-                <form class="form-horizontal" id="edit_pinglun_form" id="edit_comment_form">
+                <form class="form-horizontal"  id="edit_comment_form">
                     <input type="hidden" id="edit_id" name="id">
                     <div class="form-group">
-                        <label for="edit_userName" class="col-sm-2 control-label">
-                            用户名
-                        </label>
-                        <div class="col-sm-4">
-                            <input type="text" class="form-control" id="edit_userName" value="${comment.user.userName}" placeholder="用户名"
-                                   name="userName">
-                        </div>
                         <label for="edit_commentTime" class="col-sm-2 control-label">
                             评论时间
                         </label>
@@ -235,7 +228,7 @@
             </div>
             <div class="modal-footer">
                 <button type="button" class="btn btn-default" data-dismiss="modal">关闭</button>
-                <button type="button" class="btn btn-primary" onclick="comment_update_btn">保存修改</button>
+                <button type="button" class="btn btn-primary" id="comment_update_btn">保存修改</button>
             </div>
         </div>
     </div>
@@ -400,12 +393,10 @@
         reset_form("#editComment form");
         var id = $(this).attr("edit-id");
         $.ajax({
-            url:"${pageContext.request.contextPath}/comment/findById.action",
-            type:"POST",
-            date:$("#edit_comment_form").serialize(),
+            url:"${pageContext.request.contextPath}/comment/findById.action?id="+id,
+            type:"GET",
             success:function(result){
                 //填充用户信息
-                console.log(result);
                 $("#edit_id").val(result.extend.comment.id);
                 $("#edit_commentTime").val(result.extend.comment.commentTime);
                 $("#edit_content").val(result.extend.comment.content);
@@ -419,6 +410,7 @@
 
     //点击更新按钮弹出模态框。
     $("#comment_update_btn").click(function(){
+        console.log($("#edit_comment_form").serialize());
         $.ajax({
             url:"${pageContext.request.contextPath}/comment/update.action",
             type:"POST",

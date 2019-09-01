@@ -15,15 +15,19 @@
     </context:component-scan>
 
 
+    <mvc:annotation-driven/>
+    <!--配置SpringMVC无法使用静态文件的问题-->
+    <mvc:default-servlet-handler/>
+
     <!--配置SpringMVC的拦截器-->
-        <mvc:interceptors>
-            <mvc:interceptor>
-                <!--拦截的路径，这是拦截所有请求-->
-                <mvc:mapping path="/**"/>
-                <!--配置具体的拦截器-->
-                <bean class="com.ecjtu.util.MyInterceptor"></bean>
-            </mvc:interceptor>
-        </mvc:interceptors>
+<!--        <mvc:interceptors>-->
+<!--            <mvc:interceptor>-->
+<!--                &lt;!&ndash;拦截的路径，这是拦截所有请求&ndash;&gt;-->
+<!--                <mvc:mapping path="/**"/>-->
+<!--                &lt;!&ndash;配置具体的拦截器&ndash;&gt;-->
+<!--                <bean class="com.ecjtu.util.MyInterceptor"></bean>-->
+<!--            </mvc:interceptor>-->
+<!--        </mvc:interceptors>-->
 
 
     <!-- 文件上传,id必须设置为multipartResolver -->
@@ -33,9 +37,7 @@
         <property name="maxUploadSize" value="5000000" />
     </bean>
 
-    <mvc:annotation-driven/>
-    <!--配置SpringMVC无法使用静态文件的问题-->
-    <mvc:default-servlet-handler/>
+
     <!--配置视图解析器-->
     <bean class="org.springframework.web.servlet.view.InternalResourceViewResolver">
         <property name="prefix" value="/animal/"></property>

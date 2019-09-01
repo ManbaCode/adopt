@@ -120,18 +120,17 @@
         //index：下标 user：单个对象
         var pets=result.extend.pageInfo.list;
         $.each(pets,function(index,pet){
-            console.log(index);
             var divTd=$("<div></div>").addClass("ih-item circle effect1 agile_services_grid");
             var headTd=$("<div></div>").addClass("spinner");
-            var imgTd=$("<div></div>").addClass("img").append($("<img/>")).addClass("img-responsive").attr("src","/images/"+pet.pic);
-            imgTd.attr("pet-id",pet.id);
+            var imgTd=$("<div></div>").addClass("img").append($("<img/>").addClass("img-responsive").attr("src","/images/"+spilt(pet.pic)).attr("pet-id",pet.id));
+            // imgTd.attr("pet-id",pet.id);
+            /*$(".img-responsive").attr("pet-id",pet.id);*/
             divTd.append(headTd);
             divTd.append(imgTd);
-
             var fileTd=$("<fieldset></fieldset>");
             var animalTd=$("<legend></legend>").append(pet.petName);
-
             fileTd.append(animalTd).append(pet.remark);
+
             $("<div></div>").addClass("col-md-4 col-sm-4 col-xs-4 w3_agile_services_grid").attr("data-aos","zoom-in")
                 .append(divTd)
                 .append(fileTd)
@@ -200,6 +199,7 @@
 
     $(document).on("click",".img-responsive",function(){
         var id = $(this).attr("pet-id");
+        console.log($(this));
         console.log(id);
         $.ajax({
             url:"${pageContext.request.contextPath}/pet/findByPet.action?id="+id,
@@ -251,6 +251,12 @@
             }
         });
     });
+
+    function spilt(pics) {
+        var pis=pics;
+        var pt=pis.toString().split(",");
+        return pt[0];
+    }
 </script>
 
 </body>

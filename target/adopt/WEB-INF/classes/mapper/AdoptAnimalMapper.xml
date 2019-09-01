@@ -34,7 +34,7 @@
         <result column="adoptTime" property="adoptTime"></result>
         <result column="state" property="state"></result>
         <association property="user" javaType="users">
-            <id property="id" column="id"></id>
+            <id property="id" column="uid"></id>
             <result column="userName" property="userName"></result>
             <result column="password" property="password"></result>
             <result column="sex" property="sex"></result>
@@ -46,7 +46,7 @@
             <result column="state" property="state"></result>
         </association>
         <association property="pet" javaType="pet">
-            <id column="id" property="id"></id>
+            <id column="pid" property="id"></id>
             <result column="petName" property="petName"></result>
             <result column="petType" property="petType"></result>
             <result column="sex" property="sex"></result>
@@ -60,14 +60,14 @@
 
 
     <select id="getAdoptAnimals" parameterType="int" resultMap="BaseAdoptAnimalMap">
-        SELECT * FROM t_adopt as t,users As u,pet As p WHERE t.user_id=u.id AND t.pet_id=p.id
+        SELECT t.*,u.id  uid,u.userName,u.Email,u.state,p.id  pid,p.state,p.petName FROM t_adopt as t,users As u,pet As p WHERE t.user_id=u.id AND t.pet_id=p.id
     </select>
 
     <select id="findById" resultMap="BaseAdoptAnimalMap" parameterType="int">
-        SELECT * FROM t_adopt as t,users As u,pet As p WHERE t.user_id=u.id AND t.pet_id=p.id AND t.id=#{id}
+        SELECT t.*,u.id  uid,u.userName,u.Email,u.state,p.id  pid,p.state,p.petName FROM t_adopt as t,users As u,pet As p WHERE t.user_id=u.id AND t.pet_id=p.id AND t.id=#{id}
     </select>
 
     <select id="findByState" resultMap="BaseAdoptAnimalMap" parameterType="int">
-        SELECT * FROM t_adopt as t,users As u,pet As p WHERE t.user_id=u.id AND t.pet_id=p.id AND t.state=#{state}
+        SELECT t.*,u.id  uid,u.userName,u.Email,u.state,p.id  pid,p.state,p.petName FROM t_adopt as t,users As u,pet As p WHERE t.user_id=u.id AND t.pet_id=p.id AND t.state=#{state}
     </select>
 </mapper>

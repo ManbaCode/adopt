@@ -10,102 +10,38 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="f591194b-05f8-45ac-87db-2b419717f508" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/ecjtu/entity/Answer.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/ecjtu/mapper/AnswerMapper.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resource/mapper/AnswerMapper.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/webapp/images/1.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/webapp/images/2.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/webapp/images/3.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/webapp/images/4.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/adopt/WEB-INF/classes/com/ecjtu/entity/Answer.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/adopt/WEB-INF/classes/com/ecjtu/mapper/AnswerMapper.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/adopt/WEB-INF/classes/mapper/AnswerMapper.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/adopt/images/1.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/adopt/images/2.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/adopt/images/3.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/adopt/images/4.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/classes/com/ecjtu/entity/Answer.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/classes/com/ecjtu/mapper/AnswerMapper.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/classes/mapper/AnswerMapper.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/ecjtu/controller/AdminController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/ecjtu/controller/AdminController.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/ecjtu/controller/AdminLogin.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/ecjtu/controller/AdminLogin.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/ecjtu/controller/CommentController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/ecjtu/controller/CommentController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/ecjtu/controller/PetController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/ecjtu/controller/PetController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/ecjtu/controller/UsersController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/ecjtu/controller/UsersController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/ecjtu/entity/Comment.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/ecjtu/entity/Comment.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/ecjtu/entity/Pet.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/ecjtu/entity/Pet.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/ecjtu/mapper/CommentMapper.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/ecjtu/mapper/CommentMapper.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/ecjtu/service/CommentService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/ecjtu/service/CommentService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/ecjtu/service/impl/BlogServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/ecjtu/service/impl/BlogServiceImpl.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/ecjtu/service/impl/CommentServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/ecjtu/service/impl/CommentServiceImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/ecjtu/controller/AdoptAnimalController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/ecjtu/controller/AdoptAnimalController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/ecjtu/service/impl/AdoptAnimalServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/ecjtu/service/impl/AdoptAnimalServiceImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/ecjtu/util/MailUtil.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/ecjtu/util/MailUtil.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/ecjtu/util/MyInterceptor.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/ecjtu/util/MyInterceptor.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/resource/SpringMVC.xml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resource/SpringMVC.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resource/mapper/AdminMapper.xml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resource/mapper/AdminMapper.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resource/mapper/CommentMapper.xml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resource/mapper/CommentMapper.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resource/mapper/PetMapper.xml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resource/mapper/PetMapper.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resource/mapper/UserMapper.xml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resource/mapper/UserMapper.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/web.xml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/web.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resource/mapper/AdoptAnimalMapper.xml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resource/mapper/AdoptAnimalMapper.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/webapp/animal/admin/admin.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/animal/admin/admin.jsp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/animal/admin/comment.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/animal/admin/comment.jsp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/animal/admin/users.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/animal/admin/users.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/animal/admin/adopt.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/animal/admin/adopt.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/animal/admin/pet.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/animal/admin/pet.jsp" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/webapp/animal/index.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/animal/index.jsp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/animal/navigation.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/animal/navigation.jsp" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/webapp/animal/service.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/animal/service.jsp" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/webapp/animal/show.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/animal/show.jsp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/css/style.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/css/style.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/CommentTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/CommentTest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/petTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/petTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/AdoptAnimalTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/AdoptAnimalTest.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/adopt/WEB-INF/classes/SpringMVC.xml" beforeDir="false" afterPath="$PROJECT_DIR$/target/adopt/WEB-INF/classes/SpringMVC.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/adopt/WEB-INF/classes/com/ecjtu/controller/AdminController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/adopt/WEB-INF/classes/com/ecjtu/controller/AdminController.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/adopt/WEB-INF/classes/com/ecjtu/controller/AdminLogin.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/adopt/WEB-INF/classes/com/ecjtu/controller/AdminLogin.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/adopt/WEB-INF/classes/com/ecjtu/controller/CommentController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/adopt/WEB-INF/classes/com/ecjtu/controller/CommentController.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/adopt/WEB-INF/classes/com/ecjtu/controller/PetController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/adopt/WEB-INF/classes/com/ecjtu/controller/PetController.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/adopt/WEB-INF/classes/com/ecjtu/controller/UsersController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/adopt/WEB-INF/classes/com/ecjtu/controller/UsersController.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/adopt/WEB-INF/classes/com/ecjtu/entity/Comment.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/adopt/WEB-INF/classes/com/ecjtu/entity/Comment.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/adopt/WEB-INF/classes/com/ecjtu/entity/Pet.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/adopt/WEB-INF/classes/com/ecjtu/entity/Pet.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/adopt/WEB-INF/classes/com/ecjtu/mapper/CommentMapper.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/adopt/WEB-INF/classes/com/ecjtu/mapper/CommentMapper.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/adopt/WEB-INF/classes/com/ecjtu/service/CommentService.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/adopt/WEB-INF/classes/com/ecjtu/service/CommentService.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/adopt/WEB-INF/classes/com/ecjtu/service/impl/BlogServiceImpl.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/adopt/WEB-INF/classes/com/ecjtu/service/impl/BlogServiceImpl.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/adopt/WEB-INF/classes/com/ecjtu/service/impl/CommentServiceImpl.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/adopt/WEB-INF/classes/com/ecjtu/service/impl/CommentServiceImpl.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/adopt/WEB-INF/classes/com/ecjtu/controller/AdoptAnimalController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/adopt/WEB-INF/classes/com/ecjtu/controller/AdoptAnimalController.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/adopt/WEB-INF/classes/com/ecjtu/service/impl/AdoptAnimalServiceImpl.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/adopt/WEB-INF/classes/com/ecjtu/service/impl/AdoptAnimalServiceImpl.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/adopt/WEB-INF/classes/com/ecjtu/util/MyInterceptor.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/adopt/WEB-INF/classes/com/ecjtu/util/MyInterceptor.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/adopt/WEB-INF/classes/mapper/AdminMapper.xml" beforeDir="false" afterPath="$PROJECT_DIR$/target/adopt/WEB-INF/classes/mapper/AdminMapper.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/adopt/WEB-INF/classes/mapper/CommentMapper.xml" beforeDir="false" afterPath="$PROJECT_DIR$/target/adopt/WEB-INF/classes/mapper/CommentMapper.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/adopt/WEB-INF/classes/mapper/PetMapper.xml" beforeDir="false" afterPath="$PROJECT_DIR$/target/adopt/WEB-INF/classes/mapper/PetMapper.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/adopt/WEB-INF/classes/mapper/UserMapper.xml" beforeDir="false" afterPath="$PROJECT_DIR$/target/adopt/WEB-INF/classes/mapper/UserMapper.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/adopt/WEB-INF/web.xml" beforeDir="false" afterPath="$PROJECT_DIR$/target/adopt/WEB-INF/web.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/adopt/animal/admin/admin.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/target/adopt/animal/admin/admin.jsp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/adopt/animal/admin/comment.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/target/adopt/animal/admin/comment.jsp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/adopt/animal/admin/users.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/target/adopt/animal/admin/users.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/adopt/WEB-INF/classes/mapper/AdoptAnimalMapper.xml" beforeDir="false" afterPath="$PROJECT_DIR$/target/adopt/WEB-INF/classes/mapper/AdoptAnimalMapper.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/adopt/animal/admin/adopt.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/target/adopt/animal/admin/adopt.jsp" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/adopt/animal/index.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/target/adopt/animal/index.jsp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/adopt/animal/navigation.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/target/adopt/animal/navigation.jsp" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/adopt/animal/service.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/target/adopt/animal/service.jsp" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/adopt/animal/show.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/target/adopt/animal/show.jsp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/adopt/css/style.css" beforeDir="false" afterPath="$PROJECT_DIR$/target/adopt/css/style.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/adopt/js/houtai/fonts/glyphicons-halflings-regular.eot" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/adopt/js/houtai/fonts/glyphicons-halflings-regular.svg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/adopt/js/houtai/fonts/glyphicons-halflings-regular.ttf" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/adopt/js/houtai/fonts/glyphicons-halflings-regular.woff" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/adopt/js/houtai/fonts/glyphicons-halflings-regular.woff2" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/SpringMVC.xml" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/SpringMVC.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/ecjtu/controller/AdminController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/ecjtu/controller/AdminController.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/com/ecjtu/controller/AdminLogin.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/ecjtu/controller/AdminLogin.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/ecjtu/controller/CommentController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/ecjtu/controller/CommentController.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/ecjtu/controller/PetController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/ecjtu/controller/PetController.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/ecjtu/controller/UsersController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/ecjtu/controller/UsersController.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/ecjtu/entity/Comment.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/ecjtu/entity/Comment.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/ecjtu/entity/Pet.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/ecjtu/entity/Pet.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/ecjtu/mapper/CommentMapper.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/ecjtu/mapper/CommentMapper.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/ecjtu/service/CommentService.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/ecjtu/service/CommentService.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/ecjtu/service/impl/BlogServiceImpl.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/ecjtu/service/impl/BlogServiceImpl.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/ecjtu/service/impl/CommentServiceImpl.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/ecjtu/service/impl/CommentServiceImpl.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/ecjtu/controller/AdoptAnimalController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/ecjtu/controller/AdoptAnimalController.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/ecjtu/service/impl/AdoptAnimalServiceImpl.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/ecjtu/service/impl/AdoptAnimalServiceImpl.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/com/ecjtu/util/MyInterceptor.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/ecjtu/util/MyInterceptor.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/mapper/AdminMapper.xml" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/mapper/AdminMapper.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/mapper/CommentMapper.xml" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/mapper/CommentMapper.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/mapper/PetMapper.xml" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/mapper/PetMapper.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/mapper/UserMapper.xml" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/mapper/UserMapper.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/test-classes/CommentTest.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/test-classes/CommentTest.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/test-classes/petTest.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/test-classes/petTest.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/mapper/AdoptAnimalMapper.xml" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/mapper/AdoptAnimalMapper.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/test-classes/AdoptAnimalTest.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/test-classes/AdoptAnimalTest.class" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <ignored path="$PROJECT_DIR$/target/" />
@@ -163,82 +99,32 @@
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/resource/SpringMVC.xml">
+        <entry file="file://$PROJECT_DIR$/src/main/java/com/ecjtu/service/impl/AdoptAnimalServiceImpl.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-420">
-              <caret line="23" column="51" lean-forward="true" selection-start-line="23" selection-start-column="51" selection-end-line="23" selection-end-column="51" />
+            <state relative-caret-position="174">
+              <caret line="47" column="39" selection-start-line="47" selection-start-column="39" selection-end-line="47" selection-end-column="39" />
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/com/ecjtu/util/MyInterceptor.java">
+        <entry file="file://$PROJECT_DIR$/src/main/java/com/ecjtu/entity/AdoptAnimal.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="75">
-              <caret line="33" column="58" lean-forward="true" selection-start-line="33" selection-start-column="58" selection-end-line="33" selection-end-column="58" />
+            <state relative-caret-position="405">
+              <caret line="78" column="17" selection-start-line="78" selection-start-column="17" selection-end-line="78" selection-end-column="17" />
+              <folding>
+                <element signature="e#1649#1650#0" expanded="true" />
+                <element signature="e#1676#1677#0" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/webapp/animal/admin/login.jsp">
+        <entry file="file://$PROJECT_DIR$/src/main/webapp/animal/admin/adopt.jsp">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="930">
-              <caret line="31" column="20" selection-start-line="31" selection-start-column="20" selection-end-line="31" selection-end-column="26" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/src/main/java/com/ecjtu/controller/AdminController.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="1761">
-              <caret line="107" lean-forward="true" selection-start-line="107" selection-end-line="107" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/webapp/animal/admin/admin.jsp">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="147">
-              <caret line="54" column="66" selection-start-line="54" selection-start-column="64" selection-end-line="54" selection-end-column="66" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/com/ecjtu/controller/CommentController.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="187">
-              <caret line="73" column="67" selection-start-line="73" selection-start-column="67" selection-end-line="73" selection-end-column="67" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/com/ecjtu/controller/AdminLogin.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="47">
-              <caret line="24" column="57" selection-start-line="24" selection-start-column="57" selection-end-line="24" selection-end-column="57" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/com/ecjtu/controller/PetController.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="30">
-              <caret line="59" column="25" selection-start-line="58" selection-start-column="8" selection-end-line="59" selection-end-column="25" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/com/ecjtu/util/Message.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="183">
-              <caret line="9" column="13" selection-start-line="9" selection-start-column="13" selection-end-line="9" selection-end-column="13" />
+            <state relative-caret-position="189">
+              <caret line="336" column="42" lean-forward="true" selection-start-line="336" selection-start-column="42" selection-end-line="336" selection-end-column="42" />
             </state>
           </provider>
         </entry>
@@ -246,8 +132,57 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/webapp/animal/admin/pet.jsp">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="166">
-              <caret line="369" column="67" selection-start-line="369" selection-start-column="56" selection-end-line="369" selection-end-column="67" />
+            <state relative-caret-position="121">
+              <caret line="589" column="43" selection-start-line="589" selection-start-column="43" selection-end-line="589" selection-end-column="43" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/src/main/webapp/animal/admin/admin.jsp">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="153">
+              <caret line="376" column="23" lean-forward="true" selection-start-line="376" selection-start-column="23" selection-end-line="376" selection-end-column="23" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/com/ecjtu/controller/PetController.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="-180">
+              <caret line="46" column="87" selection-start-line="46" selection-start-column="87" selection-end-line="46" selection-end-column="87" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/com/ecjtu/controller/AdoptAnimalController.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="1038">
+              <caret line="145" selection-start-line="145" selection-end-line="145" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/com/ecjtu/util/MailUtil.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="375">
+              <caret line="35" column="27" selection-start-line="35" selection-start-column="27" selection-end-line="35" selection-end-column="27" />
+              <folding>
+                <element signature="e#698#928#0" expanded="true" />
+                <element signature="e#927#928#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/resource/mapper/AdoptAnimalMapper.xml">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="225">
+              <caret line="70" column="83" selection-start-line="70" selection-start-column="83" selection-end-line="70" selection-end-column="83" />
             </state>
           </provider>
         </entry>
@@ -268,23 +203,7 @@
   </component>
   <component name="FindInProjectRecents">
     <findStrings>
-      <find>users</find>
-      <find>pid</find>
-      <find>BasePetMap</find>
-      <find>content</find>
-      <find>commentList</find>
-      <find>1.jpg</find>
-      <find>cid</find>
-      <find>findByPet</find>
-      <find>pet-id</find>
-      <find>c</find>
-      <find>findByPetId</find>
-      <find>clea</find>
-      <find>petComments</find>
-      <find>comment</find>
-      <find>creat</find>
       <find>select</find>
-      <find>user</find>
       <find>creat.action</find>
       <find>to_page(1);</find>
       <find>reload</find>
@@ -298,6 +217,22 @@
       <find>pet</find>
       <find>login</find>
       <find>退出</find>
+      <find>tiaochuanbtn</find>
+      <find>tianchuan_btn</find>
+      <find>img-responsive</find>
+      <find>pet-id</find>
+      <find>submit_btn</find>
+      <find>disagree</find>
+      <find>create.action</find>
+      <find>updateState</find>
+      <find>state</find>
+      <find>to</find>
+      <find>user</find>
+      <find>agree-id</find>
+      <find>animal</find>
+      <find>updateAdoptState</find>
+      <find>disagree-id</find>
+      <find>disagree_btn</find>
     </findStrings>
     <replaceStrings>
       <replace>Integer</replace>
@@ -317,17 +252,10 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/src/main/java/com/ecjtu/mapper/BlogMapper.java" />
-        <option value="$PROJECT_DIR$/src/main/java/com/ecjtu/mapper/PetMapper.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/ecjtu/service/PetService.java" />
-        <option value="$PROJECT_DIR$/src/main/resource/mapper/AdoptAnimalMapper.xml" />
-        <option value="$PROJECT_DIR$/src/main/java/com/ecjtu/service/impl/AdoptAnimalServiceImpl.java" />
-        <option value="$PROJECT_DIR$/src/main/webapp/animal/admin/adopt.jsp" />
-        <option value="$PROJECT_DIR$/src/main/webapp/animal/admin/pet.jsp" />
         <option value="$PROJECT_DIR$/pom.xml" />
         <option value="$PROJECT_DIR$/src/main/resource/log4j.properties" />
         <option value="$PROJECT_DIR$/src/main/resource/MyBatis.xml" />
-        <option value="$PROJECT_DIR$/src/main/java/com/ecjtu/controller/AdoptAnimalController.java" />
         <option value="$PROJECT_DIR$/src/test/java/BlogTest.java" />
         <option value="$PROJECT_DIR$/src/main/resource/mapper/BlogMapper.xml" />
         <option value="$PROJECT_DIR$/src/main/webapp/animal/admin/comment.jsp" />
@@ -339,14 +267,11 @@
         <option value="$PROJECT_DIR$/target/classes/mapper/PetMapper.xml" />
         <option value="$PROJECT_DIR$/src/main/java/com/ecjtu/entity/Pet.java" />
         <option value="$PROJECT_DIR$/src/main/resource/mapper/UserMapper.xml" />
-        <option value="$PROJECT_DIR$/src/main/webapp/animal/index.jsp" />
         <option value="$PROJECT_DIR$/src/main/webapp/css/style.css" />
         <option value="$PROJECT_DIR$/src/test/java/CommentTest.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/ecjtu/service/impl/PetServiceImpl.java" />
-        <option value="$PROJECT_DIR$/src/main/java/com/ecjtu/controller/PetController.java" />
         <option value="$PROJECT_DIR$/src/test/java/petTest.java" />
         <option value="$PROJECT_DIR$/src/main/resource/mapper/PetMapper.xml" />
-        <option value="$PROJECT_DIR$/src/main/webapp/animal/service.jsp" />
         <option value="$PROJECT_DIR$/src/main/java/com/ecjtu/mapper/CommentMapper.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/ecjtu/service/CommentService.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/ecjtu/service/impl/CommentServiceImpl.java" />
@@ -355,7 +280,6 @@
         <option value="$PROJECT_DIR$/src/main/webapp/css/pinglun.css" />
         <option value="$PROJECT_DIR$/src/main/resource/mapper/CommentMapper.xml" />
         <option value="$PROJECT_DIR$/src/main/webapp/animal/team.jsp" />
-        <option value="$PROJECT_DIR$/src/main/webapp/animal/show.jsp" />
         <option value="$PROJECT_DIR$/src/main/java/com/ecjtu/controller/CommentController.java" />
         <option value="$PROJECT_DIR$/src/main/webapp/WEB-INF/web.xml" />
         <option value="$PROJECT_DIR$/src/main/java/com/ecjtu/entity/Admin.java" />
@@ -363,11 +287,22 @@
         <option value="$PROJECT_DIR$/src/main/resource/mapper/AdminMapper.xml" />
         <option value="$PROJECT_DIR$/src/main/webapp/animal/admin/users.jsp" />
         <option value="$PROJECT_DIR$/src/main/java/com/ecjtu/controller/UsersController.java" />
-        <option value="$PROJECT_DIR$/src/main/resource/SpringMVC.xml" />
+        <option value="$PROJECT_DIR$/src/main/java/com/ecjtu/controller/AdminController.java" />
+        <option value="$PROJECT_DIR$/src/main/webapp/animal/index.jsp" />
+        <option value="$PROJECT_DIR$/src/main/java/com/ecjtu/controller/PetController.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/ecjtu/controller/AdminLogin.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/ecjtu/util/MyInterceptor.java" />
+        <option value="$PROJECT_DIR$/src/main/resource/SpringMVC.xml" />
+        <option value="$PROJECT_DIR$/src/main/webapp/animal/show.jsp" />
+        <option value="$PROJECT_DIR$/src/main/webapp/animal/service.jsp" />
+        <option value="$PROJECT_DIR$/src/main/java/com/ecjtu/service/impl/AdoptAnimalServiceImpl.java" />
+        <option value="$PROJECT_DIR$/src/test/java/AdoptAnimalTest.java" />
+        <option value="$PROJECT_DIR$/src/main/resource/mapper/AdoptAnimalMapper.xml" />
+        <option value="$PROJECT_DIR$/src/main/webapp/animal/admin/adopt.jsp" />
+        <option value="$PROJECT_DIR$/src/main/java/com/ecjtu/util/MailUtil.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/ecjtu/controller/AdoptAnimalController.java" />
+        <option value="$PROJECT_DIR$/src/main/webapp/animal/admin/pet.jsp" />
         <option value="$PROJECT_DIR$/src/main/webapp/animal/admin/admin.jsp" />
-        <option value="$PROJECT_DIR$/src/main/java/com/ecjtu/controller/AdminController.java" />
       </list>
     </option>
   </component>
@@ -424,6 +359,7 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
+      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -482,6 +418,25 @@
               <item name="main" type="462c0819:PsiDirectoryNode" />
               <item name="java" type="462c0819:PsiDirectoryNode" />
               <item name="ecjtu" type="462c0819:PsiDirectoryNode" />
+              <item name="service" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="adopt" type="b2602c69:ProjectViewProjectNode" />
+              <item name="adopt" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+              <item name="java" type="462c0819:PsiDirectoryNode" />
+              <item name="ecjtu" type="462c0819:PsiDirectoryNode" />
+              <item name="service" type="462c0819:PsiDirectoryNode" />
+              <item name="impl" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="adopt" type="b2602c69:ProjectViewProjectNode" />
+              <item name="adopt" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+              <item name="java" type="462c0819:PsiDirectoryNode" />
+              <item name="ecjtu" type="462c0819:PsiDirectoryNode" />
               <item name="util" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
@@ -529,7 +484,28 @@
               <item name="src" type="462c0819:PsiDirectoryNode" />
               <item name="main" type="462c0819:PsiDirectoryNode" />
               <item name="webapp" type="462c0819:PsiDirectoryNode" />
+              <item name="html" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="adopt" type="b2602c69:ProjectViewProjectNode" />
+              <item name="adopt" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+              <item name="webapp" type="462c0819:PsiDirectoryNode" />
               <item name="WEB-INF" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="adopt" type="b2602c69:ProjectViewProjectNode" />
+              <item name="adopt" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="test" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="adopt" type="b2602c69:ProjectViewProjectNode" />
+              <item name="adopt" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="test" type="462c0819:PsiDirectoryNode" />
+              <item name="java" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="adopt" type="b2602c69:ProjectViewProjectNode" />
@@ -539,7 +515,6 @@
           <select />
         </subPane>
       </pane>
-      <pane id="Scope" />
       <pane id="PackagesPane" />
     </panes>
   </component>
@@ -550,7 +525,7 @@
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
     <property name="database.console.LAST_STATE" value="true" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/../SSMTest" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="list.type.of.created.stylesheet" value="PLAIN_TEXT" />
     <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
     <property name="nodejs_npm_path_reset_for_default_project" value="true" />
@@ -732,9 +707,9 @@
     </list>
     <recent_temporary>
       <list>
+        <item itemvalue="JUnit.AdoptAnimalTest.select1" />
         <item itemvalue="JUnit.CommentTest.selectName" />
         <item itemvalue="JUnit.petTest.select1" />
-        <item itemvalue="JUnit.AdoptAnimalTest.select1" />
         <item itemvalue="JUnit.petTest.select" />
         <item itemvalue="JUnit.petTest.sellect" />
       </list>
@@ -769,7 +744,10 @@
       <workItem from="1567038339242" duration="23354000" />
       <workItem from="1567080619957" duration="254000" />
       <workItem from="1567081145048" duration="9392000" />
-      <workItem from="1567125077358" duration="23629000" />
+      <workItem from="1567125077358" duration="23703000" />
+      <workItem from="1567229544095" duration="10654000" />
+      <workItem from="1567313071413" duration="12513000" />
+      <workItem from="1567347045740" duration="6124000" />
     </task>
     <task id="LOCAL-00001" summary="基于SSM的流浪猫狗领养网站的设计与实现的第一次提交">
       <created>1566461234342</created>
@@ -848,22 +826,17 @@
       <option name="project" value="LOCAL" />
       <updated>1567038596780</updated>
     </task>
-    <option name="localTasksCounter" value="12" />
+    <task id="LOCAL-00012" summary="基于SSM的流浪猫狗领养网站的设计与实现">
+      <created>1567180574411</created>
+      <option name="number" value="00012" />
+      <option name="presentableId" value="LOCAL-00012" />
+      <option name="project" value="LOCAL" />
+      <updated>1567180574412</updated>
+    </task>
+    <option name="localTasksCounter" value="13" />
     <servers />
   </component>
   <component name="TestHistory">
-    <history-entry file="CommentTest_selectName - 2019.08.29 at 20h 01m 48s.xml">
-      <configuration name="CommentTest.selectName" configurationId="JUnit" />
-    </history-entry>
-    <history-entry file="petTest_select1 - 2019.08.29 at 20h 26m 08s.xml">
-      <configuration name="petTest.select1" configurationId="JUnit" />
-    </history-entry>
-    <history-entry file="petTest_select1 - 2019.08.29 at 20h 32m 01s.xml">
-      <configuration name="petTest.select1" configurationId="JUnit" />
-    </history-entry>
-    <history-entry file="petTest_select1 - 2019.08.29 at 20h 32m 29s.xml">
-      <configuration name="petTest.select1" configurationId="JUnit" />
-    </history-entry>
     <history-entry file="petTest_select1 - 2019.08.29 at 20h 36m 05s.xml">
       <configuration name="petTest.select1" configurationId="JUnit" />
     </history-entry>
@@ -882,9 +855,21 @@
     <history-entry file="CommentTest_selectName - 2019.08.29 at 22h 08m 07s.xml">
       <configuration name="CommentTest.selectName" configurationId="JUnit" />
     </history-entry>
+    <history-entry file="AdoptAnimalTest_select1 - 2019.09.01 at 21h 12m 42s.xml">
+      <configuration name="AdoptAnimalTest.select1" configurationId="JUnit" />
+    </history-entry>
+    <history-entry file="AdoptAnimalTest_select1 - 2019.09.01 at 21h 16m 34s.xml">
+      <configuration name="AdoptAnimalTest.select1" configurationId="JUnit" />
+    </history-entry>
+    <history-entry file="AdoptAnimalTest_select1 - 2019.09.01 at 21h 17m 24s.xml">
+      <configuration name="AdoptAnimalTest.select1" configurationId="JUnit" />
+    </history-entry>
+    <history-entry file="AdoptAnimalTest_select1 - 2019.09.01 at 21h 17m 56s.xml">
+      <configuration name="AdoptAnimalTest.select1" configurationId="JUnit" />
+    </history-entry>
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="347992000" />
+    <option name="totallyTimeSpent" value="377357000" />
   </component>
   <component name="TodoView" selected-index="3">
     <todo-panel id="selected-file">
@@ -896,9 +881,10 @@
     </todo-panel>
   </component>
   <component name="ToolWindowManager">
-    <frame x="-8" y="-8" width="1382" height="744" extended-state="6" />
+    <frame x="-8" y="-8" width="1382" height="744" extended-state="7" />
+    <editor active="true" />
     <layout>
-      <window_info content_ui="combo" id="Project" order="0" sideWeight="0.87723786" visible="true" weight="0.19288956" />
+      <window_info content_ui="combo" id="Project" order="0" sideWeight="0.87723786" visible="true" weight="0.0741301" />
       <window_info id="Structure" order="1" sideWeight="0.500998" side_tool="true" weight="0.20574887" />
       <window_info id="Web" order="2" sideWeight="0.11764706" side_tool="true" weight="0.09304085" />
       <window_info id="Designer" order="3" />
@@ -906,8 +892,8 @@
       <window_info id="Favorites" order="5" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" weight="0.37213114" />
-      <window_info anchor="bottom" id="Run" order="2" sideWeight="0.49924356" weight="0.070491806" />
-      <window_info active="true" anchor="bottom" id="Debug" order="3" visible="true" weight="0.10327869" />
+      <window_info anchor="bottom" id="Run" order="2" sideWeight="0.49924356" weight="0.42295083" />
+      <window_info active="true" anchor="bottom" id="Debug" order="3" visible="true" weight="0.17540984" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
       <window_info anchor="bottom" id="TODO" order="6" weight="0.71147543" />
@@ -950,6 +936,12 @@
           <properties />
           <option name="timeStamp" value="10" />
         </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/com/ecjtu/util/MailUtil.java</url>
+          <line>21</line>
+          <properties />
+          <option name="timeStamp" value="20" />
+        </line-breakpoint>
       </breakpoints>
       <default-breakpoints>
         <breakpoint enabled="true" type="javascript-exception">
@@ -959,72 +951,6 @@
     </breakpoint-manager>
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/src/main/webapp/css/style.css">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="2670">
-          <caret line="89" column="32" selection-start-line="89" selection-start-column="32" selection-end-line="89" selection-end-column="32" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/webapp/images/2.jpg">
-      <provider selected="true" editor-type-id="images" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/ecjtu/entity/Pet.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-540">
-          <caret line="28" column="37" selection-start-line="28" selection-start-column="26" selection-end-line="28" selection-end-column="37" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/ecjtu/service/PetService.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="112">
-          <caret line="56" column="16" selection-start-line="56" selection-start-column="8" selection-end-line="56" selection-end-column="16" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/ecjtu/service/impl/PetServiceImpl.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="53">
-          <caret line="58" selection-start-line="58" selection-end-line="58" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/webapp/css/jquery.slideBox.css">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="150">
-          <caret line="5" column="4" selection-start-line="5" selection-start-column="4" selection-end-line="5" selection-end-column="4" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/test/java/petTest.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="257">
-          <caret line="44" column="41" selection-start-line="44" selection-start-column="41" selection-end-line="44" selection-end-column="41" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/ecjtu/service/impl/CommentServiceImpl.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="154">
-          <caret line="58" column="36" selection-start-line="58" selection-start-column="25" selection-end-line="58" selection-end-column="36" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar://C:/Program Files/Java/jdk1.8.0_144/src.zip!/java/util/concurrent/ThreadPoolExecutor.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="71">
-          <caret line="1148" selection-start-line="1148" selection-end-line="1148" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/test/java/CommentTest.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-913">
-          <caret line="13" column="2" selection-start-line="13" selection-start-column="2" selection-end-line="13" selection-end-column="2" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/com/ecjtu/service/CommentService.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="1650">
@@ -1032,37 +958,11 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/webapp/animal/index.jsp">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="780">
-          <caret line="26" selection-start-line="26" selection-end-line="26" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/webapp/css/base.css">
       <provider selected="true" editor-type-id="text-editor" />
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/webapp/animal/service.jsp">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="6060">
-          <caret line="202" column="24" selection-start-line="202" selection-start-column="24" selection-end-line="202" selection-end-column="24" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/webapp/animal/pinglun.jsp">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="286">
-          <caret line="163" column="26" selection-start-line="163" selection-start-column="26" selection-end-line="163" selection-end-column="26" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/webapp/css/pinglun.css">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="168">
-          <caret line="63" column="1" selection-start-line="63" selection-start-column="1" selection-end-line="63" selection-end-column="1" />
-        </state>
-      </provider>
-    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/webapp/animal/pinglun.jsp" />
+    <entry file="file://$PROJECT_DIR$/src/main/webapp/css/pinglun.css" />
     <entry file="file://$PROJECT_DIR$/src/main/java/com/ecjtu/mapper/CommentMapper.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="214">
@@ -1074,13 +974,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="217">
           <caret line="126" column="76" selection-start-line="126" selection-start-column="76" selection-end-line="126" selection-end-column="76" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/webapp/animal/show.jsp">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="6462">
-          <caret line="256" column="32" selection-start-line="256" selection-start-column="28" selection-end-line="256" selection-end-column="32" />
         </state>
       </provider>
     </entry>
@@ -1118,11 +1011,6 @@
     <entry file="file://$PROJECT_DIR$/src/main/resource/Spring-service.xml">
       <provider selected="true" editor-type-id="text-editor" />
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/resource/Spring-dao.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-1015" />
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/resource/MyBatis.xml">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="-180" />
@@ -1156,38 +1044,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="jar://$PROJECT_DIR$/../../repository/org/springframework/spring-web/5.1.8.RELEASE/spring-web-5.1.8.RELEASE.jar!/org/springframework/web/method/support/InvocableHandlerMethod.class">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="104">
-          <caret line="95" lean-forward="true" selection-start-line="95" selection-end-line="95" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/com/ecjtu/controller/UsersController.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="74">
           <caret line="82" selection-start-line="82" selection-end-line="82" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/webapp/animal/navigation.jsp">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="472">
-          <caret line="60" column="57" selection-start-line="60" selection-start-column="57" selection-end-line="60" selection-end-column="57" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/resource/mapper/PetMapper.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="227">
-          <caret line="68" column="67" selection-start-line="68" selection-start-column="67" selection-end-line="68" selection-end-column="67" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/ecjtu/util/MailUtil.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="183">
-          <caret line="12" column="13" selection-start-line="12" selection-start-column="13" selection-end-line="12" selection-end-column="13" />
         </state>
       </provider>
     </entry>
@@ -1205,20 +1065,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/webapp/animal/admin/pet.jsp">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="166">
-          <caret line="369" column="67" selection-start-line="369" selection-start-column="56" selection-end-line="369" selection-end-column="67" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/ecjtu/util/Message.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="183">
-          <caret line="9" column="13" selection-start-line="9" selection-start-column="13" selection-end-line="9" selection-end-column="13" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/web.xml">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="166">
@@ -1226,31 +1072,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/resource/SpringMVC.xml">
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/ecjtu/util/Message.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-420">
-          <caret line="23" column="51" lean-forward="true" selection-start-line="23" selection-start-column="51" selection-end-line="23" selection-end-column="51" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/webapp/animal/admin/login.jsp">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="930">
-          <caret line="31" column="20" selection-start-line="31" selection-start-column="20" selection-end-line="31" selection-end-column="26" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/ecjtu/controller/PetController.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="30">
-          <caret line="59" column="25" selection-start-line="58" selection-start-column="8" selection-end-line="59" selection-end-column="25" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/ecjtu/controller/AdminLogin.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="47">
-          <caret line="24" column="57" selection-start-line="24" selection-start-column="57" selection-end-line="24" selection-end-column="57" />
+        <state relative-caret-position="240">
+          <caret line="9" column="13" selection-start-line="9" selection-start-column="13" selection-end-line="9" selection-end-column="13" />
         </state>
       </provider>
     </entry>
@@ -1261,24 +1086,192 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/ecjtu/util/MyInterceptor.java">
+    <entry file="file://$PROJECT_DIR$/src/main/webapp/animal/index.jsp">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="75">
-          <caret line="33" column="58" lean-forward="true" selection-start-line="33" selection-start-column="58" selection-end-line="33" selection-end-column="58" />
+        <state relative-caret-position="196">
+          <caret line="173" column="95" lean-forward="true" selection-start-line="173" selection-start-column="95" selection-end-line="173" selection-end-column="95" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/webapp/animal/admin/admin.jsp">
+    <entry file="file://$PROJECT_DIR$/src/main/resource/SpringMVC.xml">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="147">
-          <caret line="54" column="66" selection-start-line="54" selection-start-column="64" selection-end-line="54" selection-end-column="66" />
+        <state relative-caret-position="870">
+          <caret line="29" column="31" selection-start-line="22" selection-start-column="12" selection-end-line="29" selection-end-column="31" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/webapp/animal/admin/login.jsp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1500">
+          <caret line="50" column="30" selection-start-line="50" selection-start-column="30" selection-end-line="50" selection-end-column="30" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/ecjtu/controller/AdminLogin.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="270">
+          <caret line="16" selection-start-line="16" selection-end-line="16" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/com/ecjtu/controller/AdminController.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1761">
-          <caret line="107" lean-forward="true" selection-start-line="107" selection-end-line="107" />
+        <state relative-caret-position="2640">
+          <caret line="107" selection-start-line="107" selection-end-line="107" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/webapp/animal/navigation.jsp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="114">
+          <caret line="60" column="57" selection-start-line="60" selection-start-column="57" selection-end-line="60" selection-end-column="57" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/ecjtu/util/MyInterceptor.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="188">
+          <caret line="22" column="115" selection-start-line="22" selection-start-column="42" selection-end-line="22" selection-end-column="115" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/resource/Spring-dao.xml">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/webapp/html/services.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="478">
+          <caret line="87" column="26" selection-start-line="87" selection-start-column="26" selection-end-line="87" selection-end-column="26" />
+          <folding>
+            <element signature="n#fieldset#0;n#div#2;n#div#0;n#div#0;n#div#1;n#body#0;n#html#0;n#!!top" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/webapp/animal/service.jsp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-1977">
+          <caret line="124" column="160" selection-start-line="124" selection-start-column="160" selection-end-line="124" selection-end-column="160" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/webapp/animal/show.jsp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="203">
+          <caret line="279" column="71" selection-start-line="279" selection-start-column="58" selection-end-line="279" selection-end-column="71" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/resource/mapper/PetMapper.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="126">
+          <caret line="18" column="27" selection-start-line="18" selection-start-column="16" selection-end-line="18" selection-end-column="27" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://$PROJECT_DIR$/../../repository/org/springframework/spring-webmvc/5.1.8.RELEASE/spring-webmvc-5.1.8.RELEASE.jar!/org/springframework/web/servlet/mvc/method/annotation/RequestMappingHandlerAdapter.class">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="103">
+          <caret line="517" column="27" selection-start-line="517" selection-start-column="27" selection-end-line="517" selection-end-column="27" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://$PROJECT_DIR$/../../repository/org/springframework/spring-webmvc/5.1.8.RELEASE/spring-webmvc-5.1.8.RELEASE.jar!/org/springframework/web/servlet/DispatcherServlet.class">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="163">
+          <caret line="518" selection-start-line="518" selection-end-line="518" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://$PROJECT_DIR$/../../repository/org/springframework/spring-web/5.1.8.RELEASE/spring-web-5.1.8.RELEASE.jar!/org/springframework/web/method/support/InvocableHandlerMethod.class">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="96">
+          <caret line="109" selection-start-line="109" selection-end-line="109" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/ecjtu/service/AdoptAnimalService.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="183">
+          <caret line="64" column="22" selection-start-line="64" selection-start-column="22" selection-end-line="64" selection-end-column="22" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/test/java/AdoptAnimalTest.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="54">
+          <caret line="35" column="34" lean-forward="true" selection-start-line="35" selection-start-column="34" selection-end-line="35" selection-end-column="34" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/resource/mapper/AdoptAnimalMapper.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="225">
+          <caret line="70" column="83" selection-start-line="70" selection-start-column="83" selection-end-line="70" selection-end-column="83" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/ecjtu/entity/AdoptAnimal.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="405">
+          <caret line="78" column="17" selection-start-line="78" selection-start-column="17" selection-end-line="78" selection-end-column="17" />
+          <folding>
+            <element signature="e#1649#1650#0" expanded="true" />
+            <element signature="e#1676#1677#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/webapp/animal/admin/adopt.jsp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="189">
+          <caret line="336" column="42" lean-forward="true" selection-start-line="336" selection-start-column="42" selection-end-line="336" selection-end-column="42" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/ecjtu/util/MailUtil.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="375">
+          <caret line="35" column="27" selection-start-line="35" selection-start-column="27" selection-end-line="35" selection-end-column="27" />
+          <folding>
+            <element signature="e#698#928#0" expanded="true" />
+            <element signature="e#927#928#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/ecjtu/controller/PetController.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-180">
+          <caret line="46" column="87" selection-start-line="46" selection-start-column="87" selection-end-line="46" selection-end-column="87" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/ecjtu/service/impl/AdoptAnimalServiceImpl.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="174">
+          <caret line="47" column="39" selection-start-line="47" selection-start-column="39" selection-end-line="47" selection-end-column="39" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/ecjtu/controller/AdoptAnimalController.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1038">
+          <caret line="145" selection-start-line="145" selection-end-line="145" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/webapp/animal/admin/pet.jsp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="121">
+          <caret line="589" column="43" selection-start-line="589" selection-start-column="43" selection-end-line="589" selection-end-column="43" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/webapp/animal/admin/admin.jsp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="153">
+          <caret line="376" column="23" lean-forward="true" selection-start-line="376" selection-start-column="23" selection-end-line="376" selection-end-column="23" />
         </state>
       </provider>
     </entry>

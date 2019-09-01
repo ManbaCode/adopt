@@ -175,7 +175,7 @@
             <br>
             <p>官网&nbsp;&nbsp;<span style="font-size: 22px;color: red">www.pet.com</span></p>
             <br>
-            <p><a href="admin/login.html">管理员登录</a></p>
+            <p><a href="${pageContext.request.contextPath}/animal/admin/login.jsp">管理员登录</a></p>
         </div>
 
     </div>

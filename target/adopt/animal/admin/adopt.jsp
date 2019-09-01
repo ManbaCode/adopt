@@ -313,12 +313,12 @@
     }
 
     $(document).on("click",".agree_btn",function(){
-        alert(111);
-        var id=$(this).attr("agree-id");
+        var adoptAnimal=$(this).attr("agree-id");
         if(confirm("确认同意吗？")){
             $.ajax({
-                url:"${pageContext.request.contextPath}/adopt/agree.action?id="+id,
-                type:"GET",
+                url:"${pageContext.request.contextPath}/adopt/agree.action",
+                type:"POST",
+                date:adoptAnimal,
                 success:function (result) {
                     alert("审核成功");
                 },
@@ -331,6 +331,7 @@
     });
     $(document).on("click",".disagree_btn",function(){
         var id=$(this).attr("disagree-id");
+        console.log(id);
         if(confirm("确认不同意吗？")){
             $.ajax({
                 url:"${pageContext.request.contextPath}/adopt/disAgree.action?id="+id,

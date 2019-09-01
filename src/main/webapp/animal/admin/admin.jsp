@@ -371,9 +371,16 @@
 
     var totalRecord,currentPage;
 
+    var isFlush=0;
 
     $(function(){
-        to_page(1);
+        if(isFlush==0){
+            alert("00000"+isFlush);
+            to_page(1);
+        }else if(isFlush==1){
+            alert("11111"+isFlush);
+            return;
+        }
     });
     function to_page(pn){
         $.ajax({
@@ -615,8 +622,11 @@
         $.ajax({
             url:"${pageContext.request.contextPath}/admin/findByName.action?adminName="+adminName,
             type:"Get",
+            async:"false",
             success:function (result) {
-                console.log(result);
+                isFlush=1;
+                alert(isFlush);
+                alert("12121122")
                 //1、解析并显示员工数据
                 build_admins_table(result);
             },

@@ -20,7 +20,7 @@ public class MyInterceptor implements HandlerInterceptor {
     public boolean preHandle(HttpServletRequest request, HttpServletResponse response, Object handler) throws Exception {
         System.out.println("preHandle方法执行");
         String requestURI = request.getRequestURI();
-        if(requestURI.indexOf("/login")>0){
+        if(requestURI.indexOf("/login")>=0||requestURI.indexOf("/animal/*.jsp")>0||requestURI.indexOf("/.action")>0){
             return true;
         }
         Admin admin = (Admin)request.getSession().getAttribute("admin");
@@ -29,9 +29,10 @@ public class MyInterceptor implements HandlerInterceptor {
             return true;
         }
 
-        request.getSession().setAttribute("msg","你还没有登录，请先登录！");
+        request.setAttribute("msg","你还没有登录，请先登录！");
 
-//        response.sendRedirect("animal/admin/login.jsp");
+        //response.sendRedirect("animal/admin/login.jsp");
+
         request.getRequestDispatcher("/animal/admin/login.jsp").forward(request,response);
         return false;
     }

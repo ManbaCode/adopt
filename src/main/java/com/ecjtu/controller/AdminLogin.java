@@ -14,6 +14,7 @@ import javax.servlet.http.HttpServletRequest;
  * @create: 2019-08-22 14:12
  */
 @Controller
+
 public class AdminLogin {
 
     @Autowired

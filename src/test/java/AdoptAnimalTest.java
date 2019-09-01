@@ -31,8 +31,11 @@ public class AdoptAnimalTest {
 
     @Test
     public void select1(){
-        AdoptAnimal byId = adoptAnimalMapper.findById(1);
-        System.out.println(byId);
+        List<AdoptAnimal> byState = adoptAnimalMapper.findByState(1);
+        for(AdoptAnimal a:byState){
+            System.out.println(a);
+        }
+
     }
 
     @Test

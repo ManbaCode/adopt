@@ -588,7 +588,6 @@
         //1、弹出是否确认删除对话框
         var petName = $(this).parents("tr").find("td:eq(2)").text();
         var petId = $(this).attr("del-id");
-
         if(confirm("确认删除【"+petName+"】吗？")){
             //确认，发送ajax请求删除即可
             $.ajax({

@@ -13,7 +13,11 @@
 <head>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
     <title>动物的具体信息</title>
-
+    <style type="text/css">
+        .myDiv{
+            margin-top: 40px;
+        }
+    </style>
     <link rel="stylesheet" href="${pageContext.request.contextPath}/bootstrap/css/bootstrap.min.css">
     <link href="${pageContext.request.contextPath}/css/jquery.slideBox.css" rel="stylesheet" type="text/css" />
     <link rel="stylesheet" href="${pageContext.request.contextPath}/css/show.css">
@@ -23,8 +27,9 @@
     <script src="${pageContext.request.contextPath}/js/jquery.comment.js"></script>
 </head>
 <body>
-<div>
-    <div>
+<div class="myDiv" >
+
+    <div >
         <h2>待领养的动物</h2>
         <center>
             <div id="demo1" class="slideBox">
@@ -77,6 +82,7 @@
         </div>
         <div class="my_btn">
             <button class="btn btn-primary btn-lg" id="pet_adopt_modal_btn">想要领养</button>
+            <button class="btn btn-primary btn-lg" id="tianchuan_btn" style="float: right;position: relative;left: 150px;bottom: 45px">返回主页</button>
         </div>
     </div>
 
@@ -285,6 +291,11 @@
             }
         });
     });
+
+
+    $("#tianchuan_btn").click(function () {
+        window.location.href="${pageContext.request.contextPath}/animal/index.jsp";
+    })
 </script>
 </body>
 </html>

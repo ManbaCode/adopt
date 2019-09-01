@@ -32,9 +32,9 @@ public class MailUtil {
         });
         String word=null;
         if(state==1){
-            word="因为你的条件不符合，所有不能同意你的申请";
-        }else if(state==0){
             word="你的申请已经同意了，请你快来这领养宠物";
+        }else if(state==0){
+            word="因为你的条件不符合，所有不能同意你的申请";
         }
         //2 创建邮件对象
 

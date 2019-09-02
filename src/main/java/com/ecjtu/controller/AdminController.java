@@ -14,6 +14,7 @@ import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.multipart.MultipartFile;
 import org.springframework.web.servlet.ModelAndView;
 
+import javax.servlet.http.HttpServletRequest;
 import java.text.DateFormat;
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
@@ -99,11 +100,17 @@ public class AdminController {
     @RequestMapping("/findByName.action")
     @ResponseBody
     public Message findByName(String adminName){
+        PageHelper.startPage(1,4);
         Admin admin = adminService.findByName(adminName);
-        List<Admin> page=new ArrayList<>();
-        page.add(admin);
-        System.out.println(page);
-        return Message.success().add("pageInfo",page);
+        List admins=new ArrayList();
+        admins.add(admin);
+        PageInfo page = new PageInfo(admins,2);
+        if(admin!=null){
+            return Message.success().add("pageInfo",page);
+        }else{
+            return Message.fail();
+        }
+
     }
 
 

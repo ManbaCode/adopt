@@ -13,6 +13,7 @@ import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.multipart.MultipartFile;
 
 import javax.servlet.http.HttpServletRequest;
+import java.util.ArrayList;
 import java.util.List;
 
 /**
@@ -91,9 +92,13 @@ public class UsersController {
     @RequestMapping("findByName.action")
     @ResponseBody
     public Message findByName(String userName){
-        Users byName = usersService.findByName(userName);
-        if(byName!=null){
-            return Message.success();
+        PageHelper.startPage(1,4);
+        List users=new ArrayList();
+        Users user = usersService.findByName(userName);
+        if(user!=null){
+            users.add(user);
+            PageInfo page=new PageInfo(users,3);
+            return Message.success().add("pageInfo",page);
         }else{
             return Message.fail();
         }

@@ -15,8 +15,7 @@
     <!-- Meta tag Keywords -->
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta charset="UTF-8" />
-    <meta name="keywords" content=""
-    />
+    <meta name="keywords" content=""/>
     <script>
         addEventListener("load", function () {
             setTimeout(hideURLbar, 0);
@@ -44,10 +43,7 @@
 
         </div>
     </div>
-    <div class="row">
-        <!-- 分页条信息 -->
-        <div class="col-md-6" id="page_nav_area"></div>
-    </div>
+
     <div class="w3l-img-side">
         <img src="/images/cat11.png" alt="" />
     </div>
@@ -55,7 +51,11 @@
         <img src="/images/cat1.png" alt="" />
     </div>
 </div>
-
+<div class="row">
+    <!-- 分页条信息 -->
+    <div class="col-md-5" id="page_info_area"></div>
+    <div class="col-md-4 myPage" id="page_nav_area"></div>
+</div>
 
 
 <!-- //services -->

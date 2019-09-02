@@ -18,6 +18,7 @@ import org.springframework.web.servlet.ModelAndView;
 import org.springframework.web.servlet.mvc.annotation.ModelAndViewResolver;
 
 import javax.servlet.http.HttpServletRequest;
+import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -106,6 +107,7 @@ public class PetController {
         for(int i=0;i<split.length;i++){
             pics.add(split[i]);
         }
+
         request.getSession().setAttribute("pics",pic);
         request.getSession().setAttribute("pet",pet);
         if(pet!=null){
@@ -115,14 +117,16 @@ public class PetController {
         }
 
     }
-    @RequestMapping("findByName.action")
+    @RequestMapping("findByPetType.action")
     @ResponseBody
-    public Pet findByName(String petName){
-        Pet byName = petService.findByName(petName);
-        if(byName!=null){
-            return byName;
+    public Message findByName(String petType){
+        PageHelper.startPage(1,4);
+        List<Pet> pets = petService.findByPetType(petType);
+        if(pets!=null){
+            PageInfo page=new PageInfo(pets,3);
+            return Message.success().add("pageInfo",page);
         }else{
-            return null;
+            return Message.fail();
         }
     }
 

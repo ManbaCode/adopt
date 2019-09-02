@@ -50,8 +50,8 @@ public class BlogServiceImpl implements BlogService {
     }
 
     @Override
-    public Blog findByTime(Date actionTime) {
-        Blog blog = blogMapper.findByTime(actionTime);
+    public List<Blog> findByTime(String actionTime) {
+        List<Blog> blog = blogMapper.findByTime(actionTime);
         return blog;
     }
 

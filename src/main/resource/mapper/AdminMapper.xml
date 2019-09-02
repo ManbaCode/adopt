@@ -60,8 +60,13 @@
         SELECT admin.*,comment.id tid,comment.commentTime,comment.content FROM (admin  LEFT JOIN comment ON admin.id=comment.admin_id) LEFT JOIN pet ON comment.pet_id=pet.id WHERE admin.id=#{id}
     </select>
 
-    <select id="findByName" resultMap="BaseAdminMap" parameterType="string">
-        SELECT admin.*,comment.id tid,comment.commentTime,comment.content FROM (admin  LEFT JOIN comment ON admin.id=comment.admin_id) LEFT JOIN pet ON comment.pet_id=pet.id  WHERE admin.adminName=#{adminName}
+    <select id="findByName" resultMap="BaseAdminMap">
+        SELECT admin.*,comment.id tid,comment.commentTime,comment.content FROM (admin  LEFT JOIN comment ON admin.id=comment.admin_id) LEFT JOIN pet ON comment.pet_id=pet.id
+        <where>
+            <if test="adminName != null ">
+            admin.adminName=#{adminName}
+            </if>
+        </where>
     </select>
 
     <delete id="deleteBatch" parameterType="int">

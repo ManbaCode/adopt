@@ -127,10 +127,10 @@
             <div class="panel-body">
                 <form class="form-inline" method="get" action="">
                     <div class="form-group">
-                        <label for="fingByTime">活动事件</label>
-                        <input type="date" class="form-control" id="fingByTime" value="" name="actionTime">
+                        <label for="findByTime">活动事件</label>
+                        <input type="date" class="form-control" id="findByTime" value="" name="actionTime">
                     </div>
-                    <button type="submit" class="btn btn-primary">查询</button>
+                    <button type="button" class="btn btn-primary" id="blog_find_modal_btn">查询</button>
                 </form>
             </div>
         </div>
@@ -330,16 +330,19 @@
             data:"pn="+pn,
             type:"GET",
             success:function(result){
-                //1、解析并显示员工数据
-                build_blogs_table(result);
-                //2、解析并显示分页信息
-                build_page_info(result);
-                //3、解析显示分页条数据
-                build_page_nav(result);
+                resolving(result);
             }
         });
     }
 
+    function resolving(result){
+        //1、解析并显示员工数据
+        build_blogs_table(result);
+        //2、解析并显示分页信息
+        build_page_info(result);
+        //3、解析显示分页条数据
+        build_page_nav(result);
+    }
     function build_blogs_table(result){
         //清空table表格
         $("#blog_table tbody").empty();
@@ -550,6 +553,24 @@
                 }
             });
         }
+    });
+
+
+    $("#blog_find_modal_btn").click(function () {
+        $("#blog_table tbody").empty();
+        var actionTime=$("#findByTime").val();
+        console.log(actionTime);
+        $.ajax({
+            url:"${pageContext.request.contextPath}/blog/findByTime.action?actionTime="+actionTime,
+            type:"Get",
+            async:"true",
+            success:function (result) {
+                resolving(result);
+            },
+            error:function (result) {
+                alert("查询错误")
+            }
+        });
     });
 </script>
 

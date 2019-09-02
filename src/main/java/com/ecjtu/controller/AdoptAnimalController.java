@@ -12,10 +12,7 @@ import com.github.pagehelper.PageHelper;
 import com.github.pagehelper.PageInfo;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestMethod;
-import org.springframework.web.bind.annotation.RequestParam;
-import org.springframework.web.bind.annotation.ResponseBody;
+import org.springframework.web.bind.annotation.*;
 import org.springframework.web.servlet.ModelAndView;
 
 import javax.jws.soap.SOAPBinding;
@@ -153,5 +150,20 @@ public class AdoptAnimalController {
         }else{
             return Message.fail();
         }
+    }
+
+
+    @RequestMapping("findByAdoptTime.action")
+    @ResponseBody
+    public Message findByAdoptTime(Date adoptTime){
+        PageHelper.startPage(1,4);
+        List<AdoptAnimal> adoptAnimals = animalService.findByAdoptTime(adoptTime);
+        if(adoptAnimals!=null){
+            PageInfo page=new PageInfo(adoptAnimals,3);
+            return Message.success().add("pageInfo",page);
+        }else{
+            return Message.fail();
+        }
+
     }
 }

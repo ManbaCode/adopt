@@ -130,10 +130,10 @@
             <div class="panel-body">
                 <form class="form-inline" method="get" action="#">
                     <div class="form-group">
-                        <label for="findByName">宠物名</label>
-                        <input type="text" class="form-control" id="findByName" value="" name="petName">
+                        <label for="findByPetType">宠物类型</label>
+                        <input type="text" class="form-control" id="findByPetType" value="" name="petName">
                     </div>
-                    <button type="submit" class="btn btn-primary">查询</button>
+                    <button type="button" class="btn btn-primary" id="pet_find_modal_btn">查询</button>
                 </form>
             </div>
         </div>
@@ -371,15 +371,19 @@
             data:"pn="+pn,
             type:"GET",
             success:function(result){
-                //1、解析并显示员工数据
-                build_pets_table(result);
-                //2、解析并显示分页信息
-                build_page_info(result);
-                //3、解析显示分页条数据
-                build_page_nav(result);
+                resolving(result);
             }
         });
     }
+    function resolving(result){
+        //1、解析并显示员工数据
+        build_pets_table(result);
+        //2、解析并显示分页信息
+        build_page_info(result);
+        //3、解析显示分页条数据
+        build_page_nav(result);
+    }
+
     //解析并显示员工数据
     function build_pets_table(result){
         //清空table表格
@@ -523,7 +527,11 @@
             data:petTd,
             success:function (result) {
                 alert("宠物创建成功");
-                to_page(1);
+                if(result.extend.pageInfo.total%3==0){
+                    to_page(result.extend.pageInfo.pageNum+1);
+                } else {
+                    to_page(result.extend.pageInfp.pageNum)
+                }
             },
             error:function (result) {
                 console.log(result);
@@ -604,6 +612,24 @@
             });
         }
     });
+
+
+    $("#pet_find_modal_btn").click(function () {
+        $("#pet_table tbody").empty();
+        var petType=$("#findByPetType").val();
+        $.ajax({
+            url:"${pageContext.request.contextPath}/pet/findByPetType.action?petType="+petType,
+            type:"Get",
+            async:"true",
+            success:function (result) {
+                resolving(result);
+            },
+            error:function (result) {
+                alert("查询错误")
+            }
+        });
+    });
+
 </script>
 
 </body>

@@ -51,7 +51,7 @@ public interface BlogMapper {
      * @param actionTime 活动的时间
      * @return  Blog
      * */
-    Blog findByTime(Date actionTime);
+    List<Blog> findByTime(String actionTime);
 
     /**
      * 批量删除

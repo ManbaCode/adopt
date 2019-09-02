@@ -52,6 +52,7 @@
     </div>
     <!-- 显示分页信息 -->
     <div class="row">
+        <div class="col-md-5" id="page_info_area"></div>
         <!-- 分页条信息 -->
         <div class="col-md-6" id="page_nav_area"></div>
     </div>

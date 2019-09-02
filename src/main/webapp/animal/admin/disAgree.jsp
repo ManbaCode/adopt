@@ -126,10 +126,10 @@
             <div class="panel-body">
                 <form class="form-inline" method="get" action="">
                     <div class="form-group">
-                        <label for="fingByName">用户名称</label>
-                        <input type="text" class="form-control" id="fingByName" value="" name="userName">
+                        <label for="findByName">用户名称</label>
+                        <input type="text" class="form-control" id="findByName" value="" name="userName">
                     </div>
-                    <button type="submit" class="btn btn-primary">查询</button>
+                    <button type="button" class="btn btn-primary" id="disAgree_find_modal_btn">查询</button>
                 </form>
             </div>
         </div>
@@ -197,16 +197,19 @@
             data:"pn="+pn,
             type:"GET",
             success:function(result){
-                //1、解析并显示员工数据
-                build_adopts_table(result);
-                //2、解析并显示分页信息
-                build_page_info(result);
-                //3、解析显示分页条数据
-                build_page_nav(result);
+               resolving(result);
             }
         });
     }
 
+    function resolving(result){
+        //1、解析并显示员工数据
+        build_adopts_table(result);
+        //2、解析并显示分页信息
+        build_page_info(result);
+        //3、解析显示分页条数据
+        build_page_nav(result);
+    }
     function build_adopts_table(result){
         //清空table表格
         $("#adopt_table tbody").empty();
@@ -299,7 +302,21 @@
         var navEle = $("<nav></nav>").append(ul);
         navEle.appendTo("#page_nav_area");
     }
-
+    $("#disAgree_find_modal_btn").click(function () {
+        $("#adopt_table tbody").empty();
+        var userName=$("#findByName").val();
+        $.ajax({
+            url:"${pageContext.request.contextPath}/user/findByName.action?userName="+userName,
+            type:"Get",
+            async:"true",
+            success:function (result) {
+                resolving(result);
+            },
+            error:function (result) {
+                alert("查询错误")
+            }
+        });
+    });
 </script>
 
 </body></html>

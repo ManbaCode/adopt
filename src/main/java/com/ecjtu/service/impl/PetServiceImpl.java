@@ -61,9 +61,9 @@ public class PetServiceImpl implements PetService {
     }
 
     @Override
-    public Pet findByName(String petName) {
-        Pet byName = petMapper.findByName(petName);
-        return byName;
+    public List<Pet> findByPetType(String petType) {
+        List<Pet> pets = petMapper.findByPetType(petType);
+        return pets;
     }
 
     @Override

@@ -70,8 +70,8 @@
         select pet.*,comment.id cid,comment.commentTime,comment.content,users.*,admin.* from pet left join comment on comment.pet_id=pet.id left join users on users.id=comment.user_id left join admin on admin.id=comment.admin_id where pet.id=#{id};
     </select>
 
-    <select id="findByName" resultType="pet" parameterType="string">
-        SELECT pet.*, FROM pet FROM petName=#{petName}
+    <select id="findByPetType" resultType="pet" parameterType="string">
+        SELECT *  FROM pet WHERE petType=#{petType}
     </select>
 
     <delete id="deleteBatch" parameterType="int">

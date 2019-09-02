@@ -9,6 +9,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import javax.mail.MessagingException;
+import java.util.Date;
 import java.util.List;
 
 /**
@@ -76,6 +77,12 @@ public class AdoptAnimalServiceImpl implements AdoptAnimalService {
     public AdoptAnimal findById(Integer id) {
         AdoptAnimal byId = adoptAnimalMapper.findById(id);
         return byId;
+    }
+
+    @Override
+    public List<AdoptAnimal> findByAdoptTime(Date adoptTime) {
+        List<AdoptAnimal> byAdoptTime = adoptAnimalMapper.findByAdoptTime(adoptTime);
+        return byAdoptTime;
     }
 
     @Override

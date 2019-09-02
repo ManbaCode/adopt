@@ -35,7 +35,7 @@
         SELECT id,actionTime,address,peoples,event,title FROM blog WHERE id=#{id}
     </select>
 
-    <select id="findByTime" parameterType="date" resultType="Blog">
+    <select id="findByTime" parameterType="string" resultType="blog">
         SELECT id,actionTime,address,peoples,event,title FROM blog WHERE actionTime=#{actionTime}
     </select>
 

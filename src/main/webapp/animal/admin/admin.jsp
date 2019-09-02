@@ -131,7 +131,7 @@
                         <label for="findByName">管理员名称</label>
                         <input type="text" class="form-control" id="findByName" value="" name="adminName">
                     </div>
-                    <button type="submit" class="btn btn-primary" id="admin_find_modal_btn">查询</button>
+                    <button type="button" class="btn btn-primary" id="admin_find_modal_btn">查询</button>
                 </form>
             </div>
         </div>
@@ -374,13 +374,7 @@
     var isFlush=0;
 
     $(function(){
-        if(isFlush==0){
-            alert("00000"+isFlush);
-            to_page(1);
-        }else if(isFlush==1){
-            alert("11111"+isFlush);
-            return;
-        }
+       to_page(1);
     });
     function to_page(pn){
         $.ajax({
@@ -388,17 +382,20 @@
             data:"pn="+pn,
             type:"GET",
             success:function(result){
-                //1、解析并显示员工数据
-                build_admins_table(result);
-                //2、解析并显示分页信息
-                build_page_info(result);
-                //3、解析显示分页条数据
-                build_page_nav(result);
+                resolving(result);
             }
         });
     }
 
 
+    function resolving(result){
+        //1、解析并显示员工数据
+        build_admins_table(result);
+        //2、解析并显示分页信息
+        build_page_info(result);
+        //3、解析显示分页条数据
+        build_page_nav(result);
+    }
     function build_admins_table(result){
         //清空table表格
         $("#admin_table tbody").empty();
@@ -616,25 +613,21 @@
         }
     });
     $("#admin_find_modal_btn").click(function () {
-
         $("#admin_table tbody").empty();
         var adminName=$("#findByName").val();
+        console.log(adminName);
         $.ajax({
             url:"${pageContext.request.contextPath}/admin/findByName.action?adminName="+adminName,
             type:"Get",
-            async:"false",
+            async:"true",
             success:function (result) {
-                isFlush=1;
-                alert(isFlush);
-                alert("12121122")
-                //1、解析并显示员工数据
-                build_admins_table(result);
+                resolving(result);
             },
             error:function (result) {
                 alert("拆个年间哎你是")
             }
         });
-    })
+    });
 
 
 </script>

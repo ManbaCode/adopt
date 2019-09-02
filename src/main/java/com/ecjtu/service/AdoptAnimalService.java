@@ -4,6 +4,7 @@ import com.ecjtu.entity.AdoptAnimal;
 import org.apache.ibatis.annotations.Param;
 
 import javax.mail.MessagingException;
+import java.util.Date;
 import java.util.List;
 
 /**
@@ -69,6 +70,13 @@ public interface AdoptAnimalService {
      * @return adoptAnimal
      * */
     AdoptAnimal findById(Integer id);
+
+    /**
+     * 根据领养时间查询信息
+     * @param adoptTime 领养时间
+     * @return adoptAnimal
+     * */
+    List<AdoptAnimal> findByAdoptTime(Date adoptTime);
 
 
     /**

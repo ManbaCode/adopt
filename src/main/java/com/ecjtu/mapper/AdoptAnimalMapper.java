@@ -3,6 +3,7 @@ package com.ecjtu.mapper;
 import com.ecjtu.entity.AdoptAnimal;
 import org.apache.ibatis.annotations.Param;
 
+import java.util.Date;
 import java.util.List;
 
 /**
@@ -68,6 +69,12 @@ public interface AdoptAnimalMapper {
      * */
     AdoptAnimal findById(Integer id);
 
+    /**
+     * 根据领养id查询信息
+     * @param adoptTime 领养时间
+     * @return adoptAnimal
+     * */
+     List<AdoptAnimal> findByAdoptTime(Date adoptTime);
 
 
     /**

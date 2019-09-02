@@ -57,10 +57,10 @@ public interface PetService {
     Pet findById(Integer id);
     /**
      * 根据动物名查询用户信息
-     * @param petName 用户名
+     * @param petType 宠物类型
      * @return pet
      * */
-    Pet findByName(String petName);
+    List<Pet> findByPetType(String petType);
 
     /**
      * 批量删除

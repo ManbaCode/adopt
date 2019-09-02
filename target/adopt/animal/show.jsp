@@ -1,4 +1,5 @@
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
+<%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt" %>
 <%--
   Created by IntelliJ IDEA.
   User: 24255
@@ -54,7 +55,9 @@
                 </div>
                 <div class="animalX2">
                     <img src="/images/p6.jpg"><span>生日</span><br>
-                    <p>${pet.birthday}</p>
+                    <p>
+                        <fmt:formatDate pattern="yyyy-MM-dd" value="${pet.birthday}"/>
+                    </p>
                 </div>
             </div>
             <div class="group">
@@ -67,17 +70,10 @@
                     <p>${pet.sex}</p>
                 </div>
             </div>
-            <div class="group">
-                <div class="animalX5">
-                    <img src="/images/p8.jpg"><span>备注</span><br>
-                    <p>${pet.remark}</p>
-                </div>
-            </div>
         </div>
         <div class="animal_me">
             <div class="animal_me1"><img src="/images/p11.jpg"></div>
-            <div class="animal_me2"><p>大家好，我是${pet.petName}。我的特徵是${pet.remark}。我非常有活力，最愛和人玩耍逛街做運動。我很喜歡認識朋友，我有自信能和大部份狗狗友好相處。
-                我已經準備好當你的好朋友，你能帶我回家給我永遠的溫暖嗎?</p></div>
+            <div class="animal_me2"><p>大家好，我是${pet.petName}。${pet.remark}。你能带我回家吗？</p></div>
             <div class="animal_me3"><img src="/images/p10.jpg"></div>
         </div>
         <div class="my_btn">

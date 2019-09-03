@@ -322,15 +322,17 @@
         $(ele).find("*").removeClass("has-error has-success");
         $(ele).find(".help-block").text("");
     }
+
     //点击编辑按钮弹出模态框。
     $("#user_edit_modal_btn").click(function(){
-        //1、发送ajax,根据id获取用户信息
-        //清除表单数据（表单完整重置（表单的数据，表单的样式））
-        reset_form("#user_edit_form");
-        //2、弹出模态框
-        $("#editUser").modal({
-            backdrop:"static"
-        });
+        // //1、发送ajax,根据id获取用户信息
+        // //清除表单数据（表单完整重置（表单的数据，表单的样式））
+        // reset_form("#user_edit_form");
+        // //2、弹出模态框
+        // $("#editUser").modal({
+        //     backdrop:"static"
+        // });
+        window.location.href="${pageContext.request.contextPath}/animal/personal-info.jsp"
 
     });
 

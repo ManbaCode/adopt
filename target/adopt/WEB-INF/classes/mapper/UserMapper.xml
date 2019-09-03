@@ -14,8 +14,19 @@
     </delete>
 
     <update id="updateUser" parameterType="int">
-        UPDATE users SET userName=#{userName},password=#{password},sex=#{sex},age=#{age},telephone=#{telephone},
-        Email=#{Email},address=#{address},pic=#{pic},state=#{state} WHERE id=#{id}
+        UPDATE users
+        <set>
+            <if test="userName != null">userName=#{userName},</if>
+            <if test="password != null">password=#{password},</if>
+            <if test="sex != null">sex=#{sex},</if>
+            <if test="age != null">age=#{age},</if>
+            <if test="telephone != null">telephone=#{telephone},</if>
+            <if test="Email != null">Email=#{Email},</if>
+            <if test="address != null">address=#{address},</if>
+            <if test="pic != null">pic=#{pic},</if>
+            <if test="state != null">state=#{state}</if>
+        </set>
+             WHERE id=#{id}
     </update>
 
     <resultMap id="BaseUserMap" type="users">

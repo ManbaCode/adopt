@@ -13,7 +13,13 @@
     </delete>
 
     <update id="updatePet" parameterType="pet">
-        UPDATE pet SET petName=#{petName},petType=#{petType},sex=#{sex},birthday=#{birthday},pic=#{pic},state=#{state},remark=#{remark} WHERE id=#{id}
+        UPDATE pet SET petName=#{petName},petType=#{petType},sex=#{sex},birthday=#{birthday},
+        <trim suffixOverrides=",">
+            <if test="pic != null">
+                pic=#{pic},
+            </if>
+        </trim>
+        state=#{state},remark=#{remark} WHERE id=#{id}
     </update>
 
     <update id="updateState" parameterType="pet">

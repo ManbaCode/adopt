@@ -38,6 +38,7 @@ public class UsersController {
         return Message.success().add("pageInfo",page);
     }
 
+
     @RequestMapping("create.action")
     @ResponseBody
     public Message create(Users users,@RequestParam("file") MultipartFile file){
@@ -65,18 +66,32 @@ public class UsersController {
 
     @RequestMapping("update.action")
     @ResponseBody
-    public Message updateUser(Users users,MultipartFile file){
-        if(file!=null){
-            String load = FileLoad.load(file);
-            users.setPic(load);
-        }
+    public Message updateUser(Users users,HttpServletRequest request){
         if(usersService.updateUser(users)>0){
+            Users user=usersService.findById(users.getId());
+            request.getSession().setAttribute("user",user);
             return Message.success();
         }else{
             return Message.fail();
         }
     }
 
+    @RequestMapping("updatePic.action")
+    @ResponseBody
+    public Message updatePic(MultipartFile file,HttpServletRequest request){
+        Users user=(Users) request.getSession().getAttribute("user");
+        if(file!=null){
+            String load = FileLoad.load(file);
+            user.setPic(load);
+        }
+        if(usersService.updateUser(user)>0){
+            Users users = usersService.findById(user.getId());
+            request.getSession().setAttribute("user",users);
+            return Message.success();
+        }else{
+            return Message.fail();
+        }
+    }
     @RequestMapping("findById.action")
     @ResponseBody
     public Message findById(Integer id){
@@ -87,6 +102,7 @@ public class UsersController {
             return Message.fail();
         }
     }
+
 
 
     @RequestMapping("findByName.action")

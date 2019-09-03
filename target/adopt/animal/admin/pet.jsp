@@ -26,6 +26,7 @@
     <style>
         .panel-heading{background-color: #337ab7;border-color: #2e6da4;font-size:14px;padding-left:20px;height:36px;line-height:36px;color:white;position:relative;cursor:pointer;}/*转成手形图标*/
         .panel-heading span{position:absolute;right:10px;top:12px;}
+        .mySize{width: 20px;height: 15px;}
     </style>
 </head>
 <body>
@@ -271,7 +272,7 @@
                 <h4 class="modal-title" id="myModalLabe">修改宠物信息</h4>
             </div>
             <div class="modal-body">
-                <form class="form-horizontal" id="edit_pet_form" enctype="multipart/form-data">
+                <form class="form-horizontal" id="edit_pet_from" enctype="multipart/form-data">
                     <input type="hidden" id="edit_id" name="id">
                     <div class="form-group">
                         <label for="edit_petName" class="col-sm-2 control-label">
@@ -312,7 +313,7 @@
                             照片
                         </label>
                         <div class="col-sm-4">
-                            <input type="file" value="/images/${pet.pic}" id="edit_pic" name="file">
+                            <input type="file" id="edit_pic" value="${pet.pic}" name="file">
                         </div>
                         <label for="edit_state" class="col-sm-2 control-label">
                             领养状态
@@ -360,7 +361,7 @@
 
 
     //总的数据 当前的页面
-    var totalRecord,currentPage;
+    var totalRecord,currentPage,currentSize,currentPageSize;
 
     $(function(){
         to_page(1);
@@ -397,7 +398,7 @@
             var petTypeTd = $("<td></td>").append(pet.petType);
             var sexTd=$("<td></td>").append(pet.sex);
             var birthdayTd=$("<td></td>").append(pet.birthday);
-            var picTd=$("<td></td>").append(pet.id);
+            var picTd=$("<td></td>").append($("<img/>").addClass().attr("src","/images/"+spilt(pet.pic)));
             var stateTd=null;
             if(pet.state==0){
                 stateTd=$("<td></td>").append("还未被申请领养");
@@ -415,7 +416,7 @@
                 .append($("<span></span>").addClass("glyphicon glyphicon-trash")).append("删除");
             //为删除按钮添加一个自定义的属性来表示当前删除的员工id
             delBtn.attr("del-id",pet.id);
-            var btnTd = $("<td></td>").append(editBtn).append(" ").append(delBtn);
+            var btnTd = $("<td></td>").append(editBtn).append("mySize").append(delBtn);
             //var delBtn =
             //append方法执行完成以后还是返回原来的元素
             $("<tr></tr>").append(checkBoxTd)
@@ -438,6 +439,8 @@
             result.extend.pageInfo.total+"条记录");
         totalRecord = result.extend.pageInfo.total;//最后的数据
         currentPage = result.extend.pageInfo.pageNum;//当前页
+        currentSize=result.extend.pageInfo.size;//当前页面的尺寸
+        currentPageSize=result.extend.pageInfo.pageSize;//每页的尺寸
     }
     //解析显示分页条，点击分页要能去下一页....
     function build_page_nav(result){
@@ -527,7 +530,11 @@
             data:petTd,
             success:function (result) {
                 alert("宠物创建成功");
-                to_page(1);
+                if(currentSize=currentPageSize){
+                    to_page(currentPage+1);
+                } else {
+                    to_page(currentPage)
+                }
             },
             error:function (result) {
                 console.log(result);
@@ -553,13 +560,13 @@
                 $("#edit_petType").val(result.extend.pet.petType);
                 $("#edit_sex").val(result.extend.pet.sex);
                 $("#edit_birthday").val(result.extend.pet.birthday);
-                // $("#edit_pic").val(result.extend.pet.pic);
+                $("#edit_pic").val(result.extend.pet.pic);
                 $("#edit_state").val(result.extend.pet.state);
                 $("#edit_remark").val(result.extend.pet.remark);
             },
             error:function (result) {
-                alert(1111)
-            }
+                alert("通过id查询用户失败")
+           }
         });
         //2、弹出模态框
         $("#editPet").modal({
@@ -575,10 +582,12 @@
         $.ajax({
             url:"${pageContext.request.contextPath}/pet/update.action",
             type:"POST",
-            data:pet,
+            processData: false,  // 告诉jQuery不要去处理发送的数据
+            contentType: false, // 告诉jQuery不要去设置Content-Type请求头
+            data:petTd,
             success:function (result) {
+                to_page(currentPage);
                 alert("宠物信息更新成功！");
-                to_page(1);
             },
             error:function(result){
                 alert("宠物信息更新失败！");
@@ -600,7 +609,11 @@
                 success:function (result) {
                     if(result.code==100){
                         alert("宠物删除成功！");
-                        to_page(1);
+                        if(result.extend.pageInfo.size==1){
+                            to_page(result.extend.pageInfo.pageNum-1);
+                        } else {
+                            to_page(result.extend.pageInfo.pageNum)
+                        }
                     }else{
                         alert("宠物删除失败！");
                     }
@@ -626,6 +639,11 @@
         });
     });
 
+    function spilt(pics) {
+        var pis=pics;
+        var pt=pis.toString().split(",");
+        return pt[0];
+    }
 </script>
 
 </body>

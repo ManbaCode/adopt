@@ -43,13 +43,12 @@
                                 <span class="icon icon-key margin-small"></span>
                             </div>
                         </div>
-                        <div class="form-group">
+                        <div class="form-group v_container">
                             <div class="field">
                                 <input type="text" class="input input-big" name="code" placeholder="验证码" />
-                                <img src="${pageContext.request.contextPath}/images/login/passcode.jpg" alt="" width="100" height="32" class="passcode" style="height:43px;cursor:pointer;" onClick="this.src=this.src+'?'">
+                                <div id="v_container" style="width: 100px;height: 45px;" class="passcode"></div>
                             </div>
                         </div>
-                    </div>
                     <div style="padding:30px;">
                         <input type="submit" id="button" class="button button-block bg-main text-big input-big" value="登录">
                     </div>
@@ -58,5 +57,21 @@
         </div>
     </div>
 </div>
+
 </body>
+<script src="${pageContext.request.contextPath}/js/gVerify.js"></script>
+<script>
+
+    var verifyCode = new GVerify("v_container");
+
+    document.getElementById("my_button").onclick = function(){
+        /*获取inputi面的值*/
+        var res = verifyCode.validate(document.getElementById("code_input").value);
+        if(res){
+            alert("验证正确");
+        }else{
+            alert("验证码错误");
+        }
+    }
+</script>
 </html>

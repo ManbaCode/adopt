@@ -8,5 +8,7 @@ ul,li{ list-style-type:none;}
 
 .field-icon-right .icon{ bottom:0px; top:auto}
 .loginbox { background:url(http://localhost:8080/web/images/login/tmbg-white.png); border:0px;}
-
-
+.mySize{
+    width: 200px;
+    height: 45px;
+}

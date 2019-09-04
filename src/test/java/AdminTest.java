@@ -44,8 +44,7 @@ public class AdminTest {
 
     @Test
     public void select1(){
-        Admin byId = adminMapper.findByName("杨一");
-        System.out.println(byId);
+
     }
 
     @Test

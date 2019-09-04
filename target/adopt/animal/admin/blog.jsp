@@ -232,7 +232,7 @@
                 </form>
             </div>
             <div class="modal-footer">
-                <button type="button" class="btn btn-default" data-dismiss="modal">关闭</button>
+                <button type="button" class="btn btn-default" data-dismiss="modal" id="blog_saveDown_btn">关闭</button>
                 <button type="button" class="btn btn-primary" id="blog_save_btn">提交</button>
             </div>
         </div>
@@ -296,7 +296,7 @@
                 </form>
             </div>
             <div class="modal-footer">
-                <button type="button" class="btn btn-default" data-dismiss="modal">关闭</button>
+                <button type="button" class="btn btn-default" data-dismiss="modal" id="blog_updateDown_btn">关闭</button>
                 <button type="button" class="btn btn-primary" id="blog_edit_btn">保存修改</button>
             </div>
         </div>
@@ -319,7 +319,7 @@
 <script type="text/javascript">
     //总的数据 当前的页面
 
-    var totalRecord,currentPage;
+    var totalRecord,currentPage,currentSize,currentPageSize,currentPages;
 
     $(function(){
         to_page(1);
@@ -390,6 +390,9 @@
             result.extend.pageInfo.total+"条记录");
         totalRecord = result.extend.pageInfo.total;//最后的数据
         currentPage = result.extend.pageInfo.pageNum;//当前页
+        var currentPages=result.extend.pageInfo.pages;//总的页数
+        currentSize=result.extend.pageInfo.size;//当前页面的尺寸
+        currentPageSize=result.extend.pageInfo.pageSize;//每页的尺寸
     }
     //解析显示分页条，点击分页要能去下一页....
     function build_page_nav(result){
@@ -476,7 +479,12 @@
             data:$("#newBlog form").serialize(),
             success:function (result) {
                 alert("活动添加成功");
-                to_page(1);
+                $("#blog_saveDown_btn").click();
+                if(currentSize=currentPageSize){
+                    to_page(currentPages+1);
+                } else {
+                    to_page(currentPages)
+                }
             },
             error:function (result) {
                 console.log(result);
@@ -523,10 +531,12 @@
             data:$("#edit_blog_form").serialize(),
             success:function (result) {
                 alert("活动信息更新成功！");
-                to_page(1);
+                $("#blog_updateDown_btn").click();
+                to_page(currentPage);
             },
             error:function(result){
                 alert("活动信息更新失败！");
+                to_page(currentPage);
             }
         });
 
@@ -544,12 +554,16 @@
                 url:"${pageContext.request.contextPath}/blog/delete.action?id="+id,
                 type:"GET",
                 success:function (result) {
-
                         alert("活动删除成功！");
-                        to_page(1);
+                    if(currentSize==1){
+                        to_page(currentPage-1);
+                    } else {
+                        to_page(currentPage);
+                    }
                 },
                 error:function (result) {
-                    alert("活动删除失败")
+                    alert("活动删除失败");
+                    to_page(currentPage);
                 }
             });
         }

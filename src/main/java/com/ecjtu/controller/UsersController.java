@@ -41,12 +41,7 @@ public class UsersController {
 
     @RequestMapping("create.action")
     @ResponseBody
-    public Message create(Users users,@RequestParam("file") MultipartFile file){
-        System.out.println(file);
-        if(file!=null){
-            String load = FileLoad.load(file);
-            users.setPic(load);
-        }
+    public Message create(Users users){
         if(usersService.addUser(users)>0){
             return Message.success();
         }else{
@@ -109,10 +104,8 @@ public class UsersController {
     @ResponseBody
     public Message findByName(String userName){
         PageHelper.startPage(1,4);
-        List users=new ArrayList();
-        Users user = usersService.findByName(userName);
-        if(user!=null){
-            users.add(user);
+        List<Users> users = usersService.findByName(userName);
+        if(users!=null){
             PageInfo page=new PageInfo(users,3);
             return Message.success().add("pageInfo",page);
         }else{

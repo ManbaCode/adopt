@@ -72,7 +72,12 @@
     </select>
 
     <select id="findByAdoptTime" resultMap="BaseAdoptAnimalMap" parameterType="date">
-        SELECT t.*,u.id  uid,u.userName,u.Email,u.state,p.id  pid,p.state,p.petName FROM t_adopt as t,users As u,pet As p WHERE t.user_id=u.id AND t.pet_id=p.id AND t.adoptTime=#{adoptTime}
+        SELECT t.*,u.id  uid,u.userName,u.Email,u.state,p.id  pid,p.state,p.petName FROM t_adopt as t,users As u,pet As p WHERE t.user_id=u.id AND t.pet_id=p.id
+        <trim prefixOverrides="ANd">
+            <if test="adoptTime !=null and adoptTime !=''">
+                AND t.adoptTime=#{adoptTime}
+            </if>
+        </trim>
     </select>
 
 </mapper>

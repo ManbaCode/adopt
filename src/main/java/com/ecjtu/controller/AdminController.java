@@ -75,9 +75,12 @@ public class AdminController {
 
     @RequestMapping("update.action")
     @ResponseBody
-    public Message updateAdmin(Admin admin, @RequestParam(value = "file")MultipartFile file){
-        String load = FileLoad.load(file);
-        admin.setPic(load);
+    public Message updateAdmin(Admin admin,MultipartFile file){
+        System.out.println(111);
+        if(file!=null && file.equals("")==false) {
+            String load = FileLoad.load(file);
+            admin.setPic(load);
+        }
         int i = adminService.updateAdmin(admin);
         System.out.println(i);
         if(i>0){
@@ -101,11 +104,9 @@ public class AdminController {
     @ResponseBody
     public Message findByName(String adminName){
         PageHelper.startPage(1,4);
-        Admin admin = adminService.findByName(adminName);
-        List admins=new ArrayList();
-        admins.add(admin);
-        PageInfo page = new PageInfo(admins,2);
-        if(admin!=null){
+        List<Admin> admins = adminService.findByName(adminName);
+        if(admins!=null){
+            PageInfo page = new PageInfo(admins,2);
             return Message.success().add("pageInfo",page);
         }else{
             return Message.fail();

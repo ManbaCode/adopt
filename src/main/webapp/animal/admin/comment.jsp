@@ -248,7 +248,7 @@
 <!-- 编写js代码 -->
 <script type="text/javascript">
 
-    var totalRecord,currentPage;
+    var totalRecord,currentPage,currentSize,currentPageSize;
 
     $(function(){
         to_page(1);
@@ -321,6 +321,8 @@
             result.extend.pageInfo.total+"条记录");
         totalRecord = result.extend.pageInfo.total;//最后的数据
         currentPage = result.extend.pageInfo.pageNum;//当前页
+        currentSize=result.extend.pageInfo.size;//当前页面的尺寸
+        currentPageSize=result.extend.pageInfo.pageSize;//每页的尺寸
     }
     //解析显示分页条，点击分页要能去下一页....
     function build_page_nav(result){
@@ -420,10 +422,11 @@
             data:$("#edit_comment_form").serialize(),
             success:function (result) {
                 alert("评论更新成功！");
-                to_page(1);
+                to_page(currentPage);
             },
             error:function(result){
                 alert("评论更新失败！");
+                to_page(currentPage);
             }
         });
 
@@ -443,15 +446,35 @@
                 success:function (result) {
                     if(result.code==100){
                         alert("评论删除成功！");
-                        to_page(1);
+                        if(currentSize==1){
+                            to_page(currentPage-1);
+                        } else {
+                            to_page(currentPage);
+                        }
                     }else{
                         alert("评论删除失败！");
+                        to_page(currentPage);
                     }
                 }
             });
         }
     });
 
+    $("#comment_find_modal_btn").click(function () {
+        $("#comment_table tbody").empty();
+        var adminName=$("#findByName").val();
+        $.ajax({
+            url:"${pageContext.request.contextPath}/comment/findByName.action?name="+adminName,
+            type:"Get",
+            async:"true",
+            success:function (result) {
+                resolving(result);
+            },
+            error:function (result) {
+                alert("查询失败")
+            }
+        });
+    });
 </script>
 
 </body>

@@ -277,15 +277,6 @@
                             </select>
                         </div>
                     </div>
-                    <div class="form-group">
-                        <label for="edit_pic" class="col-sm-2 control-label">
-                            头像
-                        </label>
-                        <div class="col-sm-4">
-                            <input type="file" class="form-control" id="edit_pic" placeholder="头像" name="pic" value="/pic/${user.pic}">
-                        </div>
-
-                    </div>
                 </form>
             </div>
             <div class="modal-footer">
@@ -358,15 +349,10 @@
 
 
     $("#user_register_btn").click(function () {
-        var file=document.getElementById("user_register_form");
-        var fd = new FormData(file);
-        console.log(fd);
         $.ajax({
             url:"${pageContext.request.contextPath}/user/create.action",
             type:"POST",
-            processData: false,  // 告诉jQuery不要去处理发送的数据
-            contentType: false, // 告诉jQuery不要去设置Content-Type请求头
-            data:fd,
+            data:$("#user_register_form").serialize(),
             success:function (result) {
                 alert("注册成功，请去登录！");
             },

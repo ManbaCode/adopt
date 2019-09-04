@@ -189,7 +189,7 @@
 
     //总的数据 当前的页面
 
-    var totalRecord,currentPage;
+    var totalRecord,currentPage,currentSize,currentPageSize;
 
     $(function(){
         to_page(1);
@@ -256,6 +256,8 @@
             result.extend.pageInfo.total+"条记录");
         totalRecord = result.extend.pageInfo.total;//最后的数据
         currentPage = result.extend.pageInfo.pageNum;//当前页
+        currentSize=result.extend.pageInfo.size;//当前页面的尺寸
+        currentPageSize=result.extend.pageInfo.pageSize;//每页的尺寸
     }
     //解析显示分页条，点击分页要能去下一页....
     function build_page_nav(result){
@@ -324,9 +326,11 @@
                 date:adoptAnimal,
                 success:function (result) {
                     alert("审核成功");
+                    to_page(currentPage);
                 },
                 error:function (result) {
                     alert("审核失败");
+                    to_page(currentPage);
                 }
             })
         }
@@ -341,9 +345,11 @@
                 type:"GET",
                 success:function (result) {
                     alert("审核成功");
+                    to_page(currentPage);
                 },
                 error:function (result) {
                     alert("审核失败");
+                    to_page(currentPage);
                 }
             })
         }

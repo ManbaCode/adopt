@@ -77,7 +77,12 @@
     </select>
 
     <select id="findByPetType" resultType="pet" parameterType="string">
-        SELECT *  FROM pet WHERE petType=#{petType}
+        SELECT *  FROM pet
+        <where>
+            <if test="petType !=null and petType != ''">
+                and petType=#{petType}
+            </if>
+        </where>
     </select>
 
     <delete id="deleteBatch" parameterType="int">

@@ -49,7 +49,7 @@ public interface UsersService {
      * @param userName 用户名
      * @return users
      * */
-    Users findByName(String userName);
+    List<Users> findByName(String userName);
 
     /**
      * 用户登录

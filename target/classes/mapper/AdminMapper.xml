@@ -16,7 +16,13 @@
     </delete>
 
     <update id="updateAdmin" parameterType="Admin">
-        UPDATE admin SET adminName=#{adminName},adminPwd=#{adminPwd},realName=#{realName},telephone=#{telephone},Email=#{Email},birthday=#{birthday},sex=#{sex},pic=#{pic},remark=#{remark} WHERE id=#{id}
+        UPDATE admin SET adminName=#{adminName},adminPwd=#{adminPwd},realName=#{realName},telephone=#{telephone},Email=#{Email},birthday=#{birthday},sex=#{sex},
+        <trim suffix=",">
+            <if test="pic !=null and pic != ''">
+                pic=#{pic}
+            </if>
+        </trim>
+        remark=#{remark} WHERE id=#{id}
     </update>
 
     <resultMap id="BaseAdminMap" type="Admin">
@@ -60,11 +66,11 @@
         SELECT admin.*,comment.id tid,comment.commentTime,comment.content FROM (admin  LEFT JOIN comment ON admin.id=comment.admin_id) LEFT JOIN pet ON comment.pet_id=pet.id WHERE admin.id=#{id}
     </select>
 
-    <select id="findByName" resultMap="BaseAdminMap">
+    <select id="findByName" resultMap="BaseAdminMap" parameterType="string">
         SELECT admin.*,comment.id tid,comment.commentTime,comment.content FROM (admin  LEFT JOIN comment ON admin.id=comment.admin_id) LEFT JOIN pet ON comment.pet_id=pet.id
         <where>
-            <if test="adminName != null ">
-            admin.adminName=#{adminName}
+            <if test="adminName != null and adminName != '' ">
+             and admin.adminName=#{adminName}
             </if>
         </where>
     </select>

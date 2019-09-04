@@ -57,6 +57,13 @@ public interface CommentService {
      * @return list
      * */
     List<Comment> findByPetId(Integer pet_id);
+
+    /**
+     * 查询用户的评论
+     * @param name 名字
+     * @return list
+     * */
+    List<Comment> findByName(String name);
     /**
      * 根据评论表id查询信息
      * @param id 评论的id

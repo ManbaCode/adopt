@@ -57,7 +57,7 @@ public interface AdminMapper {
      * @param adminName 用户名
      * @return Admin
      * */
-    Admin findByName(String adminName);
+    List<Admin> findByName(String adminName);
 
     /**
      * 批量删除

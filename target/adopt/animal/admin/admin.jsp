@@ -8,7 +8,9 @@
 --%>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <!DOCTYPE html>
-<html><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<html>
+<head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <meta http-equiv="Content-Type" content="multipart/form-data; charset=utf-8" />
     <title>宠物领养管理后台</title>
     <!-- 引入css样式文件 -->
     <!-- Bootstrap Core CSS -->
@@ -257,7 +259,7 @@
                 </form>
             </div>
             <div class="modal-footer">
-                <button type="button" class="btn btn-default" data-dismiss="modal">关闭</button>
+                <button type="button" class="btn btn-default" data-dismiss="modal" id="admin_saveDown_btn">关闭</button>
                 <button type="button" class="btn btn-primary" id="admin_save_btn">创建用户</button>
             </div>
         </div>
@@ -328,12 +330,7 @@
                         <div class="col-sm-4">
                             <input type="date" class="form-control" id="edit_birthday" placeholder="生日" value="${admin.birthday}" name="birthday">
                         </div>
-                        <label for="edit_pic" class="col-sm-2 control-label">
-                            头像
-                        </label>
-                        <div class="col-sm-4">
-                            <input type="file" class="form-control" id="edit_pic" placeholder="文件"  name="file">
-                        </div>
+
                     </div>
                     <div class="form-group">
                         <label for="edit_remark" class="col-sm-2 control-label">
@@ -343,10 +340,19 @@
                             <textarea class="form-control" id="edit_remark" placeholder="个人介绍" value="${admin.remark}" name="remark"></textarea>
                         </div>
                     </div>
+                    <div class="form-group">
+                        <label for="edit_pic" class="col-sm-2 control-label">
+                            头像
+                        </label>
+                        <div class="col-sm-4">
+                            <img src="" id="edit_pic" alt="" width="70px" height="100px">
+                            <input type="file" class="form-control"  placeholder="文件" name="file">
+                        </div>
+                    </div>
                 </form>
             </div>
             <div class="modal-footer">
-                <button type="button" class="btn btn-default" data-dismiss="modal">关闭</button>
+                <button type="button" class="btn btn-default" data-dismiss="modal" id="admin_updateDown_btn">关闭</button>
                 <button type="button" class="btn btn-primary" id="admin_update_btn">保存修改</button>
             </div>
         </div>
@@ -369,7 +375,7 @@
 
     //总的数据 当前的页面
 
-    var totalRecord,currentPage;
+    var totalRecord,currentPage,currentSize,currentPageSize,currentPages;
 
     var isFlush=0;
 
@@ -443,6 +449,9 @@
             result.extend.pageInfo.total+"条记录");
         totalRecord = result.extend.pageInfo.total;//最后的数据
         currentPage = result.extend.pageInfo.pageNum;//当前页
+        var currentPages=result.extend.pageInfo.pages;
+        currentSize=result.extend.pageInfo.size;//当前页面的尺寸
+        currentPageSize=result.extend.pageInfo.pageSize;//每页的尺寸
     }
     //解析显示分页条，点击分页要能去下一页....
     function build_page_nav(result){
@@ -528,12 +537,15 @@
             data:$("#newAdmin form").serialize(),
             success:function (result) {
                 alert("管理员创建成功");
-                to_page(1);
+                $("#admin_saveDown_btn").click();
+                if(currentSize=currentPageSize){
+                    to_page(currentPages+1);
+                } else {
+                    to_page(currentPages);
+                }
             },
             error:function (result) {
-                console.log(result);
                 alert("管理员创建失败");
-                to_page(1);
             }
         });
     });
@@ -557,6 +569,7 @@
                 $("#edit_sex").val(result.extend.admin.sex);
                 $("#edit_telephone").val(result.extend.admin.telephone);
                 $("#edit_Email").val(result.extend.admin.email);
+                $("#edit_pic").attr("src","/images/"+result.extend.admin.pic);
                 $("#edit_birthday").val(result.extend.admin.birthday);
                 $("#edit_remark").val(result.extend.admin.remark);
             }});
@@ -579,11 +592,12 @@
             data:adminInfo,
             success:function (result) {
                 alert("管理员信息更新成功！");
-                to_page(1);
+                $("#admin_updateDown_btn").click();
+                to_page(currentPage);
             },
             error:function(result){
                 alert("管理员信息更新失败！");
-                to_page(1);
+                to_page(currentPage);
             }
         });
 
@@ -603,10 +617,14 @@
                 success:function (result) {
                     if(result.code==100){
                         alert("管理员删除成功！");
-                        to_page(1);
+                        if(currentSize==1){
+                            to_page(currentPage-1);
+                        } else {
+                            to_page(currentPage);
+                        }
                     }else{
                         alert("管理员删除失败！");
-                        to_page(1);
+                        to_page(currentPage);
                     }
                 }
             });

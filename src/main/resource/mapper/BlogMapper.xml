@@ -36,7 +36,12 @@
     </select>
 
     <select id="findByTime" parameterType="string" resultType="blog">
-        SELECT id,actionTime,address,peoples,event,title FROM blog WHERE actionTime=#{actionTime}
+        SELECT id,actionTime,address,peoples,event,title FROM blog
+        <where>
+            <if test="actionTime !=null and actionTime != ''">
+                and actionTime=#{actionTime}
+            </if>
+        </where>
     </select>
 
 

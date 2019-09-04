@@ -259,7 +259,7 @@
                 </form>
             </div>
             <div class="modal-footer">
-                <button type="button" class="btn btn-default" data-dismiss="modal">关闭</button>
+                <button type="button" class="btn btn-default" data-dismiss="modal" id="user_saveDown-btn">关闭</button>
                 <button type="button" class="btn btn-primary" id="user_save_btn">创建用户</button>
             </div>
         </div>
@@ -337,8 +337,8 @@
                 </form>
             </div>
             <div class="modal-footer">
-                <button type="button" class="btn btn-default" data-dismiss="modal">关闭</button>
-                <button type="button" class="btn btn-primary" class="user_update_btn">保存修改</button>
+                <button type="button" class="btn btn-default" data-dismiss="modal" id="user_updateDown-btn">关闭</button>
+                <button type="button" class="btn btn-primary" id="user_update_btn">保存修改</button>
             </div>
         </div>
     </div>
@@ -358,7 +358,14 @@
 <!-- 编写js代码 -->
 <script type="text/javascript">
 
-    var totalRecord,currentPage;
+    var totalRecord,currentPage,currentSize,currentPageSize,currentPages;
+
+    $(document).ready(function(){
+        var key=$("#selectRefundReason").val();
+        //根据值让option选中
+        $("#user_time_zone option[value='"+key+"']").attr("selected","selected");
+    });
+
 
     $(function(){
         to_page(1);
@@ -395,7 +402,12 @@
             var ageTd=$("<td></td>").append(user.age);
             var telephoneTd=$("<td></td>").append(user.telephone);
             var addressTd=$("<td></td>").append(user.address);
-            var stateTd=$("<td></td>").append(user.state);
+            var stateTd=null;
+            if(user.state==0){
+                stateTd=$("<td></td>").append("没有领养经历");
+            }else{
+                stateTd=$("<td></td>").append("有领养经历");
+            }
 
             var editBtn = $("<button></button>").addClass("btn btn-primary btn-sm edit_btn")
                 .append($("<span></span>").addClass("glyphicon glyphicon-pencil")).append("修改");
@@ -429,6 +441,9 @@
             result.extend.pageInfo.total+"条记录");
         totalRecord = result.extend.pageInfo.total;//最后的数据
         currentPage = result.extend.pageInfo.pageNum;//当前页
+        currentPages=result.extend.pageInfo.pages;
+        currentSize=result.extend.pageInfo.size;//当前页面的尺寸
+        currentPageSize=result.extend.pageInfo.pageSize;//每页的尺寸
     }
     //解析显示分页条，点击分页要能去下一页....
     function build_page_nav(result){
@@ -516,7 +531,12 @@
             data:$("#newUsers form").serialize(),
             success:function (result) {
                 alert("管理员创建成功");
-                to_page(1);
+                $("#user_saveDown-btn").click();
+                if(currentSize==currentPageSize) {
+                    to_page(currentPages + 1);
+                }else{
+                    to_page(currentPages);
+                }
             },
             error:function (result) {
                 console.log(result);
@@ -562,13 +582,14 @@
             data:$("#edit_user_form").serialize(),
             success:function (result) {
                 alert("用户信息更新成功！");
-                to_page(1);
+                $("#user_updateDown-btn").click();
+                to_page(currentPage);
             },
             error:function(result){
                 alert("用户信息更新失败！");
+                to_page(currentPage);
             }
         });
-
     });
 
     //单个删除
@@ -584,10 +605,15 @@
                 type:"GET",
                 success:function (result) {
                         alert("用户删除成功！");
-                        to_page(1);
+                    if(currentSize==1){
+                        to_page(currentPage-1);
+                    } else {
+                        to_page(currentPage);
+                    }
                 },
                 error:function (result) {
-                    alert("删除失败")
+                    alert("删除失败");
+                    to_page(currentPage);
                 }
             });
         }

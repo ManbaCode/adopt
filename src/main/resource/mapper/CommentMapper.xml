@@ -98,6 +98,19 @@
         where comment.id=#{id}
     </select>
 
+    <select id="findByName" parameterType="String" resultMap="BaseCommentMap" >
+        select comment.*,users.userName,admin.adminName,pet.petName from comment  LEFT JOIN users ON comment.user_id=users.id  LEFT JOIN admin  ON admin.id=comment.admin_id inner join pet on comment.pet_id=pet.id
+        <where>
+            <if test="userName !=null and userName !=''">
+                and users.userName=#{userName}
+            </if>
+            <if test="adminName !=null and adminName != ''">
+                and admin.adminName=#{adminName}
+            </if>
+        </where>
+    </select>
+
+
     <delete id="deleteBatch" parameterType="int">
         DELETE FROM comment
         <foreach collection="ids" item="id" separator="," open="where id in (" close=")">

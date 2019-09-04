@@ -5,8 +5,8 @@
 <mapper namespace="com.ecjtu.mapper.UsersMapper">
 
     <insert id="addUser" parameterType="Users">
-        INSERT INTO users(userName,password,sex,age,telephone,Email,address,pic,state)
-        VALUES (#{userName},#{password},#{sex},#{age},#{telephone},#{Email},#{address},#{pic},#{state})
+        INSERT INTO users(userName,password,sex,age,telephone,Email,address,state)
+        VALUES (#{userName},#{password},#{sex},#{age},#{telephone},#{Email},#{address},#{state})
     </insert>
 
     <delete id="deleteUser" parameterType="int">
@@ -71,7 +71,12 @@
     </select>
 
     <select id="findByName" resultType="users" parameterType="string">
-        SELECT * FROM users WHERE userName=#{userName}
+        SELECT * FROM users
+        <where>
+            <if test=" userName != null  and userName !='' ">
+                and userName=#{userName}
+            </if>
+        </where>
     </select>
 
     <select id="findById" resultType="users" parameterType="int">

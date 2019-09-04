@@ -116,4 +116,16 @@ public class CommentController {
     }
 
 
+    @RequestMapping("/findByName.action")
+    @ResponseBody
+    public Message findByName(String name){
+        PageHelper.startPage(1,4);
+        List<Comment> comments = commentService.findByName(name);
+        if(comments!=null){
+            PageInfo page=new PageInfo(comments,3);
+            return Message.success().add("pageInfo",page);
+        }else{
+            return Message.fail();
+        }
+    }
 }

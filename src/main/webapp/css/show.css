@@ -173,19 +173,20 @@ h2{
     width: 300px;
     height: 400px;
     float: left;
-    bottom: 200px;
+    bottom: 150px;
     left: 60px;
 }
 .animal_me1{
     width: 258px;
-    height: 130px;
+    height: 100px;
     margin: 0px;
 }
 .animal_me1>img{
     position: relative;
-    right: 3px;
+    bottom: -30px;
+    right: 2px;
     width: 260px;
-    height: 130px;
+    height: 100px;
     object-fit: cover;
 }
 .animal_me2{

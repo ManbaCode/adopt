@@ -76,7 +76,7 @@
     </select>
 
     <delete id="deleteBatch" parameterType="int">
-        DELETE FROM pet
+        DELETE FROM admin
         <foreach collection="ids" item="id" separator="," open="where id in (" close=")">
             #{id}
         </foreach>

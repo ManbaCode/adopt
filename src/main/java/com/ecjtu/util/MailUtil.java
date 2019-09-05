@@ -35,6 +35,8 @@ public class MailUtil {
             word="你的申请已经同意了，请你快来这领养宠物";
         }else if(state==0){
             word="因为你的条件不符合，所有不能同意你的申请";
+        }else if(state==2){
+            word="有申请成为志愿者的申请，请快去处理";
         }
         //2 创建邮件对象
 
@@ -44,7 +46,7 @@ public class MailUtil {
         //2.2设置收件人
         message.setRecipient(Message.RecipientType.TO,new InternetAddress(to));
         //2.3 设置邮件主题
-        message.setSubject("来自xx网站的激活邮件");
+        message.setSubject("来自xx网站的邮件");
         //2.4这是正文
         message.setContent("<h1>来自流浪猫狗网站的邮件，</h1><h3>"+word+"</h3>","text/html;charset=UTF-8");
         //发送一封激活邮件

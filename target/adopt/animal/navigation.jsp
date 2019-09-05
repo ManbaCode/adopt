@@ -180,14 +180,6 @@
                                     </select>
                                 </div>
                             </div>
-                            <div class="form-group">
-                                <label for="new_file" class="col-sm-2 control-label">
-                                    头
-                                </label>
-                                <div class="col-sm-4">
-                                    <input type="file" class="form-control" id="new_file" placeholder="头像" name="file">
-                                </div>
-                            </div>
                         </form>
                     </div>
                     <div class="modal-footer">

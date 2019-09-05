@@ -102,6 +102,11 @@
                             </a>
                         </li>
                         <li class="list-group-item my_font">
+                            <a href="${pageContext.request.contextPath}/animal/admin/apply.jsp">
+                                <i class="fa fa-sitemap fa-fw"></i> 志愿者申请
+                            </a>
+                        </li>
+                        <li class="list-group-item my_font">
                             <a href="${pageContext.request.contextPath}/animal/admin/agree.jsp">
                                 <i class="fa fa-sitemap fa-fw"></i> 同意领养列表
                             </a>

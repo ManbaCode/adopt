@@ -1,8 +1,8 @@
 <%--
   Created by IntelliJ IDEA.
   User: 24255
-  Date: 2019/8/25
-  Time: 23:24
+  Date: 2019/9/5
+  Time: 10:55
   To change this template use File | Settings | File Templates.
 --%>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
@@ -47,6 +47,8 @@
                     <li><a href="crmclass/list.action#"><i class="fa fa-user fa-fw"></i>
                         用户：</a>
                     </li>
+                    <li><a href="crmclass/list.action#"><i class="fa fa-gear fa-fw"></i> 系统设置</a></li>
+                    <li class="divider"></li>
                     <li>
                         <a href="${pageContext.request.contextPath}/admin/logout.action">
                             <i class="fa fa-sign-out fa-fw"></i>退出登录
@@ -121,7 +123,7 @@
     <div id="page-wrapper">
         <div class="row">
             <div class="col-lg-12">
-                <h1 class="page-header">不同意领养的申请</h1>
+                <h1 class="page-header">申请成为志愿者</h1>
             </div>
             <!-- /.col-lg-12 -->
         </div>
@@ -131,10 +133,10 @@
             <div class="panel-body">
                 <form class="form-inline" method="get" action="">
                     <div class="form-group">
-                        <label for="findByName">用户名称</label>
+                        <label for="findByName">申请是否被处理</label>
                         <input type="text" class="form-control" id="findByName" value="" name="userName">
                     </div>
-                    <button type="button" class="btn btn-primary" id="disAgree_find_modal_btn">查询</button>
+                    <button type="button" class="btn btn-primary" id="find_modal_btn">查询</button>
                 </form>
             </div>
         </div>
@@ -143,7 +145,7 @@
                 <div class="panel panel-default">
                     <div class="panel-heading">领养信息列表</div>
                     <!-- /.panel-heading -->
-                    <table class="table table-bordered table-striped" id="adopt_table">
+                    <table class="table table-bordered table-striped" id="apply_table">
                         <thead>
                         <tr>
                             <th>
@@ -151,9 +153,13 @@
                             </th>
                             <th>编号</th>
                             <th>用户名称</th>
-                            <th>宠物名字</th>
-                            <th>领养时间</th>
+                            <th>Email</th>
+                            <th>年龄</th>
+                            <th>电话</th>
+                            <th>申请理由</th>
+                            <th>申请时间</th>
                             <th>状态</th>
+                            <th>操作</th>
                         </tr>
                         </thead>
                         <tbody>
@@ -178,7 +184,81 @@
     </div>
     <!-- 用户查询  end-->
 </div>
-
+<!-- 修改申请态框 -->
+<div class="modal fade" id="editApply" tabindex="-1" role="dialog" aria-labelledby="myModalLabe">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">×</span>
+                </button>
+                <h4 class="modal-title" id="myModalLabe">修改申请信息</h4>
+            </div>
+            <div class="modal-body">
+                <form class="form-horizontal" id="edit_apply_form" method="post" enctype="multipart/form-data">
+                    <input type="hidden" id="edit_id" name="id">
+                    <div class="form-group">
+                        <label for="edit_name" class="col-sm-2 control-label">
+                            申请人
+                        </label>
+                        <div class="col-sm-4">
+                            <input type="text" class="form-control" id="edit_name" placeholder="用户名称" value="${apply.name}" name="name">
+                        </div>
+                        <label for="edit_email" class="col-sm-2 control-label">
+                            邮件
+                        </label>
+                        <div class="col-sm-4">
+                            <input type="text" class="form-control" id="edit_email" placeholder="邮件" value="${apply.email}" name="email">
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label for="edit_time" class="col-sm-2 control-label">
+                            申请时间
+                        </label>
+                        <div class="col-sm-4">
+                            <input type="date" class="form-control" id="edit_time" placeholder="时间" value="${apply.applyTime}"  name="applyTime">
+                        </div>
+                        <label for="edit_telephone" class="col-sm-2 control-label">
+                            电话号码
+                        </label>
+                        <div class="col-sm-4">
+                            <input type="text" class="form-control" id="edit_telephone" placeholder="电话" value="${apply.telephone}" name="telephone">
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label for="edit_age" class="col-sm-2 control-label">
+                            年龄
+                        </label>
+                        <div class="col-sm-4">
+                            <input type="text" class="form-control" id="edit_age" placeholder="年龄" value="${apply.age}"  name="age">
+                        </div>
+                        <label for="edit_message" class="col-sm-2 control-label">
+                            申请理由
+                        </label>
+                        <div class="col-sm-4">
+                            <input type="text" class="form-control" id="edit_message" placeholder="申请理由" value="${apply.message}" name="message">
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label for="edit_state" class="col-sm-2 control-label">
+                            是否被处理
+                        </label>
+                        <div class="col-sm-4">
+                            <select class="form-control" id="edit_state" value="${apply.state}" name="state">
+                                <option value="2">还没有被被处理</option>
+                                <option value="3">已经被处理</option>
+                            </select>
+                        </div>
+                    </div>
+                </form>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-default" data-dismiss="modal" id="apply_updateDown_btn">关闭</button>
+                <button type="button" class="btn btn-primary" id="apply_update_btn">保存修改</button>
+            </div>
+        </div>
+    </div>
+</div>
 <!-- 引入js文件 -->
 <!-- jQuery -->
 <!-- jQuery -->
@@ -198,11 +278,11 @@
     });
     function to_page(pn){
         $.ajax({
-            url:"${pageContext.request.contextPath}/adopt/ByDisAgree.action",
+            url:"${pageContext.request.contextPath}/apply/applys.action",
             data:"pn="+pn,
             type:"GET",
             success:function(result){
-               resolving(result);
+                resolving(result);
             }
         });
     }
@@ -217,27 +297,46 @@
     }
     function build_adopts_table(result){
         //清空table表格
-        $("#adopt_table tbody").empty();
+        $("#apply_table tbody").empty();
         //index：下标 user：单个对象
-        var adopts=result.extend.pageInfo.list;
-        $.each(adopts,function(index,adopt){
+        var applys=result.extend.pageInfo.list;
+        $.each(applys,function(index,apply){
             var checkBoxTd = $("<td><input type='checkbox' class='check_item'/></td>");
-            var adoptIdTd = $("<td></td>").append(adopt.id);
-            var userNameTd = $("<td></td>").append(adopt.user.userName);
-            var petNameTd = $("<td></td>").append(adopt.pet.petName);
-            var adoptTimeTd=$("<td></td>").append(adopt.adoptTime);
-            var stateTd=$("<td></td>").append("不同意");
-
-
+            var applyIdTd = $("<td></td>").append(apply.id);
+            var nameTd = $("<td></td>").append(apply.name);
+            var emailTd = $("<td></td>").append(apply.email);
+            var ageTd=$("<td></td>").append(apply.age);
+            var telephoneTd=$("<td></td>").append(apply.telephone);
+            var messageTd=$("<td></td>").append(apply.message);
+            var applyTimeTd=$("<td></td>").append(apply.applyTime);
+            var stateTd=null;
+            if(apply.state==2){
+                stateTd=$("<td></td>").append("没有被处理");
+            }else{
+                stateTd=$("<td></td>").append("已经被处理");
+            }
+            var editBtn = $("<button></button>").addClass("btn btn-primary btn-sm edit_btn")
+                .append($("<span></span>").addClass("glyphicon glyphicon-pencil")).append("修改");
+            //为编辑按钮添加一个自定义的属性，来表示当前员工id
+            editBtn.attr("edit-id",apply.id);
+            var delBtn =  $("<button></button>").addClass("btn btn-danger btn-sm delete_btn")
+                .append($("<span></span>").addClass("glyphicon glyphicon-trash")).append("删除");
+            //为删除按钮添加一个自定义的属性来表示当前删除的员工id
+            delBtn.attr("del-id",apply.id);
+            var btnTd = $("<td></td>").append(editBtn).append(" ").append(delBtn);
             //var delBtn =
             //append方法执行完成以后还是返回原来的元素
             $("<tr></tr>").append(checkBoxTd)
-                .append(adoptIdTd)
-                .append(userNameTd)
-                .append(petNameTd)
-                .append(adoptTimeTd)
+                .append(applyIdTd)
+                .append(nameTd)
+                .append(emailTd)
+                .append(ageTd)
+                .append(telephoneTd)
+                .append(messageTd)
+                .append(applyTimeTd)
                 .append(stateTd)
-                .appendTo("#adopt_table tbody");
+                .append(btnTd)
+                .appendTo("#apply_table tbody");
         });
     }
 
@@ -309,18 +408,111 @@
         var navEle = $("<nav></nav>").append(ul);
         navEle.appendTo("#page_nav_area");
     }
-    $("#disAgree_find_modal_btn").click(function () {
-        $("#adopt_table tbody").empty();
-        var userName=$("#findByName").val();
+
+    //清空表单样式及内容
+    function reset_form(ele){
+        $(ele)[0].reset();
+        //清空表单样式
+        $(ele).find("*").removeClass("has-error has-success");
+        $(ele).find(".help-block").text("");
+    }
+    //点击新增按钮弹出模态框。
+    $("#admin_add_modal_btn").click(function(){
+        //清除表单数据（表单完整重置（表单的数据，表单的样式））
+        reset_form("#newAdmin form");
+        //弹出模态框
+        $("#newAdmin").modal({
+            backdrop:"static"
+        });
+    });
+
+    //点击编辑按钮弹出模态框。
+    $(document).on("click",".edit_btn",function(){
+        //1、发送ajax,根据id获取用户信息
+        //清除表单数据（表单完整重置（表单的数据，表单的样式））
+        reset_form("#editApply form");
+        var id = $(this).attr("edit-id");
         $.ajax({
-            url:"${pageContext.request.contextPath}/user/findByName.action?userName="+userName,
+            url:"${pageContext.request.contextPath}/apply/findById.action?id="+id,
+            type:"GET",
+            success:function(result){
+                //填充用户信息
+                console.log(result);
+                $("#edit_id").val(result.extend.apply.id);
+                $("#edit_name").val(result.extend.apply.name);
+                $("#edit_email").val(result.extend.apply.email);
+                $("#edit_age").val(result.extend.apply.age)
+                $("#edit_telephone").val(result.extend.apply.telephone);
+                $("#edit_message").val(result.extend.apply.message);
+                $("#edit_time").val(result.extend.apply.applyTime);
+                $("#edit_state").val(result.extend.apply.state);
+
+            }});
+        //2、弹出模态框
+        $("#editApply").modal({
+            backdrop:"static"
+        });
+
+    });
+
+    //点击更新按钮弹出模态框。
+    $("#apply_update_btn").click(function(){
+        $.ajax({
+            url:"${pageContext.request.contextPath}/apply/update.action",
+            type:"POST",
+            data:$("#edit_apply_form").serialize(),
+            success:function (result) {
+                alert("申请信息更新成功！");
+                $("#apply_updateDown_btn").click();
+                to_page(currentPage);
+            },
+            error:function(result){
+                alert("管理员信息更新失败！");
+                to_page(currentPage);
+            }
+        });
+
+    });
+
+    //单个删除
+    $(document).on("click",".delete_btn",function(){
+        //1、弹出是否确认删除对话框
+        var name = $(this).parents("tr").find("td:eq(2)").text();
+        var Id = $(this).attr("del-id");
+        if(confirm("确认删除【"+name+"】吗？")){
+            //确认，发送ajax请求删除即可
+            $.ajax({
+                url:"${pageContext.request.contextPath}/apply/delete.action?id="+id,
+                type:"GET",
+                success:function (result) {
+                    if(result.code==100){
+                        alert("申请删除成功！");
+                        if(currentSize==1){
+                            to_page(currentPage-1);
+                        } else {
+                            to_page(currentPage);
+                        }
+                    }else{
+                        alert("管理员删除失败！");
+                        to_page(currentPage);
+                    }
+                }
+            });
+        }
+    });
+    $("#apply_find_modal_btn").click(function () {
+        $("#admin_table tbody").empty();
+        var adminName=$("#findByName").val();
+        console.log(adminName);
+        $.ajax({
+            url:"${pageContext.request.contextPath}/admin/findByName.action?adminName="+adminName,
             type:"Get",
             async:"true",
             success:function (result) {
                 resolving(result);
             },
             error:function (result) {
-                alert("查询错误")
+                alert("拆个年间哎你是")
             }
         });
     });

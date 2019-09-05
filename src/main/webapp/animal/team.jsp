@@ -51,14 +51,14 @@
 <div class="contact" id="contact">
     <div class="container">
         <div class="col-md-9 col-sm-9 contact-right">
-            <form action="#" method="post">
-                <input type="text" name="name" placeholder="Your name" required="">
-                <input type="email" name="email" placeholder="Your email" required="">
-                <input type="text" name="subject" placeholder="Your subject" required="">
-                <input type="text" name="phone number" placeholder="Phone number" required="">
-                <textarea name="message" placeholder="Your message" required=""></textarea>
-                <input type="submit" value="Send">
+            <form id="save_apply_form" >
+                <input type="text" id="new_name" name="name" placeholder="你的名字" >
+                <input type="text" id="new_email" name="email" placeholder="你的邮件号" >
+                <input type="text" id="new_age" name="age" placeholder="你的年龄">
+                <input type="text" id="new_telephone" name="telephone" placeholder="你的电话">
+                <textarea name="message" id="new_message" placeholder=你想当志愿者的理由"></textarea>
             </form>
+            <button type="button" id="save_apply_btn">提交</button>
         </div>
         <div class="col-md-3 col-sm-3 contact-left">
             <div class="address">
@@ -77,10 +77,10 @@
                 <h4>
                     <i class="fa fa-envelope-o" aria-hidden="true"></i>E-MAIL</h4>
                 <p>
-                    <a href="mailto:info@example.com">Example1@gmail.com</a>
+                    <a href="mailto:info@example.com">2425549281@qq.com</a>
                 </p>
                 <p>
-                    <a href="mailto:info@example.com">Example2@gmail.com</a>
+                    <a href="mailto:info@example.com">wxecjtu@aliyun.com</a>
                 </p>
             </div>
         </div>
@@ -202,6 +202,21 @@
 
     }
 
+    $("#save_apply_btn").click(function () {
+        console.log($("#save_apply_form").serialize());
+        $.ajax({
+            url:"${pageContext.request.contextPath}/apply/create.action",
+            type:"POST",
+            data:$("#save_apply_form").serialize(),
+            success:function (result) {
+                alert("你的申请已经被提交");
+            },
+            error:function (result) {
+                alert("你提交的信息有错，请认真填写！")
+
+            }
+        });
+    });
 </script>
 </body>
 </html>

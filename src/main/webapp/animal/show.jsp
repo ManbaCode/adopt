@@ -206,7 +206,6 @@
         var comments=result.extend.comment;
         console.log(comments);
         $.each(comments,function(index,comment){
-
             var headTd=$("<header></header>").append($("<img>").attr("src","/images/"+(comment.user.pic)));
             var head=$("<div></div>").addClass("comment-right");
             var userNameTd=$("<h3></h3>").append(comment.user.userName);

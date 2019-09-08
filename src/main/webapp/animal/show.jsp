@@ -29,7 +29,6 @@
 </head>
 <body>
 <div class="myDiv" >
-
     <div >
         <h2>待领养的动物</h2>
         <center>
@@ -156,20 +155,60 @@
         </div><!-- /.modal -->
     </div>
 
-    <%--存放评论的地方--%>
-    <div class="comment-list">
-
-    </div>
-
     <div class="container">
-        <div class="commentbox">
-            <textarea cols="80" rows="50" placeholder="来说几句吧" class="mytextarea" id="content"></textarea>
-            <div class="btn btn-info pull-right" id="comment">评论</div>
+    <%--存放评论的地方--%>
+        <div class="comment-list">
+
         </div>
 
+        <div class="commentbox">
+                <textarea cols="80" rows="50" placeholder="来说几句吧" class="mytextarea" id="content"></textarea>
+                <div class="btn btn-info pull-right" id="comment">评论</div>
+            </div>
     </div>
 </div>
-
+<%--主回复--%>
+<div class="modal fade" id="saveAnswer" tabindex="-1" role="dialog" aria-labelledby="myModalLabel1" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+                <h4 class="modal-title" id="myModalLabel1">评论</h4>
+            </div>
+            <div class="modal-body">
+                <form id="save_answer_form">
+                    <input type="hidden" name="id" id="edit_id" value="${comment.id}">
+                    <textarea class="form-control" id="edit_content" placeholder="请发表评论！" name="content"></textarea>
+                </form>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-default" data-dismiss="modal">关闭</button>
+                <button type="button" class="btn btn-primary" id="save_answer_btn">提交</button>
+            </div>
+        </div><!-- /.modal-content -->
+    </div><!-- /.modal -->
+</div>
+<div class="modal fade" id="saveAnswers" tabindex="-1" role="dialog" aria-labelledby="myModalLabel2" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+                <h4 class="modal-title" id="myModalLabel2">评论</h4>
+            </div>
+            <div class="modal-body">
+                <form id="save_answers_form">
+                    <input type="hidden" name="id" id="answer_id" value="${answer.id}">
+                    <input type="hidden" name="comment_id" id="comment_id" value="${answer.comment.id}">
+                    <textarea class="form-control" id="answer_content" placeholder="请发表评论！" name="content"></textarea>
+                </form>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-default" data-dismiss="modal">关闭</button>
+                <button type="button" class="btn btn-primary" id="save_answers_btn">提交</button>
+            </div>
+        </div><!-- /.modal-content -->
+    </div><!-- /.modal -->
+</div>
 <script>
     var user="${sessionScope.user}";
 
@@ -185,12 +224,10 @@
 
     function to_page(){
         //session里面的数据
-        console.log("${pet.id}");
         $.ajax({
             url:"${pageContext.request.contextPath}/comment/petComments.action?pet_id="+"${pet.id}",
             type:"GET",
             success:function(result){
-                console.log(result.extend.comment);
                 submit(result);
             },
             error:function (result) {
@@ -204,7 +241,7 @@
         $(".comment-list").empty();
         //对结果进行遍历
         var comments=result.extend.comment;
-        console.log(comments);
+        console.log(result.extend.comment);
         $.each(comments,function(index,comment){
             var headTd=$("<header></header>").append($("<img>").attr("src","/images/"+(comment.user.pic)));
             var head=$("<div></div>").addClass("comment-right");
@@ -213,19 +250,74 @@
             var timeTd=$("<span></span>").append($("<i></i>").addClass("glyphicon glyphicon-time")).append(comment.commentTime);
             bodyTd.append(timeTd);
             var commentTd=$("<p></p>").addClass("content").append(comment.content);
-            head.append(userNameTd).append(bodyTd).append(commentTd);
+            var answer=$("<div></div>").addClass("comment-content-footer");
+            var answerHead=$("<div></div>").addClass("row");
+            var answerbtn= $("<div></div>").addClass("col-md-2").append($("<span></span>").addClass("reply-btn").append("回复").attr("save-id",comment.id));
+            answerHead.append(answerbtn);
+            answer.append(answerHead);
+            var replayListTd=null;
+            if(comment.answer != null){
+                var answers=comment.answer;
+                replayListTd = $("<div></div>").addClass("reply-list");
+                $.each(answers,function(index,answer) {
+                    var replaysTd = $("<div></div>").addClass("reply");
+                    var replay = $("<div></div>").append($("<a></a>").append(answer.user.userName)).append("回复：").append($("<a></a>").append(comment.user.userName).append("  ")).append($("<span></span>").append(answer.content));
+                    var contentTd = $("<p></p>").append($("<span></span>").append(answer.answerTime)).append($("<span></span>").addClass("reply-list-btn").append("回复").attr("saves-id",answer.id));
+                    replaysTd.append(replay).append(contentTd);
+                    replayListTd.append(replaysTd);
+                });
+                console.log(to_answer(comment.id));
+                var replayAnswerTd=to_answer(comment.id);
+                replayListTd.append(replayAnswerTd);
+            }
+            head.append(userNameTd).append(bodyTd).append(commentTd).append(answer).append(replayListTd);
             $("<div></div>").addClass("comment-info")
                 .append(headTd)
                 .append(head)
-                .appendTo(".comment-list");
+                .appendTo(".comment-list")
         });
     };
 
+    function to_answer(id){
+        //session里面的数据
+        var answer=null;
+        $.ajax({
+            url:"${pageContext.request.contextPath}/answer/findByCommentId.action?comment_id="+id,
+            type:"GET",
+            async:false,
+            success:function(result){
+                if(result.extend.answer.length > 0){
+                    answer=answerSummit(result);
+                }else{
+                    console.log(111);
+                }
+            },
+            error:function (result) {
+                alert("评论导出失败");
+            }
+        });
+        return answer;
+    }
+    function answerSummit(result){
+        //清空数据
+        //对结果进行遍历
+        console.log(result.extend.answer);
+        var answers=result.extend.answer;
+        var replys=$("<div></div>").addClass("replys")
+        $.each(answers,function(index,answer){
+            var replay=$("<div></div>").append($("<a></a>").append(answer.user.userName)).append("回复：").append($("<a></a>").append(answer.answer.user.userName).append("  ")).append($("<span></span>").append(answer.content));
+            var contentTd=$("<p></p>").append($("<span></span>").append(answer.answerTime)).append($("<span></span>").addClass("reply-list-btn").append("回复").attr("saves-id",answer.id));
+            replayTd=$("<div></div>").addClass("reply").append(replay).append(contentTd);
+            replys.append(replayTd);
+        });
+        return replys;
+
+    }
+
+
 
     $("#comment").click(function () {
-        alert(111);
         var comment=$("#content").val();
-        console.log(comment);
         if(comment==null){
             alert("请填入评论后才能发表")
         };
@@ -240,7 +332,7 @@
                 alert("评论插入失败")
             }
         })
-    })
+    });
 
 
     //清空表单样式及内容
@@ -290,7 +382,78 @@
 
     $("#tianchuan_btn").click(function () {
         window.location.href="${pageContext.request.contextPath}/animal/index.jsp";
+    });
+
+    $(document).on("click",".reply-btn",function(){
+        var id = $(this).attr("save-id");
+        console.log(id);
+        $.ajax({
+            url:"${pageContext.request.contextPath}/comment/findById.action?id="+id,
+            type:"GET",
+            success:function(result){
+                //填充用户信息
+                $("#edit_id").val(result.extend.comment.id);
+            }});
+        //2、弹出模态框
+        $("#saveAnswer").modal({
+            backdrop:"static"
+        });
+    });
+
+    $("#save_answer_btn").click(function () {
+        var id=$("#edit_id").val();
+        var content=$("#edit_content").val()
+        $.ajax({
+            url:"${pageContext.request.contextPath}/answer/create.action",
+            type:"POST",
+            dataType:"json",
+            data:{'ids':id,'content':content},
+            success:function (result) {
+                alert("回复成功！")
+            },
+            error:function (result) {
+                alert("回复失败！")
+            }
+        })
+    });
+
+    $(document).on("click",".reply-list-btn",function(){
+        var id = $(this).attr("saves-id");
+        console.log(id);
+        $.ajax({
+            url:"${pageContext.request.contextPath}/answer/findById.action?id="+id,
+            type:"GET",
+            success:function(result){
+                console.log(result.extend.answer);
+                //填充用户信息
+                $("#comment_id").val(result.extend.answer.comment.id);
+                $("#answer_id").val(result.extend.answer.id);
+
+            }});
+        //2、弹出模态框
+        $("#saveAnswers").modal({
+            backdrop:"static"
+        });
+    });
+    $("#save_answers_btn").click(function () {
+        var comment_id=$("#comment_id").val();
+        var id=$("#answer_id").val();
+        var content=$("#answer_content").val()
+        $.ajax({
+            url:"${pageContext.request.contextPath}/answer/creates.action",
+            type:"POST",
+            dataType:"json",
+            data:{'id':id,'content':content,'comment_id':comment_id},
+            success:function (result) {
+                alert("回复成功！");
+                to_page();
+            },
+            error:function (result) {
+                alert("回复失败！")
+            }
+        })
     })
+
 </script>
 </body>
 </html>

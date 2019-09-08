@@ -919,176 +919,303 @@
       <DefaultForCharset>0</DefaultForCharset>
     </collation>
     <table id="232" parent="2" name="admin"/>
-    <table id="233" parent="2" name="blog"/>
-    <table id="234" parent="2" name="comment"/>
-    <table id="235" parent="2" name="pet"/>
-    <table id="236" parent="2" name="t_adopt"/>
-    <table id="237" parent="2" name="test"/>
-    <table id="238" parent="2" name="users"/>
-    <column id="239" parent="232" name="id">
+    <table id="233" parent="2" name="answer"/>
+    <table id="234" parent="2" name="apply"/>
+    <table id="235" parent="2" name="blog"/>
+    <table id="236" parent="2" name="comment"/>
+    <table id="237" parent="2" name="pet"/>
+    <table id="238" parent="2" name="t_adopt"/>
+    <table id="239" parent="2" name="test"/>
+    <table id="240" parent="2" name="users"/>
+    <column id="241" parent="232" name="id">
       <Position>1</Position>
       <DataType>int(11)|0s</DataType>
       <NotNull>1</NotNull>
       <SequenceIdentity>1</SequenceIdentity>
       <ColumnKind>normal</ColumnKind>
     </column>
-    <column id="240" parent="232" name="adminName">
+    <column id="242" parent="232" name="adminName">
       <Position>2</Position>
       <Comment>管理员的名字</Comment>
       <DataType>varchar(20)|0s</DataType>
       <NotNull>1</NotNull>
       <ColumnKind>normal</ColumnKind>
     </column>
-    <column id="241" parent="232" name="adminPwd">
+    <column id="243" parent="232" name="adminPwd">
       <Position>3</Position>
       <Comment>密码</Comment>
       <DataType>varchar(20)|0s</DataType>
       <NotNull>1</NotNull>
       <ColumnKind>normal</ColumnKind>
     </column>
-    <column id="242" parent="232" name="realName">
+    <column id="244" parent="232" name="realName">
       <Position>4</Position>
       <Comment>真实的名字</Comment>
       <DataType>varchar(20)|0s</DataType>
       <NotNull>1</NotNull>
       <ColumnKind>normal</ColumnKind>
     </column>
-    <column id="243" parent="232" name="telephone">
+    <column id="245" parent="232" name="telephone">
       <Position>5</Position>
       <Comment>电话</Comment>
       <DataType>varchar(20)|0s</DataType>
       <NotNull>1</NotNull>
       <ColumnKind>normal</ColumnKind>
     </column>
-    <column id="244" parent="232" name="Email">
+    <column id="246" parent="232" name="Email">
       <Position>6</Position>
       <DataType>varchar(20)|0s</DataType>
       <NotNull>1</NotNull>
       <ColumnKind>normal</ColumnKind>
     </column>
-    <column id="245" parent="232" name="birthday">
+    <column id="247" parent="232" name="birthday">
       <Position>7</Position>
       <DataType>date|0s</DataType>
       <NotNull>1</NotNull>
       <ColumnKind>normal</ColumnKind>
     </column>
-    <column id="246" parent="232" name="sex">
+    <column id="248" parent="232" name="sex">
       <Position>8</Position>
       <DataType>varchar(3)|0s</DataType>
       <NotNull>1</NotNull>
       <ColumnKind>normal</ColumnKind>
     </column>
-    <column id="247" parent="232" name="pic">
+    <column id="249" parent="232" name="pic">
       <Position>9</Position>
       <DataType>varchar(100)|0s</DataType>
+      <DefaultExpression>&apos;a10.png&apos;</DefaultExpression>
       <ColumnKind>normal</ColumnKind>
     </column>
-    <column id="248" parent="232" name="remark">
+    <column id="250" parent="232" name="remark">
       <Position>10</Position>
       <DataType>varchar(255)|0s</DataType>
       <NotNull>1</NotNull>
       <ColumnKind>normal</ColumnKind>
     </column>
-    <key id="249" parent="232" name="PRIMARY">
+    <key id="251" parent="232" name="PRIMARY">
       <NameSurrogate>1</NameSurrogate>
       <ColNames>id</ColNames>
       <Primary>1</Primary>
     </key>
-    <column id="250" parent="233" name="id">
+    <column id="252" parent="233" name="id">
       <Position>1</Position>
       <DataType>int(11)|0s</DataType>
       <NotNull>1</NotNull>
       <SequenceIdentity>1</SequenceIdentity>
       <ColumnKind>normal</ColumnKind>
     </column>
-    <column id="251" parent="233" name="actionTime">
+    <column id="253" parent="233" name="user_id">
+      <Position>2</Position>
+      <DataType>int(11)|0s</DataType>
+      <ColumnKind>normal</ColumnKind>
+    </column>
+    <column id="254" parent="233" name="replay_id">
+      <Position>3</Position>
+      <DataType>int(11)|0s</DataType>
+      <ColumnKind>normal</ColumnKind>
+    </column>
+    <column id="255" parent="233" name="comment_id">
+      <Position>4</Position>
+      <DataType>int(11)|0s</DataType>
+      <NotNull>1</NotNull>
+      <ColumnKind>normal</ColumnKind>
+    </column>
+    <column id="256" parent="233" name="answerTime">
+      <Position>5</Position>
+      <DataType>date|0s</DataType>
+      <NotNull>1</NotNull>
+      <ColumnKind>normal</ColumnKind>
+    </column>
+    <column id="257" parent="233" name="content">
+      <Position>6</Position>
+      <DataType>varchar(255)|0s</DataType>
+      <NotNull>1</NotNull>
+      <ColumnKind>normal</ColumnKind>
+    </column>
+    <index id="258" parent="233" name="fk8">
+      <ColNames>user_id</ColNames>
+      <Type>btree</Type>
+    </index>
+    <index id="259" parent="233" name="fk10">
+      <ColNames>replay_id</ColNames>
+      <Type>btree</Type>
+    </index>
+    <index id="260" parent="233" name="fk11">
+      <ColNames>comment_id</ColNames>
+      <Type>btree</Type>
+    </index>
+    <key id="261" parent="233" name="PRIMARY">
+      <NameSurrogate>1</NameSurrogate>
+      <ColNames>id</ColNames>
+      <Primary>1</Primary>
+    </key>
+    <foreign-key id="262" parent="233" name="fk8">
+      <ColNames>user_id</ColNames>
+      <RefSchemaName>adopt</RefSchemaName>
+      <RefTableName>users</RefTableName>
+      <RefColNames>id</RefColNames>
+    </foreign-key>
+    <foreign-key id="263" parent="233" name="fk10">
+      <ColNames>replay_id</ColNames>
+      <RefSchemaName>adopt</RefSchemaName>
+      <RefTableName>answer</RefTableName>
+      <RefColNames>id</RefColNames>
+    </foreign-key>
+    <foreign-key id="264" parent="233" name="fk11">
+      <ColNames>comment_id</ColNames>
+      <RefSchemaName>adopt</RefSchemaName>
+      <RefTableName>comment</RefTableName>
+      <RefColNames>id</RefColNames>
+    </foreign-key>
+    <column id="265" parent="234" name="id">
+      <Position>1</Position>
+      <DataType>int(11)|0s</DataType>
+      <NotNull>1</NotNull>
+      <SequenceIdentity>1</SequenceIdentity>
+      <ColumnKind>normal</ColumnKind>
+    </column>
+    <column id="266" parent="234" name="name">
+      <Position>2</Position>
+      <DataType>varchar(10)|0s</DataType>
+      <NotNull>1</NotNull>
+      <ColumnKind>normal</ColumnKind>
+    </column>
+    <column id="267" parent="234" name="email">
+      <Position>3</Position>
+      <DataType>varchar(20)|0s</DataType>
+      <NotNull>1</NotNull>
+      <ColumnKind>normal</ColumnKind>
+    </column>
+    <column id="268" parent="234" name="age">
+      <Position>4</Position>
+      <DataType>int(11)|0s</DataType>
+      <NotNull>1</NotNull>
+      <ColumnKind>normal</ColumnKind>
+    </column>
+    <column id="269" parent="234" name="telephone">
+      <Position>5</Position>
+      <DataType>varchar(12)|0s</DataType>
+      <NotNull>1</NotNull>
+      <ColumnKind>normal</ColumnKind>
+    </column>
+    <column id="270" parent="234" name="message">
+      <Position>6</Position>
+      <DataType>varchar(100)|0s</DataType>
+      <NotNull>1</NotNull>
+      <ColumnKind>normal</ColumnKind>
+    </column>
+    <column id="271" parent="234" name="applyTime">
+      <Position>7</Position>
+      <DataType>date|0s</DataType>
+      <NotNull>1</NotNull>
+      <ColumnKind>normal</ColumnKind>
+    </column>
+    <column id="272" parent="234" name="state">
+      <Position>8</Position>
+      <DataType>int(11)|0s</DataType>
+      <DefaultExpression>2</DefaultExpression>
+      <ColumnKind>normal</ColumnKind>
+    </column>
+    <key id="273" parent="234" name="PRIMARY">
+      <NameSurrogate>1</NameSurrogate>
+      <ColNames>id</ColNames>
+      <Primary>1</Primary>
+    </key>
+    <column id="274" parent="235" name="id">
+      <Position>1</Position>
+      <DataType>int(11)|0s</DataType>
+      <NotNull>1</NotNull>
+      <SequenceIdentity>1</SequenceIdentity>
+      <ColumnKind>normal</ColumnKind>
+    </column>
+    <column id="275" parent="235" name="actionTime">
       <Position>2</Position>
       <DataType>date|0s</DataType>
       <NotNull>1</NotNull>
       <ColumnKind>normal</ColumnKind>
     </column>
-    <column id="252" parent="233" name="address">
+    <column id="276" parent="235" name="address">
       <Position>3</Position>
       <DataType>varchar(100)|0s</DataType>
       <NotNull>1</NotNull>
       <ColumnKind>normal</ColumnKind>
     </column>
-    <column id="253" parent="233" name="peoples">
+    <column id="277" parent="235" name="peoples">
       <Position>4</Position>
       <DataType>varchar(100)|0s</DataType>
       <NotNull>1</NotNull>
       <ColumnKind>normal</ColumnKind>
     </column>
-    <column id="254" parent="233" name="event">
+    <column id="278" parent="235" name="event">
       <Position>5</Position>
       <DataType>varchar(100)|0s</DataType>
       <NotNull>1</NotNull>
       <ColumnKind>normal</ColumnKind>
     </column>
-    <column id="255" parent="233" name="title">
+    <column id="279" parent="235" name="title">
       <Position>6</Position>
       <DataType>varchar(20)|0s</DataType>
       <NotNull>1</NotNull>
       <ColumnKind>normal</ColumnKind>
     </column>
-    <key id="256" parent="233" name="PRIMARY">
+    <key id="280" parent="235" name="PRIMARY">
       <NameSurrogate>1</NameSurrogate>
       <ColNames>id</ColNames>
       <Primary>1</Primary>
     </key>
-    <column id="257" parent="234" name="id">
+    <column id="281" parent="236" name="id">
       <Position>1</Position>
       <DataType>int(11)|0s</DataType>
       <NotNull>1</NotNull>
       <SequenceIdentity>1</SequenceIdentity>
       <ColumnKind>normal</ColumnKind>
     </column>
-    <column id="258" parent="234" name="user_id">
+    <column id="282" parent="236" name="user_id">
       <Position>2</Position>
       <DataType>int(11)|0s</DataType>
       <ColumnKind>normal</ColumnKind>
     </column>
-    <column id="259" parent="234" name="admin_id">
+    <column id="283" parent="236" name="admin_id">
       <Position>3</Position>
       <DataType>int(11)|0s</DataType>
       <ColumnKind>normal</ColumnKind>
     </column>
-    <column id="260" parent="234" name="pet_id">
+    <column id="284" parent="236" name="pet_id">
       <Position>4</Position>
       <DataType>int(11)|0s</DataType>
       <ColumnKind>normal</ColumnKind>
     </column>
-    <column id="261" parent="234" name="commentTime">
+    <column id="285" parent="236" name="commentTime">
       <Position>5</Position>
       <DataType>date|0s</DataType>
       <NotNull>1</NotNull>
       <ColumnKind>normal</ColumnKind>
     </column>
-    <column id="262" parent="234" name="content">
+    <column id="286" parent="236" name="content">
       <Position>6</Position>
       <Comment>评论的内容</Comment>
       <DataType>varchar(200)|0s</DataType>
       <NotNull>1</NotNull>
       <ColumnKind>normal</ColumnKind>
     </column>
-    <index id="263" parent="234" name="fk1">
+    <index id="287" parent="236" name="fk1">
       <ColNames>user_id</ColNames>
       <Type>btree</Type>
     </index>
-    <index id="264" parent="234" name="fk5">
+    <index id="288" parent="236" name="fk5">
       <ColNames>admin_id</ColNames>
       <Type>btree</Type>
     </index>
-    <index id="265" parent="234" name="fk2">
+    <index id="289" parent="236" name="fk2">
       <ColNames>pet_id</ColNames>
       <Type>btree</Type>
     </index>
-    <key id="266" parent="234" name="PRIMARY">
+    <key id="290" parent="236" name="PRIMARY">
       <NameSurrogate>1</NameSurrogate>
       <ColNames>id</ColNames>
       <Primary>1</Primary>
     </key>
-    <foreign-key id="267" parent="234" name="fk1">
+    <foreign-key id="291" parent="236" name="fk1">
       <ColNames>user_id</ColNames>
       <RefSchemaName>adopt</RefSchemaName>
       <RefTableName>users</RefTableName>
@@ -1096,7 +1223,7 @@
       <OnUpdate>cascade</OnUpdate>
       <OnDelete>cascade</OnDelete>
     </foreign-key>
-    <foreign-key id="268" parent="234" name="fk5">
+    <foreign-key id="292" parent="236" name="fk5">
       <ColNames>admin_id</ColNames>
       <RefSchemaName>adopt</RefSchemaName>
       <RefTableName>admin</RefTableName>
@@ -1104,7 +1231,7 @@
       <OnUpdate>cascade</OnUpdate>
       <OnDelete>cascade</OnDelete>
     </foreign-key>
-    <foreign-key id="269" parent="234" name="fk2">
+    <foreign-key id="293" parent="236" name="fk2">
       <ColNames>pet_id</ColNames>
       <RefSchemaName>adopt</RefSchemaName>
       <RefTableName>pet</RefTableName>
@@ -1112,113 +1239,113 @@
       <OnUpdate>cascade</OnUpdate>
       <OnDelete>cascade</OnDelete>
     </foreign-key>
-    <column id="270" parent="235" name="id">
+    <column id="294" parent="237" name="id">
       <Position>1</Position>
       <DataType>int(11)|0s</DataType>
       <NotNull>1</NotNull>
       <SequenceIdentity>1</SequenceIdentity>
       <ColumnKind>normal</ColumnKind>
     </column>
-    <column id="271" parent="235" name="petName">
+    <column id="295" parent="237" name="petName">
       <Position>2</Position>
       <DataType>varchar(20)|0s</DataType>
       <NotNull>1</NotNull>
       <ColumnKind>normal</ColumnKind>
     </column>
-    <column id="272" parent="235" name="petType">
+    <column id="296" parent="237" name="petType">
       <Position>3</Position>
       <Comment>宠物类型</Comment>
       <DataType>varchar(20)|0s</DataType>
       <NotNull>1</NotNull>
       <ColumnKind>normal</ColumnKind>
     </column>
-    <column id="273" parent="235" name="sex">
+    <column id="297" parent="237" name="sex">
       <Position>4</Position>
       <Comment>性别</Comment>
       <DataType>varchar(3)|0s</DataType>
       <NotNull>1</NotNull>
       <ColumnKind>normal</ColumnKind>
     </column>
-    <column id="274" parent="235" name="birthday">
+    <column id="298" parent="237" name="birthday">
       <Position>5</Position>
       <DataType>date|0s</DataType>
       <NotNull>1</NotNull>
       <ColumnKind>normal</ColumnKind>
     </column>
-    <column id="275" parent="235" name="pic">
+    <column id="299" parent="237" name="pic">
       <Position>6</Position>
       <Comment>头像</Comment>
       <DataType>varchar(100)|0s</DataType>
       <NotNull>1</NotNull>
       <ColumnKind>normal</ColumnKind>
     </column>
-    <column id="276" parent="235" name="state">
+    <column id="300" parent="237" name="state">
       <Position>7</Position>
-      <Comment>有无被领养 0没有被领养 1 被领养</Comment>
+      <Comment>现在的状态 0 没有申请领养 1 被申请领养 2 已经被领养</Comment>
       <DataType>int(11)|0s</DataType>
       <NotNull>1</NotNull>
-      <DefaultExpression>0</DefaultExpression>
+      <DefaultExpression>1</DefaultExpression>
       <ColumnKind>normal</ColumnKind>
     </column>
-    <column id="277" parent="235" name="remark">
+    <column id="301" parent="237" name="remark">
       <Position>8</Position>
       <Comment>备注</Comment>
       <DataType>varchar(100)|0s</DataType>
       <ColumnKind>normal</ColumnKind>
     </column>
-    <key id="278" parent="235" name="PRIMARY">
+    <key id="302" parent="237" name="PRIMARY">
       <NameSurrogate>1</NameSurrogate>
       <ColNames>id</ColNames>
       <Primary>1</Primary>
     </key>
-    <column id="279" parent="236" name="id">
+    <column id="303" parent="238" name="id">
       <Position>1</Position>
       <DataType>int(11)|0s</DataType>
       <NotNull>1</NotNull>
       <SequenceIdentity>1</SequenceIdentity>
       <ColumnKind>normal</ColumnKind>
     </column>
-    <column id="280" parent="236" name="user_id">
+    <column id="304" parent="238" name="user_id">
       <Position>2</Position>
       <Comment>用户表id的外键</Comment>
       <DataType>int(11)|0s</DataType>
       <NotNull>1</NotNull>
       <ColumnKind>normal</ColumnKind>
     </column>
-    <column id="281" parent="236" name="pet_id">
+    <column id="305" parent="238" name="pet_id">
       <Position>3</Position>
       <Comment>宠物表id的外键</Comment>
       <DataType>int(11)|0s</DataType>
       <NotNull>1</NotNull>
       <ColumnKind>normal</ColumnKind>
     </column>
-    <column id="282" parent="236" name="adoptTime">
+    <column id="306" parent="238" name="adoptTime">
       <Position>4</Position>
       <DataType>date|0s</DataType>
       <NotNull>1</NotNull>
       <ColumnKind>normal</ColumnKind>
     </column>
-    <column id="283" parent="236" name="state">
+    <column id="307" parent="238" name="state">
       <Position>5</Position>
       <Comment>是否同意被领养 0 是不同意 1 还在审核 2 是同意</Comment>
       <DataType>int(11)|0s</DataType>
       <DefaultExpression>1</DefaultExpression>
       <ColumnKind>normal</ColumnKind>
     </column>
-    <index id="284" parent="236" name="fk3">
+    <index id="308" parent="238" name="fk3">
       <ColNames>user_id</ColNames>
       <Type>btree</Type>
     </index>
-    <index id="285" parent="236" name="fk4">
+    <index id="309" parent="238" name="fk4">
       <ColNames>pet_id</ColNames>
       <Type>btree</Type>
     </index>
-    <key id="286" parent="236" name="PRIMARY">
+    <key id="310" parent="238" name="PRIMARY">
       <NameSurrogate>1</NameSurrogate>
       <ColNames>id</ColNames>
       <Primary>1</Primary>
     </key>
-    <foreign-key id="287" parent="236" name="fk3">
+    <foreign-key id="311" parent="238" name="fk3">
       <ColNames>user_id</ColNames>
       <RefSchemaName>adopt</RefSchemaName>
       <RefTableName>users</RefTableName>
@@ -1226,7 +1353,7 @@
       <OnUpdate>cascade</OnUpdate>
       <OnDelete>cascade</OnDelete>
     </foreign-key>
-    <foreign-key id="288" parent="236" name="fk4">
+    <foreign-key id="312" parent="238" name="fk4">
       <ColNames>pet_id</ColNames>
       <RefSchemaName>adopt</RefSchemaName>
       <RefTableName>pet</RefTableName>
@@ -1234,74 +1361,74 @@
       <OnUpdate>cascade</OnUpdate>
       <OnDelete>cascade</OnDelete>
     </foreign-key>
-    <column id="289" parent="237" name="Time">
+    <column id="313" parent="239" name="Time">
       <Position>1</Position>
       <DataType>date|0s</DataType>
       <ColumnKind>normal</ColumnKind>
     </column>
-    <column id="290" parent="238" name="id">
+    <column id="314" parent="240" name="id">
       <Position>1</Position>
       <DataType>int(11)|0s</DataType>
       <NotNull>1</NotNull>
       <SequenceIdentity>1</SequenceIdentity>
       <ColumnKind>normal</ColumnKind>
     </column>
-    <column id="291" parent="238" name="userName">
+    <column id="315" parent="240" name="userName">
       <Position>2</Position>
       <DataType>varchar(20)|0s</DataType>
       <NotNull>1</NotNull>
       <ColumnKind>normal</ColumnKind>
     </column>
-    <column id="292" parent="238" name="password">
+    <column id="316" parent="240" name="password">
       <Position>3</Position>
       <DataType>varchar(30)|0s</DataType>
       <NotNull>1</NotNull>
       <ColumnKind>normal</ColumnKind>
     </column>
-    <column id="293" parent="238" name="sex">
+    <column id="317" parent="240" name="sex">
       <Position>4</Position>
       <Comment>性别</Comment>
       <DataType>varchar(2)|0s</DataType>
       <ColumnKind>normal</ColumnKind>
     </column>
-    <column id="294" parent="238" name="age">
+    <column id="318" parent="240" name="age">
       <Position>5</Position>
       <Comment>年龄</Comment>
       <DataType>int(11)|0s</DataType>
       <ColumnKind>normal</ColumnKind>
     </column>
-    <column id="295" parent="238" name="telephone">
+    <column id="319" parent="240" name="telephone">
       <Position>6</Position>
       <Comment>电话</Comment>
       <DataType>varchar(20)|0s</DataType>
       <ColumnKind>normal</ColumnKind>
     </column>
-    <column id="296" parent="238" name="Email">
+    <column id="320" parent="240" name="Email">
       <Position>7</Position>
       <Comment>Email</Comment>
       <DataType>varchar(30)|0s</DataType>
       <ColumnKind>normal</ColumnKind>
     </column>
-    <column id="297" parent="238" name="address">
+    <column id="321" parent="240" name="address">
       <Position>8</Position>
       <Comment>地址</Comment>
       <DataType>varchar(50)|0s</DataType>
       <ColumnKind>normal</ColumnKind>
     </column>
-    <column id="298" parent="238" name="pic">
+    <column id="322" parent="240" name="pic">
       <Position>9</Position>
-      <Comment>头像</Comment>
       <DataType>varchar(100)|0s</DataType>
+      <DefaultExpression>&apos;t9.jpg&apos;</DefaultExpression>
       <ColumnKind>normal</ColumnKind>
     </column>
-    <column id="299" parent="238" name="state">
+    <column id="323" parent="240" name="state">
       <Position>10</Position>
       <Comment>有无领养宠物的经历 0 是没有 1 是由</Comment>
       <DataType>int(11)|0s</DataType>
       <DefaultExpression>0</DefaultExpression>
       <ColumnKind>normal</ColumnKind>
     </column>
-    <key id="300" parent="238" name="PRIMARY">
+    <key id="324" parent="240" name="PRIMARY">
       <NameSurrogate>1</NameSurrogate>
       <ColNames>id</ColNames>
       <Primary>1</Primary>

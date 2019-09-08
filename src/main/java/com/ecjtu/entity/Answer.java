@@ -17,22 +17,19 @@ public class Answer {
     private Date answerTime;
     private String content;
 
-    private Users users;
-    private Admin admin;
-    private Pet pet;
+    private Users user;
     private Answer answer;
     private Comment comment;
+
 
     public Answer() {
     }
 
-    public Answer(int id, Date answerTime, String content, Users users, Admin admin, Pet pet, Answer answer, Comment comment) {
+    public Answer(int id, Date answerTime, String content, Users user, Answer answer, Comment comment) {
         this.id = id;
         this.answerTime = answerTime;
         this.content = content;
-        this.users = users;
-        this.admin = admin;
-        this.pet = pet;
+        this.user = user;
         this.answer = answer;
         this.comment = comment;
     }
@@ -61,28 +58,12 @@ public class Answer {
         this.content = content;
     }
 
-    public Users getUsers() {
-        return users;
+    public Users getUser() {
+        return user;
     }
 
-    public void setUsers(Users users) {
-        this.users = users;
-    }
-
-    public Admin getAdmin() {
-        return admin;
-    }
-
-    public void setAdmin(Admin admin) {
-        this.admin = admin;
-    }
-
-    public Pet getPet() {
-        return pet;
-    }
-
-    public void setPet(Pet pet) {
-        this.pet = pet;
+    public void setUser(Users user) {
+        this.user = user;
     }
 
     public Answer getAnswer() {
@@ -101,16 +82,13 @@ public class Answer {
         this.comment = comment;
     }
 
-
     @Override
     public String toString() {
         return "Answer{" +
                 "id=" + id +
                 ", answerTime=" + answerTime +
                 ", content='" + content + '\'' +
-                ", users=" + users +
-                ", admin=" + admin +
-                ", pet=" + pet +
+                ", user=" + user +
                 ", answer=" + answer +
                 ", comment=" + comment +
                 '}';

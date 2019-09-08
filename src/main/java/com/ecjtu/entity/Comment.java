@@ -21,23 +21,19 @@ public class Comment {
     private Users user;
     private Admin admin;
     private Pet pet;
-    private List<Answer> answers;
+    private List<Answer> answer;
+
     public Comment() {
     }
 
-    public Comment(Date commentTime, String content) {
-        this.commentTime = commentTime;
-        this.content = content;
-    }
-
-    public Comment(Integer id, Date commentTime, String content, Users user, Admin admin, Pet pet, List<Answer> answers) {
+    public Comment(Integer id, Date commentTime, String content, Users user, Admin admin, Pet pet, List<Answer> answer) {
         this.id = id;
         this.commentTime = commentTime;
         this.content = content;
         this.user = user;
         this.admin = admin;
         this.pet = pet;
-        this.answers = answers;
+        this.answer = answer;
     }
 
     public Integer getId() {
@@ -64,14 +60,6 @@ public class Comment {
         this.content = content;
     }
 
-    public Admin getAdmin() {
-        return admin;
-    }
-
-    public void setAdmin(Admin admin) {
-        this.admin = admin;
-    }
-
     public Users getUser() {
         return user;
     }
@@ -80,12 +68,28 @@ public class Comment {
         this.user = user;
     }
 
+    public Admin getAdmin() {
+        return admin;
+    }
+
+    public void setAdmin(Admin admin) {
+        this.admin = admin;
+    }
+
     public Pet getPet() {
         return pet;
     }
 
     public void setPet(Pet pet) {
         this.pet = pet;
+    }
+
+    public List<Answer> getAnswer() {
+        return answer;
+    }
+
+    public void setAnswer(List<Answer> answer) {
+        this.answer = answer;
     }
 
     @Override
@@ -97,7 +101,7 @@ public class Comment {
                 ", user=" + user +
                 ", admin=" + admin +
                 ", pet=" + pet +
-                ", answers=" + answers +
+                ", answer=" + answer +
                 '}';
     }
 }

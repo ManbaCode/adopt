@@ -1,4 +1,4 @@
-package com.ecjtu.mapper;
+package com.ecjtu.service;
 
 import com.ecjtu.entity.Answer;
 
@@ -6,10 +6,9 @@ import java.util.List;
 
 /**
  * @author Mr Wu
- * @create: 2019-08-29 14:03
+ * @create: 2019-09-07 09:19
  */
-public interface AnswerMapper {
-
+public interface AnswerService {
 
     /**
      * 更具id查询用户的信息
@@ -23,7 +22,6 @@ public interface AnswerMapper {
      * @return int
      * */
     int addAnswer(Answer answer);
-
     /**
      * 添加回复
      * @param answer 回复

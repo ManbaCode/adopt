@@ -65,6 +65,23 @@
             <result column="state" property="state"></result>
             <result column="remark" property="remark"></result>
         </association>
+        <collection property="answer" javaType="list" ofType="answer">
+            <id column="aid" property="id"></id>
+            <result column="answerTime" property="answerTime"></result>
+            <result column="acontent" property="content"></result>
+            <association property="user" javaType="users">
+                <id  column="u2id" property="id"></id>
+                <result column="u2Name" property="userName"></result>
+                <result column="password" property="password"></result>
+                <result column="sex" property="sex"></result>
+                <result column="age" property="age"></result>
+                <result column="telephone" property="telephone"></result>
+                <result column="Email" property="Email"></result>
+                <result column="address" property="address"></result>
+                <result column="u2Pic" property="pic"></result>
+                <result column="state" property="state"></result>
+            </association>
+        </collection>
     </resultMap>
 
 
@@ -73,7 +90,8 @@
     </select>
 
     <select id="findByPetId" resultMap="BaseCommentMap" parameterType="int">
-        select comment.*,users.userName,users.pic,admin.adminName,pet.petName from comment  LEFT JOIN users ON comment.user_id=users.id  LEFT JOIN admin  ON admin.id=comment.admin_id inner join pet on comment.pet_id=pet.id where comment.pet_id=#{pet_id}
+        select comment.*,u1.userName,u1.pic,u2.id u2id,u2.pic usPic,u2.userName u2Name,answerTime,answer.id aid,answer.content acontent,admin.adminName,pet.petName from comment left join users as u1 ON comment.user_id=u1.id  LEFT JOIN admin  ON admin.id=comment.admin_id inner join pet on comment.pet_id=pet.id
+        left join answer on answer.comment_id=comment.id and answer.replay_id is null left join users as u2 on u2.id=answer.user_id where comment.pet_id=#{pet_id};
     </select>
     <!--SELECT *  FROM comment as c ,pet as p
 

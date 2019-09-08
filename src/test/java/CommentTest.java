@@ -1,6 +1,10 @@
+import com.ecjtu.controller.AnswerController;
+import com.ecjtu.entity.Answer;
 import com.ecjtu.entity.Comment;
 import com.ecjtu.entity.Users;
+import com.ecjtu.mapper.AnswerMapper;
 import com.ecjtu.mapper.CommentMapper;
+import com.ecjtu.service.AnswerService;
 import org.apache.ibatis.type.JdbcType;
 import org.junit.Test;
 import org.junit.runner.RunWith;
@@ -16,11 +20,14 @@ import java.util.List;
  * @create: 2019-08-21 19:26
  */
 @RunWith(SpringJUnit4ClassRunner.class)
-@ContextConfiguration({ "classpath:Spring-dao.xml" })
+@ContextConfiguration({ "classpath:Spring-dao.xml","classpath:Spring-service.xml" })
 public class CommentTest {
 
     @Autowired
     private CommentMapper commentMapper;
+
+    @Autowired
+    private AnswerMapper answerMapper;
 
     @Test
     public void select(){
@@ -42,14 +49,15 @@ public class CommentTest {
     }
 
     @Test
-    public void insert(){
-        int i = commentMapper.addComment(new Comment(new Date(), "111"));
-        System.out.println(i);
-    }
-    @Test
     public void selectName(){
        Comment comment1= commentMapper.findById(3);
         System.out.println(comment1);
 
+    }
+
+    @Test
+    public void selec1(){
+        Answer byId = answerMapper.findById(3);
+        System.out.println(byId);
     }
 }

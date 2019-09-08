@@ -1,32 +1,5 @@
 (function($){
 	function crateCommentInfo(obj){
-		/*
-		 * <div class="comment-info">
-			<header><img src="./images/img.jpg"></header>
-			<div class="comment-right">
-				<h3>匿名</h3>
-				<div class="comment-content-header"><span><i class="glyphicon glyphicon-time"></i> 2017-10-17 11:42:53</span><span><i class="glyphicon glyphicon-map-marker"></i>深圳</span></div>
-				<p class="content">mongodb 副本集配置副本集概念：就我的理解就是和主从复制 差不多，就是在主从复制的基础上多加了一个选举的机制。
-				复制集 特点：数据一致性 主是唯一的，没有Mysql 那样的双主结构大多数原则，集群存活节点小于二分之一是集群不可写，
-				只可读从库无法写入数据自动容灾通过下面的一个图来简单的了解下
-				 配置过程：一、安装mongodb安装过程略，不懂得可以看前面的教程二、创建存储目录与配置文件创...</p>
-				<div class="comment-content-footer">
-					<div class="row">
-						<div class="col-md-10">
-							<span><i class="glyphicon glyphicon-pushpin"></i> 来自:win10 </span><span><i class="glyphicon glyphicon-globe"></i> chrome 55.0.2883.87</span>
-						</div>
-						<div class="col-md-2"><span class="reply-btn">回复</span></div>
-					</div>
-				</div>
-				<div class="reply-list">
-					<div class="reply">
-						<div><a href="javascript:void(0)">匿名</a>:<a href="javascript:void(0)">@匿名</a><span>这写的是什么鬼东西。。。。</span></div>
-						<p><span>2017-10-17 11:42:53</span> <span class="reply-list-btn">回复</span></p>
-					</div>
-				</div>
-			</div>
-		</div>
-		 * */
 		
 		if(typeof(obj.time) == "undefined" || obj.time == ""){
 			obj.time = getNowDateFormat();
@@ -133,7 +106,7 @@
 					replyClick($(this));
 				}
 			});
-			$(".reply-list-btn").click(function(){
+            $(document).on("click",".reply-list-btn",function(){
 				if($(this).parent().parent().find(".replybox").length > 0){
 					$(".replybox").remove();
 				}else{

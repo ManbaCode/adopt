@@ -9,10 +9,7 @@
     <bookmark url="file://$PROJECT_DIR$/src/main/webapp/animal/team.jsp" line="121" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="f591194b-05f8-45ac-87db-2b419717f508" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/picture/系统流程图.jpg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-    </list>
+    <list default="true" id="f591194b-05f8-45ac-87db-2b419717f508" name="Default Changelist" comment="" />
     <ignored path="$PROJECT_DIR$/out/" />
     <ignored path="$PROJECT_DIR$/target/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -330,52 +327,7 @@
             <path>
               <item name="adopt" type="b2602c69:ProjectViewProjectNode" />
               <item name="adopt" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="adopt" type="b2602c69:ProjectViewProjectNode" />
-              <item name="adopt" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="adopt" type="b2602c69:ProjectViewProjectNode" />
-              <item name="adopt" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-              <item name="java" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="adopt" type="b2602c69:ProjectViewProjectNode" />
-              <item name="adopt" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-              <item name="java" type="462c0819:PsiDirectoryNode" />
-              <item name="ecjtu" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="adopt" type="b2602c69:ProjectViewProjectNode" />
-              <item name="adopt" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-              <item name="webapp" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="adopt" type="b2602c69:ProjectViewProjectNode" />
-              <item name="adopt" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-              <item name="webapp" type="462c0819:PsiDirectoryNode" />
-              <item name="animal" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="adopt" type="b2602c69:ProjectViewProjectNode" />
-              <item name="adopt" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-              <item name="webapp" type="462c0819:PsiDirectoryNode" />
-              <item name="animal" type="462c0819:PsiDirectoryNode" />
-              <item name="admin" type="462c0819:PsiDirectoryNode" />
+              <item name="picture" type="462c0819:PsiDirectoryNode" />
             </path>
           </expand>
           <select />
@@ -405,22 +357,22 @@
     <property name="two.files.diff.last.used.file" value="$PROJECT_DIR$/src/main/webapp/css/comment.css" />
   </component>
   <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="D:\software\maven\workspace\adopt" />
+      <recent name="D:\software\maven\workspace\adopt\picture" />
+      <recent name="D:\software\maven\workspace\adopt\src\main\webapp\js" />
+      <recent name="D:\software\maven\workspace\adopt\src\main\webapp\bootstrap" />
+      <recent name="D:\software\maven\workspace\adopt\src\main\webapp\css" />
+    </key>
+    <key name="CopyClassDialog.RECENTS_KEY">
+      <recent name="com.ecjtu.util" />
+    </key>
     <key name="MoveFile.RECENT_KEYS">
       <recent name="D:\software\maven\workspace\adopt\src\main\webapp\animal" />
       <recent name="D:\software\maven\workspace\adopt\src\main\resource" />
       <recent name="D:\software\maven\workspace\adopt\src\main\resource\mapper" />
       <recent name="D:\software\maven\workspace\adopt\src\main\webapp\animal\admin" />
       <recent name="D:\software\maven\workspace\adopt\src\main\webapp" />
-    </key>
-    <key name="CopyClassDialog.RECENTS_KEY">
-      <recent name="com.ecjtu.util" />
-    </key>
-    <key name="CopyFile.RECENT_KEYS">
-      <recent name="D:\software\maven\workspace\adopt\picture" />
-      <recent name="D:\software\maven\workspace\adopt\src\main\webapp\js" />
-      <recent name="D:\software\maven\workspace\adopt\src\main\webapp\bootstrap" />
-      <recent name="D:\software\maven\workspace\adopt\src\main\webapp\css" />
-      <recent name="D:\software\maven\workspace\adopt\src\main\webapp\html" />
     </key>
   </component>
   <component name="RunDashboard">
@@ -633,7 +585,7 @@
       <workItem from="1567849116235" duration="4890000" />
       <workItem from="1567909807700" duration="19149000" />
       <workItem from="1567988694471" duration="20718000" />
-      <workItem from="1568035776226" duration="613000" />
+      <workItem from="1568035776226" duration="939000" />
     </task>
     <task id="LOCAL-00001" summary="基于SSM的流浪猫狗领养网站的设计与实现的第一次提交">
       <created>1566461234342</created>
@@ -768,7 +720,14 @@
       <option name="project" value="LOCAL" />
       <updated>1568033179010</updated>
     </task>
-    <option name="localTasksCounter" value="20" />
+    <task id="LOCAL-00020" summary="基于SSM的流浪猫狗领养网站的设计与实现效果图">
+      <created>1568036754787</created>
+      <option name="number" value="00020" />
+      <option name="presentableId" value="LOCAL-00020" />
+      <option name="project" value="LOCAL" />
+      <updated>1568036754787</updated>
+    </task>
+    <option name="localTasksCounter" value="21" />
     <servers />
   </component>
   <component name="TestHistory">
@@ -804,7 +763,7 @@
     </history-entry>
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="548029000" />
+    <option name="totallyTimeSpent" value="548355000" />
   </component>
   <component name="TodoView" selected-index="4">
     <todo-panel id="selected-file">
@@ -816,7 +775,7 @@
     </todo-panel>
   </component>
   <component name="ToolWindowManager">
-    <frame x="-8" y="-8" width="1382" height="744" extended-state="6" />
+    <frame x="-8" y="-8" width="1382" height="744" extended-state="7" />
     <layout>
       <window_info active="true" content_ui="combo" id="Project" order="0" sideWeight="0.87723786" visible="true" weight="0.23524962" />
       <window_info id="Structure" order="1" sideWeight="0.500998" side_tool="true" weight="0.20574887" />

@@ -9,7 +9,10 @@
     <bookmark url="file://$PROJECT_DIR$/src/main/webapp/animal/team.jsp" line="121" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="f591194b-05f8-45ac-87db-2b419717f508" name="Default Changelist" comment="" />
+    <list default="true" id="f591194b-05f8-45ac-87db-2b419717f508" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/sql/adopt.sql" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+    </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <ignored path="$PROJECT_DIR$/target/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -53,15 +56,6 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/webapp/animal/admin/disAgree.jsp">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="5010">
-              <caret line="167" column="44" selection-start-line="167" selection-start-column="44" selection-end-line="167" selection-end-column="44" />
-            </state>
-          </provider>
-        </entry>
-      </file>
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/webapp/animal/admin/comment.jsp">
           <provider selected="true" editor-type-id="text-editor">
@@ -107,13 +101,18 @@
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="true">
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/webapp/animal/admin/admin.jsp">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="280">
-              <caret line="179" column="31" selection-start-line="179" selection-start-column="31" selection-end-line="179" selection-end-column="31" />
+            <state relative-caret-position="250">
+              <caret line="154" column="24" lean-forward="true" selection-start-line="154" selection-start-column="24" selection-end-line="154" selection-end-column="24" />
             </state>
           </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/sql/adopt.sql">
+          <provider selected="true" editor-type-id="text-editor" />
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
@@ -327,7 +326,7 @@
             <path>
               <item name="adopt" type="b2602c69:ProjectViewProjectNode" />
               <item name="adopt" type="462c0819:PsiDirectoryNode" />
-              <item name="picture" type="462c0819:PsiDirectoryNode" />
+              <item name="sql" type="462c0819:PsiDirectoryNode" />
             </path>
           </expand>
           <select />
@@ -344,7 +343,7 @@
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
     <property name="database.console.LAST_STATE" value="true" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/sql" />
     <property name="list.type.of.created.stylesheet" value="PLAIN_TEXT" />
     <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
     <property name="nodejs_npm_path_reset_for_default_project" value="true" />
@@ -358,21 +357,21 @@
   </component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="D:\software\maven\workspace\adopt\sql" />
       <recent name="D:\software\maven\workspace\adopt" />
       <recent name="D:\software\maven\workspace\adopt\picture" />
       <recent name="D:\software\maven\workspace\adopt\src\main\webapp\js" />
       <recent name="D:\software\maven\workspace\adopt\src\main\webapp\bootstrap" />
-      <recent name="D:\software\maven\workspace\adopt\src\main\webapp\css" />
     </key>
     <key name="CopyClassDialog.RECENTS_KEY">
       <recent name="com.ecjtu.util" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="D:\software\maven\workspace\adopt\picture" />
       <recent name="D:\software\maven\workspace\adopt\src\main\webapp\animal" />
       <recent name="D:\software\maven\workspace\adopt\src\main\resource" />
       <recent name="D:\software\maven\workspace\adopt\src\main\resource\mapper" />
       <recent name="D:\software\maven\workspace\adopt\src\main\webapp\animal\admin" />
-      <recent name="D:\software\maven\workspace\adopt\src\main\webapp" />
     </key>
   </component>
   <component name="RunDashboard">
@@ -585,7 +584,7 @@
       <workItem from="1567849116235" duration="4890000" />
       <workItem from="1567909807700" duration="19149000" />
       <workItem from="1567988694471" duration="20718000" />
-      <workItem from="1568035776226" duration="939000" />
+      <workItem from="1568035776226" duration="2398000" />
     </task>
     <task id="LOCAL-00001" summary="基于SSM的流浪猫狗领养网站的设计与实现的第一次提交">
       <created>1566461234342</created>
@@ -727,7 +726,14 @@
       <option name="project" value="LOCAL" />
       <updated>1568036754787</updated>
     </task>
-    <option name="localTasksCounter" value="21" />
+    <task id="LOCAL-00021" summary="基于SSM的流浪动物的领养的网站的效果图">
+      <created>1568037202858</created>
+      <option name="number" value="00021" />
+      <option name="presentableId" value="LOCAL-00021" />
+      <option name="project" value="LOCAL" />
+      <updated>1568037202858</updated>
+    </task>
+    <option name="localTasksCounter" value="22" />
     <servers />
   </component>
   <component name="TestHistory">
@@ -763,7 +769,7 @@
     </history-entry>
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="548355000" />
+    <option name="totallyTimeSpent" value="549814000" />
   </component>
   <component name="TodoView" selected-index="4">
     <todo-panel id="selected-file">
@@ -775,7 +781,7 @@
     </todo-panel>
   </component>
   <component name="ToolWindowManager">
-    <frame x="-8" y="-8" width="1382" height="744" extended-state="7" />
+    <frame x="-8" y="-8" width="1382" height="744" extended-state="6" />
     <layout>
       <window_info active="true" content_ui="combo" id="Project" order="0" sideWeight="0.87723786" visible="true" weight="0.23524962" />
       <window_info id="Structure" order="1" sideWeight="0.500998" side_tool="true" weight="0.20574887" />
@@ -851,7 +857,8 @@
     <MESSAGE value="基于SSM的流浪猫狗领养网站的设计与实现 ，文件的上传" />
     <MESSAGE value="基于SSM的流浪猫狗领养网站的设计与实现" />
     <MESSAGE value="基于SSM的流浪猫狗领养网站的设计与实现效果图" />
-    <option name="LAST_COMMIT_MESSAGE" value="基于SSM的流浪猫狗领养网站的设计与实现效果图" />
+    <MESSAGE value="基于SSM的流浪动物的领养的网站的效果图" />
+    <option name="LAST_COMMIT_MESSAGE" value="基于SSM的流浪动物的领养的网站的效果图" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -877,16 +884,6 @@
     </breakpoint-manager>
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/ecjtu/mapper/ApplyMapper.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="690">
-          <caret line="26" selection-start-line="26" selection-end-line="26" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/com/ecjtu/service/impl/ApplyServiceImpl.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="690">
@@ -1289,10 +1286,13 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/webapp/animal/admin/admin.jsp">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="280">
-          <caret line="179" column="31" selection-start-line="179" selection-start-column="31" selection-end-line="179" selection-end-column="31" />
+        <state relative-caret-position="250">
+          <caret line="154" column="24" lean-forward="true" selection-start-line="154" selection-start-column="24" selection-end-line="154" selection-end-column="24" />
         </state>
       </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/sql/adopt.sql">
+      <provider selected="true" editor-type-id="text-editor" />
     </entry>
   </component>
   <component name="masterDetails">

@@ -6,7 +6,10 @@
 环境 JDk1.8 tomcat9.0  
 工具 Maven, Git, GitHub, IDEA MySql5.6  
 项目中用到的技术 Spring SpringMVC MyBatis Ajax Json  
-项目的模块:
+功能流程图
+ ![Image](https://github.com/ECJTUWuXin/adopt/blob/master/picture/系统流程图.jpg)
+E-R图
+ ![Image](https://github.com/ECJTUWuXin/adopt/blob/master/picture/E-R图.jpg)
         
 ## 界面展示
  ### 首页

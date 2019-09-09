@@ -119,8 +119,8 @@ public class PetController {
     }
     @RequestMapping("findByPetType.action")
     @ResponseBody
-    public Message findByName(String petType){
-        PageHelper.startPage(1,4);
+    public Message findByName(@RequestParam(value = "pn",defaultValue = "1")Integer pn,String petType){
+        PageHelper.startPage(pn,4);
         List<Pet> pets = petService.findByPetType(petType);
         if(pets!=null){
             PageInfo page=new PageInfo(pets,3);

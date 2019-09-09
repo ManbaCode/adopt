@@ -166,7 +166,7 @@
                     </table>
                         <div class="row">
                             <!--分页文字信息  -->
-                            <div class="col-md-4" id="page_info_area"></div>
+                            <div class="col-md-8" id="page_info_area"></div>
                             <!-- 分页条信息 -->
                             <div class="col-md-4" id="page_nav_area">
 
@@ -578,19 +578,85 @@
     $("#blog_find_modal_btn").click(function () {
         $("#blog_table tbody").empty();
         var actionTime=$("#findByTime").val();
-        console.log(actionTime);
+        to_findByTime(1,actionTime);
+
+    });
+
+    function to_findByTime(pn,actionTime) {
         $.ajax({
-            url:"${pageContext.request.contextPath}/blog/findByTime.action?actionTime="+actionTime,
-            type:"Get",
+            url:"${pageContext.request.contextPath}/blog/findByTime.action?",
+            type:"POST",
+            dataType:"json",
+            data:{"pn":pn,"actionTime":actionTime},
             async:"true",
             success:function (result) {
-                resolving(result);
+                build_blogs_table(result);
+                build_page_info(result);
+                build_page_findByTime(result,actionTime);
             },
             error:function (result) {
                 alert("查询错误")
             }
         });
-    });
+    }
+
+    //解析显示分页条，点击分页要能去下一页....
+    function build_page_findByTime(result,actionTime){
+        //page_nav_area
+        $("#page_nav_area").empty();
+        var ul = $("<ul></ul>").addClass("pagination");
+
+        //构建元素
+        var firstPageLi = $("<li></li>").append($("<a></a>").append("首页").attr("href","#"));
+        var prePageLi = $("<li></li>").append($("<a></a>").append("&laquo;"));
+        if(result.extend.pageInfo.hasPreviousPage == false){
+            firstPageLi.addClass("disabled");
+            prePageLi.addClass("disabled");
+        }else{
+            //为元素添加点击翻页的事件
+            firstPageLi.click(function(){
+                to_findByTime(1,actionTime);
+            });
+            prePageLi.click(function(){
+                to_findByTime(result.extend.pageInfo.pageNum -1,actionTime);
+            });
+        }
+
+        var nextPageLi = $("<li></li>").append($("<a></a>").append("&raquo;"));
+        var lastPageLi = $("<li></li>").append($("<a></a>").append("末页").attr("href","#"));
+        if(result.extend.pageInfo.hasNextPage == false){
+            nextPageLi.addClass("disabled");
+            lastPageLi.addClass("disabled");
+        }else{
+            nextPageLi.click(function(){
+                to_findByTime(result.extend.pageInfo.pageNum +1,actionTime);
+            });
+            lastPageLi.click(function(){
+                to_findByTime(result.extend.pageInfo.pages,actionTime);
+            });
+        }
+
+        //添加首页和前一页 的提示
+        ul.append(firstPageLi).append(prePageLi);
+        //1,2，3遍历给ul中添加页码提示
+        $.each(result.extend.pageInfo.navigatepageNums,function(index,item){
+
+            var numLi = $("<li></li>").append($("<a></a>").append(item));
+            if(result.extend.pageInfo.pageNum == item){
+                numLi.addClass("active");
+            }
+            numLi.click(function(){
+                to_findByTime(item,actionTime);
+            });
+            ul.append(numLi);
+        });
+        //添加下一页和末页 的提示
+        ul.append(nextPageLi).append(lastPageLi);
+
+        //把ul加入到nav
+        var navEle = $("<nav></nav>").append(ul);
+        navEle.appendTo("#page_nav_area");
+    }
 </script>
 
 </body></html>

@@ -71,11 +71,20 @@
         SELECT t.*,u.id  uid,u.userName,u.Email,u.state,p.id  pid,p.state,p.petName FROM t_adopt as t,users As u,pet As p WHERE t.user_id=u.id AND t.pet_id=p.id AND t.state=#{state}
     </select>
 
-    <select id="findByAdoptTime" resultMap="BaseAdoptAnimalMap" parameterType="date">
+    <select id="findByName" resultMap="BaseAdoptAnimalMap">
+        SELECT t.*,u.id  uid,u.userName,u.Email,u.state,p.id  pid,p.state,p.petName FROM t_adopt as t,users As u,pet As p
+            <foreach collection="users" item="user" separator="," open="where userName in (" close=")">
+                #{user.userName}
+            </foreach>
+        AND t.user_id=u.id AND t.pet_id=p.id AND t.state=#{state}
+    </select>
+
+    <select id="findByAdoptTime" resultMap="BaseAdoptAnimalMap" parameterType="string">
         SELECT t.*,u.id  uid,u.userName,u.Email,u.state,p.id  pid,p.state,p.petName FROM t_adopt as t,users As u,pet As p WHERE t.user_id=u.id AND t.pet_id=p.id
-        <trim prefixOverrides="ANd">
+
+        <trim prefix="AND">
             <if test="adoptTime !=null and adoptTime !=''">
-                AND t.adoptTime=#{adoptTime}
+                t.adoptTime=#{adoptTime}
             </if>
         </trim>
     </select>

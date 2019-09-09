@@ -133,8 +133,11 @@
             <div class="panel-body">
                 <form class="form-inline" method="get" action="">
                     <div class="form-group">
-                        <label for="findByName">申请是否被处理</label>
-                        <input type="text" class="form-control" id="findByName" value="" name="userName">
+                        <label for="findByState">申请是否被处理</label>
+                        <select class="form-control" id="findByState" name="state">
+                            <option value="2">申请没有被处理</option>
+                            <option value="3">申请已经被处理</option>
+                        </select>
                     </div>
                     <button type="button" class="btn btn-primary" id="find_modal_btn">查询</button>
                 </form>
@@ -169,9 +172,9 @@
                     </table>
                     <div class="row">
                         <!--分页文字信息  -->
-                        <div class="col-md-12" id="page_info_area"></div>
+                        <div class="col-md-8" id="page_info_area"></div>
                         <!-- 分页条信息 -->
-                        <div class="col-md-12" id="page_nav_area">
+                        <div class="col-md-4" id="page_nav_area">
 
                         </div>
                     </div>
@@ -500,22 +503,88 @@
             });
         }
     });
-    $("#apply_find_modal_btn").click(function () {
-        $("#admin_table tbody").empty();
-        var adminName=$("#findByName").val();
-        console.log(adminName);
+    $("#find_modal_btn").click(function () {
+        $("#apply_table tbody").empty();
+        var state=$("#findByState").val();
+        to_findByState(1,state);
+    });
+
+
+    function to_findByState(pn,state) {
         $.ajax({
-            url:"${pageContext.request.contextPath}/admin/findByName.action?adminName="+adminName,
-            type:"Get",
+            url:"${pageContext.request.contextPath}/apply/findByState.action",
+            type:"POST",
+            dataType:"json",
+            data:{"pn":pn,"state":state},
             async:"true",
             success:function (result) {
-                resolving(result);
+                build_adopts_table(result);
+                build_page_info(result);
+                build_page_findByState(result,state);
             },
             error:function (result) {
-                alert("拆个年间哎你是")
+                alert("查询失败")
             }
         });
-    });
+    }
+
+    //解析显示分页条，点击分页要能去下一页....
+    function build_page_findByState(result,state){
+        //page_nav_area
+        $("#page_nav_area").empty();
+        var ul = $("<ul></ul>").addClass("pagination");
+
+        //构建元素
+        var firstPageLi = $("<li></li>").append($("<a></a>").append("首页").attr("href","#"));
+        var prePageLi = $("<li></li>").append($("<a></a>").append("&laquo;"));
+        if(result.extend.pageInfo.hasPreviousPage == false){
+            firstPageLi.addClass("disabled");
+            prePageLi.addClass("disabled");
+        }else{
+            //为元素添加点击翻页的事件
+            firstPageLi.click(function(){
+                to_findByState(1,state);
+            });
+            prePageLi.click(function(){
+                to_findByState(result.extend.pageInfo.pageNum -1,state);
+            });
+        }
+
+        var nextPageLi = $("<li></li>").append($("<a></a>").append("&raquo;"));
+        var lastPageLi = $("<li></li>").append($("<a></a>").append("末页").attr("href","#"));
+        if(result.extend.pageInfo.hasNextPage == false){
+            nextPageLi.addClass("disabled");
+            lastPageLi.addClass("disabled");
+        }else{
+            nextPageLi.click(function(){
+                to_findByState(result.extend.pageInfo.pageNum +1,state);
+            });
+            lastPageLi.click(function(){
+                to_findByState(result.extend.pageInfo.pages,state);
+            });
+        }
+
+        //添加首页和前一页 的提示
+        ul.append(firstPageLi).append(prePageLi);
+        //1,2，3遍历给ul中添加页码提示
+        $.each(result.extend.pageInfo.navigatepageNums,function(index,item){
+
+            var numLi = $("<li></li>").append($("<a></a>").append(item));
+            if(result.extend.pageInfo.pageNum == item){
+                numLi.addClass("active");
+            }
+            numLi.click(function(){
+                to_findByState(item,state);
+            });
+            ul.append(numLi);
+        });
+        //添加下一页和末页 的提示
+        ul.append(nextPageLi).append(lastPageLi);
+
+        //把ul加入到nav
+        var navEle = $("<nav></nav>").append(ul);
+        navEle.appendTo("#page_nav_area");
+    }
 </script>
 
 </body></html>

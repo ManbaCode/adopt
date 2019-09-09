@@ -133,7 +133,7 @@
             <div class="panel-body">
                 <form class="form-inline" method="get" action="">
                     <div class="form-group">
-                        <label for="findByAdoptTime">用户名称</label>
+                        <label for="findByAdoptTime">领养的时间</label>
                         <input type="date" class="form-control" id="findByAdoptTime" value="" name="adoptTime">
                     </div>
                     <button type="button" class="btn btn-primary" id="adopt_find_modal_btn">查询</button>
@@ -166,9 +166,9 @@
                     </table>
                     <div class="row">
                         <!--分页文字信息  -->
-                        <div class="col-md-12" id="page_info_area"></div>
+                        <div class="col-md-8" id="page_info_area"></div>
                         <!-- 分页条信息 -->
-                        <div class="col-md-12" id="page_nav_area">
+                        <div class="col-md-4" id="page_nav_area">
 
                         </div>
                     </div>

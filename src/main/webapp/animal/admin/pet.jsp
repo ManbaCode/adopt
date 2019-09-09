@@ -171,9 +171,9 @@
                     </table>
                     <div class="row">
                         <!--分页文字信息  -->
-                        <div class="col-md-6" id="page_info_area"></div>
+                        <div class="col-md-8" id="page_info_area"></div>
                         <!-- 分页条信息 -->
-                        <div class="col-md-6" id="page_nav_area"></div>
+                        <div class="col-md-4" id="page_nav_area"></div>
                     </div>
                     <!-- /.panel-body -->
                 </div>
@@ -632,37 +632,93 @@
         }
     });
 
-
-    $("#pet_find_modal_btn").click(function () {
-        $("#pet_table tbody").empty();
-        var petType=$("#findByPetType").val();
-        $.ajax({
-            url:"${pageContext.request.contextPath}/pet/findByPetType.action?petType="+petType,
-            type:"Get",
-            async:"true",
-            success:function (result) {
-                resolving(result);
-            },
-            error:function (result) {
-                alert("查询错误")
-            }
-        });
-    });
-
     function spilt(pics) {
         var pis=pics;
         var pt=pis.toString().split(",");
         return pt[0];
     }
-    function to_find(pn){
+
+    $("#pet_find_modal_btn").click(function () {
+        $("#pet_table tbody").empty();
+        var petType=$("#findByPetType").val();
+        to_findByPetType(1,petType);
+    });
+
+    function to_findByPetType(pn,petType) {
         $.ajax({
-            url:"${pageContext.request.contextPath}/pet/pets.action",
-            data:"pn="+pn,
-            type:"GET",
-            success:function(result){
-                resolving(result);
+            url:"${pageContext.request.contextPath}/pet/findByPetType.action?",
+            type:"POST",
+            dataType:"json",
+            data:{"pn":pn,"petType":petType},
+            async:"true",
+            success:function (result) {
+                build_pets_table(result);
+                build_page_info(result);
+                build_page_findByPetType(result,petType);
+            },
+            error:function (result) {
+                alert("查询错误")
             }
         });
+    }
+
+
+    //解析显示分页条，点击分页要能去下一页....
+    function build_page_findByPetType(result,petType){
+        //page_nav_area
+        $("#page_nav_area").empty();
+        var ul = $("<ul></ul>").addClass("pagination");
+
+        //构建元素
+        var firstPageLi = $("<li></li>").append($("<a></a>").append("首页").attr("href","#"));
+        var prePageLi = $("<li></li>").append($("<a></a>").append("&laquo;"));
+        if(result.extend.pageInfo.hasPreviousPage == false){
+            firstPageLi.addClass("disabled");
+            prePageLi.addClass("disabled");
+        }else{
+            //为元素添加点击翻页的事件
+            firstPageLi.click(function(){
+                to_findByPetType(1,petType);
+            });
+            prePageLi.click(function(){
+                to_findByPetType(result.extend.pageInfo.pageNum -1,petType);
+            });
+        }
+
+        var nextPageLi = $("<li></li>").append($("<a></a>").append("&raquo;"));
+        var lastPageLi = $("<li></li>").append($("<a></a>").append("末页").attr("href","#"));
+        if(result.extend.pageInfo.hasNextPage == false){
+            nextPageLi.addClass("disabled");
+            lastPageLi.addClass("disabled");
+        }else{
+            nextPageLi.click(function(){
+                to_findByPetType(result.extend.pageInfo.pageNum +1,petType);
+            });
+            lastPageLi.click(function(){
+                to_findByPetType(result.extend.pageInfo.pages,petType);
+            });
+        }
+
+        //添加首页和前一页 的提示
+        ul.append(firstPageLi).append(prePageLi);
+        //1,2，3遍历给ul中添加页码提示
+        $.each(result.extend.pageInfo.navigatepageNums,function(index,item){
+
+            var numLi = $("<li></li>").append($("<a></a>").append(item));
+            if(result.extend.pageInfo.pageNum == item){
+                numLi.addClass("active");
+            }
+            numLi.click(function(){
+                to_findByPetType(item,petType);
+            });
+            ul.append(numLi);
+        });
+        //添加下一页和末页 的提示
+        ul.append(nextPageLi).append(lastPageLi);
+
+        //把ul加入到nav
+        var navEle = $("<nav></nav>").append(ul);
+        navEle.appendTo("#page_nav_area");
     }
 </script>
 

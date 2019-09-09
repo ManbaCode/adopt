@@ -102,8 +102,8 @@ public class AdminController {
     }
     @RequestMapping("/findByName.action")
     @ResponseBody
-    public Message findByName(String adminName){
-        PageHelper.startPage(1,4);
+    public Message findByName(@RequestParam(value = "pn",defaultValue = "1") Integer pn,String adminName){
+        PageHelper.startPage(pn,4);
         List<Admin> admins = adminService.findByName(adminName);
         if(admins!=null){
             PageInfo page = new PageInfo(admins,2);

@@ -89,8 +89,8 @@ public class ApplyController {
 
     @RequestMapping("findByState.action")
     @ResponseBody
-    public Message findByTime(Integer state){
-        PageHelper.startPage(1,4);
+    public Message findByTime(@RequestParam(defaultValue ="1",value = "pn") Integer pn,Integer state){
+        PageHelper.startPage(pn,4);
         List<Apply> states = applyService.findByState(state);
         if(states!=null){
             PageInfo page=new PageInfo(states,3);

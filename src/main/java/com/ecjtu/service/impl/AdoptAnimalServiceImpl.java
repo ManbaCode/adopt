@@ -1,6 +1,7 @@
 package com.ecjtu.service.impl;
 
 import com.ecjtu.entity.AdoptAnimal;
+import com.ecjtu.entity.Users;
 import com.ecjtu.mapper.AdoptAnimalMapper;
 import com.ecjtu.mapper.UsersMapper;
 import com.ecjtu.service.AdoptAnimalService;
@@ -80,9 +81,15 @@ public class AdoptAnimalServiceImpl implements AdoptAnimalService {
     }
 
     @Override
-    public List<AdoptAnimal> findByAdoptTime(Date adoptTime) {
+    public List<AdoptAnimal> findByAdoptTime(String adoptTime) {
         List<AdoptAnimal> byAdoptTime = adoptAnimalMapper.findByAdoptTime(adoptTime);
         return byAdoptTime;
+    }
+
+    @Override
+    public List<AdoptAnimal> findByName(List<Users> users,Integer state) {
+        List<AdoptAnimal> byName = adoptAnimalMapper.findByName(users,state);
+        return byName;
     }
 
     @Override

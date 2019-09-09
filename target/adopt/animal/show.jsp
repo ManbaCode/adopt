@@ -147,7 +147,7 @@
                     </form>
                 </div>
                 <div class="modal-footer">
-                    <button type="button" class="btn btn-default" data-dismiss="modal">关闭
+                    <button type="button" class="btn btn-default" data-dismiss="modal" id="adopt_btn">关闭
                     </button>
                     <button type="button" class="btn btn-primary" id="submit_btn">提交申请</button>
                 </div>
@@ -182,7 +182,7 @@
                 </form>
             </div>
             <div class="modal-footer">
-                <button type="button" class="btn btn-default" data-dismiss="modal">关闭</button>
+                <button type="button" class="btn btn-default" data-dismiss="modal" id="comment_btn">关闭</button>
                 <button type="button" class="btn btn-primary" id="save_answer_btn">提交</button>
             </div>
         </div><!-- /.modal-content -->
@@ -203,7 +203,7 @@
                 </form>
             </div>
             <div class="modal-footer">
-                <button type="button" class="btn btn-default" data-dismiss="modal">关闭</button>
+                <button type="button" class="btn btn-default" data-dismiss="modal" id="answer_btn">关闭</button>
                 <button type="button" class="btn btn-primary" id="save_answers_btn">提交</button>
             </div>
         </div><!-- /.modal-content -->
@@ -371,10 +371,12 @@
             date:adopt,
             success:function (result) {
                 alert("提交申请成功");
+                $("#adopt_btn").click();
             },
             error:function (result) {
                 console.log(result);
                 alert("提交申请失败");
+                $("#adopt_btn").click();
             }
         });
     });
@@ -409,10 +411,13 @@
             dataType:"json",
             data:{'ids':id,'content':content},
             success:function (result) {
-                alert("回复成功！")
+                alert("回复成功！");
+                $("#comment_btn").click();
+                to_page();
             },
             error:function (result) {
-                alert("回复失败！")
+                alert("回复失败！");
+                $("#comment_btn").click();
             }
         })
     });
@@ -445,10 +450,13 @@
             dataType:"json",
             data:{'id':id,'content':content,'comment_id':comment_id},
             success:function (result) {
-                alert("回复成功！")
+                alert("回复成功！");
+                to_page();
+                $("#answer_btn").click();
             },
             error:function (result) {
                 alert("回复失败！")
+                $("#answer_btn").click();
             }
         })
     })

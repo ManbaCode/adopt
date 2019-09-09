@@ -70,7 +70,7 @@
         SELECT admin.*,comment.id tid,comment.commentTime,comment.content FROM (admin  LEFT JOIN comment ON admin.id=comment.admin_id) LEFT JOIN pet ON comment.pet_id=pet.id
         <where>
             <if test="adminName != null and adminName != '' ">
-             and admin.adminName=#{adminName}
+             and admin.adminName LIKE "%"#{adminName}"%"
             </if>
         </where>
     </select>

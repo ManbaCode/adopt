@@ -103,8 +103,8 @@ public class BlogController {
 
     @RequestMapping("findByTime.action")
     @ResponseBody
-    public Message findByTime(@RequestParam("actionTime") String actionTime) throws ParseException {
-        PageHelper.startPage(1,4);
+    public Message findByTime(@RequestParam(value = "pn",defaultValue = "1") Integer pn,@RequestParam("actionTime") String actionTime) throws ParseException {
+        PageHelper.startPage(pn,4);
         List<Blog> blog= blogService.findByTime(actionTime);
         if(blog!=null){
             PageInfo page=new PageInfo(blog,3);

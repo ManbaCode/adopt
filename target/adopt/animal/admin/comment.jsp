@@ -183,9 +183,9 @@
                     </table>
                     <div class="row">
                         <!--分页文字信息  -->
-                        <div class="col-md-12" id="page_info_area"></div>
+                        <div class="col-md-8" id="page_info_area"></div>
                         <!-- 分页条信息 -->
-                        <div class="col-md-12" id="page_nav_area">
+                        <div class="col-md-4" id="page_nav_area">
 
                         </div>
                     </div>

@@ -18,6 +18,8 @@ import org.springframework.web.servlet.ModelAndView;
 import javax.jws.soap.SOAPBinding;
 import javax.mail.MessagingException;
 import javax.servlet.http.HttpServletRequest;
+import java.text.ParseException;
+import java.text.SimpleDateFormat;
 import java.util.Date;
 import java.util.List;
 
@@ -155,9 +157,24 @@ public class AdoptAnimalController {
 
     @RequestMapping("findByAdoptTime.action")
     @ResponseBody
-    public Message findByAdoptTime(Date adoptTime){
+    public Message findByAdoptTime(String adoptTime) throws ParseException {
         PageHelper.startPage(1,4);
         List<AdoptAnimal> adoptAnimals = animalService.findByAdoptTime(adoptTime);
+        if(adoptAnimals!=null){
+            PageInfo page=new PageInfo(adoptAnimals,3);
+            return Message.success().add("pageInfo",page);
+        }else{
+            return Message.fail();
+        }
+
+    }
+
+    @RequestMapping("findByName.action")
+    @ResponseBody
+    public Message findByName(@RequestParam(value = "pn",defaultValue = "1")Integer pn,@RequestParam(value = "userName") String userName,@RequestParam(value = "state") Integer state) throws ParseException {
+        PageHelper.startPage(1,4);
+        List<Users> users = usersService.findByName(userName);
+        List<AdoptAnimal> adoptAnimals = animalService.findByName(users,state);
         if(adoptAnimals!=null){
             PageInfo page=new PageInfo(adoptAnimals,3);
             return Message.success().add("pageInfo",page);

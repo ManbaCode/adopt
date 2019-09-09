@@ -16,15 +16,15 @@
     </update>
 
     <select id="getApply" resultType="apply">
-        SELECT * FROM apply
+        SELECT * FROM apply ORDER BY applyTime Desc
     </select>
 
     <select id="findById" parameterType="int" resultType="apply">
-        SELECT * FROM apply WHERE id=#{id}
+        SELECT * FROM apply WHERE id=#{id} ORDER BY applyTime Desc
     </select>
 
     <select id="findByState" parameterType="int" resultType="apply">
-        SELECT * FROM apply WHERE state=#{state}
+        SELECT * FROM apply WHERE state=#{state} ORDER BY applyTime DESC
     </select>
 
     <delete id="deleteBatch" parameterType="int">

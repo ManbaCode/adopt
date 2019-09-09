@@ -60,7 +60,7 @@
     </resultMap>
 
     <select id="getPets" resultType="pet">
-        SELECT * FROM pet
+        SELECT * FROM pet ORDER BY birthday DESC
     </select>
 
     <!--select * from (pet left join t_adopt ON pet.id=pet_id) left join users on user_id=users.id where pet.state=#{state} group by  pet.id;-->
@@ -80,7 +80,7 @@
         SELECT *  FROM pet
         <where>
             <if test="petType !=null and petType != ''">
-                and petType=#{petType}
+                and petType LIKE "%"#{petType}"%"
             </if>
         </where>
     </select>

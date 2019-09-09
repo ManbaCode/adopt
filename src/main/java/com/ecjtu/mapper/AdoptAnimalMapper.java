@@ -1,7 +1,9 @@
 package com.ecjtu.mapper;
 
 import com.ecjtu.entity.AdoptAnimal;
+import com.ecjtu.entity.Users;
 import org.apache.ibatis.annotations.Param;
+import org.springframework.web.bind.annotation.RequestParam;
 
 import java.util.Date;
 import java.util.List;
@@ -74,7 +76,15 @@ public interface AdoptAnimalMapper {
      * @param adoptTime 领养时间
      * @return adoptAnimal
      * */
-     List<AdoptAnimal> findByAdoptTime(Date adoptTime);
+     List<AdoptAnimal> findByAdoptTime(String adoptTime);
+
+    /**
+     * 根据领养id查询信息
+     * @param users 用户
+     * @param state 动物的状态
+     * @return adoptAnimal
+     * */
+    List<AdoptAnimal> findByName(@Param("users") List<Users> users, @Param("state")Integer state);
 
 
     /**

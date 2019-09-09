@@ -28,7 +28,7 @@
     </update>
 
     <select id="getBlogs" resultType="Blog">
-        SELECT id,actionTime,address,peoples,event,title FROM blog
+        SELECT id,actionTime,address,peoples,event,title FROM blog ORDER BY actionTime DESC
     </select>
 
     <select id="findById" parameterType="int" resultType="Blog">
@@ -39,7 +39,7 @@
         SELECT id,actionTime,address,peoples,event,title FROM blog
         <where>
             <if test="actionTime !=null and actionTime != ''">
-                and actionTime=#{actionTime}
+                and actionTime LIKE "%"#{actionTime}"%"
             </if>
         </where>
     </select>

@@ -102,8 +102,8 @@ public class UsersController {
 
     @RequestMapping("findByName.action")
     @ResponseBody
-    public Message findByName(String userName){
-        PageHelper.startPage(1,4);
+    public Message findByName(String userName,@RequestParam(value = "pn",defaultValue = "1") Integer pn){
+        PageHelper.startPage(pn,4);
         List<Users> users = usersService.findByName(userName);
         if(users!=null){
             PageInfo page=new PageInfo(users,3);

@@ -3,9 +3,9 @@
    ## 项目介绍
 这个网站是为了流浪动物和想要领养流浪动物的爱心人士提供一个平台，能够使得它们在这个网站解决它们的问题。
 ## 项目要用到的东西：
-环境 JDk1.8 tomcat9.0
-工具 Maven, Git, GitHub, IDEA MySql5.6
-项目中用到的技术 Spring SpringMVC MyBatis Ajax Json
+环境 JDk1.8 tomcat9.0  
+工具 Maven, Git, GitHub, IDEA MySql5.6  
+项目中用到的技术 Spring SpringMVC MyBatis Ajax Json  
 项目的模块:
         
 ## 界面展示

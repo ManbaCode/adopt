@@ -210,10 +210,11 @@
             data:$("#save_apply_form").serialize(),
             success:function (result) {
                 alert("你的申请已经被提交");
+                window.location.reload();
             },
             error:function (result) {
-                alert("你提交的信息有错，请认真填写！")
-
+                alert("你提交的信息有错，请认真填写！");
+                window.location.reload();
             }
         });
     });

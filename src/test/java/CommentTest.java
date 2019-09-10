@@ -27,7 +27,7 @@ public class CommentTest {
     private CommentMapper commentMapper;
 
     @Autowired
-    private AnswerMapper answerMapper;
+    private AnswerService answerService;
 
     @Test
     public void select(){
@@ -57,7 +57,7 @@ public class CommentTest {
 
     @Test
     public void selec1(){
-        Answer byId = answerMapper.findById(3);
+        Answer byId = answerService.findById(10);
         System.out.println(byId);
     }
 }

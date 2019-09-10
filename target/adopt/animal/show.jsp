@@ -289,7 +289,7 @@
                 if(result.extend.answer.length > 0){
                     answer=answerSummit(result);
                 }else{
-                    console.log(111);
+                    return;
                 }
             },
             error:function (result) {
@@ -433,7 +433,6 @@
                 //填充用户信息
                 $("#comment_id").val(result.extend.answer.comment.id);
                 $("#answer_id").val(result.extend.answer.id);
-
             }});
         //2、弹出模态框
         $("#saveAnswers").modal({

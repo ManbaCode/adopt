@@ -54,7 +54,7 @@ public class AnswerController {
         answer.setAnswerTime(new Date());
         answer.setUser(user);
         answer.setContent(content);
-        int i = answerService.addAnswer(answer);
+        int i = answerService.addAnswers(answer);
         if(i>0){
             return Message.success();
         }else{

@@ -127,9 +127,10 @@ public class UsersController {
     }
 
     @RequestMapping("logout.action")
-    public String logout(HttpServletRequest request){
+    @ResponseBody
+    public Message logout(HttpServletRequest request){
         request.getSession().invalidate();
-        return "index";
+        return Message.success();
     }
 
 }

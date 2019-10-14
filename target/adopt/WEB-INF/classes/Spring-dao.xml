@@ -27,6 +27,7 @@
         <property name="loginTimeout" value="3000"></property>
     </bean>
 
+
     <!--配置SqlSessionFactory的工厂类-->
     <bean class="org.mybatis.spring.SqlSessionFactoryBean">
         <!--引入MyBatis的配置文件-->

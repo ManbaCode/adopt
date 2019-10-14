@@ -56,7 +56,7 @@
                         <li id="edit_logout">
                             <div class="img"><img src="/images/${user.getPic()}" alt="" width="60px" style="border-radius:50% " value="${user.getId()}" id="user_edit_modal_btn"></div>
                         </li>
-                        <a href="${pageContext.request.contextPath}/user/logout.action" id="logout">退出</a>
+                        <a id="logout">退出</a>
                     </c:if>
                     <c:if test="${!flage}" var="flage" scope="session">
                         <li id="login_register">
@@ -339,7 +339,19 @@
 
     });
 
-
+    $("#logout").click(function () {
+        $.ajax({
+            url:"${pageContext.request.contextPath}/user/logout.action",
+            type:"GET",
+            success:function (result) {
+                window.location.href="${pageContext.request.contextPath}/animal/index.jsp";
+                alert("退出成功");
+            },
+            error:function (result) {
+               alert("退出失败");
+            }
+        })
+    })
     $("#user_register_btn").click(function () {
         $.ajax({
             url:"${pageContext.request.contextPath}/user/create.action",

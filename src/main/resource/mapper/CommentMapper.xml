@@ -65,7 +65,7 @@
             <result column="state" property="state"></result>
             <result column="remark" property="remark"></result>
         </association>
-        <collection property="answer" javaType="list" ofType="answer">
+        <collection property="answer" ofType="answer">
             <id column="aid" property="id"></id>
             <result column="answerTime" property="answerTime"></result>
             <result column="acontent" property="content"></result>

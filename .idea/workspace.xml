@@ -9,11 +9,20 @@
     <bookmark url="file://$PROJECT_DIR$/src/main/webapp/animal/team.jsp" line="121" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="f591194b-05f8-45ac-87db-2b419717f508" name="Default Changelist" comment="">
+    <list default="true" id="f591194b-05f8-45ac-87db-2b419717f508" name="Default Changelist" comment="基于SSM的流浪动物的领养的网站">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/ecjtu/controller/UsersController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/ecjtu/controller/UsersController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resource/Spring-dao.xml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resource/Spring-dao.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/animal/navigation.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/animal/navigation.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/ecjtu/controller/PetController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/ecjtu/controller/PetController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/ecjtu/util/MailUtil.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/ecjtu/util/MailUtil.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resource/MyBatis.xml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resource/MyBatis.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resource/mapper/AnswerMapper.xml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resource/mapper/AnswerMapper.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resource/mapper/CommentMapper.xml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resource/mapper/CommentMapper.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/animal/admin/admin.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/animal/admin/admin.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/animal/show.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/animal/show.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/AdoptAnimalTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/AdoptAnimalTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/MyBatis.xml" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/MyBatis.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/ecjtu/controller/PetController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/ecjtu/controller/PetController.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/mapper/AnswerMapper.xml" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/mapper/AnswerMapper.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/mapper/CommentMapper.xml" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/mapper/CommentMapper.xml" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <ignored path="$PROJECT_DIR$/target/" />
@@ -59,69 +68,74 @@
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/com/ecjtu/controller/AdminController.java">
+        <entry file="file://$PROJECT_DIR$/src/main/java/com/ecjtu/mapper/AdminMapper.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="185">
-              <caret line="33" column="25" selection-start-line="33" selection-start-column="25" selection-end-line="33" selection-end-column="25" />
+            <state relative-caret-position="210">
+              <caret line="10" column="3" selection-start-line="10" selection-start-column="3" selection-end-line="10" selection-end-column="3" />
+              <folding>
+                <element signature="imports" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/resource/MyBatis.xml">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="-703">
+              <caret line="2" column="51" lean-forward="true" selection-start-line="2" selection-start-column="51" selection-end-line="2" selection-end-column="51" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/com/ecjtu/util/MailUtil.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="97">
+              <caret line="10" column="3" selection-start-line="10" selection-start-column="3" selection-end-line="10" selection-end-column="3" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/webapp/animal/admin/admin.jsp">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="105">
+              <caret line="336" column="113" selection-start-line="336" selection-start-column="113" selection-end-line="336" selection-end-column="113" />
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/src/main/java/com/ecjtu/controller/UsersController.java">
+        <entry file="file://$PROJECT_DIR$/src/main/webapp/animal/show.jsp">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="419">
-              <caret line="130" column="18" selection-start-line="130" selection-start-column="18" selection-end-line="130" selection-end-column="18" />
+            <state relative-caret-position="-3765">
+              <caret line="135" column="39" selection-start-line="135" selection-start-column="39" selection-end-line="135" selection-end-column="39" />
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/webapp/animal/index.jsp">
+        <entry file="file://$PROJECT_DIR$/src/main/resource/mapper/AnswerMapper.xml">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-5385" />
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/webapp/animal/navigation.jsp">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="206">
-              <caret line="346" column="85" selection-start-line="346" selection-start-column="85" selection-end-line="346" selection-end-column="85" />
+            <state relative-caret-position="97">
+              <caret line="11" column="51" selection-start-line="11" selection-start-column="51" selection-end-line="11" selection-end-column="51" />
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/webapp/animal/service.jsp">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="151">
-              <caret line="207" column="16" lean-forward="true" selection-start-line="207" selection-start-column="16" selection-end-line="207" selection-end-column="90" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/com/ecjtu/controller/PetController.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="420">
-              <caret line="34" selection-start-line="34" selection-end-line="34" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/resource/Spring-dao.xml">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="870">
-              <caret line="29" selection-start-line="29" selection-end-line="29" />
-            </state>
-          </provider>
+        <entry file="file://$PROJECT_DIR$/src/main/resource/Sprng-tx.xml">
+          <provider selected="true" editor-type-id="text-editor" />
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/resource/Spring-service.xml">
-          <provider selected="true" editor-type-id="text-editor" />
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="270">
+              <caret line="9" column="29" selection-start-line="7" selection-start-column="4" selection-end-line="9" selection-end-column="29" />
+            </state>
+          </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
@@ -130,12 +144,8 @@
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/resource/Sprng-tx.xml">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="450">
-              <caret line="15" selection-start-line="15" selection-end-line="15" />
-            </state>
-          </provider>
+        <entry file="file://$PROJECT_DIR$/src/main/resource/log4j.properties">
+          <provider selected="true" editor-type-id="text-editor" />
         </entry>
       </file>
     </leaf>
@@ -154,36 +164,36 @@
   </component>
   <component name="FindInProjectRecents">
     <findStrings>
-      <find>answerSummit</find>
-      <find>answer_content</find>
-      <find>cid</find>
+      <find>tbody</find>
+      <find>apply_table</find>
+      <find>edit_apply_form</find>
+      <find>new_users_form</find>
+      <find>BaseAdoptAnimalMap</find>
+      <find>edit_btn</find>
+      <find>selectRefundReason</find>
+      <find>updateRealation</find>
+      <find>updateRe</find>
+      <find>findByCommentId</find>
       <find>answer</find>
-      <find>save-id</find>
       <find>findById</find>
-      <find>a1Id</find>
-      <find>a1AnawerTime</find>
-      <find>a1AnswerTime</find>
-      <find>saveAnswers</find>
-      <find>a1content</find>
-      <find>comment_id</find>
-      <find>mail</find>
-      <find>findByAdoptTime</find>
-      <find>comment_find_modal_btn</find>
-      <find>findbyName</find>
-      <find>to_findByNamePage</find>
-      <find>to_find</find>
-      <find>to_page</find>
-      <find>build_pet_table</find>
-      <find>build_pets_table</find>
-      <find>男</find>
-      <find>apply_find_modal_btn</find>
-      <find>find_modal_btn</find>
-      <find>agree_find_modal_btn</find>
-      <find>disAgree_find_modal_btn</find>
-      <find>reply-list-btn</find>
-      <find>answer_id</find>
-      <find>saves-id</find>
-      <find>111</find>
+      <find>login</find>
+      <find>tabpanel</find>
+      <find>tablist</find>
+      <find>myModalLabel</find>
+      <find>script</find>
+      <find>login_register</find>
+      <find>update</find>
+      <find>file</find>
+      <find>ed</find>
+      <find>replys</find>
+      <find>img-responsive</find>
+      <find>slideBox</find>
+      <find>sli</find>
+      <find>demo1</find>
+      <find>save_answers_btn</find>
+      <find>index</find>
+      <find>myBatis</find>
+      <find>myBaut</find>
     </findStrings>
     <replaceStrings>
       <replace>Integer</replace>
@@ -204,32 +214,21 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/src/main/java/com/ecjtu/service/CommentService.java" />
-        <option value="$PROJECT_DIR$/src/main/java/com/ecjtu/service/impl/CommentServiceImpl.java" />
-        <option value="$PROJECT_DIR$/src/main/java/com/ecjtu/controller/CommentController.java" />
-        <option value="$PROJECT_DIR$/src/main/webapp/WEB-INF/web.xml" />
-        <option value="$PROJECT_DIR$/src/main/java/com/ecjtu/mapper/ApplyMapper.java" />
-        <option value="$PROJECT_DIR$/src/main/java/com/ecjtu/entity/Apply.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/ecjtu/service/ApplyService.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/ecjtu/service/impl/ApplyServiceImpl.java" />
         <option value="$PROJECT_DIR$/src/main/webapp/animal/admin/Apply.jsp" />
         <option value="$PROJECT_DIR$/src/main/webapp/animal/teamBlog.jsp" />
-        <option value="$PROJECT_DIR$/src/main/java/com/ecjtu/util/MailUtil.java" />
         <option value="$PROJECT_DIR$/src/main/webapp/css/show.css" />
         <option value="$PROJECT_DIR$/src/main/webapp/js/jquery.comment.js" />
         <option value="$PROJECT_DIR$/src/main/java/com/ecjtu/entity/Answer.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/ecjtu/entity/Comment.java" />
-        <option value="$PROJECT_DIR$/src/main/resource/mapper/CommentMapper.xml" />
         <option value="$PROJECT_DIR$/src/main/java/com/ecjtu/mapper/AnswerMapper.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/ecjtu/service/AnswerService.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/ecjtu/service/impl/AnswerServiceImpl.java" />
-        <option value="$PROJECT_DIR$/src/main/resource/mapper/AnswerMapper.xml" />
         <option value="$PROJECT_DIR$/src/main/resource/mapper/ApplyMapper.xml" />
         <option value="$PROJECT_DIR$/src/main/resource/mapper/UserMapper.xml" />
-        <option value="$PROJECT_DIR$/src/main/java/com/ecjtu/controller/PetController.java" />
         <option value="$PROJECT_DIR$/src/main/resource/mapper/PetMapper.xml" />
         <option value="$PROJECT_DIR$/src/main/resource/mapper/AdminMapper.xml" />
-        <option value="$PROJECT_DIR$/src/main/java/com/ecjtu/controller/AdminController.java" />
         <option value="$PROJECT_DIR$/src/main/resource/mapper/BlogMapper.xml" />
         <option value="$PROJECT_DIR$/src/main/java/com/ecjtu/controller/BlogController.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/ecjtu/controller/ApplyController.java" />
@@ -246,15 +245,26 @@
         <option value="$PROJECT_DIR$/src/main/webapp/animal/admin/apply.jsp" />
         <option value="$PROJECT_DIR$/src/main/webapp/animal/admin/agree.jsp" />
         <option value="$PROJECT_DIR$/src/main/webapp/animal/admin/adopt.jsp" />
-        <option value="$PROJECT_DIR$/src/main/webapp/animal/admin/admin.jsp" />
-        <option value="$PROJECT_DIR$/src/main/webapp/animal/show.jsp" />
         <option value="$PROJECT_DIR$/src/test/java/CommentTest.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/ecjtu/controller/AnswerController.java" />
         <option value="$PROJECT_DIR$/src/main/webapp/animal/team.jsp" />
-        <option value="$PROJECT_DIR$/src/main/resource/Spring-dao.xml" />
         <option value="$PROJECT_DIR$/src/main/resource/Sprng-tx.xml" />
-        <option value="$PROJECT_DIR$/src/main/webapp/animal/navigation.jsp" />
         <option value="$PROJECT_DIR$/src/main/java/com/ecjtu/controller/UsersController.java" />
+        <option value="$PROJECT_DIR$/src/main/webapp/animal/navigation.jsp" />
+        <option value="$PROJECT_DIR$/src/main/webapp/animal/admin/admin.jsp" />
+        <option value="$PROJECT_DIR$/src/main/java/com/ecjtu/controller/AdminController.java" />
+        <option value="$PROJECT_DIR$/src/main/resource/mapper/AnswerMapper.xml" />
+        <option value="$PROJECT_DIR$/src/main/java/com/ecjtu/controller/PetController.java" />
+        <option value="$PROJECT_DIR$/src/main/resource/mapper/CommentMapper.xml" />
+        <option value="$PROJECT_DIR$/src/main/webapp/animal/show.jsp" />
+        <option value="$PROJECT_DIR$/src/main/webapp/WEB-INF/web.xml" />
+        <option value="$PROJECT_DIR$/src/test/java/AdoptAnimalTest.java" />
+        <option value="$PROJECT_DIR$/src/main/resource/db.properties" />
+        <option value="$PROJECT_DIR$/src/main/resource/Spring-service.xml" />
+        <option value="$PROJECT_DIR$/src/main/java/com/ecjtu/mapper/AdminMapper.java" />
+        <option value="$PROJECT_DIR$/src/main/resource/MyBatis.xml" />
+        <option value="$PROJECT_DIR$/src/main/resource/Spring-dao.xml" />
+        <option value="$PROJECT_DIR$/src/main/java/com/ecjtu/util/MailUtil.java" />
       </list>
     </option>
   </component>
@@ -312,6 +322,8 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
+      <pane id="PackagesPane" />
+      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -357,7 +369,35 @@
               <item name="main" type="462c0819:PsiDirectoryNode" />
               <item name="java" type="462c0819:PsiDirectoryNode" />
               <item name="ecjtu" type="462c0819:PsiDirectoryNode" />
-              <item name="controller" type="462c0819:PsiDirectoryNode" />
+              <item name="mapper" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="adopt" type="b2602c69:ProjectViewProjectNode" />
+              <item name="adopt" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+              <item name="java" type="462c0819:PsiDirectoryNode" />
+              <item name="ecjtu" type="462c0819:PsiDirectoryNode" />
+              <item name="service" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="adopt" type="b2602c69:ProjectViewProjectNode" />
+              <item name="adopt" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+              <item name="java" type="462c0819:PsiDirectoryNode" />
+              <item name="ecjtu" type="462c0819:PsiDirectoryNode" />
+              <item name="service" type="462c0819:PsiDirectoryNode" />
+              <item name="impl" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="adopt" type="b2602c69:ProjectViewProjectNode" />
+              <item name="adopt" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+              <item name="java" type="462c0819:PsiDirectoryNode" />
+              <item name="ecjtu" type="462c0819:PsiDirectoryNode" />
+              <item name="util" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="adopt" type="b2602c69:ProjectViewProjectNode" />
@@ -379,11 +419,37 @@
               <item name="src" type="462c0819:PsiDirectoryNode" />
               <item name="main" type="462c0819:PsiDirectoryNode" />
               <item name="webapp" type="462c0819:PsiDirectoryNode" />
-              <item name="animal" type="462c0819:PsiDirectoryNode" />
+              <item name="JQuery" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="adopt" type="b2602c69:ProjectViewProjectNode" />
+              <item name="adopt" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+              <item name="webapp" type="462c0819:PsiDirectoryNode" />
+              <item name="WEB-INF" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="adopt" type="b2602c69:ProjectViewProjectNode" />
+              <item name="adopt" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="test" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="adopt" type="b2602c69:ProjectViewProjectNode" />
+              <item name="adopt" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="test" type="462c0819:PsiDirectoryNode" />
+              <item name="java" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="adopt" type="b2602c69:ProjectViewProjectNode" />
               <item name="External Libraries" type="cb654da1:ExternalLibrariesNode" />
+            </path>
+            <path>
+              <item name="adopt" type="b2602c69:ProjectViewProjectNode" />
+              <item name="External Libraries" type="cb654da1:ExternalLibrariesNode" />
+              <item name="Maven: org.mybatis:mybatis:3.5.2" type="70bed36:NamedLibraryElementNode" />
             </path>
             <path>
               <item name="adopt" type="b2602c69:ProjectViewProjectNode" />
@@ -485,8 +551,6 @@
           <select />
         </subPane>
       </pane>
-      <pane id="Scope" />
-      <pane id="PackagesPane" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -501,30 +565,30 @@
     <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
     <property name="nodejs_npm_path_reset_for_default_project" value="true" />
     <property name="nodejs_package_manager_path" value="npm" />
-    <property name="project.structure.last.edited" value="Global Libraries" />
+    <property name="project.structure.last.edited" value="Artifacts" />
     <property name="project.structure.proportion" value="0.15" />
-    <property name="project.structure.side.proportion" value="0.15735294" />
+    <property name="project.structure.side.proportion" value="0.1161665" />
     <property name="run.code.analysis.last.selected.profile" value="pProject Default" />
     <property name="settings.editor.selected.configurable" value="preferences.keymap" />
     <property name="two.files.diff.last.used.file" value="$PROJECT_DIR$/src/main/webapp/css/comment.css" />
   </component>
   <component name="RecentsManager">
-    <key name="CopyFile.RECENT_KEYS">
-      <recent name="D:\software\maven\workspace\adopt\sql" />
-      <recent name="D:\software\maven\workspace\adopt" />
-      <recent name="D:\software\maven\workspace\adopt\picture" />
-      <recent name="D:\software\maven\workspace\adopt\src\main\webapp\js" />
-      <recent name="D:\software\maven\workspace\adopt\src\main\webapp\bootstrap" />
-    </key>
-    <key name="CopyClassDialog.RECENTS_KEY">
-      <recent name="com.ecjtu.util" />
-    </key>
     <key name="MoveFile.RECENT_KEYS">
       <recent name="D:\software\maven\workspace\adopt\picture" />
       <recent name="D:\software\maven\workspace\adopt\src\main\webapp\animal" />
       <recent name="D:\software\maven\workspace\adopt\src\main\resource" />
       <recent name="D:\software\maven\workspace\adopt\src\main\resource\mapper" />
       <recent name="D:\software\maven\workspace\adopt\src\main\webapp\animal\admin" />
+    </key>
+    <key name="CopyClassDialog.RECENTS_KEY">
+      <recent name="com.ecjtu.util" />
+    </key>
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="D:\software\maven\workspace\adopt\sql" />
+      <recent name="D:\software\maven\workspace\adopt" />
+      <recent name="D:\software\maven\workspace\adopt\picture" />
+      <recent name="D:\software\maven\workspace\adopt\src\main\webapp\js" />
+      <recent name="D:\software\maven\workspace\adopt\src\main\webapp\bootstrap" />
     </key>
   </component>
   <component name="RunDashboard">
@@ -742,7 +806,44 @@
       <workItem from="1568161650506" duration="2834000" />
       <workItem from="1570192748502" duration="2386000" />
       <workItem from="1570945886913" duration="2333000" />
-      <workItem from="1571040118946" duration="1051000" />
+      <workItem from="1571040118946" duration="1831000" />
+      <workItem from="1571298332706" duration="853000" />
+      <workItem from="1574156965904" duration="572000" />
+      <workItem from="1576637113910" duration="97000" />
+      <workItem from="1577535599123" duration="724000" />
+      <workItem from="1579598198072" duration="2826000" />
+      <workItem from="1579679926816" duration="4051000" />
+      <workItem from="1580133063846" duration="697000" />
+      <workItem from="1580180740647" duration="2287000" />
+      <workItem from="1580264349273" duration="5830000" />
+      <workItem from="1580388371043" duration="1251000" />
+      <workItem from="1580559671919" duration="1395000" />
+      <workItem from="1580607598310" duration="1401000" />
+      <workItem from="1580629271926" duration="2369000" />
+      <workItem from="1580696432131" duration="2049000" />
+      <workItem from="1580806636790" duration="121000" />
+      <workItem from="1580905522229" duration="1426000" />
+      <workItem from="1581043313167" duration="5013000" />
+      <workItem from="1581135347767" duration="16000" />
+      <workItem from="1581557081941" duration="8461000" />
+      <workItem from="1581647842089" duration="7587000" />
+      <workItem from="1581733092938" duration="2766000" />
+      <workItem from="1581775610078" duration="98000" />
+      <workItem from="1581861375663" duration="1779000" />
+      <workItem from="1581906787784" duration="7061000" />
+      <workItem from="1581993528669" duration="1953000" />
+      <workItem from="1582010740628" duration="3044000" />
+      <workItem from="1582291959718" duration="1519000" />
+      <workItem from="1582510418489" duration="5817000" />
+      <workItem from="1582602154467" duration="639000" />
+      <workItem from="1582705861056" duration="1273000" />
+      <workItem from="1583588388517" duration="1137000" />
+      <workItem from="1583640129121" duration="3189000" />
+      <workItem from="1583718141842" duration="1237000" />
+      <workItem from="1583804186329" duration="1603000" />
+      <workItem from="1583844227181" duration="4186000" />
+      <workItem from="1583894098076" duration="738000" />
+      <workItem from="1583980679550" duration="311000" />
     </task>
     <task id="LOCAL-00001" summary="基于SSM的流浪猫狗领养网站的设计与实现的第一次提交">
       <created>1566461234342</created>
@@ -905,7 +1006,14 @@
       <option name="project" value="LOCAL" />
       <updated>1568132875193</updated>
     </task>
-    <option name="localTasksCounter" value="24" />
+    <task id="LOCAL-00024" summary="基于SSM的流浪动物的领养的网站">
+      <created>1571041320109</created>
+      <option name="number" value="00024" />
+      <option name="presentableId" value="LOCAL-00024" />
+      <option name="project" value="LOCAL" />
+      <updated>1571041320110</updated>
+    </task>
+    <option name="localTasksCounter" value="25" />
     <servers />
   </component>
   <component name="TestHistory">
@@ -941,9 +1049,9 @@
     </history-entry>
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="573254000" />
+    <option name="totallyTimeSpent" value="661410000" />
   </component>
-  <component name="TodoView" selected-index="4">
+  <component name="TodoView" selected-index="2">
     <todo-panel id="selected-file">
       <is-autoscroll-to-source value="true" />
     </todo-panel>
@@ -955,7 +1063,7 @@
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1382" height="744" extended-state="6" />
     <layout>
-      <window_info active="true" content_ui="combo" id="Project" order="0" sideWeight="0.87723786" visible="true" weight="0.16944024" />
+      <window_info content_ui="combo" id="Project" order="0" sideWeight="0.87723786" visible="true" weight="0.20801815" />
       <window_info id="Structure" order="1" sideWeight="0.500998" side_tool="true" weight="0.20574887" />
       <window_info id="Web" order="2" sideWeight="0.11764706" side_tool="true" weight="0.09304085" />
       <window_info id="Designer" order="3" />
@@ -963,7 +1071,7 @@
       <window_info id="Favorites" order="5" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" weight="0.37213114" />
-      <window_info anchor="bottom" id="Run" order="2" sideWeight="0.49924356" visible="true" weight="0.083606556" />
+      <window_info anchor="bottom" id="Run" order="2" sideWeight="0.49924356" weight="0.23442623" />
       <window_info anchor="bottom" id="Debug" order="3" sideWeight="0.49848714" weight="0.72786885" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
@@ -972,17 +1080,17 @@
       <window_info anchor="bottom" id="Version Control" order="8" sideWeight="0.49924356" weight="0.8868852" />
       <window_info anchor="bottom" id="Database Changes" order="9" show_stripe_button="false" />
       <window_info anchor="bottom" id="Spring" order="10" weight="0.3295082" />
-      <window_info anchor="bottom" id="Event Log" order="11" sideWeight="0.5015129" side_tool="true" weight="0.24590164" />
-      <window_info anchor="bottom" id="Terminal" order="12" weight="0.04918033" />
+      <window_info anchor="bottom" id="Event Log" order="11" sideWeight="0.5015129" side_tool="true" weight="0.6704918" />
+      <window_info anchor="bottom" id="Terminal" order="12" weight="0.38032788" />
       <window_info anchor="bottom" id="Java Enterprise" order="13" weight="0.3295082" />
-      <window_info anchor="bottom" id="Messages" order="14" sideWeight="0.49848714" weight="0.28360656" />
+      <window_info active="true" anchor="bottom" id="Messages" order="14" sideWeight="0.49848714" visible="true" weight="0.26229507" />
       <window_info anchor="bottom" id="Application Servers" order="15" sideWeight="0.49848714" weight="0.16557378" />
       <window_info anchor="bottom" id="Database Console" order="16" weight="0.1704918" />
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
       <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
       <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
       <window_info anchor="right" id="Palette" order="3" />
-      <window_info anchor="right" id="Database" order="4" weight="0.23903178" />
+      <window_info anchor="right" id="Database" order="4" weight="0.27155825" />
       <window_info anchor="right" id="Maven" order="5" weight="0.1452345" />
       <window_info anchor="right" id="Palette&#9;" order="6" />
     </layout>
@@ -1022,6 +1130,16 @@
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="1" />
   </component>
+  <component name="Vcs.Log.History.Properties">
+    <option name="COLUMN_ORDER">
+      <list>
+        <option value="0" />
+        <option value="2" />
+        <option value="3" />
+        <option value="1" />
+      </list>
+    </option>
+  </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="基于SSM的流浪猫狗领养网站的设计与实现的第一次提交" />
     <MESSAGE value="基于SSM的流浪猫狗领养网站的设计与实现的第二次提交" />
@@ -1044,335 +1162,319 @@
     </breakpoint-manager>
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/../../repository/org/springframework/spring-webmvc/5.1.8.RELEASE/spring-webmvc-5.1.8.RELEASE.pom">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-1260" />
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/pom.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-5573" />
+      </provider>
       <provider editor-type-id="MavenHelperPluginDependencyAnalyzer" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/webapp/animal/admin/users.jsp">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="210">
-          <caret line="37" column="33" lean-forward="true" selection-start-line="37" selection-start-column="33" selection-end-line="37" selection-end-column="33" />
+        <state relative-caret-position="9990">
+          <caret line="333" column="32" selection-start-line="333" selection-start-column="32" selection-end-line="333" selection-end-column="32" />
         </state>
       </provider>
     </entry>
-    <entry file="jar://$PROJECT_DIR$/../../repository/org/springframework/spring-web/5.1.8.RELEASE/spring-web-5.1.8.RELEASE.jar!/org/springframework/web/bind/annotation/RequestMapping.class">
+    <entry file="file://$PROJECT_DIR$/src/main/webapp/animal/team.jsp">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="163">
-          <caret line="17" selection-start-line="17" selection-end-line="17" selection-end-column="8" />
-        </state>
+        <state relative-caret-position="-3690" />
       </provider>
     </entry>
-    <entry file="jar://$PROJECT_DIR$/../../repository/org/springframework/spring-core/5.1.8.RELEASE/spring-core-5.1.8.RELEASE.jar!/org/springframework/core/annotation/Order.class">
+    <entry file="file://$PROJECT_DIR$/src/main/webapp/animal/teamBlog.jsp">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="270">
-          <caret line="16" column="18" selection-start-line="16" selection-start-column="18" selection-end-line="16" selection-end-column="18" />
-        </state>
+        <state relative-caret-position="-1800" />
       </provider>
     </entry>
-    <entry file="jar://$PROJECT_DIR$/../../repository/org/springframework/spring-core/5.1.8.RELEASE/spring-core-5.1.8.RELEASE.jar!/org/springframework/core/annotation/package-info.class">
+    <entry file="file://$PROJECT_DIR$/src/main/webapp/animal/test.jsp">
       <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="jar://$PROJECT_DIR$/../../repository/org/springframework/spring-core/5.1.8.RELEASE/spring-core-5.1.8.RELEASE.jar!/org/springframework/core/annotation/OrderUtils.class">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="180">
-          <caret line="13" column="22" selection-start-line="13" selection-start-column="22" selection-end-line="13" selection-end-column="22" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar://$PROJECT_DIR$/../../repository/org/springframework/spring-core/5.1.8.RELEASE/spring-core-5.1.8.RELEASE.jar!/org/springframework/core/annotation/AliasFor.class">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="253">
-          <caret line="19" column="30" lean-forward="true" selection-start-line="19" selection-start-column="30" selection-end-line="19" selection-end-column="30" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar://$PROJECT_DIR$/../../repository/org/springframework/spring-core/5.1.8.RELEASE/spring-core-5.1.8.RELEASE.jar!/org/springframework/core/SpringProperties.class">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="180">
-          <caret line="15" column="19" selection-start-line="15" selection-start-column="19" selection-end-line="15" selection-end-column="19" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar://$PROJECT_DIR$/../../repository/org/springframework/spring-core/5.1.8.RELEASE/spring-core-5.1.8.RELEASE.jar!/org/springframework/core/PriorityOrdered.class">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="120">
-          <caret line="7" column="17" selection-start-line="7" selection-start-column="17" selection-end-line="7" selection-end-column="17" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar://$PROJECT_DIR$/../../repository/org/springframework/spring-core/5.1.8.RELEASE/spring-core-5.1.8.RELEASE.jar!/org/springframework/core/PrioritizedParameterNameDiscoverer.class">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="180">
-          <caret line="14" column="13" selection-start-line="14" selection-start-column="13" selection-end-line="14" selection-end-column="13" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar://$PROJECT_DIR$/../../repository/org/springframework/spring-core/5.1.8.RELEASE/spring-core-5.1.8.RELEASE.jar!/org/springframework/core/ParameterNameDiscoverer.class">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="180">
-          <caret line="11" column="17" selection-start-line="11" selection-start-column="17" selection-end-line="11" selection-end-column="17" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar://$PROJECT_DIR$/../../repository/org/springframework/spring-aop/5.1.8.RELEASE/spring-aop-5.1.8.RELEASE.jar!/org/aopalliance/aop/Advice.class">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="120">
-          <caret line="7" column="17" selection-start-line="7" selection-start-column="17" selection-end-line="7" selection-end-column="17" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar://$PROJECT_DIR$/../../repository/org/springframework/spring-aop/5.1.8.RELEASE/spring-aop-5.1.8.RELEASE.jar!/org/aopalliance/aop/AspectException.class">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="120">
-          <caret line="7" column="13" selection-start-line="7" selection-start-column="13" selection-end-line="7" selection-end-column="13" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar://$PROJECT_DIR$/../../repository/org/springframework/spring-aop/5.1.8.RELEASE/spring-aop-5.1.8.RELEASE.jar!/org/aopalliance/intercept/MethodInvocation.class">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="180">
-          <caret line="9" column="17" selection-start-line="9" selection-start-column="17" selection-end-line="9" selection-end-column="17" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar://$PROJECT_DIR$/../../repository/org/springframework/spring-aop/5.1.8.RELEASE/spring-aop-5.1.8.RELEASE.jar!/org/aopalliance/intercept/MethodInterceptor.class">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="150">
-          <caret line="8" column="17" selection-start-line="8" selection-start-column="17" selection-end-line="8" selection-end-column="17" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar://$PROJECT_DIR$/../../repository/org/springframework/spring-aop/5.1.8.RELEASE/spring-aop-5.1.8.RELEASE.jar!/org/aopalliance/intercept/Invocation.class">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="120">
-          <caret line="7" column="17" selection-start-line="7" selection-start-column="17" selection-end-line="7" selection-end-column="17" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar://$PROJECT_DIR$/../../repository/org/springframework/spring-aop/5.1.8.RELEASE/spring-aop-5.1.8.RELEASE.jar!/org/aopalliance/intercept/Interceptor.class">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="180">
-          <caret line="9" column="17" selection-start-line="9" selection-start-column="17" selection-end-line="9" selection-end-column="17" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar://$PROJECT_DIR$/../../repository/org/springframework/spring-aop/5.1.8.RELEASE/spring-aop-5.1.8.RELEASE.jar!/org/springframework/aop/TruePointcut.class">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="180">
-          <caret line="9" column="12" selection-start-line="9" selection-start-column="12" selection-end-line="9" selection-end-column="12" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar://$PROJECT_DIR$/../../repository/org/springframework/spring-aop/5.1.8.RELEASE/spring-aop-5.1.8.RELEASE.jar!/org/springframework/aop/ThrowsAdvice.class">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="120">
-          <caret line="7" column="17" selection-start-line="7" selection-start-column="17" selection-end-line="7" selection-end-column="17" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar://$PROJECT_DIR$/../../repository/org/springframework/spring-context/5.1.8.RELEASE/spring-context-5.1.8.RELEASE.jar!/org/springframework/cache/annotation/CachePut.class">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="193">
-          <caret line="19" column="18" selection-start-line="19" selection-start-column="18" selection-end-line="19" selection-end-column="18" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar://$PROJECT_DIR$/../../repository/org/springframework/spring-context/5.1.8.RELEASE/spring-context-5.1.8.RELEASE.jar!/org/springframework/cache/annotation/package-info.class">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="jar://$PROJECT_DIR$/../../repository/org/springframework/spring-context/5.1.8.RELEASE/spring-context-5.1.8.RELEASE.jar!/org/springframework/cache/annotation/EnableCaching.class">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="193">
-          <caret line="19" column="18" selection-start-line="19" selection-start-column="18" selection-end-line="19" selection-end-column="18" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar://$PROJECT_DIR$/../../repository/org/springframework/spring-context/5.1.8.RELEASE/spring-context-5.1.8.RELEASE.jar!/org/springframework/cache/annotation/CacheAnnotationParser.class">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="180">
-          <caret line="12" column="17" selection-start-line="12" selection-start-column="17" selection-end-line="12" selection-end-column="17" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar://$PROJECT_DIR$/../../repository/org/springframework/spring-context/5.1.8.RELEASE/spring-context-5.1.8.RELEASE.jar!/org/springframework/cache/annotation/Cacheable.class">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="193">
-          <caret line="19" column="18" selection-start-line="19" selection-start-column="18" selection-end-line="19" selection-end-column="18" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar://$PROJECT_DIR$/../../repository/org/springframework/spring-context/5.1.8.RELEASE/spring-context-5.1.8.RELEASE.jar!/org/springframework/cache/annotation/CacheConfig.class">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="193">
-          <caret line="16" column="18" selection-start-line="16" selection-start-column="18" selection-end-line="16" selection-end-column="18" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar://$PROJECT_DIR$/../../repository/org/springframework/spring-context/5.1.8.RELEASE/spring-context-5.1.8.RELEASE.jar!/org/springframework/cache/annotation/CacheEvict.class">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="193">
-          <caret line="19" column="18" selection-start-line="19" selection-start-column="18" selection-end-line="19" selection-end-column="18" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar://$PROJECT_DIR$/../../repository/org/springframework/spring-beans/5.1.8.RELEASE/spring-beans-5.1.8.RELEASE.jar!/org/springframework/beans/annotation/AnnotationBeanUtils.class">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="180">
-          <caret line="19" column="22" selection-start-line="19" selection-start-column="22" selection-end-line="19" selection-end-column="22" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar://$PROJECT_DIR$/../../repository/org/springframework/spring-beans/5.1.8.RELEASE/spring-beans-5.1.8.RELEASE.jar!/org/springframework/beans/annotation/package-info.class">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="jar://$PROJECT_DIR$/../../repository/org/springframework/spring-beans/5.1.8.RELEASE/spring-beans-5.1.8.RELEASE.jar!/org/springframework/beans/Mergeable.class">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="180">
-          <caret line="9" column="17" selection-start-line="9" selection-start-column="17" selection-end-line="9" selection-end-column="17" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar://$PROJECT_DIR$/../../repository/org/springframework/spring-beans/5.1.8.RELEASE/spring-beans-5.1.8.RELEASE.jar!/org/springframework/beans/FatalBeanException.class">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="180">
-          <caret line="9" column="13" selection-start-line="9" selection-start-column="13" selection-end-line="9" selection-end-column="13" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar://$PROJECT_DIR$/../../repository/org/springframework/spring-beans/5.1.8.RELEASE/spring-beans-5.1.8.RELEASE.jar!/org/springframework/beans/ConversionNotSupportedException.class">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="180">
-          <caret line="10" column="13" selection-start-line="10" selection-start-column="13" selection-end-line="10" selection-end-column="13" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar://$PROJECT_DIR$/../../repository/org/springframework/spring-beans/5.1.8.RELEASE/spring-beans-5.1.8.RELEASE.jar!/org/springframework/beans/BeansException.class">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="180">
-          <caret line="10" column="22" selection-start-line="10" selection-start-column="22" selection-end-line="10" selection-end-column="22" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar://$PROJECT_DIR$/../../repository/org/springframework/spring-beans/5.1.8.RELEASE/spring-beans-5.1.8.RELEASE.jar!/org/springframework/beans/AbstractPropertyAccessor.class">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="180">
-          <caret line="14" column="22" selection-start-line="14" selection-start-column="22" selection-end-line="14" selection-end-column="22" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar://$PROJECT_DIR$/../../repository/org/springframework/spring-beans/5.1.8.RELEASE/spring-beans-5.1.8.RELEASE.jar!/org/springframework/beans/AbstractNestablePropertyAccessor.class">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="180">
-          <caret line="34" column="22" selection-start-line="34" selection-start-column="22" selection-end-line="34" selection-end-column="22" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar://$PROJECT_DIR$/../../repository/org/springframework/spring-beans/5.1.8.RELEASE/spring-beans-5.1.8.RELEASE.jar!/org/springframework/beans/propertyeditors/ByteArrayPropertyEditor.class">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="180">
-          <caret line="10" column="13" selection-start-line="10" selection-start-column="13" selection-end-line="10" selection-end-column="13" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar://$PROJECT_DIR$/../../repository/org/springframework/spring-beans/5.1.8.RELEASE/spring-beans-5.1.8.RELEASE.jar!/org/springframework/beans/factory/annotation/Qualifier.class">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="297">
-          <caret line="18" column="18" selection-start-line="18" selection-start-column="18" selection-end-line="18" selection-end-column="18" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar://$PROJECT_DIR$/../../repository/org/springframework/spring-beans/5.1.8.RELEASE/spring-beans-5.1.8.RELEASE.jar!/org/springframework/beans/factory/annotation/Value.class">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="270">
-          <caret line="16" column="18" selection-start-line="16" selection-start-column="18" selection-end-line="16" selection-end-column="18" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar://$PROJECT_DIR$/../../repository/org/springframework/spring-beans/5.1.8.RELEASE/spring-beans-5.1.8.RELEASE.jar!/org/springframework/beans/factory/annotation/Autowired.class">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="180">
-          <caret line="13" column="34" lean-forward="true" selection-start-line="13" selection-start-column="34" selection-end-line="13" selection-end-column="53" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar://$PROJECT_DIR$/../../repository/org/springframework/spring-beans/5.1.8.RELEASE/spring-beans-5.1.8.RELEASE.jar!/org/springframework/beans/factory/annotation/AnnotatedGenericBeanDefinition.class">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-385">
-          <caret line="14" column="13" selection-start-line="14" selection-start-column="13" selection-end-line="14" selection-end-column="13" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar://$PROJECT_DIR$/../../repository/org/springframework/spring-beans/5.1.8.RELEASE/spring-beans-5.1.8.RELEASE.jar!/org/springframework/beans/factory/annotation/AnnotatedBeanDefinition.class">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="180">
-          <caret line="12" column="17" selection-start-line="12" selection-start-column="17" selection-end-line="12" selection-end-column="17" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/ecjtu/controller/PetController.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="420">
-          <caret line="34" selection-start-line="34" selection-end-line="34" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/resource/Spring-dao.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="870">
-          <caret line="29" selection-start-line="29" selection-end-line="29" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/resource/Spring-service.xml">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/resource/SpringMVC.xml">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/resource/Sprng-tx.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="450">
-          <caret line="15" selection-start-line="15" selection-end-line="15" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/ecjtu/controller/AdminController.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="185">
-          <caret line="33" column="25" selection-start-line="33" selection-start-column="25" selection-end-line="33" selection-end-column="25" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/webapp/animal/index.jsp">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-5385" />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/webapp/animal/personal-info.jsp">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-3558" />
-      </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/webapp/animal/service.jsp">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="151">
-          <caret line="207" column="16" lean-forward="true" selection-start-line="207" selection-start-column="16" selection-end-line="207" selection-end-column="90" />
+        <state relative-caret-position="6060">
+          <caret line="202" column="24" selection-start-line="202" selection-start-column="24" selection-end-line="202" selection-end-column="24" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/ecjtu/service/impl/AnswerServiceImpl.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="30">
+          <caret line="15" column="13" selection-start-line="15" selection-start-column="13" selection-end-line="15" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/ecjtu/entity/Answer.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="303">
+          <caret line="19" column="23" lean-forward="true" selection-start-line="19" selection-start-column="23" selection-end-line="19" selection-end-column="23" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/ecjtu/entity/Apply.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-77">
+          <caret line="11" column="13" selection-start-line="11" selection-start-column="13" selection-end-line="11" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/ecjtu/entity/Blog.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="240">
+          <caret line="11" column="13" selection-start-line="11" selection-start-column="13" selection-end-line="11" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/ecjtu/entity/Comment.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="510">
+          <caret line="21" column="24" selection-start-line="21" selection-start-column="24" selection-end-line="21" selection-end-column="24" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/webapp/animal/navigation.jsp">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="206">
-          <caret line="346" column="85" selection-start-line="346" selection-start-column="85" selection-end-line="346" selection-end-column="85" />
+        <state relative-caret-position="1680">
+          <caret line="56" column="79" selection-start-line="56" selection-start-column="79" selection-end-line="56" selection-end-column="79" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/ecjtu/controller/AdminController.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="2610">
+          <caret line="107" column="25" selection-start-line="107" selection-start-column="25" selection-end-line="107" selection-end-column="25" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/webapp/animal/about.jsp">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/webapp/animal/personal-info.jsp">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/webapp/animal/index.jsp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1050">
+          <caret line="35" column="24" selection-start-line="35" selection-start-column="24" selection-end-line="35" selection-end-column="24" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/com/ecjtu/controller/UsersController.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="419">
-          <caret line="130" column="18" selection-start-line="130" selection-start-column="18" selection-end-line="130" selection-end-column="18" />
+        <state relative-caret-position="300">
+          <caret line="24" column="13" selection-start-line="24" selection-start-column="13" selection-end-line="24" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/ecjtu/controller/AnswerController.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1980">
+          <caret line="78" column="29" selection-start-line="78" selection-start-column="21" selection-end-line="78" selection-end-column="29" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/webapp/js/jquery.slideBox.min.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="30">
+          <caret line="1" column="4" selection-start-line="1" selection-start-column="4" selection-end-line="1" selection-end-column="4" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/ecjtu/controller/CommentController.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="347">
+          <caret line="117" lean-forward="true" selection-start-line="117" selection-end-line="117" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/webapp/css/show.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="497">
+          <caret line="220" column="1" selection-start-line="220" selection-start-column="1" selection-end-line="220" selection-end-column="1" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/resource/mapper/ApplyMapper.xml">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/resource/mapper/AdoptAnimalMapper.xml">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/resource/mapper/BlogMapper.xml">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/resource/mapper/CommentMapper.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1080">
+          <caret line="67" column="54" selection-start-line="67" selection-start-column="54" selection-end-line="67" selection-end-column="54" />
+          <folding>
+            <element signature="n#association#0;n#resultMap#0;n#mapper#0;n#!!top" />
+            <element signature="n#association#1;n#resultMap#0;n#mapper#0;n#!!top" />
+            <element signature="n#association#2;n#resultMap#0;n#mapper#0;n#!!top" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/resource/mapper/UserMapper.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="2370">
+          <caret line="79" column="13" selection-start-line="79" selection-start-column="13" selection-end-line="79" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/resource/mapper/AdminMapper.xml">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/resource/mapper/PetMapper.xml">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/ecjtu/util/MyInterceptor.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-347">
+          <caret line="13" column="13" selection-start-line="13" selection-start-column="13" selection-end-line="13" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/ecjtu/util/UUIDUtil.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="240">
+          <caret line="8" column="13" selection-start-line="8" selection-start-column="13" selection-end-line="8" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/ecjtu/util/Message.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="193">
+          <caret line="9" column="13" selection-start-line="9" selection-start-column="13" selection-end-line="9" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/ecjtu/util/AnimalDate.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="193">
+          <caret line="14" column="13" selection-start-line="14" selection-start-column="13" selection-end-line="14" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/ecjtu/util/DataConvert.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="93">
+          <caret line="14" column="13" selection-start-line="14" selection-start-column="13" selection-end-line="14" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/test/java/AdoptAnimalTest.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="193">
+          <caret line="27" column="25" selection-start-line="27" selection-start-column="25" selection-end-line="27" selection-end-column="25" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/test/java/AdminTest.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="197">
+          <caret line="19" column="13" selection-start-line="19" selection-start-column="13" selection-end-line="19" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/test/java/UserTest.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="13">
+          <caret line="16" column="13" selection-start-line="16" selection-start-column="13" selection-end-line="16" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://$PROJECT_DIR$/../../repository/com/alibaba/druid/1.1.19/druid-1.1.19.jar!/com/alibaba/druid/pool/DruidDataSource.class">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-360">
+          <caret line="90" column="13" selection-start-line="90" selection-start-column="13" selection-end-line="90" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/web.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="990">
+          <caret line="33" column="38" selection-start-line="33" selection-start-column="38" selection-end-line="33" selection-end-column="38" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/resource/db.properties">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="150">
+          <caret line="5" column="19" selection-start-line="5" selection-start-column="19" selection-end-line="5" selection-end-column="19" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/resource/Spring-dao.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1080">
+          <caret line="36" column="25" selection-start-line="36" selection-start-column="25" selection-end-line="36" selection-end-column="25" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/ecjtu/service/impl/AdminServiceImpl.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="360">
+          <caret line="18" column="36" selection-start-line="18" selection-start-column="36" selection-end-line="18" selection-end-column="36" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/ecjtu/mapper/AdminMapper.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="210">
+          <caret line="10" column="3" selection-start-line="10" selection-start-column="3" selection-end-line="10" selection-end-column="3" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/resource/Sprng-tx.xml">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/resource/Spring-service.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="270">
+          <caret line="9" column="29" selection-start-line="7" selection-start-column="4" selection-end-line="9" selection-end-column="29" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/resource/SpringMVC.xml">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/resource/log4j.properties">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/resource/MyBatis.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-703">
+          <caret line="2" column="51" lean-forward="true" selection-start-line="2" selection-start-column="51" selection-end-line="2" selection-end-column="51" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/resource/mapper/AnswerMapper.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="97">
+          <caret line="11" column="51" selection-start-line="11" selection-start-column="51" selection-end-line="11" selection-end-column="51" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/ecjtu/util/MailUtil.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="97">
+          <caret line="10" column="3" selection-start-line="10" selection-start-column="3" selection-end-line="10" selection-end-column="3" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/webapp/animal/admin/admin.jsp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="105">
+          <caret line="336" column="113" selection-start-line="336" selection-start-column="113" selection-end-line="336" selection-end-column="113" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/webapp/animal/show.jsp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-3765">
+          <caret line="135" column="39" selection-start-line="135" selection-start-column="39" selection-end-line="135" selection-end-column="39" />
         </state>
       </provider>
     </entry>
@@ -1386,7 +1488,8 @@
           <splitter-proportions>
             <option name="proportions">
               <list>
-                <option value="0.15735294" />
+                <option value="0.1161665" />
+                <option value="0.5" />
               </list>
             </option>
           </splitter-proportions>
@@ -1398,7 +1501,7 @@
           <splitter-proportions>
             <option name="proportions">
               <list>
-                <option value="0.15735294" />
+                <option value="0.1161665" />
               </list>
             </option>
           </splitter-proportions>
@@ -1409,7 +1512,7 @@
           <splitter-proportions>
             <option name="proportions">
               <list>
-                <option value="0.15735294" />
+                <option value="0.1161665" />
               </list>
             </option>
           </splitter-proportions>
@@ -1421,7 +1524,7 @@
           <splitter-proportions>
             <option name="proportions">
               <list>
-                <option value="0.15735294" />
+                <option value="0.1161665" />
               </list>
             </option>
           </splitter-proportions>
@@ -1433,7 +1536,7 @@
           <splitter-proportions>
             <option name="proportions">
               <list>
-                <option value="0.15735294" />
+                <option value="0.1161665" />
               </list>
             </option>
           </splitter-proportions>
@@ -1453,10 +1556,11 @@
       </state>
       <state key="ProjectLibrariesConfigurable.UI">
         <settings>
+          <last-edited>Maven: com.alibaba:druid:1.1.19</last-edited>
           <splitter-proportions>
             <option name="proportions">
               <list>
-                <option value="0.15735294" />
+                <option value="0.1161665" />
               </list>
             </option>
           </splitter-proportions>

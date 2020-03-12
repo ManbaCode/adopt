@@ -17,6 +17,7 @@
         <id column="a1Id" property="id"></id>
         <result column="a1AnswerTime" property="answerTime"></result>
         <result column="a1content" property="content"></result>
+
         <association property="user" javaType="users">
             <id property="id" column="u1Id"></id>
             <result column="u1Name" property="userName"></result>
@@ -29,6 +30,7 @@
             <result column="pic" property="pic"></result>
             <result column="state" property="state"></result>
         </association>
+
         <association property="answer" javaType="answer">
             <id column="a2Id" property="id"></id>
             <result column="answerTime" property="answerTime"></result>

@@ -4,15 +4,16 @@
         "http://mybatis.org/dtd/mybatis-3-config.dtd">
 <configuration>
 
+
     <settings>
         <!-- 打印查询语句 -->
         <setting name="logImpl" value="STDOUT_LOGGING" />
     </settings>
 
     <typeAliases>
+        <!--使用别名，就会使用answer代替Answer-->
         <package name="com.ecjtu.entity"/>
     </typeAliases>
-
 
 
     <!--引入pageHelper分页插件，注意plugin标签位置-->
@@ -35,5 +36,4 @@
             <property name="reasonable" value="true"/>
         </plugin>
     </plugins>
-
 </configuration>

@@ -13,7 +13,7 @@ import java.util.Properties;
 public class MailUtil {
 
     /**
-     * 发送邮件的方法
+     * 发送邮件的方法，自己需要去注册163邮箱账号
      * @param to :给谁发送邮件
      * @param state  ：邮件的激活码
      * */
@@ -27,7 +27,7 @@ public class MailUtil {
         Session session = Session.getInstance(properties, new Authenticator() {
             @Override
             protected PasswordAuthentication getPasswordAuthentication() {
-                return new PasswordAuthentication("wuxinyugan@163.com", "tianfeng123");
+                return new PasswordAuthentication("邮箱账号", "授权码");
             }
         });
         String word=null;

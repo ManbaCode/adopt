@@ -156,7 +156,7 @@
     </div>
 
     <div class="container">
-    <%--存放评论的地方--%>
+    <!--存放评论的地方-->
         <div class="comment-list">
 
         </div>
@@ -167,7 +167,7 @@
             </div>
     </div>
 </div>
-<%--主回复--%>
+<!--主回复-->
 <div class="modal fade" id="saveAnswer" tabindex="-1" role="dialog" aria-labelledby="myModalLabel1" aria-hidden="true">
     <div class="modal-dialog">
         <div class="modal-content">

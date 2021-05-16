@@ -2,7 +2,7 @@
 <!DOCTYPE mapper
         PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
         "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
-<mapper namespace="com.ecjtu.mapper.AnswerMapper">
+<mapper namespace="com.wind.mapper.AnswerMapper">
 
     <insert id="addAnswer" parameterType="answer">
         INSERT INTO answer (user_id,comment_id, answerTime, content) VALUES (#{user.id},#{comment.id},#{answerTime},#{content})

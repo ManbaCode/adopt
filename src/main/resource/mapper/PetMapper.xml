@@ -2,7 +2,7 @@
 <!DOCTYPE mapper
         PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
         "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
-<mapper namespace="com.ecjtu.mapper.PetMapper">
+<mapper namespace="com.wind.mapper.PetMapper">
 
     <insert id="addPet" parameterType="Pet">
         INSERT INTO pet (id,petName,petType,sex,birthday,pic,state,remark)values(#{id},#{petName},#{petType},#{sex},#{birthday},#{pic},#{state},#{remark})

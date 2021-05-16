@@ -1,0 +1,29 @@
+package com.wind.util;
+
+
+
+import org.springframework.core.convert.converter.Converter;
+
+import java.text.ParseException;
+import java.text.SimpleDateFormat;
+import java.util.Date;
+
+/**
+ * @author Mr Wu
+ * @create: 2019-08-05 19:23
+ */
+public class DataConvert implements Converter<String,Date> {
+
+    @Override
+    public Date convert(String source) {
+        SimpleDateFormat simpleDateFormat = new SimpleDateFormat("yyyy-MM-dd");
+        Date date=null;
+        try {
+            date=simpleDateFormat.parse(source);
+        } catch (ParseException e) {
+            date=null;
+            e.getMessage();
+        }
+        return date;
+    }
+}

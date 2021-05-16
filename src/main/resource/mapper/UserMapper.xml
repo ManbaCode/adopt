@@ -2,7 +2,7 @@
 <!DOCTYPE mapper
         PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
         "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
-<mapper namespace="com.ecjtu.mapper.UsersMapper">
+<mapper namespace="com.wind.mapper.UsersMapper">
 
     <insert id="addUser" parameterType="Users">
         INSERT INTO users(userName,password,sex,age,telephone,Email,address,state)

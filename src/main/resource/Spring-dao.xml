@@ -41,6 +41,6 @@
     <!--扫描mapper包-->
     <bean class="org.mybatis.spring.mapper.MapperScannerConfigurer">
         <!--mapper对象的注册-->
-        <property name="basePackage" value="com.ecjtu.mapper"></property>
+        <property name="basePackage" value="com.wind.mapper"></property>
     </bean>
 </beans>

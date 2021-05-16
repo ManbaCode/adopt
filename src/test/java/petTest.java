@@ -1,16 +1,13 @@
-import com.ecjtu.entity.Pet;
-import com.ecjtu.mapper.PetMapper;
-import com.ecjtu.service.PetService;
-import com.ecjtu.util.Message;
+import com.wind.entity.Pet;
+import com.wind.mapper.PetMapper;
+import com.wind.service.PetService;
 import com.github.pagehelper.PageHelper;
-import com.github.pagehelper.PageInfo;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.test.context.ContextConfiguration;
 import org.springframework.test.context.junit4.SpringJUnit4ClassRunner;
 
-import java.util.Date;
 import java.util.List;
 
 /**

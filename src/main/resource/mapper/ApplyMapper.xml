@@ -2,7 +2,7 @@
 <!DOCTYPE mapper
         PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
         "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
-<mapper namespace="com.ecjtu.mapper.ApplyMapper">
+<mapper namespace="com.wind.mapper.ApplyMapper">
 
     <insert id="addApply" parameterType="apply">
         INSERT INTO apply(name,email,age,telephone,message,applyTime) VALUES (#{name},#{email},#{age},#{telephone},#{message},#{applyTime})

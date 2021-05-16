@@ -1,6 +1,6 @@
-import com.ecjtu.entity.Blog;
-import com.ecjtu.mapper.BlogMapper;
-import com.ecjtu.service.BlogService;
+import com.wind.entity.Blog;
+import com.wind.mapper.BlogMapper;
+import com.wind.service.BlogService;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.springframework.beans.factory.annotation.Autowired;

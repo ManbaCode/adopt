@@ -1,5 +1,5 @@
-import com.ecjtu.entity.Users;
-import com.ecjtu.mapper.UsersMapper;
+import com.wind.entity.Users;
+import com.wind.mapper.UsersMapper;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.springframework.beans.factory.annotation.Autowired;

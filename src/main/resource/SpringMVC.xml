@@ -10,7 +10,7 @@
        http://www.springframework.org/schema/mvc
        https://www.springframework.org/schema/mvc/spring-mvc.xsd">
 
-    <context:component-scan base-package="com.ecjtu.controller">
+    <context:component-scan base-package="com.wind.controller">
         <context:include-filter type="annotation" expression="org.springframework.stereotype.Controller"/>
     </context:component-scan>
 
@@ -25,7 +25,7 @@
 <!--                &lt;!&ndash;拦截的路径，这是拦截所有请求&ndash;&gt;-->
 <!--                <mvc:mapping path="/**"/>-->
 <!--                &lt;!&ndash;配置具体的拦截器&ndash;&gt;-->
-<!--                <bean class="com.ecjtu.util.MyInterceptor"></bean>-->
+<!--                <bean class="com.windutil.MyInterceptor"></bean>-->
 <!--            </mvc:interceptor>-->
 <!--        </mvc:interceptors>-->
 

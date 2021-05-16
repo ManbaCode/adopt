@@ -1,14 +1,13 @@
-import com.ecjtu.entity.AdoptAnimal;
-import com.ecjtu.entity.Pet;
-import com.ecjtu.entity.Users;
-import com.ecjtu.mapper.AdoptAnimalMapper;
+import com.wind.entity.AdoptAnimal;
+import com.wind.entity.Pet;
+import com.wind.entity.Users;
+import com.wind.mapper.AdoptAnimalMapper;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.test.context.ContextConfiguration;
 import org.springframework.test.context.junit4.SpringJUnit4ClassRunner;
 
-import java.sql.Connection;
 import java.text.SimpleDateFormat;
 import java.util.Date;
 import java.util.List;
